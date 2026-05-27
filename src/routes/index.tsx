@@ -53,9 +53,7 @@ function Index() {
 
         {/* Hero */}
         <div className="relative">
-          <div className="bg-[#FFE600] w-full h-64 flex items-center justify-center">
-            <img src={heroImg} alt="Cartão Mercado Pago Pré-aprovado" className="h-60 object-contain" />
-          </div>
+          <img src={heroImg} alt="Cartão Mercado Pago Pré-aprovado" className="w-full h-auto object-contain block" />
         </div>
 
         {/* Vantagens */}
