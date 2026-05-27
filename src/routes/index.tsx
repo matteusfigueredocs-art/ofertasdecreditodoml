@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
@@ -25,6 +25,7 @@ const steps = [
 
 function Index() {
   const [idx, setIdx] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const t = setInterval(() => setIdx((i) => (i + 1) % 3), 5000);
@@ -32,7 +33,7 @@ function Index() {
   }, []);
 
   const handleCTA = () => {
-    document.getElementById("como-solicitar")?.scrollIntoView({ behavior: "smooth" });
+    navigate({ to: "/validacao" });
   };
 
   return (

