@@ -18,6 +18,15 @@ export const Route = createFileRoute("/aprovado")({
 
 function Aprovado() {
   const navigate = useNavigate();
+  const [limite, setLimite] = useState<number>(4200);
+
+  useEffect(() => {
+    try {
+      const v = sessionStorage.getItem("limiteAprovado");
+      if (v) setLimite(parseInt(v, 10) || 4200);
+    } catch {}
+  }, []);
+
 
   const items = [
     {
