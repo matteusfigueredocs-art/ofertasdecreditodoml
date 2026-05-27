@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ValidacaoRouteImport } from './routes/validacao'
 import { Route as QuestionarioRouteImport } from './routes/questionario'
+import { Route as AprovadoRouteImport } from './routes/aprovado'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ValidacaoRoute = ValidacaoRouteImport.update({
@@ -23,6 +24,11 @@ const QuestionarioRoute = QuestionarioRouteImport.update({
   path: '/questionario',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AprovadoRoute = AprovadoRouteImport.update({
+  id: '/aprovado',
+  path: '/aprovado',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +37,34 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aprovado': typeof AprovadoRoute
   '/questionario': typeof QuestionarioRoute
   '/validacao': typeof ValidacaoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aprovado': typeof AprovadoRoute
   '/questionario': typeof QuestionarioRoute
   '/validacao': typeof ValidacaoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aprovado': typeof AprovadoRoute
   '/questionario': typeof QuestionarioRoute
   '/validacao': typeof ValidacaoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/questionario' | '/validacao'
+  fullPaths: '/' | '/aprovado' | '/questionario' | '/validacao'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/questionario' | '/validacao'
-  id: '__root__' | '/' | '/questionario' | '/validacao'
+  to: '/' | '/aprovado' | '/questionario' | '/validacao'
+  id: '__root__' | '/' | '/aprovado' | '/questionario' | '/validacao'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AprovadoRoute: typeof AprovadoRoute
   QuestionarioRoute: typeof QuestionarioRoute
   ValidacaoRoute: typeof ValidacaoRoute
 }
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QuestionarioRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aprovado': {
+      id: '/aprovado'
+      path: '/aprovado'
+      fullPath: '/aprovado'
+      preLoaderRoute: typeof AprovadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AprovadoRoute: AprovadoRoute,
   QuestionarioRoute: QuestionarioRoute,
   ValidacaoRoute: ValidacaoRoute,
 }
