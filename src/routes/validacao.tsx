@@ -144,10 +144,7 @@ function Validacao() {
                   <span className="font-semibold text-gray-800 text-right">{formatDate(data.nascimento)}</span>
                 </div>
                 <div className="flex justify-between text-sm gap-3">
-                  <span className="text-gray-600 shrink-0">Nome da Mãe:</span>
-                  <span className="font-semibold text-gray-800 text-right">{data.mae || "-"}</span>
-                </div>
-                <div className="flex justify-between text-sm gap-3">
+
                   <span className="text-gray-600 shrink-0">CPF:</span>
                   <span className="font-semibold text-gray-800 text-right">{cpf}</span>
                 </div>
