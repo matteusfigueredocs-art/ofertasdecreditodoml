@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ValidacaoRouteImport } from './routes/validacao'
+import { Route as QuestionarioRouteImport } from './routes/questionario'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ValidacaoRoute = ValidacaoRouteImport.update({
   id: '/validacao',
   path: '/validacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuestionarioRoute = QuestionarioRouteImport.update({
+  id: '/questionario',
+  path: '/questionario',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/questionario': typeof QuestionarioRoute
   '/validacao': typeof ValidacaoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/questionario': typeof QuestionarioRoute
   '/validacao': typeof ValidacaoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/questionario': typeof QuestionarioRoute
   '/validacao': typeof ValidacaoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/validacao'
+  fullPaths: '/' | '/questionario' | '/validacao'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/validacao'
-  id: '__root__' | '/' | '/validacao'
+  to: '/' | '/questionario' | '/validacao'
+  id: '__root__' | '/' | '/questionario' | '/validacao'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  QuestionarioRoute: typeof QuestionarioRoute
   ValidacaoRoute: typeof ValidacaoRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/validacao'
       fullPath: '/validacao'
       preLoaderRoute: typeof ValidacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/questionario': {
+      id: '/questionario'
+      path: '/questionario'
+      fullPath: '/questionario'
+      preLoaderRoute: typeof QuestionarioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  QuestionarioRoute: QuestionarioRoute,
   ValidacaoRoute: ValidacaoRoute,
 }
 export const routeTree = rootRouteImport
