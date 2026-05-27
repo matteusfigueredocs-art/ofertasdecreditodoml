@@ -89,7 +89,7 @@ function Questionario() {
     const t2 = setTimeout(() => setProgressSteps(2), 2600);
     const t3 = setTimeout(() => setProgressSteps(3), 4000);
     const t4 = setTimeout(() => setProgressSteps(4), 5200);
-    const t5 = setTimeout(() => navigate({ to: "/" }), 6200);
+    const t5 = setTimeout(() => navigate({ to: "/aprovado" }), 6200);
     return () => {
       [t1, t2, t3, t4, t5].forEach(clearTimeout);
     };
