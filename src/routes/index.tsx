@@ -1,5 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import mlLogo from "@/assets/mercado-livre-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
