@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as ValidacaoRouteImport } from './routes/validacao'
 import { Route as QuestionarioRouteImport } from './routes/questionario'
 import { Route as ProcessandoRouteImport } from './routes/processando'
+import { Route as LimiteRouteImport } from './routes/limite'
 import { Route as InteresseRouteImport } from './routes/interesse'
 import { Route as CartaoAprovadoRouteImport } from './routes/cartao-aprovado'
 import { Route as AprovadoRouteImport } from './routes/aprovado'
@@ -30,6 +31,11 @@ const QuestionarioRoute = QuestionarioRouteImport.update({
 const ProcessandoRoute = ProcessandoRouteImport.update({
   id: '/processando',
   path: '/processando',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LimiteRoute = LimiteRouteImport.update({
+  id: '/limite',
+  path: '/limite',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InteresseRoute = InteresseRouteImport.update({
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/aprovado': typeof AprovadoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/interesse': typeof InteresseRoute
+  '/limite': typeof LimiteRoute
   '/processando': typeof ProcessandoRoute
   '/questionario': typeof QuestionarioRoute
   '/validacao': typeof ValidacaoRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/aprovado': typeof AprovadoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/interesse': typeof InteresseRoute
+  '/limite': typeof LimiteRoute
   '/processando': typeof ProcessandoRoute
   '/questionario': typeof QuestionarioRoute
   '/validacao': typeof ValidacaoRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/aprovado': typeof AprovadoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/interesse': typeof InteresseRoute
+  '/limite': typeof LimiteRoute
   '/processando': typeof ProcessandoRoute
   '/questionario': typeof QuestionarioRoute
   '/validacao': typeof ValidacaoRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/aprovado'
     | '/cartao-aprovado'
     | '/interesse'
+    | '/limite'
     | '/processando'
     | '/questionario'
     | '/validacao'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/aprovado'
     | '/cartao-aprovado'
     | '/interesse'
+    | '/limite'
     | '/processando'
     | '/questionario'
     | '/validacao'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/aprovado'
     | '/cartao-aprovado'
     | '/interesse'
+    | '/limite'
     | '/processando'
     | '/questionario'
     | '/validacao'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   AprovadoRoute: typeof AprovadoRoute
   CartaoAprovadoRoute: typeof CartaoAprovadoRoute
   InteresseRoute: typeof InteresseRoute
+  LimiteRoute: typeof LimiteRoute
   ProcessandoRoute: typeof ProcessandoRoute
   QuestionarioRoute: typeof QuestionarioRoute
   ValidacaoRoute: typeof ValidacaoRoute
@@ -142,6 +155,13 @@ declare module '@tanstack/react-router' {
       path: '/processando'
       fullPath: '/processando'
       preLoaderRoute: typeof ProcessandoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/limite': {
+      id: '/limite'
+      path: '/limite'
+      fullPath: '/limite'
+      preLoaderRoute: typeof LimiteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/interesse': {
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   AprovadoRoute: AprovadoRoute,
   CartaoAprovadoRoute: CartaoAprovadoRoute,
   InteresseRoute: InteresseRoute,
+  LimiteRoute: LimiteRoute,
   ProcessandoRoute: ProcessandoRoute,
   QuestionarioRoute: QuestionarioRoute,
   ValidacaoRoute: ValidacaoRoute,
