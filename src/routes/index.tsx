@@ -53,7 +53,7 @@ function Index() {
         </div>
 
         {/* Vantagens */}
-        <div className="px-4 -mt-8 relative z-10">
+        <div className="px-4 mt-4 relative z-10">
           <div className="bg-white rounded-xl shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Vantagens exclusivas</h2>
             <div className="space-y-4">
