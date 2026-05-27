@@ -89,6 +89,7 @@ function Gerente() {
             </button>
           </form>
         </div>
+        <TrustSeals />
       </main>
     </div>
   );

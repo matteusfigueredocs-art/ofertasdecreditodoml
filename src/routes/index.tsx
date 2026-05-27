@@ -226,6 +226,7 @@ function Index() {
           </div>
         </div>
 
+        <TrustSeals />
         {/* Footer */}
         <div className="px-4 pb-6">
           <div className="text-center text-xs text-gray-500">
