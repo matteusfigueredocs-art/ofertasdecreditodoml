@@ -28,6 +28,8 @@ function Endereco() {
     cidade: "",
     estado: "",
   });
+  const [saving, setSaving] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -39,8 +41,14 @@ function Endereco() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (saving || success) return;
     if (!form.cep || !form.endereco || !form.numero || !form.bairro || !form.cidade || !form.estado) return;
-    navigate({ to: "/" });
+    setSaving(true);
+    setTimeout(() => {
+      setSaving(false);
+      setSuccess(true);
+      setTimeout(() => navigate({ to: "/" }), 2200);
+    }, 1500);
   };
 
   const inputCls =
