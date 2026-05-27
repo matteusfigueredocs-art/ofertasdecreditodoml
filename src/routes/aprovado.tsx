@@ -67,7 +67,7 @@ function Aprovado() {
           </div>
 
           <button
-            onClick={() => navigate({ to: "/interesse" })}
+            onClick={() => navigate({ to: "/limite" })}
             className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md transition-all"
           >
             Continuar
