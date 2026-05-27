@@ -1,6 +1,8 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
+import mlHandshake from "@/assets/ml-handshake.png";
+import mastercard from "@/assets/mastercard.png";
 
 export const Route = createFileRoute("/personalizar")({
   head: () => ({
@@ -56,21 +58,28 @@ function Personalizar() {
 
             {/* Top row */}
             <div className="flex justify-between items-start relative">
-              <div className="w-12 h-8 bg-[#FFE600] rounded-md flex items-center justify-center shadow">
-                <img src={mlLogo} alt="ML" className="h-5 object-contain" />
-              </div>
-              <span className={`${platinumColor} text-[11px] tracking-widest font-semibold`}>
+              <img src={mlHandshake} alt="Mercado Livre" className="h-10 object-contain drop-shadow" />
+              <span className={`${platinumColor} text-xs tracking-[0.2em] font-semibold`}>
                 PLATINUM
               </span>
             </div>
 
-            {/* Chip + wifi */}
+            {/* Chip + contactless */}
             <div className="absolute left-5 top-1/2 -translate-y-1/2">
               <div className="w-10 h-7 rounded-md bg-gradient-to-br from-yellow-300 to-yellow-500 shadow-inner" />
             </div>
-            <div className={`absolute right-5 top-1/2 -translate-y-1/2 ${textColor} text-xl rotate-90`}>
-              ))
-            </div>
+            <svg
+              viewBox="0 0 24 24"
+              className={`absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 ${textColor}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            >
+              <path d="M5 8c4-4 10-4 14 0" />
+              <path d="M8 11c2.5-2.5 5.5-2.5 8 0" />
+              <path d="M11 14c1-1 2-1 2 0" />
+            </svg>
 
             {/* Bottom */}
             <div className="absolute bottom-4 left-5 right-5 flex justify-between items-end">
@@ -78,10 +87,7 @@ function Personalizar() {
                 <div className={`${textColor} font-semibold tracking-wider text-sm`}>{nome}</div>
                 <div className={`${subTextColor} text-[10px] tracking-wider`}>TITULAR DO CARTÃO</div>
               </div>
-              <div className="flex">
-                <div className="w-7 h-7 rounded-full bg-red-500" />
-                <div className="w-7 h-7 rounded-full bg-orange-400 -ml-3 mix-blend-multiply" />
-              </div>
+              <img src={mastercard} alt="Mastercard" className="h-8 object-contain" />
             </div>
           </div>
 
