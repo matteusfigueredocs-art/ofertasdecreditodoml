@@ -58,7 +58,12 @@ function Personalizar() {
 
             {/* Top row */}
             <div className="flex justify-between items-start relative">
-              <img src={mlHandshake} alt="Mercado Livre" className="h-10 object-contain drop-shadow" />
+              <img
+                src={mlHandshake}
+                alt="Mercado Livre"
+                className="h-10 object-contain"
+                style={{ filter: "brightness(0) invert(1)" }}
+              />
               <span className={`${platinumColor} text-xs tracking-[0.2em] font-semibold`}>
                 PLATINUM
               </span>
