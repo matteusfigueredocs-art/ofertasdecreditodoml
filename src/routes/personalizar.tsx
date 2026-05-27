@@ -79,7 +79,7 @@ function Personalizar() {
             </div>
 
             {/* Chip */}
-            <div className="absolute left-5 bottom-5">
+            <div className="absolute left-5 top-1/2 -translate-y-1/2">
               <div className="w-11 h-8 rounded-md bg-gradient-to-br from-yellow-300 to-yellow-600 shadow-inner relative overflow-hidden">
                 <div className="absolute inset-1 border border-yellow-700/40 rounded-sm" />
               </div>
@@ -88,7 +88,7 @@ function Personalizar() {
             {/* Contactless */}
             <svg
               viewBox="0 0 24 24"
-              className={`absolute right-5 bottom-6 w-5 h-5 ${textColor} rotate-90`}
+              className={`absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 ${textColor} rotate-90`}
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -98,6 +98,15 @@ function Personalizar() {
               <path d="M8 11c2.5-2.5 5.5-2.5 8 0" />
               <path d="M11 14c1-1 2-1 2 0" />
             </svg>
+
+            {/* Bottom */}
+            <div className="absolute bottom-4 left-5 right-5 flex justify-between items-end">
+              <div>
+                <div className={`${textColor} font-semibold tracking-wider text-sm`}>{nome}</div>
+                <div className={`${subTextColor} text-[10px] tracking-wider`}>TITULAR DO CARTÃO</div>
+              </div>
+              <img src={mastercard} alt="Mastercard" className="h-8 object-contain" />
+            </div>
           </div>
 
           {/* Color picker */}
