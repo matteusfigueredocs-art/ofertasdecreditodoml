@@ -5,7 +5,6 @@ const STEPS = [
   { id: 2, label: "Análise" },
   { id: 3, label: "Personalização" },
   { id: 4, label: "Entrega" },
-  { id: 5, label: "Pagamento" },
 ];
 
 export function FunnelSteps({ current }: { current: number }) {
