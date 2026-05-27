@@ -23,7 +23,7 @@ function Interesse() {
   ];
 
   const handleSelect = () => {
-    navigate({ to: "/" });
+    navigate({ to: "/processando" });
   };
 
   return (
