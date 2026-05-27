@@ -41,14 +41,10 @@ function Index() {
     <div className="min-h-screen bg-[#EEEEEE]">
       <div className="max-w-md mx-auto min-h-screen bg-white relative">
         {/* Header */}
-        <div className="flex items-center px-4 py-3 bg-white border-b border-gray-100">
-          <button aria-label="Voltar" className="text-[#3483FA] text-xl">
-            <i className="fas fa-arrow-left" />
-          </button>
+        <div className="flex items-center px-4 py-6 bg-[#FFE600]">
           <div className="flex-1 flex justify-center items-center">
-            <img src={mlLogo} alt="Mercado Livre" className="h-20 md:h-24 object-contain" />
+            <img src={mlLogo} alt="Mercado Livre" className="h-16 md:h-20 object-contain" />
           </div>
-          <div className="w-6" />
         </div>
 
         {/* Hero */}
