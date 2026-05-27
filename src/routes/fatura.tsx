@@ -21,7 +21,7 @@ function Fatura() {
   const handleSelect = (day: number) => {
     setSelected(day);
     setTimeout(() => {
-      navigate({ to: "/" });
+      navigate({ to: "/gerente" });
     }, 2800);
   };
 

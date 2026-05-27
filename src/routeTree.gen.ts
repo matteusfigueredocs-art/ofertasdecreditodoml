@@ -15,6 +15,7 @@ import { Route as ProcessandoRouteImport } from './routes/processando'
 import { Route as PersonalizarRouteImport } from './routes/personalizar'
 import { Route as LimiteRouteImport } from './routes/limite'
 import { Route as InteresseRouteImport } from './routes/interesse'
+import { Route as GerenteRouteImport } from './routes/gerente'
 import { Route as FaturaRouteImport } from './routes/fatura'
 import { Route as CartaoAprovadoRouteImport } from './routes/cartao-aprovado'
 import { Route as AprovadoRouteImport } from './routes/aprovado'
@@ -50,6 +51,11 @@ const InteresseRoute = InteresseRouteImport.update({
   path: '/interesse',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GerenteRoute = GerenteRouteImport.update({
+  id: '/gerente',
+  path: '/gerente',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaturaRoute = FaturaRouteImport.update({
   id: '/fatura',
   path: '/fatura',
@@ -76,6 +82,7 @@ export interface FileRoutesByFullPath {
   '/aprovado': typeof AprovadoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/fatura': typeof FaturaRoute
+  '/gerente': typeof GerenteRoute
   '/interesse': typeof InteresseRoute
   '/limite': typeof LimiteRoute
   '/personalizar': typeof PersonalizarRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/aprovado': typeof AprovadoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/fatura': typeof FaturaRoute
+  '/gerente': typeof GerenteRoute
   '/interesse': typeof InteresseRoute
   '/limite': typeof LimiteRoute
   '/personalizar': typeof PersonalizarRoute
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/aprovado': typeof AprovadoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/fatura': typeof FaturaRoute
+  '/gerente': typeof GerenteRoute
   '/interesse': typeof InteresseRoute
   '/limite': typeof LimiteRoute
   '/personalizar': typeof PersonalizarRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
     | '/aprovado'
     | '/cartao-aprovado'
     | '/fatura'
+    | '/gerente'
     | '/interesse'
     | '/limite'
     | '/personalizar'
@@ -127,6 +137,7 @@ export interface FileRouteTypes {
     | '/aprovado'
     | '/cartao-aprovado'
     | '/fatura'
+    | '/gerente'
     | '/interesse'
     | '/limite'
     | '/personalizar'
@@ -139,6 +150,7 @@ export interface FileRouteTypes {
     | '/aprovado'
     | '/cartao-aprovado'
     | '/fatura'
+    | '/gerente'
     | '/interesse'
     | '/limite'
     | '/personalizar'
@@ -152,6 +164,7 @@ export interface RootRouteChildren {
   AprovadoRoute: typeof AprovadoRoute
   CartaoAprovadoRoute: typeof CartaoAprovadoRoute
   FaturaRoute: typeof FaturaRoute
+  GerenteRoute: typeof GerenteRoute
   InteresseRoute: typeof InteresseRoute
   LimiteRoute: typeof LimiteRoute
   PersonalizarRoute: typeof PersonalizarRoute
@@ -204,6 +217,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InteresseRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gerente': {
+      id: '/gerente'
+      path: '/gerente'
+      fullPath: '/gerente'
+      preLoaderRoute: typeof GerenteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/fatura': {
       id: '/fatura'
       path: '/fatura'
@@ -240,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   AprovadoRoute: AprovadoRoute,
   CartaoAprovadoRoute: CartaoAprovadoRoute,
   FaturaRoute: FaturaRoute,
+  GerenteRoute: GerenteRoute,
   InteresseRoute: InteresseRoute,
   LimiteRoute: LimiteRoute,
   PersonalizarRoute: PersonalizarRoute,
