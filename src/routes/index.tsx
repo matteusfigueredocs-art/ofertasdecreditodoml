@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const heroImg = "https://i.postimg.cc/Hk7bBxRq/image-(2).png";
+import heroImg from "@/assets/hero-mercado-livre.png";
 const steps = [
   { img: "https://i.postimg.cc/90tYKgYq/1.jpg", text: "Preencha seu CPF para consultar seu limite de cartão pré-aprovado" },
   { img: "https://i.postimg.cc/g0CyJbMp/2.jpg", text: "Escolha seu modelo de cartão e forma de envio" },
