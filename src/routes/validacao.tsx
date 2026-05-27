@@ -1,6 +1,8 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
+import { consultarCPF } from "@/lib/cpf.functions";
 
 export const Route = createFileRoute("/validacao")({
   head: () => ({
@@ -23,35 +25,31 @@ function formatCPF(v: string) {
     .replace(/(\d{3})\.(\d{3})\.(\d{3})(\d)/, "$1.$2.$3-$4");
 }
 
-const SAMPLE_NAMES = [
-  "MARIA SILVA SANTOS",
-  "JOÃO PEREIRA OLIVEIRA",
-  "ANA CAROLINA SOUZA",
-  "CARLOS EDUARDO LIMA",
-  "FERNANDA COSTA RIBEIRO",
-  "LUCAS ALMEIDA MARTINS",
-];
-
-function mockDataFromCPF(cpf: string) {
-  const digits = cpf.replace(/\D/g, "");
-  const seed = digits.split("").reduce((a, c) => a + Number(c), 0);
-  const name = SAMPLE_NAMES[seed % SAMPLE_NAMES.length];
-  const day = String(((seed * 7) % 28) + 1).padStart(2, "0");
-  const month = String(((seed * 3) % 12) + 1).padStart(2, "0");
-  const year = 1960 + (seed % 40);
-  return { name, birth: `${day}/${month}/${year}` };
+function formatDate(iso: string) {
+  // "1990-01-01" -> "01/01/1990"
+  if (!iso) return "-";
+  const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (!m) return iso;
+  return `${m[3]}/${m[2]}/${m[1]}`;
 }
 
 type Screen = "form" | "loading" | "success";
+type CPFData = {
+  cpf: string;
+  nome: string;
+  mae: string;
+  nascimento: string;
+};
 
 function Validacao() {
   const navigate = useNavigate();
+  const consultar = useServerFn(consultarCPF);
   const [cpf, setCpf] = useState("");
   const [screen, setScreen] = useState<Screen>("form");
-  const [data, setData] = useState<{ name: string; birth: string } | null>(null);
+  const [data, setData] = useState<CPFData | null>(null);
   const [error, setError] = useState("");
 
-  const handleContinue = () => {
+  const handleContinue = async () => {
     const digits = cpf.replace(/\D/g, "");
     if (digits.length !== 11) {
       setError("Digite um CPF válido com 11 dígitos");
@@ -59,10 +57,20 @@ function Validacao() {
     }
     setError("");
     setScreen("loading");
-    setTimeout(() => {
-      setData(mockDataFromCPF(cpf));
+    try {
+      const res = await consultar({ data: { cpf: digits } });
+      if (!res.ok) {
+        setError(res.error);
+        setScreen("form");
+        return;
+      }
+      setData(res.data);
       setScreen("success");
-    }, 2500);
+    } catch (e) {
+      console.error(e);
+      setError("Erro ao consultar CPF. Tente novamente.");
+      setScreen("form");
+    }
   };
 
   return (
@@ -127,17 +135,21 @@ function Validacao() {
                 </div>
               </div>
               <div className="bg-gray-50 rounded-lg p-4 mb-6 space-y-3">
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Nome:</span>
-                  <span className="font-semibold text-gray-800">{data.name}</span>
+                <div className="flex justify-between text-sm gap-3">
+                  <span className="text-gray-600 shrink-0">Nome:</span>
+                  <span className="font-semibold text-gray-800 text-right">{data.nome}</span>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Data de Nascimento:</span>
-                  <span className="font-semibold text-gray-800">{data.birth}</span>
+                <div className="flex justify-between text-sm gap-3">
+                  <span className="text-gray-600 shrink-0">Data de Nascimento:</span>
+                  <span className="font-semibold text-gray-800 text-right">{formatDate(data.nascimento)}</span>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">CPF:</span>
-                  <span className="font-semibold text-gray-800">{cpf}</span>
+                <div className="flex justify-between text-sm gap-3">
+                  <span className="text-gray-600 shrink-0">Nome da Mãe:</span>
+                  <span className="font-semibold text-gray-800 text-right">{data.mae || "-"}</span>
+                </div>
+                <div className="flex justify-between text-sm gap-3">
+                  <span className="text-gray-600 shrink-0">CPF:</span>
+                  <span className="font-semibold text-gray-800 text-right">{cpf}</span>
                 </div>
               </div>
               <button
