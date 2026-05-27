@@ -107,7 +107,7 @@ function Personalizar() {
           </div>
 
           <button
-            onClick={() => navigate({ to: "/" })}
+            onClick={() => navigate({ to: "/fatura" })}
             className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md shadow-md transition-all"
           >
             Continuar
