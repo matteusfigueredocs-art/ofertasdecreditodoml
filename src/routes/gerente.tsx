@@ -27,7 +27,7 @@ function Gerente() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (whatsapp.replace(/\D/g, "").length < 10) return;
-    navigate({ to: "/" });
+    navigate({ to: "/endereco" });
   };
 
   return (
