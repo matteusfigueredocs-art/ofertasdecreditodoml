@@ -14,8 +14,11 @@ export const Route = createFileRoute("/envio")({
 function Envio() {
   const navigate = useNavigate();
 
-  const handleSelect = (_method: "sedex" | "pac") => {
-    navigate({ to: "/" });
+  const handleSelect = (method: "sedex" | "pac") => {
+    const current = typeof window !== "undefined" ? window.location.search : "";
+    const sp = new URLSearchParams(current);
+    sp.set("metodo", method);
+    navigate({ to: "/confirmacao", search: Object.fromEntries(sp) as never });
   };
 
   return (
