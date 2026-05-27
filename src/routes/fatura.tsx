@@ -1,8 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
-import { UrgencyBar } from "@/components/UrgencyBar";
-import { TrustSeals } from "@/components/TrustSeals";
+import { FunnelSteps } from "@/components/FunnelSteps";
 
 export const Route = createFileRoute("/fatura")({
   head: () => ({
@@ -32,7 +31,7 @@ function Fatura() {
       <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
-      <UrgencyBar />
+      <FunnelSteps current={5} />
 
       <main className="flex-1 flex items-start justify-center px-4 py-8">
         <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6 md:p-8">
@@ -77,7 +76,6 @@ function Fatura() {
             </div>
           </div>
         </div>
-        <TrustSeals />
       </main>
 
       <footer className="text-center text-xs text-gray-500 py-6">

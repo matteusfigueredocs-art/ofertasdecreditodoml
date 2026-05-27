@@ -1,8 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
-import { UrgencyBar } from "@/components/UrgencyBar";
-import { TrustSeals } from "@/components/TrustSeals";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -48,7 +46,6 @@ function Index() {
             <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
           </div>
         </div>
-        <UrgencyBar />
 
         {/* Hero */}
         <div className="relative">
@@ -225,8 +222,6 @@ function Index() {
             </div>
           </div>
         </div>
-
-        <TrustSeals />
         {/* Footer */}
         <div className="px-4 pb-6">
           <div className="text-center text-xs text-gray-500">
