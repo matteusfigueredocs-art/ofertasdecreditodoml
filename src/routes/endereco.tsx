@@ -47,7 +47,7 @@ function Endereco() {
     setTimeout(() => {
       setSaving(false);
       setSuccess(true);
-      setTimeout(() => navigate({ to: "/" }), 2200);
+      setTimeout(() => navigate({ to: "/envio" }), 2200);
     }, 1500);
   };
 

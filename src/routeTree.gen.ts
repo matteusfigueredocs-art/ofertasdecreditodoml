@@ -17,6 +17,7 @@ import { Route as LimiteRouteImport } from './routes/limite'
 import { Route as InteresseRouteImport } from './routes/interesse'
 import { Route as GerenteRouteImport } from './routes/gerente'
 import { Route as FaturaRouteImport } from './routes/fatura'
+import { Route as EnvioRouteImport } from './routes/envio'
 import { Route as EnderecoRouteImport } from './routes/endereco'
 import { Route as CartaoAprovadoRouteImport } from './routes/cartao-aprovado'
 import { Route as AprovadoRouteImport } from './routes/aprovado'
@@ -62,6 +63,11 @@ const FaturaRoute = FaturaRouteImport.update({
   path: '/fatura',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EnvioRoute = EnvioRouteImport.update({
+  id: '/envio',
+  path: '/envio',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EnderecoRoute = EnderecoRouteImport.update({
   id: '/endereco',
   path: '/endereco',
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/aprovado': typeof AprovadoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/endereco': typeof EnderecoRoute
+  '/envio': typeof EnvioRoute
   '/fatura': typeof FaturaRoute
   '/gerente': typeof GerenteRoute
   '/interesse': typeof InteresseRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/aprovado': typeof AprovadoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/endereco': typeof EnderecoRoute
+  '/envio': typeof EnvioRoute
   '/fatura': typeof FaturaRoute
   '/gerente': typeof GerenteRoute
   '/interesse': typeof InteresseRoute
@@ -117,6 +125,7 @@ export interface FileRoutesById {
   '/aprovado': typeof AprovadoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/endereco': typeof EnderecoRoute
+  '/envio': typeof EnvioRoute
   '/fatura': typeof FaturaRoute
   '/gerente': typeof GerenteRoute
   '/interesse': typeof InteresseRoute
@@ -133,6 +142,7 @@ export interface FileRouteTypes {
     | '/aprovado'
     | '/cartao-aprovado'
     | '/endereco'
+    | '/envio'
     | '/fatura'
     | '/gerente'
     | '/interesse'
@@ -147,6 +157,7 @@ export interface FileRouteTypes {
     | '/aprovado'
     | '/cartao-aprovado'
     | '/endereco'
+    | '/envio'
     | '/fatura'
     | '/gerente'
     | '/interesse'
@@ -161,6 +172,7 @@ export interface FileRouteTypes {
     | '/aprovado'
     | '/cartao-aprovado'
     | '/endereco'
+    | '/envio'
     | '/fatura'
     | '/gerente'
     | '/interesse'
@@ -176,6 +188,7 @@ export interface RootRouteChildren {
   AprovadoRoute: typeof AprovadoRoute
   CartaoAprovadoRoute: typeof CartaoAprovadoRoute
   EnderecoRoute: typeof EnderecoRoute
+  EnvioRoute: typeof EnvioRoute
   FaturaRoute: typeof FaturaRoute
   GerenteRoute: typeof GerenteRoute
   InteresseRoute: typeof InteresseRoute
@@ -244,6 +257,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaturaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/envio': {
+      id: '/envio'
+      path: '/envio'
+      fullPath: '/envio'
+      preLoaderRoute: typeof EnvioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/endereco': {
       id: '/endereco'
       path: '/endereco'
@@ -280,6 +300,7 @@ const rootRouteChildren: RootRouteChildren = {
   AprovadoRoute: AprovadoRoute,
   CartaoAprovadoRoute: CartaoAprovadoRoute,
   EnderecoRoute: EnderecoRoute,
+  EnvioRoute: EnvioRoute,
   FaturaRoute: FaturaRoute,
   GerenteRoute: GerenteRoute,
   InteresseRoute: InteresseRoute,
