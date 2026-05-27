@@ -4,6 +4,7 @@ import mlLogo from "@/assets/mercado-livre-logo.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 import mlHandshake from "@/assets/ml-handshake.png";
 import mastercard from "@/assets/mastercard.png";
+import cardChip from "@/assets/card-chip.png";
 
 export const Route = createFileRoute("/personalizar")({
   head: () => ({
