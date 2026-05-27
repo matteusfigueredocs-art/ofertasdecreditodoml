@@ -54,8 +54,16 @@ function Personalizar() {
 
           {/* Credit card preview */}
           <div
-            className={`relative w-full aspect-[1.6/1] rounded-2xl bg-gradient-to-br ${card.gradient} p-5 shadow-xl mb-6 overflow-hidden transition-all duration-300`}
+            className={`relative w-full aspect-[1.75/1] rounded-2xl bg-gradient-to-br ${card.gradient} p-5 shadow-xl mb-6 overflow-hidden transition-all duration-300`}
           >
+            {/* diagonal sheen lines */}
+            <div
+              className="absolute inset-0 opacity-[0.18] pointer-events-none"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(135deg, rgba(255,255,255,0.6) 0px, rgba(255,255,255,0.6) 1px, transparent 1px, transparent 6px)",
+              }}
+            />
             <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,white,transparent_60%)]" />
 
             {/* Top row */}
@@ -70,13 +78,17 @@ function Personalizar() {
               </span>
             </div>
 
-            {/* Chip + contactless */}
-            <div className="absolute left-5 top-1/2 -translate-y-1/2">
-              <div className="w-10 h-7 rounded-md bg-gradient-to-br from-yellow-300 to-yellow-500 shadow-inner" />
+            {/* Chip */}
+            <div className="absolute left-5 bottom-5">
+              <div className="w-11 h-8 rounded-md bg-gradient-to-br from-yellow-300 to-yellow-600 shadow-inner relative overflow-hidden">
+                <div className="absolute inset-1 border border-yellow-700/40 rounded-sm" />
+              </div>
             </div>
+
+            {/* Contactless */}
             <svg
               viewBox="0 0 24 24"
-              className={`absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 ${textColor}`}
+              className={`absolute right-5 bottom-6 w-5 h-5 ${textColor} rotate-90`}
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -86,15 +98,6 @@ function Personalizar() {
               <path d="M8 11c2.5-2.5 5.5-2.5 8 0" />
               <path d="M11 14c1-1 2-1 2 0" />
             </svg>
-
-            {/* Bottom */}
-            <div className="absolute bottom-4 left-5 right-5 flex justify-between items-end">
-              <div>
-                <div className={`${textColor} font-semibold tracking-wider text-sm`}>{nome}</div>
-                <div className={`${subTextColor} text-[10px] tracking-wider`}>TITULAR DO CARTÃO</div>
-              </div>
-              <img src={mastercard} alt="Mastercard" className="h-8 object-contain" />
-            </div>
           </div>
 
           {/* Color picker */}
