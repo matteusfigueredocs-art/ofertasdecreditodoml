@@ -46,7 +46,7 @@ function Index() {
             <i className="fas fa-arrow-left" />
           </button>
           <div className="flex-1 flex justify-center items-center">
-            <img src={mlLogo} alt="Mercado Livre" className="h-16 object-contain" />
+            <img src={mlLogo} alt="Mercado Livre" className="h-28 md:h-36 object-contain" />
           </div>
           <div className="w-6" />
         </div>

@@ -76,8 +76,8 @@ function Validacao() {
   return (
     <div className="min-h-screen bg-[#EEEEEE] flex flex-col relative overflow-hidden">
       {/* Header */}
-      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
-        <img src={mlLogo} alt="Mercado Livre" className="h-20 object-contain" />
+      <div className="bg-[#FFE600] w-full py-5 flex justify-center items-center shadow-sm">
+        <img src={mlLogo} alt="Mercado Livre" className="h-32 md:h-40 object-contain" />
       </div>
 
       {/* Decorations */}
