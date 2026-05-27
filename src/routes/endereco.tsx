@@ -28,6 +28,8 @@ function Endereco() {
     cidade: "",
     estado: "",
   });
+  const [saving, setSaving] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -39,8 +41,14 @@ function Endereco() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (saving || success) return;
     if (!form.cep || !form.endereco || !form.numero || !form.bairro || !form.cidade || !form.estado) return;
-    navigate({ to: "/" });
+    setSaving(true);
+    setTimeout(() => {
+      setSaving(false);
+      setSuccess(true);
+      setTimeout(() => navigate({ to: "/" }), 2200);
+    }, 1500);
   };
 
   const inputCls =
@@ -113,13 +121,35 @@ function Endereco() {
 
             <button
               type="submit"
-              className="w-full bg-[#3483FA] hover:bg-[#2968c8] text-white font-bold py-4 rounded-lg shadow-md transition-colors mt-2"
+              disabled={saving || success}
+              className="w-full bg-[#3483FA] hover:bg-[#2968c8] disabled:bg-[#0a2540] disabled:text-gray-300 disabled:cursor-not-allowed text-white font-bold py-4 rounded-lg shadow-md transition-colors mt-2"
             >
-              Continuar
+              {saving ? "Salvando dados..." : "Continuar"}
             </button>
           </form>
         </div>
       </main>
+
+      {success && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center px-6 z-50 animate-in fade-in duration-200">
+          <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-8 flex flex-col items-center text-center">
+            <div className="w-16 h-16 rounded-full bg-[#00A650] flex items-center justify-center mb-4">
+              <svg viewBox="0 0 24 24" className="w-9 h-9 text-white" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h2 className="text-xl font-bold text-gray-800 mb-2">
+              Endereço Cadastrado com Sucesso!
+            </h2>
+            <p className="text-sm text-gray-600 mb-5">
+              Seu endereço foi salvo e está pronto para entrega do cartão.
+            </p>
+            <div className="w-full bg-gray-50 border-l-4 border-[#3483FA] rounded-md py-4 px-4 text-sm font-semibold text-gray-700">
+              Redirecionando ...
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
