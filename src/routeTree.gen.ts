@@ -15,6 +15,7 @@ import { Route as ProcessandoRouteImport } from './routes/processando'
 import { Route as PersonalizarRouteImport } from './routes/personalizar'
 import { Route as LimiteRouteImport } from './routes/limite'
 import { Route as InteresseRouteImport } from './routes/interesse'
+import { Route as FaturaRouteImport } from './routes/fatura'
 import { Route as CartaoAprovadoRouteImport } from './routes/cartao-aprovado'
 import { Route as AprovadoRouteImport } from './routes/aprovado'
 import { Route as IndexRouteImport } from './routes/index'
@@ -49,6 +50,11 @@ const InteresseRoute = InteresseRouteImport.update({
   path: '/interesse',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaturaRoute = FaturaRouteImport.update({
+  id: '/fatura',
+  path: '/fatura',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CartaoAprovadoRoute = CartaoAprovadoRouteImport.update({
   id: '/cartao-aprovado',
   path: '/cartao-aprovado',
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aprovado': typeof AprovadoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
+  '/fatura': typeof FaturaRoute
   '/interesse': typeof InteresseRoute
   '/limite': typeof LimiteRoute
   '/personalizar': typeof PersonalizarRoute
@@ -80,6 +87,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aprovado': typeof AprovadoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
+  '/fatura': typeof FaturaRoute
   '/interesse': typeof InteresseRoute
   '/limite': typeof LimiteRoute
   '/personalizar': typeof PersonalizarRoute
@@ -92,6 +100,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/aprovado': typeof AprovadoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
+  '/fatura': typeof FaturaRoute
   '/interesse': typeof InteresseRoute
   '/limite': typeof LimiteRoute
   '/personalizar': typeof PersonalizarRoute
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/'
     | '/aprovado'
     | '/cartao-aprovado'
+    | '/fatura'
     | '/interesse'
     | '/limite'
     | '/personalizar'
@@ -116,6 +126,7 @@ export interface FileRouteTypes {
     | '/'
     | '/aprovado'
     | '/cartao-aprovado'
+    | '/fatura'
     | '/interesse'
     | '/limite'
     | '/personalizar'
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '/'
     | '/aprovado'
     | '/cartao-aprovado'
+    | '/fatura'
     | '/interesse'
     | '/limite'
     | '/personalizar'
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AprovadoRoute: typeof AprovadoRoute
   CartaoAprovadoRoute: typeof CartaoAprovadoRoute
+  FaturaRoute: typeof FaturaRoute
   InteresseRoute: typeof InteresseRoute
   LimiteRoute: typeof LimiteRoute
   PersonalizarRoute: typeof PersonalizarRoute
@@ -191,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InteresseRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fatura': {
+      id: '/fatura'
+      path: '/fatura'
+      fullPath: '/fatura'
+      preLoaderRoute: typeof FaturaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cartao-aprovado': {
       id: '/cartao-aprovado'
       path: '/cartao-aprovado'
@@ -219,6 +239,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AprovadoRoute: AprovadoRoute,
   CartaoAprovadoRoute: CartaoAprovadoRoute,
+  FaturaRoute: FaturaRoute,
   InteresseRoute: InteresseRoute,
   LimiteRoute: LimiteRoute,
   PersonalizarRoute: PersonalizarRoute,
