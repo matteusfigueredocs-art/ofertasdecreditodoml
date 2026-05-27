@@ -22,6 +22,7 @@ import { Route as EnvioRouteImport } from './routes/envio'
 import { Route as EnderecoRouteImport } from './routes/endereco'
 import { Route as ConfirmacaoRouteImport } from './routes/confirmacao'
 import { Route as CartaoAprovadoRouteImport } from './routes/cartao-aprovado'
+import { Route as CalculandoRouteImport } from './routes/calculando'
 import { Route as AprovadoRouteImport } from './routes/aprovado'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -90,6 +91,11 @@ const CartaoAprovadoRoute = CartaoAprovadoRouteImport.update({
   path: '/cartao-aprovado',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CalculandoRoute = CalculandoRouteImport.update({
+  id: '/calculando',
+  path: '/calculando',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AprovadoRoute = AprovadoRouteImport.update({
   id: '/aprovado',
   path: '/aprovado',
@@ -104,6 +110,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aprovado': typeof AprovadoRoute
+  '/calculando': typeof CalculandoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/confirmacao': typeof ConfirmacaoRoute
   '/endereco': typeof EnderecoRoute
@@ -121,6 +128,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aprovado': typeof AprovadoRoute
+  '/calculando': typeof CalculandoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/confirmacao': typeof ConfirmacaoRoute
   '/endereco': typeof EnderecoRoute
@@ -139,6 +147,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/aprovado': typeof AprovadoRoute
+  '/calculando': typeof CalculandoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/confirmacao': typeof ConfirmacaoRoute
   '/endereco': typeof EnderecoRoute
@@ -158,6 +167,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/aprovado'
+    | '/calculando'
     | '/cartao-aprovado'
     | '/confirmacao'
     | '/endereco'
@@ -175,6 +185,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/aprovado'
+    | '/calculando'
     | '/cartao-aprovado'
     | '/confirmacao'
     | '/endereco'
@@ -192,6 +203,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/aprovado'
+    | '/calculando'
     | '/cartao-aprovado'
     | '/confirmacao'
     | '/endereco'
@@ -210,6 +222,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AprovadoRoute: typeof AprovadoRoute
+  CalculandoRoute: typeof CalculandoRoute
   CartaoAprovadoRoute: typeof CartaoAprovadoRoute
   ConfirmacaoRoute: typeof ConfirmacaoRoute
   EnderecoRoute: typeof EnderecoRoute
@@ -318,6 +331,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CartaoAprovadoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calculando': {
+      id: '/calculando'
+      path: '/calculando'
+      fullPath: '/calculando'
+      preLoaderRoute: typeof CalculandoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/aprovado': {
       id: '/aprovado'
       path: '/aprovado'
@@ -338,6 +358,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AprovadoRoute: AprovadoRoute,
+  CalculandoRoute: CalculandoRoute,
   CartaoAprovadoRoute: CartaoAprovadoRoute,
   ConfirmacaoRoute: ConfirmacaoRoute,
   EnderecoRoute: EnderecoRoute,
