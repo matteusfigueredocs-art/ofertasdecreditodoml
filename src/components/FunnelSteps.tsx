@@ -10,29 +10,29 @@ const STEPS = [
 
 export function FunnelSteps({ current }: { current: number }) {
   return (
-    <div className="w-full bg-white border-b border-gray-200">
+    <div className="w-full bg-[#FFE600] border-b border-[#E6CF00]">
       <div className="max-w-md mx-auto px-3 py-3">
         <div className="flex items-center justify-between">
           {STEPS.map((s, i) => {
             const done = current > s.id;
             const active = current === s.id;
             const circleClass = done
-              ? "bg-[#00A650] text-white border-[#00A650]"
+              ? "bg-[#3483FA] text-white border-[#3483FA]"
               : active
-              ? "bg-[#3483FA] text-white border-[#3483FA] ring-4 ring-[#3483FA]/15"
-              : "bg-white text-gray-400 border-gray-300";
+              ? "bg-white text-[#3483FA] border-[#3483FA] ring-4 ring-[#3483FA]/20"
+              : "bg-white/70 text-gray-500 border-gray-400";
             const labelClass = active
-              ? "text-[#3483FA] font-semibold"
+              ? "text-[#3483FA] font-bold"
               : done
-              ? "text-gray-700"
-              : "text-gray-400";
-            const lineClass = current > s.id ? "bg-[#00A650]" : "bg-gray-200";
+              ? "text-gray-800 font-semibold"
+              : "text-gray-600";
+            const prevDone = current > s.id - 1;
             return (
               <div key={s.id} className="flex-1 flex flex-col items-center relative">
                 {i > 0 && (
                   <div
                     className={`absolute top-3 right-1/2 h-[2px] w-full ${
-                      current > s.id - 1 && current >= s.id ? "bg-[#3483FA]" : lineClass
+                      prevDone ? "bg-[#3483FA]" : "bg-gray-400/50"
                     }`}
                   />
                 )}
