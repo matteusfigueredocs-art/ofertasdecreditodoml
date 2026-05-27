@@ -25,10 +25,18 @@ function Calculando() {
   useEffect(() => {
     const t1 = setTimeout(() => {
       setStep(2);
-      setProgress(70);
-    }, 2400);
-    const t2 = setTimeout(() => setProgress(100), 4200);
-    const t3 = setTimeout(() => navigate({ to: "/aprovado" }), 5000);
+      setProgress(60);
+    }, 6000);
+    const t2 = setTimeout(() => {
+      setStep(3);
+      setProgress(100);
+    }, 12000);
+    const t3 = setTimeout(() => {
+      try {
+        sessionStorage.setItem("limiteAprovado", "4200");
+      } catch {}
+      navigate({ to: "/aprovado" });
+    }, 15000);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
@@ -39,12 +47,11 @@ function Calculando() {
   // Animated counter going up to simulate "limit being calculated"
   useEffect(() => {
     const start = Date.now();
-    const target = 5000;
-    const duration = 4500;
+    const target = 4200;
+    const duration = 14500;
     const interval = setInterval(() => {
       const elapsed = Date.now() - start;
       const pct = Math.min(elapsed / duration, 1);
-      // ease-out
       const eased = 1 - Math.pow(1 - pct, 3);
       setCounter(Math.floor(target * eased));
       if (pct >= 1) clearInterval(interval);

@@ -1,4 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 
@@ -17,6 +18,15 @@ export const Route = createFileRoute("/aprovado")({
 
 function Aprovado() {
   const navigate = useNavigate();
+  const [limite, setLimite] = useState<number>(4200);
+
+  useEffect(() => {
+    try {
+      const v = sessionStorage.getItem("limiteAprovado");
+      if (v) setLimite(parseInt(v, 10) || 4200);
+    } catch {}
+  }, []);
+
 
   const items = [
     {
@@ -50,11 +60,19 @@ function Aprovado() {
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-2">
             Parabéns! Seu crédito foi aprovado
           </h1>
-          <p className="text-sm text-gray-600 text-center mb-6">
+          <p className="text-sm text-gray-600 text-center mb-4">
             Agora é só finalizar seu cartão e começar a aproveitar
           </p>
 
+          <div className="rounded-xl bg-gradient-to-br from-[#3483FA] to-[#1E5BBA] text-white p-5 mb-6 text-center shadow-md">
+            <p className="text-[11px] uppercase tracking-wider opacity-90">Limite aprovado</p>
+            <p className="text-3xl font-extrabold mt-1 tabular-nums">
+              R$ {limite.toLocaleString("pt-BR")},00
+            </p>
+          </div>
+
           <div className="space-y-3 mb-6">
+
             {items.map((item) => (
               <div
                 key={item.text}
