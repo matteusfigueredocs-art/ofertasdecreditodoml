@@ -28,7 +28,7 @@ function Processando() {
     steps.forEach((_, i) => {
       timers.push(setTimeout(() => setCurrent(i + 1), (i + 1) * 1500));
     });
-    timers.push(setTimeout(() => navigate({ to: "/" }), steps.length * 1500 + 1200));
+    timers.push(setTimeout(() => navigate({ to: "/cartao-aprovado" }), steps.length * 1500 + 1200));
     return () => timers.forEach(clearTimeout);
   }, [navigate]);
 
