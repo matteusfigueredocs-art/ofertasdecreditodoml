@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as ValidacaoRouteImport } from './routes/validacao'
 import { Route as QuestionarioRouteImport } from './routes/questionario'
 import { Route as ProcessandoRouteImport } from './routes/processando'
+import { Route as PersonalizarRouteImport } from './routes/personalizar'
 import { Route as LimiteRouteImport } from './routes/limite'
 import { Route as InteresseRouteImport } from './routes/interesse'
 import { Route as CartaoAprovadoRouteImport } from './routes/cartao-aprovado'
@@ -31,6 +32,11 @@ const QuestionarioRoute = QuestionarioRouteImport.update({
 const ProcessandoRoute = ProcessandoRouteImport.update({
   id: '/processando',
   path: '/processando',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PersonalizarRoute = PersonalizarRouteImport.update({
+  id: '/personalizar',
+  path: '/personalizar',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LimiteRoute = LimiteRouteImport.update({
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/interesse': typeof InteresseRoute
   '/limite': typeof LimiteRoute
+  '/personalizar': typeof PersonalizarRoute
   '/processando': typeof ProcessandoRoute
   '/questionario': typeof QuestionarioRoute
   '/validacao': typeof ValidacaoRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/interesse': typeof InteresseRoute
   '/limite': typeof LimiteRoute
+  '/personalizar': typeof PersonalizarRoute
   '/processando': typeof ProcessandoRoute
   '/questionario': typeof QuestionarioRoute
   '/validacao': typeof ValidacaoRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/cartao-aprovado': typeof CartaoAprovadoRoute
   '/interesse': typeof InteresseRoute
   '/limite': typeof LimiteRoute
+  '/personalizar': typeof PersonalizarRoute
   '/processando': typeof ProcessandoRoute
   '/questionario': typeof QuestionarioRoute
   '/validacao': typeof ValidacaoRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/cartao-aprovado'
     | '/interesse'
     | '/limite'
+    | '/personalizar'
     | '/processando'
     | '/questionario'
     | '/validacao'
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/cartao-aprovado'
     | '/interesse'
     | '/limite'
+    | '/personalizar'
     | '/processando'
     | '/questionario'
     | '/validacao'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/cartao-aprovado'
     | '/interesse'
     | '/limite'
+    | '/personalizar'
     | '/processando'
     | '/questionario'
     | '/validacao'
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   CartaoAprovadoRoute: typeof CartaoAprovadoRoute
   InteresseRoute: typeof InteresseRoute
   LimiteRoute: typeof LimiteRoute
+  PersonalizarRoute: typeof PersonalizarRoute
   ProcessandoRoute: typeof ProcessandoRoute
   QuestionarioRoute: typeof QuestionarioRoute
   ValidacaoRoute: typeof ValidacaoRoute
@@ -155,6 +168,13 @@ declare module '@tanstack/react-router' {
       path: '/processando'
       fullPath: '/processando'
       preLoaderRoute: typeof ProcessandoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/personalizar': {
+      id: '/personalizar'
+      path: '/personalizar'
+      fullPath: '/personalizar'
+      preLoaderRoute: typeof PersonalizarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/limite': {
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   CartaoAprovadoRoute: CartaoAprovadoRoute,
   InteresseRoute: InteresseRoute,
   LimiteRoute: LimiteRoute,
+  PersonalizarRoute: PersonalizarRoute,
   ProcessandoRoute: ProcessandoRoute,
   QuestionarioRoute: QuestionarioRoute,
   ValidacaoRoute: ValidacaoRoute,
