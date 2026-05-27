@@ -41,9 +41,9 @@ function Index() {
     <div className="min-h-screen bg-[#EEEEEE]">
       <div className="max-w-md mx-auto min-h-screen bg-white relative">
         {/* Header */}
-        <div className="flex items-center px-4 py-6 bg-white border-b border-gray-100">
+        <div className="flex items-center px-4 py-3 bg-white border-b border-gray-100">
           <div className="flex-1 flex justify-center items-center">
-            <img src={mlLogo} alt="Mercado Livre" className="h-16 md:h-20 object-contain" />
+            <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
           </div>
         </div>
 
