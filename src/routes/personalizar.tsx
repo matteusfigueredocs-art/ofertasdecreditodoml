@@ -63,8 +63,7 @@ function Personalizar() {
               <img
                 src={mlHandshake}
                 alt="Mercado Livre"
-                className="h-10 object-contain"
-                style={{ filter: "brightness(0) invert(1)" }}
+                className="h-10 object-contain drop-shadow"
               />
               <span className={`${platinumColor} text-xs tracking-[0.2em] font-semibold`}>
                 PLATINUM
