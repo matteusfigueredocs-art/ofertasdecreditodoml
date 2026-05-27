@@ -13,6 +13,7 @@ import { Route as ValidacaoRouteImport } from './routes/validacao'
 import { Route as QuestionarioRouteImport } from './routes/questionario'
 import { Route as ProcessandoRouteImport } from './routes/processando'
 import { Route as PersonalizarRouteImport } from './routes/personalizar'
+import { Route as PagamentoRouteImport } from './routes/pagamento'
 import { Route as LimiteRouteImport } from './routes/limite'
 import { Route as InteresseRouteImport } from './routes/interesse'
 import { Route as GerenteRouteImport } from './routes/gerente'
@@ -42,6 +43,11 @@ const ProcessandoRoute = ProcessandoRouteImport.update({
 const PersonalizarRoute = PersonalizarRouteImport.update({
   id: '/personalizar',
   path: '/personalizar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PagamentoRoute = PagamentoRouteImport.update({
+  id: '/pagamento',
+  path: '/pagamento',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LimiteRoute = LimiteRouteImport.update({
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/gerente': typeof GerenteRoute
   '/interesse': typeof InteresseRoute
   '/limite': typeof LimiteRoute
+  '/pagamento': typeof PagamentoRoute
   '/personalizar': typeof PersonalizarRoute
   '/processando': typeof ProcessandoRoute
   '/questionario': typeof QuestionarioRoute
@@ -122,6 +129,7 @@ export interface FileRoutesByTo {
   '/gerente': typeof GerenteRoute
   '/interesse': typeof InteresseRoute
   '/limite': typeof LimiteRoute
+  '/pagamento': typeof PagamentoRoute
   '/personalizar': typeof PersonalizarRoute
   '/processando': typeof ProcessandoRoute
   '/questionario': typeof QuestionarioRoute
@@ -139,6 +147,7 @@ export interface FileRoutesById {
   '/gerente': typeof GerenteRoute
   '/interesse': typeof InteresseRoute
   '/limite': typeof LimiteRoute
+  '/pagamento': typeof PagamentoRoute
   '/personalizar': typeof PersonalizarRoute
   '/processando': typeof ProcessandoRoute
   '/questionario': typeof QuestionarioRoute
@@ -157,6 +166,7 @@ export interface FileRouteTypes {
     | '/gerente'
     | '/interesse'
     | '/limite'
+    | '/pagamento'
     | '/personalizar'
     | '/processando'
     | '/questionario'
@@ -173,6 +183,7 @@ export interface FileRouteTypes {
     | '/gerente'
     | '/interesse'
     | '/limite'
+    | '/pagamento'
     | '/personalizar'
     | '/processando'
     | '/questionario'
@@ -189,6 +200,7 @@ export interface FileRouteTypes {
     | '/gerente'
     | '/interesse'
     | '/limite'
+    | '/pagamento'
     | '/personalizar'
     | '/processando'
     | '/questionario'
@@ -206,6 +218,7 @@ export interface RootRouteChildren {
   GerenteRoute: typeof GerenteRoute
   InteresseRoute: typeof InteresseRoute
   LimiteRoute: typeof LimiteRoute
+  PagamentoRoute: typeof PagamentoRoute
   PersonalizarRoute: typeof PersonalizarRoute
   ProcessandoRoute: typeof ProcessandoRoute
   QuestionarioRoute: typeof QuestionarioRoute
@@ -240,6 +253,13 @@ declare module '@tanstack/react-router' {
       path: '/personalizar'
       fullPath: '/personalizar'
       preLoaderRoute: typeof PersonalizarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pagamento': {
+      id: '/pagamento'
+      path: '/pagamento'
+      fullPath: '/pagamento'
+      preLoaderRoute: typeof PagamentoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/limite': {
@@ -326,6 +346,7 @@ const rootRouteChildren: RootRouteChildren = {
   GerenteRoute: GerenteRoute,
   InteresseRoute: InteresseRoute,
   LimiteRoute: LimiteRoute,
+  PagamentoRoute: PagamentoRoute,
   PersonalizarRoute: PersonalizarRoute,
   ProcessandoRoute: ProcessandoRoute,
   QuestionarioRoute: QuestionarioRoute,
