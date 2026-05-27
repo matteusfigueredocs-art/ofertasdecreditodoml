@@ -135,17 +135,21 @@ function Validacao() {
                 </div>
               </div>
               <div className="bg-gray-50 rounded-lg p-4 mb-6 space-y-3">
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Nome:</span>
-                  <span className="font-semibold text-gray-800">{data.name}</span>
+                <div className="flex justify-between text-sm gap-3">
+                  <span className="text-gray-600 shrink-0">Nome:</span>
+                  <span className="font-semibold text-gray-800 text-right">{data.nome}</span>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Data de Nascimento:</span>
-                  <span className="font-semibold text-gray-800">{data.birth}</span>
+                <div className="flex justify-between text-sm gap-3">
+                  <span className="text-gray-600 shrink-0">Data de Nascimento:</span>
+                  <span className="font-semibold text-gray-800 text-right">{formatDate(data.nascimento)}</span>
                 </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">CPF:</span>
-                  <span className="font-semibold text-gray-800">{cpf}</span>
+                <div className="flex justify-between text-sm gap-3">
+                  <span className="text-gray-600 shrink-0">Nome da Mãe:</span>
+                  <span className="font-semibold text-gray-800 text-right">{data.mae || "-"}</span>
+                </div>
+                <div className="flex justify-between text-sm gap-3">
+                  <span className="text-gray-600 shrink-0">CPF:</span>
+                  <span className="font-semibold text-gray-800 text-right">{cpf}</span>
                 </div>
               </div>
               <button
