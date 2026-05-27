@@ -198,30 +198,6 @@ function Index() {
           </button>
         </div>
 
-        {/* Depoimentos */}
-        <div className="px-4 mt-6 mb-8">
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <div className="flex items-center mb-4">
-              <div className="bg-blue-50 rounded-full p-2 mr-3">
-                <i className="fas fa-quote-right text-[#3483FA]" />
-              </div>
-              <p className="font-semibold text-gray-800">O que dizem nossos clientes</p>
-            </div>
-            <div className="border-l-4 border-[#3483FA] pl-4">
-              <p className="text-gray-700 italic mb-2">
-                "Processo super rápido, meu cartão chegou rapidinho e já veio com limite liberado! Recomendo!"
-              </p>
-              <div className="flex items-center">
-                <p className="text-sm font-semibold text-gray-800 mr-2">Mariana S.</p>
-                <div className="flex text-yellow-400">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <i key={i} className="fas fa-star text-xs" />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         {/* Footer */}
         <div className="px-4 pb-6">
           <div className="text-center text-xs text-gray-500">
