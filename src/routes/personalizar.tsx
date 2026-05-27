@@ -4,6 +4,7 @@ import mlLogo from "@/assets/mercado-livre-logo.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 import mlHandshake from "@/assets/ml-handshake.png";
 import mastercard from "@/assets/mastercard.png";
+import cardChip from "@/assets/card-chip.png";
 
 export const Route = createFileRoute("/personalizar")({
   head: () => ({
@@ -80,9 +81,7 @@ function Personalizar() {
 
             {/* Chip */}
             <div className="absolute left-5 top-1/2 -translate-y-1/2">
-              <div className="w-11 h-8 rounded-md bg-gradient-to-br from-yellow-300 to-yellow-600 shadow-inner relative overflow-hidden">
-                <div className="absolute inset-1 border border-yellow-700/40 rounded-sm" />
-              </div>
+              <img src={cardChip} alt="Chip" className="w-12 h-9 object-contain drop-shadow" />
             </div>
 
             {/* Contactless */}
