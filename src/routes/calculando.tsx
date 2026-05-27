@@ -2,6 +2,8 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { TrendingUp, UserCheck, Calculator, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
+import { UrgencyBar } from "@/components/UrgencyBar";
+import { TrustSeals } from "@/components/TrustSeals";
 
 export const Route = createFileRoute("/calculando")({
   head: () => ({
@@ -60,6 +62,7 @@ function Calculando() {
       <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
+      <UrgencyBar />
 
       <main className="flex-1 flex items-start justify-center px-3 py-5">
         <div className="w-full max-w-md">
@@ -148,6 +151,7 @@ function Calculando() {
             <span>Análise 100% segura e criptografada</span>
           </div>
         </div>
+        <TrustSeals />
       </main>
     </div>
   );

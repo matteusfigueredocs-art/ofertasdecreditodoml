@@ -1,6 +1,8 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
+import { UrgencyBar } from "@/components/UrgencyBar";
+import { TrustSeals } from "@/components/TrustSeals";
 
 export const Route = createFileRoute("/cartao-aprovado")({
   head: () => ({
@@ -44,6 +46,7 @@ function CartaoAprovado() {
       <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
+      <UrgencyBar />
 
       <main className="flex-1 w-full max-w-md mx-auto px-4 py-6 space-y-5">
         {/* Success */}
@@ -114,6 +117,7 @@ function CartaoAprovado() {
             ))}
           </div>
         </section>
+        <TrustSeals />
       </main>
 
       <footer className="text-center text-xs text-gray-500 py-6">
