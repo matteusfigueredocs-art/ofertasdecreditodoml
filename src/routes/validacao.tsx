@@ -2,6 +2,8 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
+import { UrgencyBar } from "@/components/UrgencyBar";
+import { TrustSeals } from "@/components/TrustSeals";
 import { consultarCPF } from "@/lib/cpf.functions";
 
 export const Route = createFileRoute("/validacao")({
@@ -79,6 +81,7 @@ function Validacao() {
       <div className="bg-white w-full py-3 flex justify-center items-center shadow-sm border-b border-gray-100">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
+      <UrgencyBar />
 
       {/* Decorations */}
       <div className="absolute top-40 -left-20 w-64 h-64 rounded-full bg-white/40 pointer-events-none" />
@@ -158,6 +161,7 @@ function Validacao() {
             </>
           )}
         </div>
+        <TrustSeals />
       </main>
 
       {/* Footer */}
