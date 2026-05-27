@@ -68,18 +68,8 @@ function Validacao() {
   return (
     <div className="min-h-screen bg-[#EEEEEE] flex flex-col relative overflow-hidden">
       {/* Header */}
-      <div className="bg-[#FFE600] w-full py-4 flex justify-center items-center gap-2 shadow-sm">
-        <svg viewBox="0 0 60 40" className="h-9 w-12" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="30" cy="22" rx="28" ry="14" fill="#FFE600" stroke="#2D3277" strokeWidth="1.5" />
-          <path d="M14 20 q8 -10 16 0 q8 10 16 0" stroke="#2D3277" strokeWidth="3" fill="none" strokeLinecap="round" />
-          <circle cx="20" cy="20" r="3" fill="#2D3277" />
-          <circle cx="40" cy="20" r="3" fill="#2D3277" />
-        </svg>
-        <span className="text-[#2D3277] font-bold leading-tight">
-          mercado
-          <br />
-          livre
-        </span>
+      <div className="bg-[#FFE600] w-full py-4 flex justify-center items-center shadow-sm">
+        <img src={mlLogo} alt="Mercado Livre" className="h-12 object-contain" />
       </div>
 
       {/* Decorations */}
