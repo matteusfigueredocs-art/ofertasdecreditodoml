@@ -2,8 +2,6 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
 import gerente from "@/assets/gerente-geovana.png";
-import { UrgencyBar } from "@/components/UrgencyBar";
-import { TrustSeals } from "@/components/TrustSeals";
 
 export const Route = createFileRoute("/gerente")({
   head: () => ({
@@ -35,7 +33,6 @@ function Gerente() {
   return (
     <div className="min-h-screen bg-[#EEEEEE] flex flex-col">
       <div className="bg-[#FFE600] w-full h-3" />
-      <UrgencyBar />
 
       <main className="flex-1 flex items-start justify-center px-4 py-6">
         <div className="w-full max-w-md bg-white rounded-xl shadow-sm p-6 md:p-8">
@@ -89,7 +86,6 @@ function Gerente() {
             </button>
           </form>
         </div>
-        <TrustSeals />
       </main>
     </div>
   );
