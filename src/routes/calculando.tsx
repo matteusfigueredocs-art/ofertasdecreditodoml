@@ -63,7 +63,7 @@ function Calculando() {
     step > i ? "done" : step === i ? "active" : "pending";
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FFE600] via-[#FFF6B0] to-[#EEEEEE] flex flex-col">
+    <div className="min-h-screen bg-[#FFE600] flex flex-col">
       {/* Header */}
       <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
