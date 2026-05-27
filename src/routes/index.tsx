@@ -38,6 +38,25 @@ function Index() {
   return (
     <div className="min-h-screen bg-[#EEEEEE]">
       <div className="max-w-md mx-auto min-h-screen bg-white relative">
+        {/* Header */}
+        <div className="flex items-center px-4 py-3 bg-white border-b border-gray-100">
+          <button aria-label="Voltar" className="text-[#3483FA] text-xl">
+            <i className="fas fa-arrow-left" />
+          </button>
+          <div className="flex-1 flex justify-center items-center gap-2">
+            <svg viewBox="0 0 60 40" className="h-7 w-10" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="30" cy="22" rx="28" ry="14" fill="#FFE600" />
+              <path d="M14 20 q8 -10 16 0 q8 10 16 0" stroke="#2D3277" strokeWidth="3" fill="none" strokeLinecap="round" />
+              <circle cx="20" cy="20" r="3" fill="#2D3277" />
+              <circle cx="40" cy="20" r="3" fill="#2D3277" />
+            </svg>
+            <span className="text-[#2D3277] font-bold leading-tight text-sm">
+              mercado<br />livre
+            </span>
+          </div>
+          <div className="w-6" />
+        </div>
+
         {/* Hero */}
         <div className="relative">
           <div className="bg-[#FFE600] w-full h-64 flex items-center justify-center">
