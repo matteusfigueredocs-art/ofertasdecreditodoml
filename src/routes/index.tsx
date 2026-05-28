@@ -143,10 +143,10 @@ function Index() {
                   </details>
                 ))}
               </div>
-
-
-
+            </>
+          )}
         </div>
+
 
 
         {/* Hero */}
