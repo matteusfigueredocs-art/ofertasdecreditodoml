@@ -218,8 +218,37 @@ function Index() {
           </div>
         </div>
 
+        {/* Selos de segurança */}
+        <div className="px-4 mt-6">
+          <div className="bg-white/95 rounded-xl shadow-sm border border-[#E6CF00] px-3 py-3">
+            <div className="grid grid-cols-3 gap-2 text-center">
+              <div className="flex flex-col items-center gap-1.5">
+                <span className="w-9 h-9 rounded-full bg-[#E8F5E9] flex items-center justify-center">
+                  <i className="fas fa-lock text-[#2E7D32] text-sm" />
+                </span>
+                <div className="text-[10px] font-bold text-gray-900 leading-tight">Site seguro</div>
+                <div className="text-[9px] text-gray-500 leading-tight">SSL 256-bits</div>
+              </div>
+              <div className="flex flex-col items-center gap-1.5 border-x border-gray-100">
+                <span className="w-9 h-9 rounded-full bg-[#E3F2FD] flex items-center justify-center">
+                  <i className="fas fa-shield-halved text-[#1565C0] text-sm" />
+                </span>
+                <div className="text-[10px] font-bold text-gray-900 leading-tight">Dados criptografados</div>
+                <div className="text-[9px] text-gray-500 leading-tight">Ponta a ponta</div>
+              </div>
+              <div className="flex flex-col items-center gap-1.5">
+                <span className="w-9 h-9 rounded-full bg-[#FFF3E0] flex items-center justify-center">
+                  <i className="fas fa-user-shield text-[#E65100] text-sm" />
+                </span>
+                <div className="text-[10px] font-bold text-gray-900 leading-tight">LGPD</div>
+                <div className="text-[9px] text-gray-500 leading-tight">Lei 13.709/18</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Bloco entrega do cartão */}
+
         <div className="px-4 mt-6">
           <div className="relative bg-white rounded-2xl shadow-md overflow-hidden">
             <div className="relative px-6 pt-6 pb-2 text-center">
