@@ -368,9 +368,6 @@ function Index() {
             </div>
           </div>
         </div>
-            </div>
-          </div>
-        </div>
 
         {/* FAQ */}
         <div className="px-4 mt-6">
