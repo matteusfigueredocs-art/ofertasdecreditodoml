@@ -103,76 +103,37 @@ function Index() {
           </div>
         </div>
 
-        {/* Como Solicitar */}
+        {/* Como Solicitar - Timeline */}
         <div id="como-solicitar" className="px-4 mt-6">
           <div className="bg-white rounded-xl shadow-md p-6">
-            <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Como Solicitar?</h2>
+            <div className="flex justify-center mb-4">
+              <div className="w-12 h-1.5 rounded-full bg-[#F4D147]" />
+            </div>
+            <h2 className="text-2xl font-extrabold text-gray-900 mb-8 text-center leading-tight">
+              Aproveite seu cartão de crédito de forma segura, rápida e sem burocracia
+            </h2>
 
-            <div className="flex items-center justify-between mb-6">
-              {[0, 1, 2].map((n) => (
-                <div key={n} className="flex items-center flex-1 last:flex-none">
-                  <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
-                      idx >= n ? "bg-[#3483FA] text-white" : "bg-gray-200 text-gray-500"
-                    }`}
-                  >
-                    {n + 1}
-                  </div>
-                  {n < 2 && (
-                    <div className={`h-1 flex-1 mx-1 ${idx > n ? "bg-[#3483FA]" : "bg-gray-200"}`} />
-
+            <div className="relative pl-14">
+              {[
+                { title: "Peça seu cartão de crédito", text: "Você pede em poucas etapas e nós cuidamos do resto." },
+                { title: "Vamos analisar seu pedido", text: "Queremos te conhecer analisando seu histórico com relação a crédito." },
+                { title: "Receba seu cartão em casa", text: "Enviamos para o endereço informado e é só começar a usar." },
+              ].map((item, i, arr) => (
+                <div key={i} className="relative pb-8 last:pb-0">
+                  {i < arr.length - 1 && (
+                    <span className="absolute left-[-32px] top-10 bottom-0 w-0.5 bg-[#3483FA]" />
                   )}
+                  <div className="absolute left-[-46px] top-0 w-10 h-10 rounded-full border-2 border-[#3483FA] bg-white flex items-center justify-center text-[#3483FA] font-bold">
+                    {i + 1}
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-base">{item.title}</h3>
+                  <p className="text-sm text-gray-600 mt-1">{item.text}</p>
                 </div>
-              ))}
-            </div>
-
-            <div className="relative">
-              <div className="text-center">
-                <div className="mb-4 relative h-64 overflow-hidden">
-                  {steps.map((s, i) => (
-                    <img
-                      key={i}
-                      src={s.img}
-                      alt={`Etapa ${i + 1}`}
-                      className={`absolute inset-0 m-auto max-h-full max-w-full object-contain transition-opacity duration-700 ease-in-out ${
-                        idx === i ? "opacity-100" : "opacity-0"
-                      }`}
-                    />
-                  ))}
-                </div>
-                <p className="text-gray-800 font-medium">
-                  <span className="font-bold">{idx + 1}.</span> {steps[idx].text}
-                </p>
-              </div>
-
-              <button
-                onClick={() => setIdx((i) => (i - 1 + 3) % 3)}
-                aria-label="Anterior"
-                className="absolute left-2 top-24 -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-gray-900 hover:bg-[#FBE74D]"
-              >
-                <i className="fas fa-chevron-left" />
-              </button>
-              <button
-                onClick={() => setIdx((i) => (i + 1) % 3)}
-                aria-label="Próximo"
-                className="absolute right-2 top-24 -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-gray-900 hover:bg-[#FBE74D]"
-              >
-                <i className="fas fa-chevron-right" />
-              </button>
-            </div>
-
-            <div className="flex justify-center mt-4 space-x-2">
-              {[0, 1, 2].map((n) => (
-                <button
-                  key={n}
-                  onClick={() => setIdx(n)}
-                  aria-label={`Ir para etapa ${n + 1}`}
-                  className={`w-2 h-2 rounded-full ${idx === n ? "bg-[#3483FA]" : "bg-gray-300"}`}
-                />
               ))}
             </div>
           </div>
         </div>
+
 
         {/* Estatísticas */}
         <div className="px-4 mt-6">
