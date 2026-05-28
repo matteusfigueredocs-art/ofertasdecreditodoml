@@ -290,9 +290,10 @@ function Index() {
             </div>
           </div>
         </div>
-
         {/* Como Solicitar - Carrossel */}
-        <div id="como-solicitar" className="px-4 mt-6">
+        <div id="como-solicitar">
+          <div className="bg-white shadow-md p-6">
+
           <div className="bg-white rounded-xl shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Como solicitar?</h2>
 
