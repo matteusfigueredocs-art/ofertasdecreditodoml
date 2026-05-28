@@ -93,7 +93,38 @@ function Personalizar() {
                   <path d="M13.5 3.8a12 12 0 0 1 0 16.4" />
                 </svg>
                 <div
-                  className={`absolute left-8 bottom-[25%] max-w-[66%] truncate text-sm font-medium tracking-[0.12em] ${textColor}`}
+                  className={`absolute right-6 top-[39%] text-right font-mono text-base leading-[1.42] tracking-[0.08em] ${textColor}`}
+                >
+                  <div>1234</div>
+                  <div className="border-y border-current/70 py-0.5">5678</div>
+                  <div>9101</div>
+                  <div>1213</div>
+                </div>
+                <div
+                  className={`absolute right-6 top-[67%] flex items-end gap-2 text-right font-mono ${textColor}`}
+                >
+                  <span className="text-[5px] leading-[.9] opacity-85">
+                    EXP.
+                    <br />
+                    DATE
+                  </span>
+                  <span className="text-[9px] tracking-[0.08em]">05/31</span>
+                </div>
+                <div
+                  className={`absolute right-6 top-[74%] flex items-end gap-2 text-right font-mono ${textColor}`}
+                >
+                  <span className="text-[5px] leading-[.9] opacity-85">
+                    SECURITY
+                    <br />
+                    CODE
+                  </span>
+                  <span className="text-[9px] tracking-[0.08em]">145</span>
+                </div>
+                <div className="absolute right-6 bottom-[18%] rounded-sm bg-red-600 px-1 py-0.5 text-[5px] font-bold text-white">
+                  Banco24Horas
+                </div>
+                <div
+                  className={`absolute left-8 top-[48%] max-w-[42%] truncate text-[9px] font-medium tracking-[0.12em] ${textColor}`}
                 >
                   {nome}
                 </div>
