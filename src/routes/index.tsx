@@ -100,23 +100,65 @@ function Index() {
 
 
 
-        {/* Como Solicitar - Fotos */}
+        {/* Como Solicitar - Carrossel */}
         <div id="como-solicitar" className="px-4 mt-6">
           <div className="bg-white rounded-xl shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Como solicitar?</h2>
-            <div className="space-y-6">
-              {steps.map((s, i) => (
-                <div key={i} className="flex flex-col items-center text-center">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#3483FA] text-white font-bold mb-3">
+
+            {/* Indicador de passos */}
+            <div className="flex items-center justify-center gap-2 mb-4">
+              {steps.map((_, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <button
+                    onClick={() => setIdx(i)}
+                    className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all ${
+                      i === idx ? "bg-[#3483FA] text-white" : "bg-gray-200 text-gray-600"
+                    }`}
+                  >
                     {i + 1}
-                  </div>
-                  <img src={s.img} alt={`Passo ${i + 1}`} className="w-full max-w-xs rounded-lg" />
-                  <p className="text-sm text-gray-700 mt-3">{s.text}</p>
+                  </button>
+                  {i < steps.length - 1 && (
+                    <div className={`w-6 h-0.5 ${i < idx ? "bg-[#3483FA]" : "bg-gray-200"}`} />
+                  )}
                 </div>
               ))}
             </div>
+
+            {/* Slide */}
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-500"
+                style={{ transform: `translateX(-${idx * 100}%)` }}
+              >
+                {steps.map((s, i) => (
+                  <div key={i} className="w-full shrink-0 flex flex-col items-center text-center px-2">
+                    <img src={s.img} alt={`Passo ${i + 1}`} className="w-full max-w-xs rounded-lg" />
+                    <p className="text-sm text-gray-700 mt-3">{s.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Setas */}
+            <div className="flex justify-between items-center mt-4">
+              <button
+                onClick={() => setIdx((i) => (i - 1 + steps.length) % steps.length)}
+                className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700"
+                aria-label="Anterior"
+              >
+                <i className="fas fa-chevron-left" />
+              </button>
+              <button
+                onClick={() => setIdx((i) => (i + 1) % steps.length)}
+                className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700"
+                aria-label="Próximo"
+              >
+                <i className="fas fa-chevron-right" />
+              </button>
+            </div>
           </div>
         </div>
+
 
         {/* Estatísticas */}
         <div className="px-4 mt-6">
