@@ -45,7 +45,7 @@ function Index() {
       (entries) => {
         if (entries[0].isIntersecting) {
           [0, 1, 2].forEach((i) => {
-            setTimeout(() => setActiveStep(i), i * 700);
+            setTimeout(() => setActiveStep(i), i * 3000);
           });
           observer.disconnect();
         }
