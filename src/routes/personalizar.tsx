@@ -2,9 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
-import mlHandshake from "@/assets/ml-handshake.png";
-import mastercard from "@/assets/mastercard.png";
-import cardChip from "@/assets/card-chip.png";
+import cardBg from "@/assets/card-bg.png";
 
 export const Route = createFileRoute("/personalizar")({
   head: () => ({
@@ -59,55 +57,19 @@ function Personalizar() {
               {/* FRONT */}
               <div
                 className="card-3d-face absolute inset-0 rounded-2xl shadow-2xl overflow-hidden"
-                style={{ backgroundColor: card.value }}
+                style={{
+                  backgroundColor: card.value,
+                  backgroundImage: `url(${cardBg})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  filter: card.value === "#3483FA" ? "none" : "hue-rotate(0deg)",
+                }}
               >
-                {/* subtle inner highlight */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_60%)] pointer-events-none" />
-
-                {/* ML handshake logo - top left */}
-                <img
-                  src={mlHandshake}
-                  alt="Mercado Livre"
-                  className="absolute top-4 left-4 h-9 w-9 object-contain drop-shadow"
-                />
-
-                {/* PLATINUM - top right */}
-                <span className={`absolute top-5 right-4 ${platinumColor} text-[11px] tracking-[0.18em] font-semibold`}>
-                  PLATINUM
-                </span>
-
-                {/* Chip - upper middle left */}
-                <img
-                  src={cardChip}
-                  alt="Chip"
-                  className="absolute left-4 top-[28%] w-11 h-8 object-contain drop-shadow"
-                />
-
-                {/* Contactless - upper middle right */}
-                <svg
-                  viewBox="0 0 24 24"
-                  className={`absolute right-4 top-[29%] w-6 h-6 ${textColor} rotate-90`}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                >
-                  <path d="M5 8c4-4 10-4 14 0" />
-                  <path d="M8 11c2.5-2.5 5.5-2.5 8 0" />
-                  <path d="M11 14c1-1 2-1 2 0" />
-                </svg>
-
-                {/* Name */}
-                <div className={`absolute left-4 right-4 top-[62%] ${textColor} font-semibold tracking-wider text-[13px]`}>
+                {/* Name overlay */}
+                <div className={`absolute left-4 right-4 top-[38%] ${textColor} font-semibold tracking-wider text-[13px] drop-shadow`}>
                   {nome}
                 </div>
-
-                {/* Mastercard - bottom right */}
-                <img
-                  src={mastercard}
-                  alt="Mastercard"
-                  className="absolute bottom-4 right-4 h-8 object-contain"
-                />
               </div>
 
               {/* BACK */}
@@ -116,9 +78,7 @@ function Personalizar() {
                 style={{ backgroundColor: card.value }}
               >
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_60%)] pointer-events-none" />
-                {/* magnetic stripe */}
                 <div className="absolute left-0 right-0 top-6 h-10 bg-black/80" />
-                {/* signature strip */}
                 <div className="absolute left-3 right-10 top-24 h-7 bg-white/90 rounded-sm flex items-center justify-end px-2">
                   <div className="text-[10px] text-gray-500 tracking-widest">123</div>
                 </div>
@@ -126,6 +86,7 @@ function Personalizar() {
                   mercadolivre.com
                 </div>
               </div>
+
             </div>
           </div>
 
