@@ -162,8 +162,9 @@ function Index() {
         </div>
 
         {/* Timeline */}
-        <div className="px-4 -mt-3 relative z-10">
-          <div className="bg-white rounded-xl shadow-md p-6">
+        <div className="-mt-3 relative z-10">
+          <div className="bg-white shadow-md p-6">
+
             <div className="flex justify-center mb-4">
               <div className="w-full h-1.5 rounded-full bg-[#FFE600]" />
 
