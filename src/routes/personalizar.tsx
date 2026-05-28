@@ -99,7 +99,7 @@ function Personalizar() {
                 <img
                   src={mastercard}
                   alt="Mastercard"
-                  className="absolute bottom-6 right-6 w-14 h-auto"
+                  className="absolute bottom-5 right-5 w-20 h-auto"
                 />
               </div>
 
