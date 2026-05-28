@@ -140,7 +140,6 @@ function Personalizar() {
                   alt="Mastercard"
                   className="absolute bottom-5 right-5 w-20 h-auto"
                 />
-                />
               </div>
             </div>
           </div>
