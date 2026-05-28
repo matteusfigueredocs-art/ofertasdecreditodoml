@@ -41,8 +41,8 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F5E84A]">
-      <div className="max-w-md mx-auto min-h-screen bg-[#F5E84A] relative">
+    <div className="min-h-screen bg-[#FFE600]">
+      <div className="max-w-md mx-auto min-h-screen bg-[#FFE600] relative">
         {/* Header */}
         <div className="flex items-center px-4 py-3 bg-[#FFE600] shadow-sm">
           <div className="flex-1 flex justify-center items-center">
@@ -59,7 +59,7 @@ function Index() {
         <div className="px-4 -mt-3 relative z-10">
           <div className="bg-white rounded-xl shadow-md p-6">
             <div className="flex justify-center mb-4">
-              <div className="w-12 h-1.5 rounded-full bg-[#F5E84A]" />
+              <div className="w-12 h-1.5 rounded-full bg-[#FFE600]" />
             </div>
             <h2 className="text-2xl font-extrabold text-gray-900 mb-8 text-center leading-tight">
               Aproveite seu cartão de crédito de forma segura, rápida e sem burocracia
