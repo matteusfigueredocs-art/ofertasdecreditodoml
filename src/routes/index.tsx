@@ -18,6 +18,7 @@ export const Route = createFileRoute("/")({
 });
 
 import heroImg from "@/assets/hero-mercado-livre.png";
+import cartaoEntregaImg from "@/assets/cartao-entrega.png";
 import step1Img from "@/assets/step-1.png";
 import step2Img from "@/assets/step-2.png";
 import step3Img from "@/assets/step-3.png";
