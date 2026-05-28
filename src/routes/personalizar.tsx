@@ -5,7 +5,6 @@ import { FunnelSteps } from "@/components/FunnelSteps";
 import mlHandshake from "@/assets/ml-handshake.png";
 import mastercard from "@/assets/mastercard.png";
 import cardChip from "@/assets/card-chip.png";
-import cardBg from "@/assets/card-bg.png";
 
 export const Route = createFileRoute("/personalizar")({
   head: () => ({
@@ -93,38 +92,7 @@ function Personalizar() {
                   <path d="M13.5 3.8a12 12 0 0 1 0 16.4" />
                 </svg>
                 <div
-                  className={`absolute right-6 top-[39%] text-right font-mono text-base leading-[1.42] tracking-[0.08em] ${textColor}`}
-                >
-                  <div>1234</div>
-                  <div className="border-y border-current/70 py-0.5">5678</div>
-                  <div>9101</div>
-                  <div>1213</div>
-                </div>
-                <div
-                  className={`absolute right-6 top-[67%] flex items-end gap-2 text-right font-mono ${textColor}`}
-                >
-                  <span className="text-[5px] leading-[.9] opacity-85">
-                    EXP.
-                    <br />
-                    DATE
-                  </span>
-                  <span className="text-[9px] tracking-[0.08em]">05/31</span>
-                </div>
-                <div
-                  className={`absolute right-6 top-[74%] flex items-end gap-2 text-right font-mono ${textColor}`}
-                >
-                  <span className="text-[5px] leading-[.9] opacity-85">
-                    SECURITY
-                    <br />
-                    CODE
-                  </span>
-                  <span className="text-[9px] tracking-[0.08em]">145</span>
-                </div>
-                <div className="absolute right-6 bottom-[18%] rounded-sm bg-red-600 px-1 py-0.5 text-[5px] font-bold text-white">
-                  Banco24Horas
-                </div>
-                <div
-                  className={`absolute left-8 top-[48%] max-w-[42%] truncate text-[9px] font-medium tracking-[0.12em] ${textColor}`}
+                  className={`absolute left-8 bottom-[25%] max-w-[66%] truncate text-sm font-medium tracking-[0.12em] ${textColor}`}
                 >
                   {nome}
                 </div>
@@ -140,12 +108,41 @@ function Personalizar() {
                 className="card-3d-face card-3d-back absolute inset-0 rounded-2xl shadow-2xl overflow-hidden"
                 style={{
                   backgroundColor: card.value,
-                  backgroundImage: `url(${cardBg})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
+                  backgroundImage:
+                    "linear-gradient(90deg, rgba(0,0,0,.34) 0 18%, rgba(0,0,0,.10) 18%, transparent 44%), linear-gradient(145deg, rgba(255,255,255,.08), rgba(0,0,0,.24))",
                 }}
-              />
+              >
+                <div className={`absolute top-7 right-7 text-right ${textColor}`}>
+                  <div className="text-[9px] font-semibold tracking-[0.16em] opacity-90">PLATINUM</div>
+                  <div className="mt-1 text-[14px] font-bold leading-[.9]">mercado</div>
+                  <div className="text-[14px] font-bold leading-[.9]">livre</div>
+                </div>
+                <div className={`absolute left-8 top-[31%] max-w-[42%] truncate text-[9px] font-medium tracking-[0.12em] ${textColor}`}>
+                  {nome}
+                </div>
+                <div className={`absolute right-6 top-[38%] text-right font-mono text-base leading-[1.42] tracking-[0.08em] ${textColor}`}>
+                  <div>1234</div>
+                  <div className="border-y border-current/70 py-0.5">5678</div>
+                  <div>9101</div>
+                  <div>1213</div>
+                </div>
+                <div className={`absolute right-6 top-[67%] flex items-end gap-2 text-right font-mono ${textColor}`}>
+                  <span className="text-[5px] leading-[.9] opacity-85">EXP.<br />DATE</span>
+                  <span className="text-[9px] tracking-[0.08em]">05/31</span>
+                </div>
+                <div className={`absolute right-6 top-[74%] flex items-end gap-2 text-right font-mono ${textColor}`}>
+                  <span className="text-[5px] leading-[.9] opacity-85">SECURITY<br />CODE</span>
+                  <span className="text-[9px] tracking-[0.08em]">145</span>
+                </div>
+                <div className="absolute right-6 bottom-[18%] rounded-sm bg-red-600 px-1 py-0.5 text-[5px] font-bold text-white">
+                  Banco24Horas
+                </div>
+                <img
+                  src={mastercard}
+                  alt="Mastercard"
+                  className="absolute bottom-6 right-6 w-14 h-auto"
+                />
+              </div>
             </div>
           </div>
 
