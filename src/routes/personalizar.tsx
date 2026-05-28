@@ -99,7 +99,7 @@ function Personalizar() {
                 <img
                   src={mastercard}
                   alt="Mastercard"
-                  className="absolute bottom-6 right-6 w-14 h-auto"
+                  className="absolute bottom-5 right-5 w-20 h-auto"
                 />
               </div>
 
@@ -132,13 +132,13 @@ function Personalizar() {
                   <span className="text-[5px] leading-[.9] opacity-85">SECURITY<br />CODE</span>
                   <span className="text-[9px] tracking-[0.08em]">145</span>
                 </div>
-                <div className="absolute right-6 bottom-[18%] rounded-sm bg-red-600 px-1 py-0.5 text-[5px] font-bold text-white">
+                <div className="absolute right-5 bottom-[20%] rounded bg-red-600 px-1.5 py-1 text-[8px] font-bold text-white">
                   Banco24Horas
                 </div>
                 <img
                   src={mastercard}
                   alt="Mastercard"
-                  className="absolute bottom-6 right-6 w-14 h-auto"
+                  className="absolute bottom-5 right-5 w-20 h-auto"
                 />
               </div>
             </div>
