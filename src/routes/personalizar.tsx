@@ -54,9 +54,9 @@ function Personalizar() {
 
           {/* Credit card preview - 3D rotating */}
           <div className="card-3d-scene mb-6 flex justify-center">
-            <div className="card-3d-rotator relative w-[62%] max-w-[260px] aspect-[1/1.586]">
-              {/* FRONT */}
             <div className="card-3d-rotator relative w-[78%] max-w-[280px] aspect-[1/1.586]">
+              {/* FRONT */}
+              <div
                 className="card-3d-face absolute inset-0 rounded-2xl shadow-2xl overflow-hidden"
                 style={{
                   backgroundColor: card.value,
