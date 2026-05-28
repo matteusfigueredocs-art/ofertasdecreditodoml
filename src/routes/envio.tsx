@@ -1,6 +1,9 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
+import sedexLogo from "@/assets/sedex-logo.png";
+import pacLogo from "@/assets/pac-logo.png";
+import loggiLogo from "@/assets/loggi-logo.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 
 export const Route = createFileRoute("/envio")({
