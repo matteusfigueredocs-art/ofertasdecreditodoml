@@ -1,8 +1,11 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
-import cartaoMao from "@/assets/cartao-mao.png";
+import mlHandshake from "@/assets/ml-handshake.png";
+import mastercard from "@/assets/mastercard.png";
+import cardChip from "@/assets/card-chip.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
+
 export const Route = createFileRoute("/aprovado")({
   head: () => ({
     meta: [
@@ -70,23 +73,42 @@ function Aprovado() {
             Agora é só finalizar seu cartão e começar a aproveitar
           </p>
 
-          {/* Cartão na mão com o nome do titular */}
-          <div className="relative flex justify-center mb-4">
-            <img
-
-              src={cartaoMao}
-              alt="Cartão Mercado Livre"
-              className="w-56 h-auto object-contain drop-shadow-xl"
-            />
-            <span
-              className="absolute text-white font-semibold tracking-[0.16em] uppercase text-[12px] whitespace-nowrap drop-shadow"
-              style={{ top: "30%", left: "50%", transform: "translate(-50%, -50%)" }}
+          {/* Cartão estilizado com o nome do titular */}
+          <div className="mb-5 flex justify-center">
+            <div
+              className="relative w-[78%] max-w-[280px] aspect-[1/1.586] rounded-2xl shadow-2xl overflow-hidden"
+              style={{
+                backgroundColor: "#3483FA",
+                backgroundImage:
+                  "radial-gradient(circle at 72% 18%, rgba(255,255,255,.14), transparent 34%), linear-gradient(145deg, rgba(255,255,255,.10), rgba(0,0,0,.20))",
+              }}
             >
-              {nome}
-            </span>
+              <img src={mlHandshake} alt="Mercado Livre" className="absolute top-5 left-8 w-14 h-auto" />
+              <span className="absolute top-8 right-6 text-[10px] font-semibold tracking-[0.16em] text-white/80">
+                PLATINUM
+              </span>
+              <img src={cardChip} alt="Chip" className="absolute top-[31%] left-8 w-11 h-auto" />
+              <svg
+                className="absolute top-[30%] right-8 w-11 h-11 text-white/70"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.9"
+                strokeLinecap="round"
+              >
+                <path d="M6.5 8.5a5 5 0 0 1 0 7" />
+                <path d="M10 6a8.5 8.5 0 0 1 0 12" />
+                <path d="M13.5 3.8a12 12 0 0 1 0 16.4" />
+              </svg>
+              <div className="absolute left-8 bottom-[25%] max-w-[66%] truncate text-sm font-medium tracking-[0.12em] text-white">
+                {nome}
+              </div>
+              <img src={mastercard} alt="Mastercard" className="absolute bottom-5 right-5 w-20 h-auto" />
+            </div>
           </div>
 
           <div className="relative rounded-2xl bg-[#FFE600] p-6 mb-6 text-center shadow-[0_8px_24px_-8px_rgba(255,230,0,0.6)] border border-[#E6CF00] overflow-hidden">
+
             <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/30" />
             <div className="absolute -bottom-12 -left-10 w-28 h-28 rounded-full bg-black/5" />
             <p className="relative text-[11px] uppercase tracking-[0.18em] text-gray-800 font-semibold">
