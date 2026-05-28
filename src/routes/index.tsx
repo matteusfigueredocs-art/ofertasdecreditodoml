@@ -41,10 +41,10 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFE600]">
-      <div className="max-w-md mx-auto min-h-screen bg-[#FFE600] relative">
+    <div className="min-h-screen bg-[#F4D147]">
+      <div className="max-w-md mx-auto min-h-screen bg-[#F4D147] relative">
         {/* Header */}
-        <div className="flex items-center px-4 py-3 bg-[#FFE600] shadow-sm">
+        <div className="flex items-center px-4 py-3 bg-[#F4D147] shadow-sm">
           <div className="flex-1 flex justify-center items-center">
             <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
           </div>
@@ -57,11 +57,11 @@ function Index() {
 
         {/* Vantagens */}
         <div className="px-4 -mt-3 relative z-10">
-          <div className="bg-[#FFF8E1] rounded-xl shadow-md p-6">
+          <div className="bg-[#FBE74D] rounded-xl shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Vantagens exclusivas</h2>
             <div className="space-y-4">
               <div className="flex items-center bg-white p-4 rounded-lg">
-                <div className="bg-[#FFE600] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
+                <div className="bg-[#F4D147] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                   <i className="fas fa-bolt text-lg" />
                 </div>
                 <div>
@@ -70,7 +70,7 @@ function Index() {
                 </div>
               </div>
               <div className="flex items-center bg-white p-4 rounded-lg">
-                <div className="bg-[#FFE600] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
+                <div className="bg-[#F4D147] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                   <i className="fas fa-shield-alt text-lg" />
                 </div>
                 <div>
@@ -79,7 +79,7 @@ function Index() {
                 </div>
               </div>
               <div className="flex items-center bg-white p-4 rounded-lg">
-                <div className="bg-[#FFE600] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
+                <div className="bg-[#F4D147] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                   <i className="fas fa-credit-card text-lg" />
                 </div>
                 <div>
@@ -91,7 +91,7 @@ function Index() {
 
             <button
               onClick={handleCTA}
-              className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md mt-6 transition-all duration-300 animate-pulse"
+              className="w-full bg-[#F4D147] hover:bg-[#E5C238] text-gray-900 text-lg font-semibold py-4 rounded-md mt-6 transition-all duration-300 animate-pulse"
             >
               Solicitar meu cartão agora
             </button>
@@ -105,7 +105,7 @@ function Index() {
 
         {/* Como Solicitar */}
         <div id="como-solicitar" className="px-4 mt-6">
-          <div className="bg-[#FFF8E1] rounded-xl shadow-md p-6">
+          <div className="bg-[#FBE74D] rounded-xl shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Como Solicitar?</h2>
 
             <div className="flex items-center justify-between mb-6">
@@ -113,13 +113,13 @@ function Index() {
                 <div key={n} className="flex items-center flex-1 last:flex-none">
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
-                      idx >= n ? "bg-[#FFE600] text-gray-900" : "bg-gray-200 text-gray-500"
+                      idx >= n ? "bg-[#F4D147] text-gray-900" : "bg-gray-200 text-gray-500"
                     }`}
                   >
                     {n + 1}
                   </div>
                   {n < 2 && (
-                    <div className={`h-1 flex-1 mx-1 ${idx > n ? "bg-[#FFE600]" : "bg-gray-200"}`} />
+                    <div className={`h-1 flex-1 mx-1 ${idx > n ? "bg-[#F4D147]" : "bg-gray-200"}`} />
                   )}
                 </div>
               ))}
@@ -147,14 +147,14 @@ function Index() {
               <button
                 onClick={() => setIdx((i) => (i - 1 + 3) % 3)}
                 aria-label="Anterior"
-                className="absolute left-2 top-24 -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-gray-900 hover:bg-[#FFF8E1]"
+                className="absolute left-2 top-24 -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-gray-900 hover:bg-[#FBE74D]"
               >
                 <i className="fas fa-chevron-left" />
               </button>
               <button
                 onClick={() => setIdx((i) => (i + 1) % 3)}
                 aria-label="Próximo"
-                className="absolute right-2 top-24 -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-gray-900 hover:bg-[#FFF8E1]"
+                className="absolute right-2 top-24 -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-gray-900 hover:bg-[#FBE74D]"
               >
                 <i className="fas fa-chevron-right" />
               </button>
@@ -166,7 +166,7 @@ function Index() {
                   key={n}
                   onClick={() => setIdx(n)}
                   aria-label={`Ir para etapa ${n + 1}`}
-                  className={`w-2 h-2 rounded-full ${idx === n ? "bg-[#FFE600]" : "bg-gray-300"}`}
+                  className={`w-2 h-2 rounded-full ${idx === n ? "bg-[#F4D147]" : "bg-gray-300"}`}
                 />
               ))}
             </div>
@@ -175,7 +175,7 @@ function Index() {
 
         {/* Estatísticas */}
         <div className="px-4 mt-6">
-          <div className="bg-[#FFF8E1] rounded-xl shadow-md p-6 flex justify-between text-center">
+          <div className="bg-[#FBE74D] rounded-xl shadow-md p-6 flex justify-between text-center">
             <div>
               <p className="text-2xl font-bold text-gray-900">+500mil</p>
               <p className="text-xs text-gray-600">Clientes</p>
@@ -195,10 +195,10 @@ function Index() {
         <div className="px-4 mt-6">
           <button
             onClick={handleCTA}
-            className="bg-[#FFF8E1] rounded-xl shadow-md p-4 w-full flex items-center justify-between"
+            className="bg-[#FBE74D] rounded-xl shadow-md p-4 w-full flex items-center justify-between"
           >
             <div className="flex items-center">
-              <div className="bg-[#FFF8E1] w-10 h-10 rounded-full flex items-center justify-center mr-3">
+              <div className="bg-[#FBE74D] w-10 h-10 rounded-full flex items-center justify-center mr-3">
                 <i className="fas fa-calculator text-gray-900" />
               </div>
               <div className="text-left">

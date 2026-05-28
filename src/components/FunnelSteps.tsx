@@ -9,16 +9,16 @@ const STEPS = [
 
 export function FunnelSteps({ current }: { current: number }) {
   return (
-    <div className="w-full bg-[#FFE600] border-b border-[#E6CF00]">
+    <div className="w-full bg-[#F4D147] border-b border-[#E5C238]">
       <div className="max-w-md mx-auto px-3 py-3">
         <div className="flex items-center justify-between">
           {STEPS.map((s, i) => {
             const done = current > s.id;
             const active = current === s.id;
             const circleClass = done
-              ? "bg-[#FFE600] text-gray-900 border-[#FFE600]"
+              ? "bg-[#F4D147] text-gray-900 border-[#F4D147]"
               : active
-              ? "bg-white text-gray-900 border-[#FFE600] ring-4 ring-[#FFE600]/20"
+              ? "bg-white text-gray-900 border-[#F4D147] ring-4 ring-[#F4D147]/20"
               : "bg-white/70 text-gray-500 border-gray-400";
             const labelClass = active
               ? "text-gray-900 font-bold"
@@ -31,7 +31,7 @@ export function FunnelSteps({ current }: { current: number }) {
                 {i > 0 && (
                   <div
                     className={`absolute top-3 right-1/2 h-[2px] w-full ${
-                      prevDone ? "bg-[#FFE600]" : "bg-gray-400/50"
+                      prevDone ? "bg-[#F4D147]" : "bg-gray-400/50"
                     }`}
                   />
                 )}
