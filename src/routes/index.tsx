@@ -19,14 +19,6 @@ export const Route = createFileRoute("/")({
 
 import heroImg from "@/assets/hero-mercado-livre.png";
 import cartaoEntregaImg from "@/assets/cartao-entrega.png";
-import step1Img from "@/assets/step-1.png";
-import step2Img from "@/assets/step-2.png";
-import step3Img from "@/assets/step-3.png";
-const steps = [
-  { img: step1Img, text: "Preencha seu CPF para consultar seu limite de cartão pré-aprovado" },
-  { img: step2Img, text: "Escolha seu modelo de cartão e forma de envio" },
-  { img: step3Img, text: "Receba seu cartão no conforto de casa e comece a usar" },
-];
 
 function formatCPF(v: string) {
   const d = v.replace(/\D/g, "").slice(0, 11);
@@ -37,17 +29,12 @@ function formatCPF(v: string) {
 }
 
 function Index() {
-  const [idx, setIdx] = useState(0);
   const [activeStep, setActiveStep] = useState(-1);
   const [cpf, setCpf] = useState("");
   const [accepted, setAccepted] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const t = setInterval(() => setIdx((i) => (i + 1) % 3), 5000);
-    return () => clearInterval(t);
-  }, []);
 
   useEffect(() => {
     const el = timelineRef.current;
