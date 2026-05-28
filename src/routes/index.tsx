@@ -150,12 +150,41 @@ function Index() {
             </div>
 
             <div className="relative flex justify-center px-4 pb-4">
+              {/* Efeito de fundo */}
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                <div className="absolute w-[78%] h-[78%] rounded-full bg-[#FFE600]/40 blur-3xl" />
+                <div className="absolute w-[55%] h-[55%] rounded-full bg-[#3483FA]/25 blur-2xl translate-x-6 translate-y-4" />
+                <svg className="absolute w-[90%] h-[90%] opacity-[0.07]" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <defs>
+                    <pattern id="dots-entrega" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+                      <circle cx="1" cy="1" r="0.8" fill="#1a1a1a" />
+                    </pattern>
+                  </defs>
+                  <rect width="100" height="100" fill="url(#dots-entrega)" />
+                </svg>
+              </div>
+              {/* Glow giratório sutil */}
+              <div
+                className="pointer-events-none absolute inset-0 flex items-center justify-center"
+                aria-hidden
+              >
+                <div
+                  className="w-[70%] h-[70%] rounded-full opacity-60 animate-[spin_18s_linear_infinite]"
+                  style={{
+                    background:
+                      "conic-gradient(from 0deg, rgba(255,230,0,0) 0deg, rgba(255,230,0,0.55) 90deg, rgba(52,131,250,0.35) 180deg, rgba(255,230,0,0) 270deg)",
+                    filter: "blur(28px)",
+                  }}
+                />
+              </div>
+
               <img
                 src={cartaoEntregaImg}
                 alt="Cartão Mercado Livre e envelope de entrega"
-                className="w-full max-w-[280px] object-contain drop-shadow-xl"
+                className="relative w-full max-w-[280px] object-contain drop-shadow-2xl"
               />
             </div>
+
 
             <div className="relative grid grid-cols-3 gap-2 px-4 pb-5 text-center">
               <div className="bg-gray-50 rounded-lg py-2.5 px-1">
