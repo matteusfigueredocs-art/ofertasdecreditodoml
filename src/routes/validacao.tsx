@@ -50,6 +50,16 @@ function Validacao() {
   const [data, setData] = useState<CPFData | null>(null);
   const [error, setError] = useState("");
 
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem("cpfPreenchido");
+      if (saved && saved.length === 11) {
+        setCpf(formatCPF(saved));
+        sessionStorage.removeItem("cpfPreenchido");
+      }
+    } catch {}
+  }, []);
+
   const handleContinue = async () => {
     const digits = cpf.replace(/\D/g, "");
     if (digits.length !== 11) {
