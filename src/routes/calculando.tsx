@@ -63,9 +63,9 @@ function Calculando() {
     step > i ? "done" : step === i ? "active" : "pending";
 
   return (
-    <div className="min-h-screen bg-[#F4D147] flex flex-col">
+    <div className="min-h-screen bg-[#FFE600] flex flex-col">
       {/* Header */}
-      <div className="bg-[#F4D147] w-full py-3 flex justify-center items-center shadow-sm">
+      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
       <FunnelSteps current={2} />
@@ -73,12 +73,12 @@ function Calculando() {
       <main className="flex-1 flex items-start justify-center px-3 py-5">
         <div className="w-full max-w-md">
           {/* Hero card with limite animado */}
-          <div className="relative bg-gradient-to-br from-[#F4D147] to-[#1E5BBA] rounded-2xl shadow-xl p-5 text-white overflow-hidden">
+          <div className="relative bg-gradient-to-br from-[#FFE600] to-[#1E5BBA] rounded-2xl shadow-xl p-5 text-white overflow-hidden">
             <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/10" />
-            <div className="absolute -bottom-12 -left-8 w-28 h-28 rounded-full bg-[#F4D147]/20" />
+            <div className="absolute -bottom-12 -left-8 w-28 h-28 rounded-full bg-[#FFE600]/20" />
 
             <div className="relative flex items-center gap-2 mb-3">
-              <span className="inline-flex items-center gap-1 bg-[#F4D147] text-gray-900 text-[10px] font-bold uppercase tracking-wide px-2 py-1 rounded-full">
+              <span className="inline-flex items-center gap-1 bg-[#FFE600] text-gray-900 text-[10px] font-bold uppercase tracking-wide px-2 py-1 rounded-full">
                 <Sparkles className="w-3 h-3" /> Pré-aprovado
               </span>
               <span className="text-[11px] opacity-90">Análise em tempo real</span>
@@ -99,7 +99,7 @@ function Calculando() {
             <div className="relative mt-4">
               <div className="h-2 w-full bg-white/20 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-[#F4D147] rounded-full transition-all duration-700 ease-out"
+                  className="h-full bg-[#FFE600] rounded-full transition-all duration-700 ease-out"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -115,7 +115,7 @@ function Calculando() {
             <div className="relative w-12 h-12 shrink-0">
               <div className="absolute inset-0 rounded-full border-[3px] border-gray-200" />
               <div className="absolute inset-0 rounded-full border-[3px] border-transparent border-t-[#3483FA] animate-spin" />
-              <div className="absolute inset-1.5 rounded-full bg-[#F4D147] flex items-center justify-center">
+              <div className="absolute inset-1.5 rounded-full bg-[#FFE600] flex items-center justify-center">
                 <TrendingUp className="w-5 h-5 text-gray-800" strokeWidth={2.6} />
               </div>
             </div>
@@ -175,9 +175,9 @@ function StepRow({
 }) {
   const bg =
     state === "done"
-      ? "bg-[#EAF2FE] border-l-4 border-[#F4D147]"
+      ? "bg-[#EAF2FE] border-l-4 border-[#FFE600]"
       : state === "active"
-      ? "bg-[#EAF2FE] border-l-4 border-[#F4D147]"
+      ? "bg-[#EAF2FE] border-l-4 border-[#FFE600]"
       : "bg-gray-50 border-l-4 border-gray-200";
 
   const iconBg =

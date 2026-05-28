@@ -101,21 +101,21 @@ function Questionario() {
   return (
     <div className="min-h-screen bg-white flex flex-col relative overflow-hidden">
       {/* Header */}
-      <div className="bg-[#F4D147] w-full py-3 flex justify-center items-center shadow-sm">
+      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
       <FunnelSteps current={1} />
 
       {/* Decorative circles */}
-      <div className="absolute w-72 h-72 rounded-full bg-[#F4D147]/20 -top-20 -right-20 z-0" />
-      <div className="absolute w-56 h-56 rounded-full bg-[#F4D147]/10 -bottom-16 -left-16 z-0" />
+      <div className="absolute w-72 h-72 rounded-full bg-[#FFE600]/20 -top-20 -right-20 z-0" />
+      <div className="absolute w-56 h-56 rounded-full bg-[#FFE600]/10 -bottom-16 -left-16 z-0" />
 
       <main className="flex-1 flex items-start justify-center px-4 py-8 relative z-10">
         <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6 md:p-8">
           {/* Progress bar */}
           <div className="w-full h-1.5 bg-gray-200 rounded-full mb-6 overflow-hidden">
             <div
-              className="h-full bg-[#F4D147] transition-all duration-500"
+              className="h-full bg-[#FFE600] transition-all duration-500"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -139,12 +139,12 @@ function Questionario() {
                     onClick={() => handleSelect(opt.label)}
                     className={
                       step.columns === 2
-                        ? "border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center gap-3 hover:border-[#F4D147] hover:bg-[#FBE74D] transition-all"
-                        : "border border-gray-200 rounded-lg p-4 text-left text-gray-800 font-medium hover:border-[#F4D147] hover:bg-[#FBE74D] transition-all"
+                        ? "border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center gap-3 hover:border-[#FFE600] hover:bg-[#FBE74D] transition-all"
+                        : "border border-gray-200 rounded-lg p-4 text-left text-gray-800 font-medium hover:border-[#FFE600] hover:bg-[#FBE74D] transition-all"
                     }
                   >
                     {opt.icon && step.columns === 2 && (
-                      <span className="w-12 h-12 rounded-lg bg-[#F4D147] flex items-center justify-center">
+                      <span className="w-12 h-12 rounded-lg bg-[#FFE600] flex items-center justify-center">
                         <i className={`fas ${opt.icon} text-gray-800 text-lg`} />
                       </span>
                     )}
@@ -178,15 +178,15 @@ function Questionario() {
                       key={label}
                       className={`flex items-center justify-between p-3 rounded-lg border ${
                         done
-                          ? "border-[#F4D147] bg-[#FBE74D]"
+                          ? "border-[#FFE600] bg-[#FBE74D]"
                           : active
-                          ? "border-[#F4D147] bg-[#FBE74D]"
+                          ? "border-[#FFE600] bg-[#FBE74D]"
                           : "border-gray-200 bg-gray-50"
                       }`}
                     >
                       <span className="text-sm font-medium text-gray-800">{label}</span>
                       {done ? (
-                        <span className="w-6 h-6 rounded-full bg-[#F4D147] flex items-center justify-center">
+                        <span className="w-6 h-6 rounded-full bg-[#FFE600] flex items-center justify-center">
                           <i className="fas fa-check text-white text-xs" />
                         </span>
                       ) : active ? (

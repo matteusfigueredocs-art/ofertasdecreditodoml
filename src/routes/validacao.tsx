@@ -80,7 +80,7 @@ function Validacao() {
   return (
     <div className="min-h-screen bg-white flex flex-col relative overflow-hidden">
       {/* Header */}
-      <div className="bg-[#F4D147] w-full py-3 flex justify-center items-center shadow-sm">
+      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
       <FunnelSteps current={1} />
@@ -108,12 +108,12 @@ function Validacao() {
                 placeholder="000.000.000-00"
                 value={cpf}
                 onChange={(e) => setCpf(formatCPF(e.target.value))}
-                className="w-full border border-gray-300 rounded-md px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#F4D147] focus:border-transparent"
+                className="w-full border border-gray-300 rounded-md px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#FFE600] focus:border-transparent"
               />
               {error && <p className="text-sm text-red-600 mt-2">{error}</p>}
               <button
                 onClick={handleContinue}
-                className="w-full bg-[#F4D147] hover:bg-[#E5C238] text-gray-900 text-lg font-semibold py-4 rounded-md mt-6 transition-all"
+                className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md mt-6 transition-all"
               >
                 Continuar
               </button>
@@ -132,7 +132,7 @@ function Validacao() {
           {screen === "success" && data && (
             <>
               <div className="flex flex-col items-center mb-6">
-                <div className="w-14 h-14 rounded-full bg-[#F4D147] flex items-center justify-center mb-3">
+                <div className="w-14 h-14 rounded-full bg-[#FFE600] flex items-center justify-center mb-3">
                   <i className="fas fa-check text-white text-2xl" />
                 </div>
                 <div className="text-lg font-semibold text-gray-900">
@@ -156,7 +156,7 @@ function Validacao() {
               </div>
               <button
                 onClick={() => navigate({ to: "/questionario" })}
-                className="w-full bg-[#F4D147] hover:bg-[#E5C238] text-gray-900 text-lg font-semibold py-4 rounded-md transition-all"
+                className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md transition-all"
               >
                 Continuar
               </button>

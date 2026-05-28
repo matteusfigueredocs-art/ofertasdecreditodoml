@@ -42,7 +42,7 @@ function CartaoAprovado() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <div className="bg-[#F4D147] w-full py-3 flex justify-center items-center shadow-sm">
+      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
       <FunnelSteps current={5} />
@@ -50,7 +50,7 @@ function CartaoAprovado() {
       <main className="flex-1 w-full max-w-md mx-auto px-4 py-6 space-y-5">
         {/* Success */}
         <section className="text-center pt-2">
-          <div className="w-20 h-20 rounded-full bg-[#F4D147] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-yellow-200">
+          <div className="w-20 h-20 rounded-full bg-[#FFE600] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-yellow-200">
             <i className="fas fa-check text-white text-3xl" />
           </div>
           <h1 className="text-3xl font-extrabold text-gray-800">Parabéns!</h1>
@@ -58,10 +58,10 @@ function CartaoAprovado() {
         </section>
 
         {/* Approved card */}
-        <section className="bg-white border-2 border-[#F4D147] rounded-xl p-6 text-center">
+        <section className="bg-white border-2 border-[#FFE600] rounded-xl p-6 text-center">
           <div className="text-xs font-bold tracking-widest text-gray-900">LIMITE APROVADO</div>
           <div className="text-4xl font-extrabold text-gray-900 my-3">R$ 4.750,00</div>
-          <div className="inline-block bg-[#F4D147] text-gray-900 text-xs font-semibold px-4 py-2 rounded-full">
+          <div className="inline-block bg-[#FFE600] text-gray-900 text-xs font-semibold px-4 py-2 rounded-full">
             Cartão liberado em até 5 minutos
           </div>
           <div className="text-[11px] text-gray-500 mt-3">Sujeito à confirmação dos dados pessoais</div>
@@ -70,7 +70,7 @@ function CartaoAprovado() {
         {/* CTA */}
         <button
           onClick={() => navigate({ to: "/aprovado" })}
-          className="w-full bg-[#F4D147] hover:bg-[#E5C238] text-gray-900 text-lg font-semibold py-4 rounded-md shadow-md transition-all"
+          className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md shadow-md transition-all"
         >
           Finalizar Cadastro
         </button>
@@ -79,7 +79,7 @@ function CartaoAprovado() {
         <section className="grid grid-cols-3 gap-2">
           {infoCards.map((c) => (
             <div key={c.label} className="bg-white rounded-xl p-3 text-center">
-              <div className="w-10 h-10 mx-auto rounded-lg bg-[#F4D147] flex items-center justify-center mb-2">
+              <div className="w-10 h-10 mx-auto rounded-lg bg-[#FFE600] flex items-center justify-center mb-2">
                 <i className={`fas ${c.icon} text-white text-sm`} />
               </div>
               <div className="text-[10px] tracking-wider text-gray-500 font-semibold">{c.label.toUpperCase()}</div>
@@ -91,14 +91,14 @@ function CartaoAprovado() {
         {/* Benefits carousel */}
         <section className="bg-white rounded-xl p-5">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="w-7 h-7 rounded bg-[#F4D147] flex items-center justify-center">
+            <span className="w-7 h-7 rounded bg-[#FFE600] flex items-center justify-center">
               <i className="fas fa-star text-gray-800 text-xs" />
             </span>
             <span className="font-bold text-gray-800">Benefícios do seu cartão</span>
           </div>
 
           <div className="bg-gradient-to-br from-[#EAF2FE] to-white rounded-lg p-6 text-center min-h-[170px] flex flex-col items-center justify-center">
-            <div className="w-14 h-14 rounded-full bg-[#F4D147] flex items-center justify-center mb-3">
+            <div className="w-14 h-14 rounded-full bg-[#FFE600] flex items-center justify-center mb-3">
               <i className={`fas ${benefits[slide].icon} text-white text-xl`} />
             </div>
             <div className="text-gray-900 font-bold text-lg">{benefits[slide].title}</div>
@@ -111,7 +111,7 @@ function CartaoAprovado() {
                 key={i}
                 onClick={() => setSlide(i)}
                 aria-label={`Slide ${i + 1}`}
-                className={`h-2 rounded-full transition-all ${i === slide ? "w-6 bg-[#F4D147]" : "w-2 bg-gray-300"}`}
+                className={`h-2 rounded-full transition-all ${i === slide ? "w-6 bg-[#FFE600]" : "w-2 bg-gray-300"}`}
               />
             ))}
           </div>
