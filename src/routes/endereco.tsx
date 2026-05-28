@@ -99,7 +99,7 @@ function Endereco() {
           <p className="text-sm text-gray-600 text-center mb-6">
             Onde você deseja receber seu cartão
           </p>
-
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className={labelCls}>CEP</label>
               <div className="relative">
@@ -120,7 +120,6 @@ function Endereco() {
                 )}
               </div>
               {cepError && <p className="mt-1 text-xs text-red-600">{cepError}</p>}
-            </div>
             </div>
 
             <div>
