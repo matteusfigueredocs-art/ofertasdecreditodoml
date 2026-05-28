@@ -97,7 +97,7 @@ function Index() {
                     {i < arr.length - 1 && (
                       <span className="absolute left-[-32px] top-10 bottom-0 w-0.5 bg-gray-200 overflow-hidden">
                         <span
-                          className="block w-full bg-[#3483FA] transition-all duration-700 ease-out"
+                          className="block w-full bg-[#3483FA] transition-all duration-[3000ms] ease-linear"
                           style={{ height: activeStep > i ? "100%" : "0%" }}
                         />
                       </span>
