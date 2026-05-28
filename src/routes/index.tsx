@@ -84,8 +84,11 @@ function Index() {
   };
 
   return (
+    <div className="min-h-screen bg-[#FFE600]">
+      <div className="max-w-md mx-auto min-h-screen bg-[#FFE600] relative">
         {/* Header */}
         <div className="px-4 py-3 bg-[#FFE600] shadow-sm relative">
+
           <div className="flex justify-between items-center">
             <button
               type="button"
