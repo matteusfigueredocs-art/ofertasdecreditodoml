@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
 
 export const Route = createFileRoute("/")({
@@ -29,11 +29,31 @@ const steps = [
 
 function Index() {
   const [idx, setIdx] = useState(0);
+  const [activeStep, setActiveStep] = useState(-1);
+  const timelineRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const t = setInterval(() => setIdx((i) => (i + 1) % 3), 5000);
     return () => clearInterval(t);
+  }, []);
+
+  useEffect(() => {
+    const el = timelineRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          [0, 1, 2].forEach((i) => {
+            setTimeout(() => setActiveStep(i), i * 700);
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   const handleCTA = () => {
@@ -65,23 +85,37 @@ function Index() {
               Aproveite seu cartão de crédito de forma segura, rápida e sem burocracia
             </h2>
 
-            <div className="relative pl-14">
+            <div ref={timelineRef} className="relative pl-14">
               {[
                 { title: "Peça seu cartão de crédito", text: "Você pede em poucas etapas e nós cuidamos do resto." },
                 { title: "Vamos analisar seu pedido", text: "Queremos te conhecer analisando seu histórico com relação a crédito." },
                 { title: "Receba seu cartão", text: "Aprovado, seu cartão chega no conforto da sua casa." },
-              ].map((item, i, arr) => (
-                <div key={i} className="relative pb-8 last:pb-0">
-                  {i < arr.length - 1 && (
-                    <span className="absolute left-[-32px] top-10 bottom-0 w-0.5 bg-[#3483FA]" />
-                  )}
-                  <div className="absolute left-[-46px] top-0 w-10 h-10 rounded-full border-2 border-[#3483FA] bg-white flex items-center justify-center text-[#3483FA] font-bold">
-                    {i + 1}
+              ].map((item, i, arr) => {
+                const isActive = activeStep >= i;
+                return (
+                  <div key={i} className="relative pb-8 last:pb-0">
+                    {i < arr.length - 1 && (
+                      <span className="absolute left-[-32px] top-10 bottom-0 w-0.5 bg-gray-200 overflow-hidden">
+                        <span
+                          className="block w-full bg-[#3483FA] transition-all duration-700 ease-out"
+                          style={{ height: activeStep > i ? "100%" : "0%" }}
+                        />
+                      </span>
+                    )}
+                    <div
+                      className={`absolute left-[-46px] top-0 w-10 h-10 rounded-full border-2 flex items-center justify-center font-bold transition-all duration-500 ${
+                        isActive
+                          ? "border-[#3483FA] bg-[#3483FA] text-white scale-110 shadow-lg shadow-[#3483FA]/40"
+                          : "border-gray-300 bg-white text-gray-400"
+                      }`}
+                    >
+                      {i + 1}
+                    </div>
+                    <h3 className={`font-bold text-base transition-colors duration-500 ${isActive ? "text-gray-900" : "text-gray-400"}`}>{item.title}</h3>
+                    <p className={`text-sm mt-1 transition-colors duration-500 ${isActive ? "text-gray-600" : "text-gray-400"}`}>{item.text}</p>
                   </div>
-                  <h3 className="font-bold text-gray-900 text-base">{item.title}</h3>
-                  <p className="text-sm text-gray-600 mt-1">{item.text}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             <button
