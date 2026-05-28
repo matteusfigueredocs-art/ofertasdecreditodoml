@@ -46,6 +46,7 @@ function Validacao() {
   const navigate = useNavigate();
   const consultar = useServerFn(consultarCPF);
   const [cpf, setCpf] = useState("");
+  const [accepted, setAccepted] = useState(false);
   const [screen, setScreen] = useState<Screen>("form");
   const [data, setData] = useState<CPFData | null>(null);
   const [error, setError] = useState("");
