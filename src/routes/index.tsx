@@ -57,8 +57,8 @@ function Index() {
           <div className="bg-white rounded-xl shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Vantagens exclusivas</h2>
             <div className="space-y-4">
-              <div className="flex items-center bg-blue-50 p-4 rounded-lg">
-                <div className="bg-[#3483FA] text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
+              <div className="flex items-center bg-[#FFF8E1] p-4 rounded-lg">
+                <div className="bg-[#FFE600] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                   <i className="fas fa-bolt text-lg" />
                 </div>
                 <div>
@@ -88,7 +88,7 @@ function Index() {
 
             <button
               onClick={handleCTA}
-              className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md mt-6 transition-all duration-300 animate-pulse"
+              className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md mt-6 transition-all duration-300 animate-pulse"
             >
               Solicitar meu cartão agora
             </button>
@@ -135,14 +135,14 @@ function Index() {
               <button
                 onClick={() => setIdx((i) => (i - 1 + 3) % 3)}
                 aria-label="Anterior"
-                className="absolute left-2 top-24 -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-[#3483FA] hover:bg-blue-50"
+                className="absolute left-2 top-24 -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-[#3483FA] hover:bg-[#FFF8E1]"
               >
                 <i className="fas fa-chevron-left" />
               </button>
               <button
                 onClick={() => setIdx((i) => (i + 1) % 3)}
                 aria-label="Próximo"
-                className="absolute right-2 top-24 -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-[#3483FA] hover:bg-blue-50"
+                className="absolute right-2 top-24 -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-[#3483FA] hover:bg-[#FFF8E1]"
               >
                 <i className="fas fa-chevron-right" />
               </button>
@@ -186,7 +186,7 @@ function Index() {
             className="bg-white rounded-xl shadow-md p-4 w-full flex items-center justify-between"
           >
             <div className="flex items-center">
-              <div className="bg-blue-50 w-10 h-10 rounded-full flex items-center justify-center mr-3">
+              <div className="bg-[#FFF8E1] w-10 h-10 rounded-full flex items-center justify-center mr-3">
                 <i className="fas fa-calculator text-[#3483FA]" />
               </div>
               <div className="text-left">

@@ -88,7 +88,7 @@ function Aprovado() {
 
           <button
             onClick={() => navigate({ to: "/limite" })}
-            className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md transition-all"
+            className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md transition-all"
           >
             Continuar
           </button>
