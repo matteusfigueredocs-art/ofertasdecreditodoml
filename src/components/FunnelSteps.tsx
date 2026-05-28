@@ -15,9 +15,8 @@ export function FunnelSteps({ current }: { current: number }) {
         <div className="flex justify-center mb-3">
           <img src={mlLogo} alt="Mercado Livre" className="h-8 object-contain" />
         </div>
-
-      <div className="max-w-md mx-auto px-3 py-3">
         <div className="flex items-center justify-between">
+
           {STEPS.map((s, i) => {
             const done = current > s.id;
             const active = current === s.id;
