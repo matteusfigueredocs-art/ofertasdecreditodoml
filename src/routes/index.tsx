@@ -18,10 +18,13 @@ export const Route = createFileRoute("/")({
 });
 
 import heroImg from "@/assets/hero-mercado-livre.png";
+import step1Img from "@/assets/step-1.png";
+import step2Img from "@/assets/step-2.png";
+import step3Img from "@/assets/step-3.png";
 const steps = [
-  { img: "https://i.postimg.cc/90tYKgYq/1.jpg", text: "Preencha seu CPF para consultar seu limite de cartão pré-aprovado" },
-  { img: "https://i.postimg.cc/g0CyJbMp/2.jpg", text: "Escolha seu modelo de cartão e forma de envio" },
-  { img: "https://i.postimg.cc/8kBd13Lf/3.jpg", text: "Receba seu cartão no conforto de casa e comece a usar" },
+  { img: step1Img, text: "Preencha seu CPF para consultar seu limite de cartão pré-aprovado" },
+  { img: step2Img, text: "Escolha seu modelo de cartão e forma de envio" },
+  { img: step3Img, text: "Receba seu cartão no conforto de casa e comece a usar" },
 ];
 
 function Index() {
