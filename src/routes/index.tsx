@@ -131,10 +131,49 @@ function Index() {
               <span className="text-sm">Seus dados estão protegidos e seguros</span>
             </div>
           </div>
+
+        {/* Bloco entrega do cartão */}
+        <div className="px-4 mt-6">
+          <div className="relative bg-white rounded-2xl shadow-md overflow-hidden">
+            <div className="absolute inset-x-0 top-0 h-24 bg-[#FFE600]" />
+            <div className="relative px-6 pt-6 pb-2 text-center">
+              <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur text-gray-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-gray-200 shadow-sm">
+                <i className="fas fa-truck-fast" /> Entrega rápida e segura
+              </span>
+              <h3 className="mt-3 text-xl font-bold text-gray-900 leading-tight">
+                Receba seu cartão em casa
+              </h3>
+              <p className="text-sm text-gray-600 mt-1.5 max-w-xs mx-auto">
+                Embalagem exclusiva, rastreamento em tempo real e entrega em todo o Brasil.
+              </p>
+            </div>
+
+            <div className="relative flex justify-center px-4 pb-4">
+              <img
+                src={cartaoEntregaImg}
+                alt="Cartão Mercado Livre e envelope de entrega"
+                className="w-full max-w-[280px] object-contain drop-shadow-xl"
+              />
+            </div>
+
+            <div className="relative grid grid-cols-3 gap-2 px-4 pb-5 text-center">
+              <div className="bg-gray-50 rounded-lg py-2.5 px-1">
+                <i className="fas fa-box-open text-gray-900 text-base" />
+                <div className="text-[10px] font-semibold text-gray-700 mt-1 leading-tight">Embalagem exclusiva</div>
+              </div>
+              <div className="bg-gray-50 rounded-lg py-2.5 px-1">
+                <i className="fas fa-location-dot text-gray-900 text-base" />
+                <div className="text-[10px] font-semibold text-gray-700 mt-1 leading-tight">Rastreio em tempo real</div>
+              </div>
+              <div className="bg-gray-50 rounded-lg py-2.5 px-1">
+                <i className="fas fa-shield-halved text-gray-900 text-base" />
+                <div className="text-[10px] font-semibold text-gray-700 mt-1 leading-tight">Entrega segura</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-
-
+        {/* Como Solicitar - Carrossel */}
         {/* Como Solicitar - Carrossel */}
         <div id="como-solicitar" className="px-4 mt-6">
           <div className="bg-white rounded-xl shadow-md p-6">
