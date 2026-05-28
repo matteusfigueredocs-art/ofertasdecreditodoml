@@ -28,9 +28,19 @@ const steps = [
   { img: step3Img, text: "Receba seu cartão no conforto de casa e comece a usar" },
 ];
 
+function formatCPF(v: string) {
+  const d = v.replace(/\D/g, "").slice(0, 11);
+  return d
+    .replace(/(\d{3})(\d)/, "$1.$2")
+    .replace(/(\d{3})\.(\d{3})(\d)/, "$1.$2.$3")
+    .replace(/(\d{3})\.(\d{3})\.(\d{3})(\d)/, "$1.$2.$3-$4");
+}
+
 function Index() {
   const [idx, setIdx] = useState(0);
   const [activeStep, setActiveStep] = useState(-1);
+  const [cpf, setCpf] = useState("");
+  const [accepted, setAccepted] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
@@ -58,8 +68,13 @@ function Index() {
   }, []);
 
   const handleCTA = () => {
+    const digits = cpf.replace(/\D/g, "");
+    if (digits.length === 11 && typeof window !== "undefined") {
+      sessionStorage.setItem("cpfPreenchido", digits);
+    }
     navigate({ to: "/validacao" });
   };
+
 
   return (
     <div className="min-h-screen bg-[#FFE600]">
