@@ -19,11 +19,14 @@ export const Route = createFileRoute("/aprovado")({
 function Aprovado() {
   const navigate = useNavigate();
   const [limite, setLimite] = useState<number>(4200);
+  const [nome, setNome] = useState<string>("SEU NOME");
 
   useEffect(() => {
     try {
       const v = sessionStorage.getItem("limiteAprovado");
       if (v) setLimite(parseInt(v, 10) || 4200);
+      const n = sessionStorage.getItem("nomeTitular");
+      if (n) setNome(n.toUpperCase());
     } catch {}
   }, []);
 
