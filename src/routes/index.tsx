@@ -127,7 +127,7 @@ function Index() {
 
             <div className="relative">
               <div className="text-center">
-                <div className="bg-white rounded-lg p-4 mb-4 relative h-64 overflow-hidden">
+                <div className="bg-[#F4D147] rounded-lg p-4 mb-4 relative h-64 overflow-hidden">
                   {steps.map((s, i) => (
                     <img
                       key={i}
