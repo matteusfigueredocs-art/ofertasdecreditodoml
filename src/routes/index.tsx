@@ -221,18 +221,10 @@ function Index() {
         </div>
 
 
-        {/* Divisor */}
-        <div className="px-4 mt-6 flex items-center gap-3">
-          <div className="flex-1 h-px bg-gray-900/15" />
-          <div className="w-1.5 h-1.5 rounded-full bg-gray-900/30" />
-          <div className="flex-1 h-px bg-gray-900/15" />
-        </div>
-
-
         {/* Bloco entrega do cartão */}
+        <div>
+          <div className="relative bg-white shadow-md overflow-hidden">
 
-        <div className="px-4 mt-6">
-          <div className="relative bg-white rounded-2xl shadow-md overflow-hidden">
             <div className="relative px-6 pt-6 pb-2 text-center">
               <span className="inline-flex items-center gap-1.5 bg-[#FFE600] text-gray-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
                 <i className="fas fa-truck-fast" /> Entrega rápida e segura
@@ -298,11 +290,11 @@ function Index() {
             </div>
           </div>
         </div>
-
         {/* Como Solicitar - Carrossel */}
-        <div id="como-solicitar" className="px-4 mt-6">
-          <div className="bg-white rounded-xl shadow-md p-6">
+        <div id="como-solicitar">
+          <div className="bg-white shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Como solicitar?</h2>
+
 
             <div className="flex items-center justify-center gap-2 mb-4">
               {steps.map((_, i) => (
@@ -356,7 +348,7 @@ function Index() {
         </div>
 
         {/* Estatísticas */}
-        <div className="px-4 mt-6">
+        <div className="px-4 py-6 bg-white shadow-md">
           <div className="bg-gradient-to-br from-[#3483FA] to-[#1c5fc7] rounded-2xl shadow-xl p-5 flex justify-between text-center relative overflow-hidden">
             <div className="absolute -top-6 -right-6 w-24 h-24 bg-white/10 rounded-full" />
             <div className="absolute -bottom-8 -left-8 w-28 h-28 bg-white/5 rounded-full" />
@@ -387,81 +379,78 @@ function Index() {
         </div>
 
         {/* Benefícios */}
-        <div className="px-4 mt-6">
-          <div className="bg-white rounded-2xl shadow-md p-5">
-            <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Benefícios do seu cartão</h2>
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { icon: "fa-circle-xmark", title: "Sem anuidade", desc: "Zero taxa anual" },
-                { icon: "fa-coins", title: "Cashback", desc: "Em compras ML" },
-                { icon: "fa-percent", title: "Descontos", desc: "Mercado Livre" },
-                { icon: "fa-calendar-days", title: "Parcele em até 12x", desc: "Sem juros" },
-              ].map((b) => (
-                <div key={b.title} className="border border-gray-100 rounded-xl p-3 flex items-start gap-2.5">
-                  <div className="w-9 h-9 rounded-full bg-[#EAF2FE] flex items-center justify-center shrink-0">
-                    <i className={`fa-solid ${b.icon} text-[#3483FA]`} />
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-gray-900 leading-tight">{b.title}</p>
-                    <p className="text-[11px] text-gray-500 mt-0.5">{b.desc}</p>
+        <div className="bg-white shadow-md p-5">
+          <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Benefícios do seu cartão</h2>
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              { icon: "fa-circle-xmark", title: "Sem anuidade", desc: "Zero taxa anual" },
+              { icon: "fa-coins", title: "Cashback", desc: "Em compras ML" },
+              { icon: "fa-percent", title: "Descontos", desc: "Mercado Livre" },
+              { icon: "fa-calendar-days", title: "Parcele em até 12x", desc: "Sem juros" },
+            ].map((b) => (
+              <div key={b.title} className="border border-gray-100 rounded-xl p-3 flex items-start gap-2.5">
+                <div className="w-9 h-9 rounded-full bg-[#EAF2FE] flex items-center justify-center shrink-0">
+                  <i className={`fa-solid ${b.icon} text-[#3483FA]`} />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-gray-900 leading-tight">{b.title}</p>
+                  <p className="text-[11px] text-gray-500 mt-0.5">{b.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Quem já recebeu */}
+        <div className="bg-white shadow-md p-5">
+          <h2 className="text-lg font-bold text-gray-900 text-center mb-1">Quem já recebeu o cartão</h2>
+          <div className="flex items-center justify-center gap-1 text-yellow-400 mb-4">
+            {[...Array(5)].map((_, i) => <i key={i} className="fa-solid fa-star text-xs" />)}
+            <span className="text-xs text-gray-600 ml-1 font-medium">4.8 · +12 mil avaliações</span>
+          </div>
+
+          <div className="overflow-hidden rounded-xl">
+            <div
+              className="flex transition-transform duration-700 ease-out"
+              style={{ transform: `translateX(-${clienteIdx * 100}%)` }}
+            >
+              {clientes.map((c) => (
+                <div key={c.name} className="w-full shrink-0 px-1">
+                  <div className="relative rounded-xl overflow-hidden aspect-[4/5] shadow-md">
+                    <img src={c.img} alt={`${c.name} recebeu o cartão`} className="w-full h-full object-cover" />
+                    <div className="absolute top-2 right-2 bg-[#FFE600] rounded-full px-2 py-1 flex items-center gap-1 shadow">
+                      <i className="fa-solid fa-check text-[10px] text-gray-900" />
+                      <span className="text-[10px] font-bold text-gray-900">Entregue</span>
+                    </div>
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-3">
+                      <p className="text-white text-base font-bold leading-tight">{c.name}</p>
+                      <p className="text-white/80 text-[11px]">{c.city}</p>
+                      <div className="flex gap-0.5 text-yellow-300 mt-1">
+                        {[...Array(5)].map((_, i) => <i key={i} className="fa-solid fa-star text-[10px]" />)}
+                      </div>
+                      <p className="text-white text-xs leading-snug mt-1.5">"{c.text}"</p>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
-        {/* Quem já recebeu */}
-        <div className="px-4 mt-6">
-          <div className="bg-white rounded-2xl shadow-md p-5">
-            <h2 className="text-lg font-bold text-gray-900 text-center mb-1">Quem já recebeu o cartão</h2>
-            <div className="flex items-center justify-center gap-1 text-yellow-400 mb-4">
-              {[...Array(5)].map((_, i) => <i key={i} className="fa-solid fa-star text-xs" />)}
-              <span className="text-xs text-gray-600 ml-1 font-medium">4.8 · +12 mil avaliações</span>
-            </div>
-
-            <div className="overflow-hidden rounded-xl">
-              <div
-                className="flex transition-transform duration-700 ease-out"
-                style={{ transform: `translateX(-${clienteIdx * 100}%)` }}
-              >
-                {clientes.map((c) => (
-                  <div key={c.name} className="w-full shrink-0 px-1">
-                    <div className="relative rounded-xl overflow-hidden aspect-[4/5] shadow-md">
-                      <img src={c.img} alt={`${c.name} recebeu o cartão`} className="w-full h-full object-cover" />
-                      <div className="absolute top-2 right-2 bg-[#FFE600] rounded-full px-2 py-1 flex items-center gap-1 shadow">
-                        <i className="fa-solid fa-check text-[10px] text-gray-900" />
-                        <span className="text-[10px] font-bold text-gray-900">Entregue</span>
-                      </div>
-                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-3">
-                        <p className="text-white text-base font-bold leading-tight">{c.name}</p>
-                        <p className="text-white/80 text-[11px]">{c.city}</p>
-                        <div className="flex gap-0.5 text-yellow-300 mt-1">
-                          {[...Array(5)].map((_, i) => <i key={i} className="fa-solid fa-star text-[10px]" />)}
-                        </div>
-                        <p className="text-white text-xs leading-snug mt-1.5">"{c.text}"</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex items-center justify-center gap-2 mt-4">
-              {clientes.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setClienteIdx(i)}
-                  aria-label={`Cliente ${i + 1}`}
-                  className={`h-2 rounded-full transition-all ${i === clienteIdx ? "w-6 bg-[#3483FA]" : "w-2 bg-gray-300"}`}
-                />
-              ))}
-            </div>
           </div>
-        </div>
-        </div>
+
+          <div className="flex items-center justify-center gap-2 mt-4">
+            {clientes.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setClienteIdx(i)}
+                aria-label={`Cliente ${i + 1}`}
+                className={`h-2 rounded-full transition-all ${i === clienteIdx ? "w-6 bg-[#3483FA]" : "w-2 bg-gray-300"}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* FAQ */}
-        <div className="px-4 mt-6">
-          <div className="bg-white rounded-2xl shadow-md p-5">
+        <div className="bg-white shadow-md p-5">
+
             <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Perguntas frequentes</h2>
             <div className="space-y-2">
               {[
@@ -479,8 +468,8 @@ function Index() {
                 </details>
               ))}
             </div>
-          </div>
         </div>
+
 
         {/* Footer */}
         <div className="px-4 pt-6 pb-28">
