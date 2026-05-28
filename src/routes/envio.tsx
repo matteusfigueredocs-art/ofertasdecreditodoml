@@ -200,11 +200,11 @@ function Envio() {
                       MAIS POPULAR
                     </div>
                   </div>
-                  <div className="text-sm text-gray-600">1 dia útil</div>
+                  <div className="text-sm text-gray-600">3 dias úteis</div>
                   <div className="text-xs text-gray-900 font-semibold mt-0.5">
                     ✓ Rastreamento incluído
                   </div>
-                  <div className="text-xs text-gray-500 italic mt-0.5">Chegará até 28/05</div>
+                  <div className="text-xs text-gray-500 italic mt-0.5">Chegará até 30/05</div>
                   <div className="text-right font-bold text-gray-800 -mt-5">R$ 29,90</div>
                 </div>
               </button>
