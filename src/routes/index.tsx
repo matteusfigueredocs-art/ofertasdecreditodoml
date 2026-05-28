@@ -86,19 +86,92 @@ function Index() {
           </div>
         </div>
 
-        {/* Hero */}
+        {/* Hero + CPF inline (estrutura MP) */}
         <div className="relative">
           <img src={heroImg} alt="Cartão Mercado Pago Pré-aprovado" className="w-full h-auto object-contain block" />
         </div>
 
-        {/* Timeline */}
-        <div className="px-4 -mt-3 relative z-10">
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <div className="flex justify-center mb-4">
-              <div className="w-12 h-1.5 rounded-full bg-[#FFE600]" />
+        <div className="px-4 -mt-6 relative z-10">
+          <div className="bg-white rounded-2xl shadow-xl p-5">
+            <h2 className="text-lg font-bold text-gray-900 mb-4">
+              Peça seu cartão de crédito
+            </h2>
+            <label className="block text-xs font-semibold text-gray-700 mb-1.5" htmlFor="cpf-hero">
+              CPF
+            </label>
+            <input
+              id="cpf-hero"
+              type="tel"
+              inputMode="numeric"
+              placeholder="000.000.000-00"
+              value={cpf}
+              onChange={(e) => setCpf(formatCPF(e.target.value))}
+              className="w-full border border-gray-300 rounded-md px-3 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#3483FA] focus:border-transparent"
+            />
+            <label className="flex items-start gap-2 mt-3 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={accepted}
+                onChange={(e) => setAccepted(e.target.checked)}
+                className="mt-0.5 w-4 h-4 accent-[#3483FA] shrink-0"
+              />
+              <span className="text-[11px] text-gray-600 leading-snug">
+                Li e entendi a <a href="#" className="text-[#3483FA] underline">Declaração de Privacidade</a> e autorizo o tratamento dos meus dados, inclusive para consulta ao SCR.
+              </span>
+            </label>
+            <button
+              onClick={handleCTA}
+              disabled={!accepted || cpf.replace(/\D/g, "").length !== 11}
+              className="w-full bg-[#3483FA] hover:bg-[#2968C8] disabled:bg-gray-300 disabled:cursor-not-allowed text-white text-base font-semibold py-3.5 rounded-md mt-4 transition-all"
+            >
+              Continuar
+            </button>
+            <div className="flex items-center justify-center mt-3 text-gray-500">
+              <i className="fas fa-lock mr-1.5 text-xs" />
+              <span className="text-[11px]">Seus dados estão protegidos e seguros</span>
             </div>
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-8 text-center leading-tight">
-              Aproveite seu cartão de crédito de forma segura, rápida e sem burocracia
+          </div>
+        </div>
+
+        {/* Bloco "O cartão te dá..." estilo MP (imagem + lista de checks) */}
+        <div className="px-4 mt-8">
+          <div className="bg-white rounded-2xl shadow-md p-5">
+            <div className="flex justify-center mb-4">
+              <img
+                src={cartaoEntregaImg}
+                alt="Cartão Mercado Livre"
+                className="w-44 h-auto object-contain drop-shadow-xl"
+              />
+            </div>
+            <h2 className="text-xl font-extrabold text-gray-900 text-center leading-tight mb-5">
+              O cartão que te dá <span className="text-[#3483FA]">benefícios reais</span> em todas as compras
+            </h2>
+            <ul className="space-y-3">
+              {[
+                { title: "Sem anuidade", desc: "Zero taxa anual, pra sempre." },
+                { title: "Parcele em até 12x", desc: "Sem juros em produtos selecionados no Mercado Livre." },
+                { title: "Cashback nas compras", desc: "Receba de volta direto na sua conta." },
+                { title: "Acompanhe tudo pelo app", desc: "Gastos, limites e cartões em um só lugar." },
+              ].map((b) => (
+                <li key={b.title} className="flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-[#3483FA] flex items-center justify-center shrink-0 mt-0.5">
+                    <i className="fa-solid fa-check text-white text-[11px]" />
+                  </span>
+                  <div>
+                    <p className="text-sm font-bold text-gray-900 leading-tight">{b.title}</p>
+                    <p className="text-xs text-gray-600 mt-0.5">{b.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* É muito fácil pedir — Timeline 3 passos */}
+        <div className="px-4 mt-6">
+          <div className="bg-white rounded-2xl shadow-md p-6">
+            <h2 className="text-xl font-extrabold text-gray-900 mb-6 text-center leading-tight">
+              É muito fácil pedir seu cartão
             </h2>
 
             <div ref={timelineRef} className="relative pl-14">
@@ -136,17 +209,13 @@ function Index() {
 
             <button
               onClick={handleCTA}
-              className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md mt-6 transition-all duration-300 animate-pulse"
+              className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-base font-semibold py-3.5 rounded-md mt-4 transition-all"
             >
-              Solicitar meu cartão agora
+              Pedir meu cartão
             </button>
-
-            <div className="flex items-center justify-center mt-4 pt-4 border-t border-gray-100 text-gray-600">
-              <i className="fas fa-lock mr-2 text-gray-900" />
-              <span className="text-sm">Seus dados estão protegidos e seguros</span>
-            </div>
           </div>
         </div>
+
 
 
         {/* Bloco entrega do cartão */}
