@@ -468,8 +468,8 @@ function Index() {
                 </details>
               ))}
             </div>
-          </div>
         </div>
+
 
         {/* Footer */}
         <div className="px-4 pt-6 pb-28">
