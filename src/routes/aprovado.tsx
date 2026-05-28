@@ -73,9 +73,7 @@ function Aprovado() {
           {/* Cartão na mão com o nome do titular */}
           <div className="relative flex justify-center mb-4">
             <img
-          {/* Cartão na mão com o nome do titular */}
-          <div className="relative flex justify-center mb-4">
-            <img
+
               src={cartaoMao}
               alt="Cartão Mercado Livre"
               className="w-56 h-auto object-contain drop-shadow-xl"
