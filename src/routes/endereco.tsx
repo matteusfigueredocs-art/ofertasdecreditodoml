@@ -100,16 +100,27 @@ function Endereco() {
             Onde você deseja receber seu cartão
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className={labelCls}>CEP</label>
-              <input
-                inputMode="numeric"
-                value={form.cep}
-                onChange={(e) => setForm((f) => ({ ...f, cep: formatCep(e.target.value) }))}
-                placeholder="00000-000"
-                className={inputCls}
-              />
+              <div className="relative">
+                <input
+                  inputMode="numeric"
+                  value={form.cep}
+                  onChange={(e) => {
+                    const next = formatCep(e.target.value);
+                    setForm((f) => ({ ...f, cep: next }));
+                    if (next.replace(/\D/g, "").length === 8) lookupCep(next);
+                  }}
+                  onBlur={(e) => lookupCep(e.target.value)}
+                  placeholder="00000-000"
+                  className={inputCls}
+                />
+                {cepLoading && (
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 border-[#FFE600] border-t-transparent animate-spin" />
+                )}
+              </div>
+              {cepError && <p className="mt-1 text-xs text-red-600">{cepError}</p>}
+            </div>
             </div>
 
             <div>
