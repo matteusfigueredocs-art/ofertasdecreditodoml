@@ -113,13 +113,14 @@ function Index() {
                 <div key={n} className="flex items-center flex-1 last:flex-none">
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
-                      idx >= n ? "bg-[#F4D147] text-gray-900" : "bg-gray-200 text-gray-500"
+                      idx >= n ? "bg-[#3483FA] text-white" : "bg-gray-200 text-gray-500"
                     }`}
                   >
                     {n + 1}
                   </div>
                   {n < 2 && (
-                    <div className={`h-1 flex-1 mx-1 ${idx > n ? "bg-[#F4D147]" : "bg-gray-200"}`} />
+                    <div className={`h-1 flex-1 mx-1 ${idx > n ? "bg-[#3483FA]" : "bg-gray-200"}`} />
+
                   )}
                 </div>
               ))}
@@ -166,7 +167,7 @@ function Index() {
                   key={n}
                   onClick={() => setIdx(n)}
                   aria-label={`Ir para etapa ${n + 1}`}
-                  className={`w-2 h-2 rounded-full ${idx === n ? "bg-[#F4D147]" : "bg-gray-300"}`}
+                  className={`w-2 h-2 rounded-full ${idx === n ? "bg-[#3483FA]" : "bg-gray-300"}`}
                 />
               ))}
             </div>
