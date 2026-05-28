@@ -163,7 +163,10 @@ function Index() {
 
         {/* Timeline */}
         <div className="-mt-12 relative z-10">
-          <div className="bg-white shadow-md p-6 pt-10 relative border-t-4 border-white">
+          {/* White divider line between hero and content */}
+          <div className="h-1 bg-white w-full shadow-md" />
+          <div className="bg-white shadow-md p-6 pt-10 relative">
+
 
 
 
