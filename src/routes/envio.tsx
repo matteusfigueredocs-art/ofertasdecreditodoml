@@ -46,17 +46,7 @@ function Envio() {
   useEffect(() => {
     if (stage !== "searching") return;
     setStepIdx(0);
-    const timers: ReturnType<typeof setTimeout>[] = [];
-    searchSteps.forEach((_, i) => {
-      timers.push(setTimeout(() => setStepIdx(i + 1), (i + 1) * 600));
-    });
-    timers.push(setTimeout(() => setStage("options"), searchSteps.length * 600 + 400));
-    return () => timers.forEach(clearTimeout);
-  }, [stage]);
-  useEffect(() => {
-    if (stage !== "searching") return;
-    setStepIdx(0);
-    const perStep = 2200; // ~10s total (4 * 2200 + 400)
+    const perStep = 2200; // ~10s total
     const timers: ReturnType<typeof setTimeout>[] = [];
     searchSteps.forEach((_, i) => {
       timers.push(setTimeout(() => setStepIdx(i + 1), (i + 1) * perStep));
@@ -64,6 +54,15 @@ function Envio() {
     timers.push(setTimeout(() => setStage("options"), searchSteps.length * perStep + 400));
     return () => timers.forEach(clearTimeout);
   }, [stage]);
+
+  const handleSelect = (method: "sedex" | "pac" | "loggi") => {
+    const current = typeof window !== "undefined" ? window.location.search : "";
+    const sp = new URLSearchParams(current);
+    sp.set("metodo", method);
+    navigate({ to: "/confirmacao", search: Object.fromEntries(sp) as never });
+  };
+
+  return (
     <div className="min-h-screen bg-white flex flex-col">
       <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
