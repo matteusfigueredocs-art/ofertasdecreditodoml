@@ -67,6 +67,21 @@ function Aprovado() {
             Agora é só finalizar seu cartão e começar a aproveitar
           </p>
 
+          {/* Cartão na mão com o nome do titular */}
+          <div className="relative flex justify-center mb-4">
+            <img
+              src={cartaoMao}
+              alt="Cartão Mercado Livre"
+              className="w-64 h-auto object-contain drop-shadow-xl"
+            />
+            <span
+              className="absolute text-white font-medium tracking-[0.14em] uppercase text-[11px] whitespace-nowrap"
+              style={{ top: "44%", left: "28%", transform: "translateX(-50%)" }}
+            >
+              {nome}
+            </span>
+          </div>
+
           <div className="relative rounded-2xl bg-[#FFE600] p-6 mb-6 text-center shadow-[0_8px_24px_-8px_rgba(255,230,0,0.6)] border border-[#E6CF00] overflow-hidden">
             <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/30" />
             <div className="absolute -bottom-12 -left-10 w-28 h-28 rounded-full bg-black/5" />
