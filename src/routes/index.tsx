@@ -22,6 +22,9 @@ import cartaoEntregaImg from "@/assets/cartao-entrega.png";
 import step1Img from "@/assets/step-1.png";
 import step2Img from "@/assets/step-2.png";
 import step3Img from "@/assets/step-3.png";
+import clienteMariana from "@/assets/cliente-mariana.png";
+import clienteJoao from "@/assets/cliente-joao.png";
+import clienteCarlos from "@/assets/cliente-carlos.png";
 const steps = [
   { img: step1Img, text: "Preencha seu CPF para consultar seu limite de cartão pré-aprovado" },
   { img: step2Img, text: "Escolha seu modelo de cartão e forma de envio" },
