@@ -137,9 +137,9 @@ function Index() {
         {/* Bloco entrega do cartão */}
         <div className="px-4 mt-6">
           <div className="relative bg-white rounded-2xl shadow-md overflow-hidden">
-            <div className="absolute inset-x-0 top-0 h-24 bg-[#FFE600]" />
             <div className="relative px-6 pt-6 pb-2 text-center">
-              <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur text-gray-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-gray-200 shadow-sm">
+              <span className="inline-flex items-center gap-1.5 bg-[#FFE600] text-gray-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+
                 <i className="fas fa-truck-fast" /> Entrega rápida e segura
               </span>
               <h3 className="mt-3 text-xl font-bold text-gray-900 leading-tight">
