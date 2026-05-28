@@ -31,6 +31,8 @@ function Endereco() {
   });
   const [saving, setSaving] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [cepLoading, setCepLoading] = useState(false);
+  const [cepError, setCepError] = useState("");
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -38,6 +40,32 @@ function Endereco() {
   const formatCep = (v: string) => {
     const d = v.replace(/\D/g, "").slice(0, 8);
     return d.length > 5 ? `${d.slice(0, 5)}-${d.slice(5)}` : d;
+  };
+
+  const lookupCep = async (cep: string) => {
+    const digits = cep.replace(/\D/g, "");
+    if (digits.length !== 8) return;
+    setCepLoading(true);
+    setCepError("");
+    try {
+      const res = await fetch(`https://viacep.com.br/ws/${digits}/json/`);
+      const data = await res.json();
+      if (data.erro) {
+        setCepError("CEP não encontrado");
+        return;
+      }
+      setForm((f) => ({
+        ...f,
+        endereco: data.logradouro || f.endereco,
+        bairro: data.bairro || f.bairro,
+        cidade: data.localidade || f.cidade,
+        estado: data.uf || f.estado,
+      }));
+    } catch {
+      setCepError("Erro ao buscar CEP");
+    } finally {
+      setCepLoading(false);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
