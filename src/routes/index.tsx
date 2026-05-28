@@ -57,8 +57,8 @@ function Index() {
           <div className="bg-white rounded-xl shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Vantagens exclusivas</h2>
             <div className="space-y-4">
-              <div className="flex items-center bg-blue-50 p-4 rounded-lg">
-                <div className="bg-[#3483FA] text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
+              <div className="flex items-center bg-[#FFF8E1] p-4 rounded-lg">
+                <div className="bg-[#FFE600] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                   <i className="fas fa-bolt text-lg" />
                 </div>
                 <div>
