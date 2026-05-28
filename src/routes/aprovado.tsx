@@ -86,6 +86,8 @@ function Aprovado() {
             </span>
           </div>
 
+          <div className="relative rounded-2xl bg-[#FFE600] p-6 mb-6 text-center shadow-[0_8px_24px_-8px_rgba(255,230,0,0.6)] border border-[#E6CF00] overflow-hidden">
+            <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/30" />
             <div className="absolute -bottom-12 -left-10 w-28 h-28 rounded-full bg-black/5" />
             <p className="relative text-[11px] uppercase tracking-[0.18em] text-gray-800 font-semibold">
               Limite aprovado
@@ -94,6 +96,7 @@ function Aprovado() {
               R$ {limite.toLocaleString("pt-BR")},00
             </p>
           </div>
+
 
           <div className="space-y-3 mb-6">
 
