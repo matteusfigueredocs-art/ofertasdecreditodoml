@@ -58,7 +58,7 @@ function Personalizar() {
           {/* Credit card preview - 3D rotating (portrait, flat color like reference) */}
           <div className="card-3d-scene mb-6 flex justify-center">
             <div className="card-3d-rotator relative w-[62%] max-w-[260px] aspect-[1/1.586]">
-              {/* FRONT */}
+              {/* FRONT - apenas imagem de referência */}
               <div
                 className="card-3d-face absolute inset-0 rounded-2xl shadow-2xl overflow-hidden"
                 style={{
@@ -68,52 +68,7 @@ function Personalizar() {
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
                 }}
-              >
-                {/* ML handshake logo - top left */}
-                <img
-                  src={mlHandshake}
-                  alt="Mercado Livre"
-                  className="absolute top-4 left-4 h-9 w-9 object-contain drop-shadow"
-                />
-
-                {/* PLATINUM - top right */}
-                <span className={`absolute top-5 right-4 ${platinumColor} text-[11px] tracking-[0.18em] font-semibold`}>
-                  PLATINUM
-                </span>
-
-                {/* Chip - upper middle left */}
-                <img
-                  src={cardChip}
-                  alt="Chip"
-                  className="absolute left-4 top-[28%] w-11 h-8 object-contain drop-shadow"
-                />
-
-                {/* Contactless - upper middle right */}
-                <svg
-                  viewBox="0 0 24 24"
-                  className={`absolute right-4 top-[29%] w-6 h-6 ${textColor} rotate-90`}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                >
-                  <path d="M5 8c4-4 10-4 14 0" />
-                  <path d="M8 11c2.5-2.5 5.5-2.5 8 0" />
-                  <path d="M11 14c1-1 2-1 2 0" />
-                </svg>
-
-                {/* Name */}
-                <div className={`absolute left-4 right-4 top-[62%] ${textColor} font-semibold tracking-wider text-[13px]`}>
-                  {nome}
-                </div>
-
-                {/* Mastercard - bottom right */}
-                <img
-                  src={mastercard}
-                  alt="Mastercard"
-                  className="absolute bottom-4 right-4 h-8 object-contain"
-                />
-              </div>
+              />
 
               {/* BACK */}
               <div
@@ -124,15 +79,8 @@ function Personalizar() {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
-              >
-                <div className="absolute left-0 right-0 top-6 h-10 bg-black/80" />
-                <div className="absolute left-3 right-10 top-24 h-7 bg-white/90 rounded-sm flex items-center justify-end px-2">
-                  <div className="text-[10px] text-gray-500 tracking-widest">123</div>
-                </div>
-                <div className="absolute bottom-3 left-0 right-0 text-center text-[8px] text-white/70 tracking-wider">
-                  mercadolivre.com
-                </div>
-              </div>
+              />
+
 
 
             </div>
