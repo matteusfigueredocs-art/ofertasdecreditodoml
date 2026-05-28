@@ -61,7 +61,7 @@ function Personalizar() {
                 style={{
                   backgroundColor: card.value,
                   backgroundImage:
-                    "linear-gradient(90deg, rgba(0,0,0,.32) 0 18%, rgba(0,0,0,.08) 18%, transparent 42%), radial-gradient(circle at 72% 18%, rgba(255,255,255,.14), transparent 34%), linear-gradient(145deg, rgba(255,255,255,.10), rgba(0,0,0,.20))",
+                    "radial-gradient(circle at 72% 18%, rgba(255,255,255,.14), transparent 34%), linear-gradient(145deg, rgba(255,255,255,.10), rgba(0,0,0,.20))",
                 }}
               >
                 <img
