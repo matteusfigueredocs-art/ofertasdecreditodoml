@@ -27,6 +27,9 @@ import clientePatricia1 from "@/assets/cliente-patricia-1.png";
 import clienteJuliana from "@/assets/cliente-juliana.png";
 import clienteJoaoPedro from "@/assets/cliente-joao-pedro.png";
 import clientePatricia2 from "@/assets/cliente-patricia-2.png";
+import clienteMariana from "@/assets/cliente-mariana.png";
+import clienteJoao from "@/assets/cliente-joao.png";
+import clienteCarlos from "@/assets/cliente-carlos.png";
 
 const steps = [
   { img: step1Img, text: "Preencha seu CPF para consultar seu limite de cartão pré-aprovado" },
@@ -40,7 +43,11 @@ const clientes = [
   { img: clienteJuliana, name: "JULIANA FERREIRA", city: "Cartão entregue", text: "Chegou direitinho e já consegui ativar sem dificuldade." },
   { img: clienteJoaoPedro, name: "JOÃO PEDRO LIMA", city: "Cartão entregue", text: "A entrega foi tranquila e o cartão veio certinho." },
   { img: clientePatricia2, name: "PATRÍCIA ALVES", city: "Cartão entregue", text: "Tudo chegou bem embalado e sem complicação." },
+  { img: clienteMariana, name: "MARIANA SOUZA", city: "Cartão entregue", text: "Atendimento ótimo e o cartão chegou rapidinho." },
+  { img: clienteJoao, name: "JOÃO SILVA", city: "Cartão entregue", text: "Processo simples do começo ao fim, recomendo." },
+  { img: clienteCarlos, name: "CARLOS OLIVEIRA", city: "Cartão entregue", text: "Recebi no prazo e já estou usando sem problemas." },
 ];
+
 
 function Index() {
   const [idx, setIdx] = useState(0);
