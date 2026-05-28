@@ -127,8 +127,17 @@ function Index() {
 
             <div className="relative">
               <div className="text-center">
-                <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                  <img src={steps[idx].img} alt={`Etapa ${idx + 1}`} className="mx-auto max-h-64 object-contain" />
+                <div className="bg-gray-50 rounded-lg p-4 mb-4 relative h-64 overflow-hidden">
+                  {steps.map((s, i) => (
+                    <img
+                      key={i}
+                      src={s.img}
+                      alt={`Etapa ${i + 1}`}
+                      className={`absolute inset-0 m-auto max-h-full max-w-full object-contain transition-opacity duration-700 ease-in-out ${
+                        idx === i ? "opacity-100" : "opacity-0"
+                      }`}
+                    />
+                  ))}
                 </div>
                 <p className="text-gray-800 font-medium">
                   <span className="font-bold">{idx + 1}.</span> {steps[idx].text}
