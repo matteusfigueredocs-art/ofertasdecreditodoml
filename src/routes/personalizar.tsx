@@ -17,7 +17,7 @@ export const Route = createFileRoute("/personalizar")({
 });
 
 const colors = [
-  { name: "Azul", value: "#3483FA", gradient: "from-[#3483FA] to-[#2968C8]" },
+  { name: "Azul", value: "#3483FA", gradient: "from-[#FFE600] to-[#2968C8]" },
   { name: "Amarelo", value: "#FFE600", gradient: "from-[#FFE600] to-[#E6CC00]" },
   { name: "Vermelho", value: "#E53935", gradient: "from-[#E53935] to-[#B71C1C]" },
   { name: "Cinza", value: "#9E9E9E", gradient: "from-[#9E9E9E] to-[#616161]" },
@@ -116,7 +116,7 @@ function Personalizar() {
                 onClick={() => setSelected(i)}
                 aria-label={`Cor ${c.name}`}
                 className={`w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all ${
-                  selected === i ? "ring-2 ring-offset-2 ring-[#3483FA] scale-110" : "hover:scale-105"
+                  selected === i ? "ring-2 ring-offset-2 ring-[#FFE600] scale-110" : "hover:scale-105"
                 }`}
                 style={{ backgroundColor: c.value }}
               >
@@ -131,7 +131,7 @@ function Personalizar() {
 
           <button
             onClick={() => navigate({ to: "/fatura" })}
-            className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md shadow-md transition-all"
+            className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-white text-lg font-semibold py-4 rounded-md shadow-md transition-all"
           >
             Continuar
           </button>
@@ -142,8 +142,8 @@ function Personalizar() {
         <p>© 2025 Mercado Instituição de Pagamento Ltda.</p>
         <p className="mt-1">
           CNPJ: 10.573.521/0001-91 ·{" "}
-          <a href="#" className="text-[#3483FA]">Termos e condições</a> ·{" "}
-          <a href="#" className="text-[#3483FA]">Privacidade</a>
+          <a href="#" className="text-gray-900">Termos e condições</a> ·{" "}
+          <a href="#" className="text-gray-900">Privacidade</a>
         </p>
       </footer>
     </div>

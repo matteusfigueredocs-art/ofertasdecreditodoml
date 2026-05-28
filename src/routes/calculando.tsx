@@ -73,7 +73,7 @@ function Calculando() {
       <main className="flex-1 flex items-start justify-center px-3 py-5">
         <div className="w-full max-w-md">
           {/* Hero card with limite animado */}
-          <div className="relative bg-gradient-to-br from-[#3483FA] to-[#1E5BBA] rounded-2xl shadow-xl p-5 text-white overflow-hidden">
+          <div className="relative bg-gradient-to-br from-[#FFE600] to-[#1E5BBA] rounded-2xl shadow-xl p-5 text-white overflow-hidden">
             <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/10" />
             <div className="absolute -bottom-12 -left-8 w-28 h-28 rounded-full bg-[#FFE600]/20" />
 
@@ -153,7 +153,7 @@ function Calculando() {
 
           {/* Trust badge */}
           <div className="mt-4 flex items-center justify-center gap-2 text-[11px] text-gray-600">
-            <ShieldCheck className="w-4 h-4 text-[#3483FA]" />
+            <ShieldCheck className="w-4 h-4 text-gray-900" />
             <span>Análise 100% segura e criptografada</span>
           </div>
         </div>
@@ -175,9 +175,9 @@ function StepRow({
 }) {
   const bg =
     state === "done"
-      ? "bg-[#EAF2FE] border-l-4 border-[#3483FA]"
+      ? "bg-[#EAF2FE] border-l-4 border-[#FFE600]"
       : state === "active"
-      ? "bg-[#EAF2FE] border-l-4 border-[#3483FA]"
+      ? "bg-[#EAF2FE] border-l-4 border-[#FFE600]"
       : "bg-gray-50 border-l-4 border-gray-200";
 
   const iconBg =
@@ -201,9 +201,9 @@ function StepRow({
         <span className={`font-semibold text-[13px] ${labelColor}`}>{label}</span>
       </div>
       <div className="text-[11px]">
-        {status === "done" && <span className="text-[#3483FA] font-semibold">✓ Ok</span>}
+        {status === "done" && <span className="text-gray-900 font-semibold">✓ Ok</span>}
         {status === "loading" && (
-          <span className="text-[#3483FA] tracking-widest animate-pulse font-bold">•••</span>
+          <span className="text-gray-900 tracking-widest animate-pulse font-bold">•••</span>
         )}
         {status === "waiting" && <span className="text-gray-400">Aguardando</span>}
       </div>

@@ -72,10 +72,10 @@ function Pagamento() {
         <div className="w-full max-w-md bg-white rounded-xl shadow-sm p-6 md:p-8">
           <div className="text-center mb-2">
             <div className="text-sm font-semibold text-gray-700">Seu Limite Disponível</div>
-            <div className="text-3xl font-bold text-[#3483FA] mt-1">R$ 4.750</div>
+            <div className="text-3xl font-bold text-gray-900 mt-1">R$ 4.750</div>
           </div>
 
-          <div className="mt-5 mb-6 rounded-2xl p-5 bg-gradient-to-br from-[#3483FA] to-[#1d5fc4] text-white shadow-lg aspect-[1.6] flex flex-col justify-between">
+          <div className="mt-5 mb-6 rounded-2xl p-5 bg-gradient-to-br from-[#FFE600] to-[#1d5fc4] text-white shadow-lg aspect-[1.6] flex flex-col justify-between">
             <div className="w-10 h-7 rounded bg-[#FFD700]/90 shadow-inner" />
             <div className="text-lg font-semibold tracking-[0.2em]">
               4532 •••• •••• ••••
@@ -107,11 +107,11 @@ function Pagamento() {
 
           <button
             onClick={() => navigate({ to: "/" })}
-            className="w-full bg-[#3483FA] hover:bg-[#2968c8] text-white font-bold py-4 rounded-lg shadow-md transition-colors"
+            className="w-full bg-[#FFE600] hover:bg-[#2968c8] text-white font-bold py-4 rounded-lg shadow-md transition-colors"
           >
             Pagar Frete
           </button>
-          <div className="text-center text-xs text-[#3483FA] font-semibold mt-2 flex items-center justify-center gap-1">
+          <div className="text-center text-xs text-gray-900 font-semibold mt-2 flex items-center justify-center gap-1">
             🔒 Pagamento 100% seguro
           </div>
 
@@ -169,7 +169,7 @@ function Pagamento() {
           </div>
 
           <div className="mt-6 flex items-center gap-3 p-3 bg-[#EAF2FE] rounded-lg">
-            <div className="w-9 h-9 rounded-full bg-[#3483FA] flex items-center justify-center text-white font-bold shrink-0">
+            <div className="w-9 h-9 rounded-full bg-[#FFE600] flex items-center justify-center text-white font-bold shrink-0">
               ✓
             </div>
             <div className="text-sm">

