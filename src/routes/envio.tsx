@@ -213,20 +213,20 @@ function Envio() {
                 onClick={() => handleSelect("loggi")}
                 className="w-full border border-gray-200 rounded-xl p-4 mb-3 flex items-center gap-4 hover:border-[#FFE600] hover:shadow-sm transition-all text-left bg-white"
               >
-                <div className="w-20 h-14 rounded-lg bg-white border border-gray-200 flex items-center justify-center shrink-0 p-1.5">
-                  <img src={loggiLogo} alt="Loggi" className="max-h-full max-w-full object-contain" />
+                <div className="w-20 h-14 rounded-lg bg-white border border-gray-200 flex items-center justify-center shrink-0 p-0.5 overflow-hidden">
+                  <img src={loggiLogo} alt="Loggi" className="w-full h-full object-contain scale-125" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-2">
                     <div className="font-bold text-gray-800">Loggi</div>
                     <div className="font-bold text-gray-800 whitespace-nowrap">R$ 31,67</div>
                   </div>
-                  <div className="text-sm text-gray-600">2 a 4 dias úteis</div>
+                  <div className="text-sm text-gray-600">1 dia útil</div>
                   <div className="text-xs text-gray-900 font-semibold mt-0.5">
                     ✓ Rastreamento em tempo real
                   </div>
                   <div className="text-xs text-gray-500 italic mt-0.5">
-                    Chegará entre 30/05 a 03/06
+                    Chegará até 28/05
                   </div>
                 </div>
               </button>
