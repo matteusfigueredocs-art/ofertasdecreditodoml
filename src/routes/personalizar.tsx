@@ -2,7 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
-import mlHandshake from "@/assets/ml-handshake-white.png";
+import mlHandshake from "@/assets/ml-handshake.png";
 import mastercard from "@/assets/mastercard.png";
 import cardChip from "@/assets/card-chip.png";
 import cardBg from "@/assets/card-bg.png";
@@ -62,14 +62,13 @@ function Personalizar() {
                 style={{
                   backgroundColor: card.value,
                   backgroundImage:
-                    "linear-gradient(90deg, rgba(0,0,0,.26) 0 17%, rgba(0,0,0,0) 17%), radial-gradient(circle at 78% 31%, rgba(255,255,255,.16), transparent 36%), linear-gradient(160deg, rgba(255,255,255,.10), rgba(0,0,0,.18))",
+                    "radial-gradient(circle at 24% 18%, rgba(255,255,255,.18), transparent 24%), linear-gradient(160deg, rgba(255,255,255,.08), rgba(0,0,0,.12))",
                 }}
               >
-                <div className="absolute inset-y-0 left-0 w-[17%] bg-black/18" />
                 <img
                   src={mlHandshake}
                   alt="Mercado Livre"
-                  className="absolute top-5 left-[26%] w-11 h-auto"
+                  className="absolute top-5 left-8 w-14 h-auto"
                 />
                 <span
                   className={`absolute top-8 right-6 text-[10px] font-semibold tracking-[0.16em] ${platinumColor}`}
@@ -79,14 +78,14 @@ function Personalizar() {
                 <img
                   src={cardChip}
                   alt="Chip"
-                  className="absolute top-[31%] left-[24%] w-9 h-auto"
+                  className="absolute top-[31%] left-8 w-11 h-auto"
                 />
                 <svg
-                  className={`absolute top-[32%] left-[43%] w-6 h-6 ${subTextColor}`}
+                  className={`absolute top-[30%] right-8 w-11 h-11 ${subTextColor}`}
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1.8"
+                  strokeWidth="1.9"
                   strokeLinecap="round"
                 >
                   <path d="M6.5 8.5a5 5 0 0 1 0 7" />
@@ -94,32 +93,14 @@ function Personalizar() {
                   <path d="M13.5 3.8a12 12 0 0 1 0 16.4" />
                 </svg>
                 <div
-                  className={`absolute right-5 top-[39%] text-right font-mono text-lg leading-[1.38] tracking-[0.08em] ${textColor}`}
-                >
-                  <div>1234</div>
-                  <div className="border-y border-current/75 py-0.5">5678</div>
-                  <div>9101</div>
-                  <div>1213</div>
-                </div>
-                <div
-                  className={`absolute right-5 top-[73%] flex items-end gap-2 text-right font-mono ${textColor}`}
-                >
-                  <span className="text-[6px] leading-[.9] opacity-80">
-                    EXP.
-                    <br />
-                    DATE
-                  </span>
-                  <span className="text-[10px] tracking-[0.08em]">05/31</span>
-                </div>
-                <div
-                  className={`absolute left-[24%] bottom-10 max-w-[48%] truncate text-[10px] font-medium tracking-[0.12em] ${textColor}`}
+                  className={`absolute left-8 bottom-[25%] max-w-[66%] truncate text-sm font-medium tracking-[0.12em] ${textColor}`}
                 >
                   {nome}
                 </div>
                 <img
                   src={mastercard}
                   alt="Mastercard"
-                  className="absolute bottom-6 right-5 w-12 h-auto"
+                  className="absolute bottom-6 right-6 w-14 h-auto"
                 />
               </div>
 
