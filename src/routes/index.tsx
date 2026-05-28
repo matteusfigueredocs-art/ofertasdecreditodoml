@@ -55,38 +55,33 @@ function Index() {
           <img src={heroImg} alt="Cartão Mercado Pago Pré-aprovado" className="w-full h-auto object-contain block" />
         </div>
 
-        {/* Vantagens */}
+        {/* Timeline */}
         <div className="px-4 -mt-3 relative z-10">
           <div className="bg-white rounded-xl shadow-md p-6">
-            <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Vantagens exclusivas</h2>
-            <div className="space-y-4">
-              <div className="flex items-center bg-white p-4 rounded-lg">
-                <div className="bg-[#3483FA] text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
-                  <i className="fas fa-bolt text-lg" />
+            <div className="flex justify-center mb-4">
+              <div className="w-12 h-1.5 rounded-full bg-[#F4D147]" />
+            </div>
+            <h2 className="text-2xl font-extrabold text-gray-900 mb-8 text-center leading-tight">
+              Aproveite seu cartão de crédito de forma segura, rápida e sem burocracia
+            </h2>
+
+            <div className="relative pl-14">
+              {[
+                { title: "Peça seu cartão de crédito", text: "Você pede em poucas etapas e nós cuidamos do resto." },
+                { title: "Vamos analisar seu pedido", text: "Queremos te conhecer analisando seu histórico com relação a crédito." },
+                { title: "Receba seu cartão", text: "Aprovado, seu cartão chega no conforto da sua casa." },
+              ].map((item, i, arr) => (
+                <div key={i} className="relative pb-8 last:pb-0">
+                  {i < arr.length - 1 && (
+                    <span className="absolute left-[-32px] top-10 bottom-0 w-0.5 bg-[#3483FA]" />
+                  )}
+                  <div className="absolute left-[-46px] top-0 w-10 h-10 rounded-full border-2 border-[#3483FA] bg-white flex items-center justify-center text-[#3483FA] font-bold">
+                    {i + 1}
+                  </div>
+                  <h3 className="font-bold text-gray-900 text-base">{item.title}</h3>
+                  <p className="text-sm text-gray-600 mt-1">{item.text}</p>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800">Crédito na hora</h3>
-                  <p className="text-sm text-gray-600">Para usar onde e quando quiser!</p>
-                </div>
-              </div>
-              <div className="flex items-center bg-white p-4 rounded-lg">
-                <div className="bg-[#3483FA] text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
-                  <i className="fas fa-shield-alt text-lg" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800">Sem burocracia</h3>
-                  <p className="text-sm text-gray-600">Sem consulta ao SPC/Serasa.</p>
-                </div>
-              </div>
-              <div className="flex items-center bg-white p-4 rounded-lg">
-                <div className="bg-[#3483FA] text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
-                  <i className="fas fa-credit-card text-lg" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-800">Cartão para seu dia a dia</h3>
-                  <p className="text-sm text-gray-600">Use em lojas físicas e online.</p>
-                </div>
-              </div>
+              ))}
             </div>
 
             <button
@@ -102,6 +97,7 @@ function Index() {
             </div>
           </div>
         </div>
+
 
 
         {/* Como Solicitar - Fotos */}
