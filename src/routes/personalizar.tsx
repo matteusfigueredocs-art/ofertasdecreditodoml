@@ -109,13 +109,11 @@ function Personalizar() {
                 style={{
                   backgroundColor: card.value,
                   backgroundImage:
-                    "linear-gradient(90deg, rgba(0,0,0,.34) 0 18%, rgba(0,0,0,.10) 18%, transparent 44%), linear-gradient(145deg, rgba(255,255,255,.08), rgba(0,0,0,.24))",
+                    "linear-gradient(145deg, rgba(255,255,255,.08), rgba(0,0,0,.24))",
                 }}
               >
                 <div className={`absolute top-7 right-7 text-right ${textColor}`}>
                   <div className="text-[9px] font-semibold tracking-[0.16em] opacity-90">PLATINUM</div>
-                  <div className="mt-1 text-[14px] font-bold leading-[.9]">mercado</div>
-                  <div className="text-[14px] font-bold leading-[.9]">livre</div>
                 </div>
                 <div className={`absolute left-8 top-[31%] max-w-[42%] truncate text-[9px] font-medium tracking-[0.12em] ${textColor}`}>
                   {nome}
