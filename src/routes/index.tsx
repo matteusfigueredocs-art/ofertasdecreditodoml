@@ -293,9 +293,8 @@ function Index() {
         {/* Como Solicitar - Carrossel */}
         <div id="como-solicitar">
           <div className="bg-white shadow-md p-6">
-
-          <div className="bg-white rounded-xl shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Como solicitar?</h2>
+
 
             <div className="flex items-center justify-center gap-2 mb-4">
               {steps.map((_, i) => (
