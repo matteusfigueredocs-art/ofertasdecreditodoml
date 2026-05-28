@@ -76,7 +76,7 @@ function Confirmacao() {
               </svg>
             </div>
             <div className="font-bold text-gray-900 text-sm">
-              Taxa de envio gerada com sucesso!
+              Custo de entrega calculado com sucesso!
             </div>
           </div>
 
