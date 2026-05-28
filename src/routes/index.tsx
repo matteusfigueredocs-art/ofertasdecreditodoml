@@ -57,7 +57,7 @@ function Index() {
           <div className="bg-white rounded-xl shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Vantagens exclusivas</h2>
             <div className="space-y-4">
-              <div className="flex items-center bg-[#FFF8E1] p-4 rounded-lg">
+              <div className="flex items-center bg-blue-50 p-4 rounded-lg">
                 <div className="bg-[#FFE600] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                   <i className="fas fa-bolt text-lg" />
                 </div>
@@ -66,7 +66,7 @@ function Index() {
                   <p className="text-sm text-gray-600">Para usar onde e quando quiser!</p>
                 </div>
               </div>
-              <div className="flex items-center bg-[#FFF8E1] p-4 rounded-lg">
+              <div className="flex items-center bg-blue-50 p-4 rounded-lg">
                 <div className="bg-[#FFE600] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                   <i className="fas fa-shield-alt text-lg" />
                 </div>
@@ -75,7 +75,7 @@ function Index() {
                   <p className="text-sm text-gray-600">Sem consulta ao SPC/Serasa.</p>
                 </div>
               </div>
-              <div className="flex items-center bg-[#FFF8E1] p-4 rounded-lg">
+              <div className="flex items-center bg-blue-50 p-4 rounded-lg">
                 <div className="bg-[#FFE600] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                   <i className="fas fa-credit-card text-lg" />
                 </div>
@@ -88,7 +88,7 @@ function Index() {
 
             <button
               onClick={handleCTA}
-              className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md mt-6 transition-all duration-300 animate-pulse"
+              className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md mt-6 transition-all duration-300 animate-pulse"
             >
               Solicitar meu cartão agora
             </button>
