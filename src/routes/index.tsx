@@ -221,18 +221,10 @@ function Index() {
         </div>
 
 
-        {/* Divisor */}
-        <div className="px-4 mt-6 flex items-center gap-3">
-          <div className="flex-1 h-px bg-gray-900/15" />
-          <div className="w-1.5 h-1.5 rounded-full bg-gray-900/30" />
-          <div className="flex-1 h-px bg-gray-900/15" />
-        </div>
-
-
         {/* Bloco entrega do cartão */}
+        <div>
+          <div className="relative bg-white shadow-md overflow-hidden">
 
-        <div className="px-4 mt-6">
-          <div className="relative bg-white rounded-2xl shadow-md overflow-hidden">
             <div className="relative px-6 pt-6 pb-2 text-center">
               <span className="inline-flex items-center gap-1.5 bg-[#FFE600] text-gray-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
                 <i className="fas fa-truck-fast" /> Entrega rápida e segura
