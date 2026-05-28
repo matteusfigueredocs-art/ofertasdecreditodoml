@@ -29,11 +29,31 @@ const steps = [
 
 function Index() {
   const [idx, setIdx] = useState(0);
+  const [activeStep, setActiveStep] = useState(-1);
+  const timelineRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const t = setInterval(() => setIdx((i) => (i + 1) % 3), 5000);
     return () => clearInterval(t);
+  }, []);
+
+  useEffect(() => {
+    const el = timelineRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          [0, 1, 2].forEach((i) => {
+            setTimeout(() => setActiveStep(i), i * 700);
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   const handleCTA = () => {
