@@ -57,7 +57,7 @@ function Endereco() {
   const labelCls = "block text-sm font-semibold text-gray-800 mb-1.5";
 
   return (
-    <div className="min-h-screen bg-[#EEEEEE] flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col">
       <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>

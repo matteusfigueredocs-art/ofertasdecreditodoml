@@ -38,7 +38,7 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-[#EEEEEE]">
+    <div className="min-h-screen bg-white">
       <div className="max-w-md mx-auto min-h-screen bg-white relative">
         {/* Header */}
         <div className="flex items-center px-4 py-3 bg-white border-b border-gray-100">

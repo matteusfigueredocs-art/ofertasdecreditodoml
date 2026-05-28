@@ -34,7 +34,7 @@ function Processando() {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-[#EEEEEE] flex flex-col relative overflow-hidden">
+    <div className="min-h-screen bg-white flex flex-col relative overflow-hidden">
       <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
