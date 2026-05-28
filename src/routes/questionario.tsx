@@ -178,7 +178,7 @@ function Questionario() {
                       key={label}
                       className={`flex items-center justify-between p-3 rounded-lg border ${
                         done
-                          ? "border-[#00A650] bg-green-50"
+                          ? "border-[#3483FA] bg-blue-50"
                           : active
                           ? "border-[#3483FA] bg-blue-50"
                           : "border-gray-200 bg-gray-50"
@@ -186,7 +186,7 @@ function Questionario() {
                     >
                       <span className="text-sm font-medium text-gray-800">{label}</span>
                       {done ? (
-                        <span className="w-6 h-6 rounded-full bg-[#00A650] flex items-center justify-center">
+                        <span className="w-6 h-6 rounded-full bg-[#3483FA] flex items-center justify-center">
                           <i className="fas fa-check text-white text-xs" />
                         </span>
                       ) : active ? (

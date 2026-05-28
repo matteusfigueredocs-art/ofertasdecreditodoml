@@ -153,7 +153,7 @@ function Calculando() {
 
           {/* Trust badge */}
           <div className="mt-4 flex items-center justify-center gap-2 text-[11px] text-gray-600">
-            <ShieldCheck className="w-4 h-4 text-[#00A650]" />
+            <ShieldCheck className="w-4 h-4 text-[#3483FA]" />
             <span>Análise 100% segura e criptografada</span>
           </div>
         </div>
@@ -175,13 +175,13 @@ function StepRow({
 }) {
   const bg =
     state === "done"
-      ? "bg-[#E8F5EC] border-l-4 border-[#00A650]"
+      ? "bg-[#EAF2FE] border-l-4 border-[#3483FA]"
       : state === "active"
       ? "bg-[#EAF2FE] border-l-4 border-[#3483FA]"
       : "bg-gray-50 border-l-4 border-gray-200";
 
   const iconBg =
-    state === "done" ? "#00A650" : state === "active" ? "#3483FA" : "#9CA3AF";
+    state === "done" ? "#3483FA" : state === "active" ? "#3483FA" : "#9CA3AF";
 
   const labelColor = state === "pending" ? "text-gray-500" : "text-gray-800";
 
@@ -201,7 +201,7 @@ function StepRow({
         <span className={`font-semibold text-[13px] ${labelColor}`}>{label}</span>
       </div>
       <div className="text-[11px]">
-        {status === "done" && <span className="text-[#00A650] font-semibold">✓ Ok</span>}
+        {status === "done" && <span className="text-[#3483FA] font-semibold">✓ Ok</span>}
         {status === "loading" && (
           <span className="text-[#3483FA] tracking-widest animate-pulse font-bold">•••</span>
         )}

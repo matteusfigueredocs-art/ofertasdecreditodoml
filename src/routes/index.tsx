@@ -94,7 +94,7 @@ function Index() {
             </button>
 
             <div className="flex items-center justify-center mt-4 pt-4 border-t border-gray-100 text-gray-600">
-              <i className="fas fa-lock mr-2 text-[#00A650]" />
+              <i className="fas fa-lock mr-2 text-[#3483FA]" />
               <span className="text-sm">Seus dados estão protegidos e seguros</span>
             </div>
           </div>

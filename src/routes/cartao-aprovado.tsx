@@ -50,7 +50,7 @@ function CartaoAprovado() {
       <main className="flex-1 w-full max-w-md mx-auto px-4 py-6 space-y-5">
         {/* Success */}
         <section className="text-center pt-2">
-          <div className="w-20 h-20 rounded-full bg-[#00A650] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-green-200">
+          <div className="w-20 h-20 rounded-full bg-[#3483FA] flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-200">
             <i className="fas fa-check text-white text-3xl" />
           </div>
           <h1 className="text-3xl font-extrabold text-gray-800">Parabéns!</h1>
@@ -58,10 +58,10 @@ function CartaoAprovado() {
         </section>
 
         {/* Approved card */}
-        <section className="bg-white border-2 border-[#00A650] rounded-xl p-6 text-center">
-          <div className="text-xs font-bold tracking-widest text-[#00A650]">LIMITE APROVADO</div>
-          <div className="text-4xl font-extrabold text-[#00A650] my-3">R$ 4.750,00</div>
-          <div className="inline-block bg-[#00A650] text-white text-xs font-semibold px-4 py-2 rounded-full">
+        <section className="bg-white border-2 border-[#3483FA] rounded-xl p-6 text-center">
+          <div className="text-xs font-bold tracking-widest text-[#3483FA]">LIMITE APROVADO</div>
+          <div className="text-4xl font-extrabold text-[#3483FA] my-3">R$ 4.750,00</div>
+          <div className="inline-block bg-[#3483FA] text-white text-xs font-semibold px-4 py-2 rounded-full">
             Cartão liberado em até 5 minutos
           </div>
           <div className="text-[11px] text-gray-500 mt-3">Sujeito à confirmação dos dados pessoais</div>
