@@ -61,7 +61,7 @@ function Index() {
             <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Vantagens exclusivas</h2>
             <div className="space-y-4">
               <div className="flex items-center bg-white p-4 rounded-lg">
-                <div className="bg-[#F4D147] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
+                <div className="bg-[#3483FA] text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                   <i className="fas fa-bolt text-lg" />
                 </div>
                 <div>
@@ -70,7 +70,7 @@ function Index() {
                 </div>
               </div>
               <div className="flex items-center bg-white p-4 rounded-lg">
-                <div className="bg-[#F4D147] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
+                <div className="bg-[#3483FA] text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                   <i className="fas fa-shield-alt text-lg" />
                 </div>
                 <div>
@@ -79,7 +79,7 @@ function Index() {
                 </div>
               </div>
               <div className="flex items-center bg-white p-4 rounded-lg">
-                <div className="bg-[#F4D147] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
+                <div className="bg-[#3483FA] text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                   <i className="fas fa-credit-card text-lg" />
                 </div>
                 <div>
@@ -91,7 +91,7 @@ function Index() {
 
             <button
               onClick={handleCTA}
-              className="w-full bg-[#F4D147] hover:bg-[#E5C238] text-gray-900 text-lg font-semibold py-4 rounded-md mt-6 transition-all duration-300 animate-pulse"
+              className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md mt-6 transition-all duration-300 animate-pulse"
             >
               Solicitar meu cartão agora
             </button>
