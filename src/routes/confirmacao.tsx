@@ -68,20 +68,20 @@ function Confirmacao() {
             Confirme os detalhes do seu pedido antes de finalizar
           </p>
 
-          <div className="bg-[#EAF2FE]/60 border-2 border-[#3483FA] rounded-lg p-3 flex items-center gap-3 mb-5">
-            <div className="w-8 h-8 rounded-full bg-[#3483FA] flex items-center justify-center shrink-0">
+          <div className="bg-[#EAF2FE]/60 border-2 border-[#FFE600] rounded-lg p-3 flex items-center gap-3 mb-5">
+            <div className="w-8 h-8 rounded-full bg-[#FFE600] flex items-center justify-center shrink-0">
               <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
-            <div className="font-bold text-[#3483FA] text-sm">
+            <div className="font-bold text-gray-900 text-sm">
               Taxa de envio gerada com sucesso!
             </div>
           </div>
 
           <div className="border border-gray-200 rounded-xl p-4 mb-4">
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-2.5 h-2.5 bg-[#3483FA] rounded-sm" />
+              <div className="w-2.5 h-2.5 bg-[#FFE600] rounded-sm" />
               <h2 className="font-bold text-gray-800">Detalhes do Envio</h2>
             </div>
             <div className="bg-gray-50 rounded-lg p-4 relative">
@@ -108,12 +108,12 @@ function Confirmacao() {
             <div className="bg-gray-50 rounded-lg p-4">
               <div className="font-bold text-gray-800 text-lg mb-1">{method.name}</div>
               <div className="flex items-center gap-2 text-sm text-gray-700 mb-2">
-                <div className="w-3.5 h-3.5 rounded-full border-2 border-[#3483FA] flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#3483FA]" />
+                <div className="w-3.5 h-3.5 rounded-full border-2 border-[#FFE600] flex items-center justify-center">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#FFE600]" />
                 </div>
                 Prazo de entrega: {method.days}
               </div>
-              <div className="inline-flex bg-[#EAF2FE] text-[#3483FA] text-xs font-semibold py-1 px-3 rounded-full">
+              <div className="inline-flex bg-[#EAF2FE] text-gray-900 text-xs font-semibold py-1 px-3 rounded-full">
                 ✓ Rastreamento incluído
               </div>
             </div>
@@ -128,7 +128,7 @@ function Confirmacao() {
 
           <button
             onClick={() => navigate({ to: "/pagamento", search: { nome: new URLSearchParams(typeof window !== "undefined" ? window.location.search : "").get("nome") ?? "" } as never })}
-            className="w-full bg-[#3483FA] hover:bg-[#2968c8] text-white font-bold py-4 rounded-lg shadow-md transition-colors tracking-wide"
+            className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 font-bold py-4 rounded-lg shadow-md transition-colors tracking-wide"
           >
             SIM, VOU QUERER!
           </button>

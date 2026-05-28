@@ -16,12 +16,12 @@ export function FunnelSteps({ current }: { current: number }) {
             const done = current > s.id;
             const active = current === s.id;
             const circleClass = done
-              ? "bg-[#3483FA] text-white border-[#3483FA]"
+              ? "bg-[#FFE600] text-gray-900 border-[#FFE600]"
               : active
-              ? "bg-white text-[#3483FA] border-[#3483FA] ring-4 ring-[#3483FA]/20"
+              ? "bg-white text-gray-900 border-[#FFE600] ring-4 ring-[#FFE600]/20"
               : "bg-white/70 text-gray-500 border-gray-400";
             const labelClass = active
-              ? "text-[#3483FA] font-bold"
+              ? "text-gray-900 font-bold"
               : done
               ? "text-gray-800 font-semibold"
               : "text-gray-600";
@@ -31,7 +31,7 @@ export function FunnelSteps({ current }: { current: number }) {
                 {i > 0 && (
                   <div
                     className={`absolute top-3 right-1/2 h-[2px] w-full ${
-                      prevDone ? "bg-[#3483FA]" : "bg-gray-400/50"
+                      prevDone ? "bg-[#FFE600]" : "bg-gray-400/50"
                     }`}
                   />
                 )}

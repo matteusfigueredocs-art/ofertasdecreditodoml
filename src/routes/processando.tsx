@@ -41,7 +41,7 @@ function Processando() {
       <FunnelSteps current={5} />
 
       <div className="absolute w-72 h-72 rounded-full bg-[#FFE600]/20 -top-20 -right-20 z-0" />
-      <div className="absolute w-56 h-56 rounded-full bg-[#3483FA]/10 -bottom-16 -left-16 z-0" />
+      <div className="absolute w-56 h-56 rounded-full bg-[#FFE600]/10 -bottom-16 -left-16 z-0" />
 
       <main className="flex-1 flex items-start justify-center px-4 py-8 relative z-10">
         <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6 md:p-8">
@@ -60,11 +60,11 @@ function Processando() {
                     {label}
                   </span>
                   {done ? (
-                    <span className="w-6 h-6 rounded-full bg-[#3483FA] text-white flex items-center justify-center text-xs">
+                    <span className="w-6 h-6 rounded-full bg-[#FFE600] text-gray-900 flex items-center justify-center text-xs">
                       ✓
                     </span>
                   ) : active ? (
-                    <span className="w-6 h-6 rounded-full border-2 border-[#3483FA] border-t-transparent animate-spin" />
+                    <span className="w-6 h-6 rounded-full border-2 border-[#FFE600] border-t-transparent animate-spin" />
                   ) : (
                     <span className="w-6 h-6 rounded-full border border-gray-300" />
                   )}
@@ -79,8 +79,8 @@ function Processando() {
         <p>© 2025 Mercado Instituição de Pagamento Ltda.</p>
         <p className="mt-1">
           CNPJ: 10.573.521/0001-91 ·{" "}
-          <a href="#" className="text-[#3483FA]">Termos e condições</a> ·{" "}
-          <a href="#" className="text-[#3483FA]">Privacidade</a>
+          <a href="#" className="text-gray-900">Termos e condições</a> ·{" "}
+          <a href="#" className="text-gray-900">Privacidade</a>
         </p>
       </footer>
     </div>
