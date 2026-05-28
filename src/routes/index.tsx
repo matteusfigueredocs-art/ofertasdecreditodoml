@@ -22,9 +22,12 @@ import cartaoEntregaImg from "@/assets/cartao-entrega.png";
 import step1Img from "@/assets/step-1.png";
 import step2Img from "@/assets/step-2.png";
 import step3Img from "@/assets/step-3.png";
-import clienteMariana from "@/assets/cliente-mariana.png";
-import clienteJoao from "@/assets/cliente-joao.png";
-import clienteCarlos from "@/assets/cliente-carlos.png";
+import clienteAndre from "@/assets/cliente-andre.png";
+import clientePatricia1 from "@/assets/cliente-patricia-1.png";
+import clienteJuliana from "@/assets/cliente-juliana.png";
+import clienteJoaoPedro from "@/assets/cliente-joao-pedro.png";
+import clientePatricia2 from "@/assets/cliente-patricia-2.png";
+
 const steps = [
   { img: step1Img, text: "Preencha seu CPF para consultar seu limite de cartão pré-aprovado" },
   { img: step2Img, text: "Escolha seu modelo de cartão e forma de envio" },
@@ -32,9 +35,11 @@ const steps = [
 ];
 
 const clientes = [
-  { img: clienteMariana, name: "Mariana Souza", city: "São Paulo, SP", text: "Pedi e em 3 dias o cartão chegou em casa. Super fácil!" },
-  { img: clienteJoao, name: "João Pedro Lima", city: "Curitiba, PR", text: "Aprovação foi rápida mesmo, sem burocracia nenhuma." },
-  { img: clienteCarlos, name: "Carlos Henrique", city: "Salvador, BA", text: "Chegou direitinho pelos Correios, embalagem linda." },
+  { img: clienteAndre, name: "ANDRÉ LIMA", city: "Cartão entregue", text: "Recebi meu cartão em casa e chegou tudo certinho." },
+  { img: clientePatricia1, name: "PATRÍCIA ALVES", city: "Cartão entregue", text: "Foi bem rápido e o cartão veio do jeito que eu esperava." },
+  { img: clienteJuliana, name: "JULIANA FERREIRA", city: "Cartão entregue", text: "Chegou direitinho e já consegui ativar sem dificuldade." },
+  { img: clienteJoaoPedro, name: "JOÃO PEDRO LIMA", city: "Cartão entregue", text: "A entrega foi tranquila e o cartão veio certinho." },
+  { img: clientePatricia2, name: "PATRÍCIA ALVES", city: "Cartão entregue", text: "Tudo chegou bem embalado e sem complicação." },
 ];
 
 function Index() {
