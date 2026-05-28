@@ -31,14 +31,26 @@ const steps = [
   { img: step3Img, text: "Receba seu cartão no conforto de casa e comece a usar" },
 ];
 
+const clientes = [
+  { img: clienteMariana, name: "Mariana Souza", city: "São Paulo, SP", text: "Pedi e em 3 dias o cartão chegou em casa. Super fácil!" },
+  { img: clienteJoao, name: "João Pedro Lima", city: "Curitiba, PR", text: "Aprovação foi rápida mesmo, sem burocracia nenhuma." },
+  { img: clienteCarlos, name: "Carlos Henrique", city: "Salvador, BA", text: "Chegou direitinho pelos Correios, embalagem linda." },
+];
+
 function Index() {
   const [idx, setIdx] = useState(0);
+  const [clienteIdx, setClienteIdx] = useState(0);
   const [activeStep, setActiveStep] = useState(-1);
   const timelineRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const t = setInterval(() => setIdx((i) => (i + 1) % 3), 5000);
+    return () => clearInterval(t);
+  }, []);
+
+  useEffect(() => {
+    const t = setInterval(() => setClienteIdx((i) => (i + 1) % clientes.length), 4500);
     return () => clearInterval(t);
   }, []);
 
