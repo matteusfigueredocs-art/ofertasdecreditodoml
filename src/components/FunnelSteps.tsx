@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import mlLogo from "@/assets/mercado-livre-logo.png";
 
 const STEPS = [
   { id: 1, label: "Identificação" },
@@ -10,6 +11,11 @@ const STEPS = [
 export function FunnelSteps({ current }: { current: number }) {
   return (
     <div className="w-full bg-[#FFE600] border-b border-[#E6CF00]">
+      <div className="max-w-md mx-auto px-3 pt-3 pb-3">
+        <div className="flex justify-center mb-3">
+          <img src={mlLogo} alt="Mercado Livre" className="h-8 object-contain" />
+        </div>
+
       <div className="max-w-md mx-auto px-3 py-3">
         <div className="flex items-center justify-between">
           {STEPS.map((s, i) => {
