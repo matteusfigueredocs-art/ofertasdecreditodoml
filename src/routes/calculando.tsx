@@ -1,7 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { TrendingUp, UserCheck, Calculator, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
-import mlLogo from "@/assets/mercado-livre-logo.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 
 export const Route = createFileRoute("/calculando")({
@@ -65,9 +64,6 @@ function Calculando() {
   return (
     <div className="min-h-screen bg-[#FFE600] flex flex-col">
       {/* Header */}
-      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
-        <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
-      </div>
       <FunnelSteps current={2} />
 
       <main className="flex-1 flex items-start justify-center px-3 py-5">

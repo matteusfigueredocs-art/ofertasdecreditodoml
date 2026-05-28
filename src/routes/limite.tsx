@@ -1,5 +1,4 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import mlLogo from "@/assets/mercado-livre-logo.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 
 export const Route = createFileRoute("/limite")({
@@ -17,9 +16,6 @@ function Limite() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col relative overflow-hidden">
-      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
-        <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
-      </div>
       <FunnelSteps current={3} />
 
       <div className="absolute w-72 h-72 rounded-full bg-[#FFE600]/20 -top-20 -right-20 z-0" />

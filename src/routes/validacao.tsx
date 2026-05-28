@@ -1,7 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
-import mlLogo from "@/assets/mercado-livre-logo.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 import { consultarCPF } from "@/lib/cpf.functions";
 
@@ -80,9 +79,6 @@ function Validacao() {
   return (
     <div className="min-h-screen bg-white flex flex-col relative overflow-hidden">
       {/* Header */}
-      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
-        <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
-      </div>
       <FunnelSteps current={1} />
 
       {/* Decorations */}

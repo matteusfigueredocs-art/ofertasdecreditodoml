@@ -1,6 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import mlLogo from "@/assets/mercado-livre-logo.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 import mlHandshake from "@/assets/ml-handshake.png";
 import mastercard from "@/assets/mastercard.png";
@@ -45,9 +44,6 @@ function Personalizar() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col relative overflow-hidden">
-      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
-        <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
-      </div>
       <FunnelSteps current={3} />
 
       <main className="flex-1 flex items-start justify-center px-4 py-8 relative z-10">

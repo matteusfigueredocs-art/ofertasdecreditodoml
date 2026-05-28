@@ -1,6 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import mlLogo from "@/assets/mercado-livre-logo.png";
 import mlHandshake from "@/assets/ml-handshake.png";
 import mastercard from "@/assets/mastercard.png";
 import cardChip from "@/assets/card-chip.png";
@@ -55,9 +54,6 @@ function Aprovado() {
   return (
     <div className="min-h-screen bg-white flex flex-col relative overflow-hidden">
       {/* Header */}
-      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
-        <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
-      </div>
       <FunnelSteps current={2} />
 
       {/* Decorative circles */}
