@@ -20,15 +20,18 @@ function Aprovado() {
   const navigate = useNavigate();
   const [limite, setLimite] = useState<number>(4200);
   const [nome, setNome] = useState<string>("SEU NOME");
-
   useEffect(() => {
     try {
       const v = sessionStorage.getItem("limiteAprovado");
       if (v) setLimite(parseInt(v, 10) || 4200);
       const n = sessionStorage.getItem("nomeTitular");
-      if (n) setNome(n.toUpperCase());
+      if (n) {
+        const primeiro = n.trim().split(/\s+/)[0] || n;
+        setNome(primeiro.toUpperCase());
+      }
     } catch {}
   }, []);
+
 
 
   const items = [
@@ -70,13 +73,14 @@ function Aprovado() {
           {/* Cartão na mão com o nome do titular */}
           <div className="relative flex justify-center mb-4">
             <img
+
               src={cartaoMao}
               alt="Cartão Mercado Livre"
-              className="w-64 h-auto object-contain drop-shadow-xl"
+              className="w-56 h-auto object-contain drop-shadow-xl"
             />
             <span
-              className="absolute text-white font-medium tracking-[0.14em] uppercase text-[11px] whitespace-nowrap"
-              style={{ top: "44%", left: "28%", transform: "translateX(-50%)" }}
+              className="absolute text-white font-semibold tracking-[0.16em] uppercase text-[12px] whitespace-nowrap drop-shadow"
+              style={{ top: "30%", left: "50%", transform: "translate(-50%, -50%)" }}
             >
               {nome}
             </span>
@@ -92,6 +96,7 @@ function Aprovado() {
               R$ {limite.toLocaleString("pt-BR")},00
             </p>
           </div>
+
 
           <div className="space-y-3 mb-6">
 
