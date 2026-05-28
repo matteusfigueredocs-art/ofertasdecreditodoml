@@ -31,7 +31,7 @@ function Gerente() {
   };
 
   return (
-    <div className="min-h-screen bg-[#EEEEEE] flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col">
       <div className="bg-[#FFE600] w-full h-3" />
 
       <main className="flex-1 flex items-start justify-center px-4 py-6">
