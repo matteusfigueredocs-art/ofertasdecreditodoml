@@ -135,7 +135,7 @@ function Endereco() {
       {success && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center px-6 z-50 animate-in fade-in duration-200">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-8 flex flex-col items-center text-center">
-            <div className="w-16 h-16 rounded-full bg-[#00A650] flex items-center justify-center mb-4">
+            <div className="w-16 h-16 rounded-full bg-[#3483FA] flex items-center justify-center mb-4">
               <svg viewBox="0 0 24 24" className="w-9 h-9 text-white" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>

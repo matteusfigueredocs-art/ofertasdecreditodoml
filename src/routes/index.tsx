@@ -75,8 +75,8 @@ function Index() {
                   <p className="text-sm text-gray-600">Sem consulta ao SPC/Serasa.</p>
                 </div>
               </div>
-              <div className="flex items-center bg-green-50 p-4 rounded-lg">
-                <div className="bg-[#00A650] text-white w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
+              <div className="flex items-center bg-[#FFF8E1] p-4 rounded-lg">
+                <div className="bg-[#FFE600] text-[#333] w-10 h-10 rounded-full flex items-center justify-center mr-4 shrink-0">
                   <i className="fas fa-credit-card text-lg" />
                 </div>
                 <div>
@@ -94,7 +94,7 @@ function Index() {
             </button>
 
             <div className="flex items-center justify-center mt-4 pt-4 border-t border-gray-100 text-gray-600">
-              <i className="fas fa-lock mr-2 text-[#00A650]" />
+              <i className="fas fa-lock mr-2 text-[#3483FA]" />
               <span className="text-sm">Seus dados estão protegidos e seguros</span>
             </div>
           </div>

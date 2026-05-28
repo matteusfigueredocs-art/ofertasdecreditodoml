@@ -129,10 +129,10 @@ function Validacao() {
           {screen === "success" && data && (
             <>
               <div className="flex flex-col items-center mb-6">
-                <div className="w-14 h-14 rounded-full bg-[#00A650] flex items-center justify-center mb-3">
+                <div className="w-14 h-14 rounded-full bg-[#3483FA] flex items-center justify-center mb-3">
                   <i className="fas fa-check text-white text-2xl" />
                 </div>
-                <div className="text-lg font-semibold text-[#00A650]">
+                <div className="text-lg font-semibold text-[#3483FA]">
                   Dados encontrados com sucesso!
                 </div>
               </div>

@@ -68,13 +68,13 @@ function Confirmacao() {
             Confirme os detalhes do seu pedido antes de finalizar
           </p>
 
-          <div className="bg-[#E8F5EC]/60 border-2 border-[#00A650] rounded-lg p-3 flex items-center gap-3 mb-5">
-            <div className="w-8 h-8 rounded-full bg-[#00A650] flex items-center justify-center shrink-0">
+          <div className="bg-[#EAF2FE]/60 border-2 border-[#3483FA] rounded-lg p-3 flex items-center gap-3 mb-5">
+            <div className="w-8 h-8 rounded-full bg-[#3483FA] flex items-center justify-center shrink-0">
               <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
-            <div className="font-bold text-[#00A650] text-sm">
+            <div className="font-bold text-[#3483FA] text-sm">
               Taxa de envio gerada com sucesso!
             </div>
           </div>
@@ -102,7 +102,7 @@ function Confirmacao() {
 
           <div className="border border-gray-200 rounded-xl p-4 mb-5">
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[10px] border-b-[#00A650]" />
+              <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[10px] border-b-[#3483FA]" />
               <h2 className="font-bold text-gray-800">Método de Envio</h2>
             </div>
             <div className="bg-gray-50 rounded-lg p-4">
@@ -113,7 +113,7 @@ function Confirmacao() {
                 </div>
                 Prazo de entrega: {method.days}
               </div>
-              <div className="inline-flex bg-[#E8F5EC] text-[#00A650] text-xs font-semibold py-1 px-3 rounded-full">
+              <div className="inline-flex bg-[#EAF2FE] text-[#3483FA] text-xs font-semibold py-1 px-3 rounded-full">
                 ✓ Rastreamento incluído
               </div>
             </div>

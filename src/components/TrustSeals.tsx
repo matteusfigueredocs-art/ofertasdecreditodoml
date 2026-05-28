@@ -16,8 +16,8 @@ export function TrustSeals() {
         <div className="grid grid-cols-4 gap-2">
           {items.map(({ icon: Icon, label }) => (
             <div key={label} className="flex flex-col items-center gap-1">
-              <div className="w-9 h-9 rounded-full bg-[#E8F5EC] flex items-center justify-center">
-                <Icon className="w-4 h-4 text-[#00A650]" strokeWidth={2.4} />
+              <div className="w-9 h-9 rounded-full bg-[#EAF2FE] flex items-center justify-center">
+                <Icon className="w-4 h-4 text-[#3483FA]" strokeWidth={2.4} />
               </div>
               <span className="text-[10px] text-gray-700 font-medium text-center leading-tight">
                 {label}

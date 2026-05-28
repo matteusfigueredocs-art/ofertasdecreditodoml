@@ -34,8 +34,8 @@ function Limite() {
             Saiba como seu limite de crédito pode aumentar ou diminuir
           </p>
 
-          <div className="bg-[#E8F5EC] border-2 border-[#00A650] rounded-lg p-5 text-center mb-4">
-            <div className="text-[#00A650] font-bold text-lg mb-2">Aumento de Limite</div>
+          <div className="bg-[#EAF2FE] border-2 border-[#3483FA] rounded-lg p-5 text-center mb-4">
+            <div className="text-[#3483FA] font-bold text-lg mb-2">Aumento de Limite</div>
             <p className="text-sm text-gray-700 leading-snug">
               Caso você realize o pagamento das faturas em dia, seu limite será aumentado constantemente.
             </p>

@@ -72,7 +72,7 @@ function Pagamento() {
         <div className="w-full max-w-md bg-white rounded-xl shadow-sm p-6 md:p-8">
           <div className="text-center mb-2">
             <div className="text-sm font-semibold text-gray-700">Seu Limite Disponível</div>
-            <div className="text-3xl font-bold text-[#00A650] mt-1">R$ 4.750</div>
+            <div className="text-3xl font-bold text-[#3483FA] mt-1">R$ 4.750</div>
           </div>
 
           <div className="mt-5 mb-6 rounded-2xl p-5 bg-gradient-to-br from-[#3483FA] to-[#1d5fc4] text-white shadow-lg aspect-[1.6] flex flex-col justify-between">
@@ -111,7 +111,7 @@ function Pagamento() {
           >
             Pagar Frete
           </button>
-          <div className="text-center text-xs text-[#00A650] font-semibold mt-2 flex items-center justify-center gap-1">
+          <div className="text-center text-xs text-[#3483FA] font-semibold mt-2 flex items-center justify-center gap-1">
             🔒 Pagamento 100% seguro
           </div>
 
@@ -168,8 +168,8 @@ function Pagamento() {
             ))}
           </div>
 
-          <div className="mt-6 flex items-center gap-3 p-3 bg-[#E8F5EC] rounded-lg">
-            <div className="w-9 h-9 rounded-full bg-[#00A650] flex items-center justify-center text-white font-bold shrink-0">
+          <div className="mt-6 flex items-center gap-3 p-3 bg-[#EAF2FE] rounded-lg">
+            <div className="w-9 h-9 rounded-full bg-[#3483FA] flex items-center justify-center text-white font-bold shrink-0">
               ✓
             </div>
             <div className="text-sm">

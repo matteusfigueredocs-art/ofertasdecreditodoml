@@ -36,7 +36,7 @@ function Envio() {
           </h1>
           <p className="text-sm text-gray-600 text-center mb-6 leading-relaxed">
             Agora basta escolher uma forma de envio do seu Cartão de Crédito{" "}
-            <span className="font-bold text-[#00A650]">APROVADO</span>
+            <span className="font-bold text-[#3483FA]">APROVADO</span>
           </p>
 
           <button
@@ -49,12 +49,12 @@ function Envio() {
             <div className="flex-1 min-w-0">
               <div className="flex items-start justify-between gap-2">
                 <div className="font-bold text-gray-800">SEDEX</div>
-                <div className="bg-[#00A650] text-white text-[10px] font-bold py-1 px-2.5 rounded-full whitespace-nowrap">
+                <div className="bg-[#3483FA] text-white text-[10px] font-bold py-1 px-2.5 rounded-full whitespace-nowrap">
                   MAIS POPULAR
                 </div>
               </div>
               <div className="text-sm text-gray-600">1 dia útil</div>
-              <div className="text-xs text-[#00A650] font-semibold mt-0.5">
+              <div className="text-xs text-[#3483FA] font-semibold mt-0.5">
                 ✓ Rastreamento incluído
               </div>
               <div className="text-xs text-gray-500 italic mt-0.5">Chegará até 28/05</div>
@@ -75,7 +75,7 @@ function Envio() {
                 <div className="font-bold text-gray-800 whitespace-nowrap">R$ 24,30</div>
               </div>
               <div className="text-sm text-gray-600">15-20 dias úteis</div>
-              <div className="text-xs text-[#00A650] font-semibold mt-0.5">
+              <div className="text-xs text-[#3483FA] font-semibold mt-0.5">
                 ✓ Rastreamento incluído
               </div>
               <div className="text-xs text-gray-500 italic mt-0.5">
