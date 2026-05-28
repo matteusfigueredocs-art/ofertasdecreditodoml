@@ -162,8 +162,11 @@ function Index() {
         </div>
 
         {/* Timeline */}
-        <div className="-mt-3 relative z-10">
-          <div className="bg-white shadow-md p-6">
+        <div className="-mt-12 relative z-10">
+          <div className="bg-white shadow-md p-6 pt-10 relative">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#3483FA] text-white text-xs font-bold uppercase tracking-wider px-5 py-2 rounded-full shadow-lg whitespace-nowrap">
+              Simples e rápido
+            </div>
 
             <h2 className="text-2xl font-extrabold text-gray-900 mb-8 text-center leading-tight">
               Aproveite seu cartão de crédito de forma segura, rápida e sem burocracia
