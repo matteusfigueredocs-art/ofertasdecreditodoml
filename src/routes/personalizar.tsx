@@ -128,21 +128,14 @@ function Personalizar() {
                 className="card-3d-face card-3d-back absolute inset-0 rounded-2xl shadow-2xl overflow-hidden"
                 style={{
                   backgroundColor: card.value,
-                  backgroundImage:
-                    "linear-gradient(90deg, rgba(0,0,0,.26) 0 17%, rgba(0,0,0,0) 17%), linear-gradient(160deg, rgba(255,255,255,.10), rgba(0,0,0,.18))",
+                  backgroundImage: `url(${cardBg})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
                 }}
-              >
-                <div className="absolute inset-y-0 left-0 w-[17%] bg-black/18" />
-                <div className="absolute left-0 right-0 top-7 h-11 bg-black/80" />
-                <div className="absolute right-5 top-[34%] h-8 w-16 rounded-sm bg-white/95 px-2 py-1 text-right font-mono text-sm text-gray-900">
-                  123
-                </div>
-                <div
-                  className={`absolute bottom-5 right-5 text-[10px] font-semibold tracking-[0.08em] ${textColor}`}
-                >
-                  mercadolivre.com
-                </div>
-              </div>
+              />
+            </div>
+          </div>
             </div>
           </div>
 
