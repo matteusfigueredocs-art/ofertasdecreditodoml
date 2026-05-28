@@ -122,35 +122,72 @@ function Envio() {
                 Calculando frete até {cidade ? `${cidade}${estado ? `/${estado}` : ""}` : "seu endereço"}
               </p>
 
-              {/* Mapa estilizado tipo Correios */}
-              <div className="relative h-44 rounded-xl overflow-hidden bg-[#EAF4FF] border border-gray-200 mb-6">
+              {/* Cena de transportadora */}
+              <div className="relative h-48 rounded-xl overflow-hidden bg-gradient-to-b from-[#E8F1FF] to-[#F7FAFF] border border-gray-200 mb-6">
+                {/* céu / grade sutil */}
                 <div
-                  className="absolute inset-0 opacity-60"
+                  className="absolute inset-0 opacity-40"
                   style={{
                     backgroundImage:
-                      "linear-gradient(0deg, rgba(0,80,180,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0,80,180,.12) 1px, transparent 1px)",
-                    backgroundSize: "24px 24px",
+                      "linear-gradient(0deg, rgba(0,80,180,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0,80,180,.08) 1px, transparent 1px)",
+                    backgroundSize: "26px 26px",
                   }}
                 />
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 180" preserveAspectRatio="none">
-                  <path d="M30 150 Q 140 40 250 110 T 380 60" stroke="#0050B4" strokeWidth="2.5" strokeDasharray="6 6" fill="none" />
-                </svg>
-                <div className="absolute left-6 bottom-6 flex flex-col items-center">
-                  <div className="w-8 h-8 rounded-full bg-white border-2 border-[#0050B4] flex items-center justify-center shadow-md">
-                    <span className="text-base">🏤</span>
-                  </div>
-                  <span className="text-[10px] font-bold text-gray-700 mt-1">Agência</span>
+
+                {/* Centro de Distribuição (esquerda) */}
+                <div className="absolute left-3 bottom-10 flex flex-col items-center z-10">
+                  <svg viewBox="0 0 48 40" className="w-12 h-10 drop-shadow-sm">
+                    <rect x="4" y="14" width="40" height="22" fill="#ffffff" stroke="#0050B4" strokeWidth="2" />
+                    <polygon points="2,16 24,2 46,16" fill="#FFE600" stroke="#0050B4" strokeWidth="2" />
+                    <rect x="20" y="22" width="8" height="14" fill="#0050B4" />
+                    <rect x="9" y="20" width="6" height="5" fill="#EAF2FE" stroke="#0050B4" strokeWidth="1" />
+                    <rect x="33" y="20" width="6" height="5" fill="#EAF2FE" stroke="#0050B4" strokeWidth="1" />
+                  </svg>
+                  <span className="text-[10px] font-bold text-gray-700 mt-1">CD Origem</span>
                 </div>
-                <div className="absolute right-6 top-6 flex flex-col items-center">
-                  <div className="w-9 h-9 rounded-full bg-[#FFE600] border-2 border-gray-900 flex items-center justify-center shadow-md animate-pulse">
-                    <span className="text-base">📍</span>
+
+                {/* Pino de destino (direita) */}
+                <div className="absolute right-3 top-4 flex flex-col items-center z-10">
+                  <div className="w-10 h-10 rounded-full bg-[#FFE600] border-2 border-gray-900 flex items-center justify-center shadow-md">
+                    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="#D32F2F" stroke="#0d0d0d" strokeWidth="1.2">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+                    </svg>
                   </div>
-                  <span className="text-[10px] font-bold text-gray-900 mt-1 max-w-[100px] truncate">
+                  <span className="text-[10px] font-bold text-gray-900 mt-1 max-w-[90px] truncate">
                     {cidade || "Destino"}
                   </span>
                 </div>
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-14 h-14 rounded-full border-4 border-[#FFE600] border-t-transparent animate-spin" />
+
+                {/* Estrada + caminhão animado */}
+                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 200" preserveAspectRatio="none">
+                  <defs>
+                    <path id="rota" d="M40 160 Q 140 60 220 130 T 370 50" />
+                  </defs>
+                  <use href="#rota" stroke="#0050B4" strokeWidth="2.5" strokeDasharray="6 6" fill="none" />
+                  {/* Caminhão SVG percorrendo a rota */}
+                  <g>
+                    <g transform="translate(-18,-12)">
+                      {/* baú */}
+                      <rect x="0" y="0" width="26" height="16" rx="2" fill="#ffffff" stroke="#0d0d0d" strokeWidth="1.5" />
+                      <rect x="2" y="2" width="22" height="12" fill="#FFE600" />
+                      {/* cabine */}
+                      <rect x="26" y="4" width="10" height="12" rx="1.5" fill="#0050B4" stroke="#0d0d0d" strokeWidth="1.5" />
+                      <rect x="28" y="6" width="6" height="4" fill="#EAF2FE" />
+                      {/* rodas */}
+                      <circle cx="7" cy="18" r="3" fill="#0d0d0d" />
+                      <circle cx="20" cy="18" r="3" fill="#0d0d0d" />
+                      <circle cx="32" cy="18" r="3" fill="#0d0d0d" />
+                    </g>
+                    <animateMotion dur="2.8s" repeatCount="indefinite" rotate="auto">
+                      <mpath href="#rota" />
+                    </animateMotion>
+                  </g>
+                </svg>
+
+                {/* badge "rastreando" */}
+                <div className="absolute top-2 left-2 bg-white/90 backdrop-blur px-2 py-1 rounded-full border border-gray-200 flex items-center gap-1.5 shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-[10px] font-bold text-gray-700 tracking-wide">RASTREANDO</span>
                 </div>
               </div>
 
