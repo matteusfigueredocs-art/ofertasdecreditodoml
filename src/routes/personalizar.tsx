@@ -136,8 +136,6 @@ function Personalizar() {
               />
             </div>
           </div>
-            </div>
-          </div>
 
           {/* Color picker */}
           <div className="flex justify-center gap-4 mb-6">
