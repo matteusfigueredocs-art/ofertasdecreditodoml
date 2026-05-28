@@ -17,8 +17,8 @@ export const Route = createFileRoute("/personalizar")({
 });
 
 const colors = [
-  { name: "Azul", value: "#3483FA", gradient: "from-[#F4D147] to-[#2968C8]" },
-  { name: "Amarelo", value: "#F4D147", gradient: "from-[#F4D147] to-[#E6CC00]" },
+  { name: "Azul", value: "#3483FA", gradient: "from-[#FFE600] to-[#2968C8]" },
+  { name: "Amarelo", value: "#FFE600", gradient: "from-[#FFE600] to-[#E6CF00]" },
   { name: "Vermelho", value: "#E53935", gradient: "from-[#E53935] to-[#B71C1C]" },
   { name: "Cinza", value: "#9E9E9E", gradient: "from-[#9E9E9E] to-[#616161]" },
   { name: "Preto", value: "#1A1A1A", gradient: "from-[#2D2D2D] to-[#0A0A0A]" },
@@ -28,7 +28,7 @@ function Personalizar() {
   const navigate = useNavigate();
   const [selected, setSelected] = useState(0);
   const card = colors[selected];
-  const isLight = card.value === "#F4D147";
+  const isLight = card.value === "#FFE600";
   const textColor = isLight ? "text-gray-800" : "text-white";
   const subTextColor = isLight ? "text-gray-700/70" : "text-white/70";
   const platinumColor = isLight ? "text-gray-700" : "text-white/80";
@@ -45,7 +45,7 @@ function Personalizar() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col relative overflow-hidden">
-      <div className="bg-[#F4D147] w-full py-3 flex justify-center items-center shadow-sm">
+      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
       <FunnelSteps current={3} />
@@ -157,7 +157,7 @@ function Personalizar() {
                 aria-label={`Cor ${c.name}`}
                 className={`w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all ${
                   selected === i
-                    ? "ring-2 ring-offset-2 ring-[#F4D147] scale-110"
+                    ? "ring-2 ring-offset-2 ring-[#FFE600] scale-110"
                     : "hover:scale-105"
                 }`}
                 style={{ backgroundColor: c.value }}
@@ -165,7 +165,7 @@ function Personalizar() {
                 {selected === i && (
                   <svg
                     viewBox="0 0 24 24"
-                    className={`w-5 h-5 ${c.value === "#F4D147" ? "text-gray-800" : "text-white"}`}
+                    className={`w-5 h-5 ${c.value === "#FFE600" ? "text-gray-800" : "text-white"}`}
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="3"
@@ -181,7 +181,7 @@ function Personalizar() {
 
           <button
             onClick={() => navigate({ to: "/fatura" })}
-            className="w-full bg-[#F4D147] hover:bg-[#E5C238] text-gray-900 text-lg font-semibold py-4 rounded-md shadow-md transition-all"
+            className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md shadow-md transition-all"
           >
             Continuar
           </button>

@@ -28,7 +28,7 @@ function Fatura() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <div className="bg-[#F4D147] w-full py-3 flex justify-center items-center shadow-sm">
+      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
       <FunnelSteps current={5} />
@@ -47,11 +47,11 @@ function Fatura() {
               <button
                 key={day}
                 onClick={() => handleSelect(day)}
-                className={`flex items-center gap-3 border border-gray-200 rounded-lg p-3 hover:border-[#F4D147] hover:shadow-sm transition-all text-left ${
+                className={`flex items-center gap-3 border border-gray-200 rounded-lg p-3 hover:border-[#FFE600] hover:shadow-sm transition-all text-left ${
                   day === 25 ? "col-span-2 max-w-[50%] mx-auto w-full" : ""
                 }`}
               >
-                <div className="w-12 h-12 rounded-md bg-[#F4D147] flex items-center justify-center text-gray-900 font-bold shrink-0">
+                <div className="w-12 h-12 rounded-md bg-[#FFE600] flex items-center justify-center text-gray-900 font-bold shrink-0">
                   {String(day).padStart(2, "0")}
                 </div>
                 <div className="flex-1 font-semibold text-gray-800 text-sm">Todo dia {day}</div>
@@ -62,8 +62,8 @@ function Fatura() {
             ))}
           </div>
 
-          <div className="bg-gradient-to-r from-[#EAF2FE] to-white border border-[#F4D147]/20 rounded-lg p-4 flex items-start gap-3">
-            <div className="w-9 h-9 rounded-full bg-[#F4D147] flex items-center justify-center shrink-0">
+          <div className="bg-gradient-to-r from-[#EAF2FE] to-white border border-[#FFE600]/20 rounded-lg p-4 flex items-start gap-3">
+            <div className="w-9 h-9 rounded-full bg-[#FFE600] flex items-center justify-center shrink-0">
               <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2v.3h6V17c0-.8.4-1.5 1-2A7 7 0 0 0 12 2z" />
               </svg>
@@ -90,10 +90,10 @@ function Fatura() {
       {selected !== null && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center px-4 z-50 animate-in fade-in duration-200">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden">
-            <div className="h-1.5 bg-[#F4D147]" />
+            <div className="h-1.5 bg-[#FFE600]" />
             <div className="p-8 flex flex-col items-center text-center">
-              <div className="w-20 h-20 rounded-full bg-[#F4D147]/10 flex items-center justify-center mb-5 ring-8 ring-[#F4D147]/5">
-                <div className="w-16 h-16 rounded-full bg-[#F4D147] flex items-center justify-center">
+              <div className="w-20 h-20 rounded-full bg-[#FFE600]/10 flex items-center justify-center mb-5 ring-8 ring-[#FFE600]/5">
+                <div className="w-16 h-16 rounded-full bg-[#FFE600] flex items-center justify-center">
                   <svg viewBox="0 0 24 24" className="w-9 h-9 text-white" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
@@ -102,7 +102,7 @@ function Fatura() {
               <h2 className="text-2xl font-bold text-gray-800 mb-1">Configurado!</h2>
               <p className="text-sm text-gray-600 mb-5">Sua data de vencimento foi definida</p>
 
-              <div className="w-full bg-[#EAF2FE]/60 border border-[#F4D147]/20 rounded-lg py-4 px-4 mb-5">
+              <div className="w-full bg-[#EAF2FE]/60 border border-[#FFE600]/20 rounded-lg py-4 px-4 mb-5">
                 <div className="text-[11px] tracking-wider font-semibold text-gray-500 uppercase mb-1">
                   Vencimento da Fatura
                 </div>
@@ -110,7 +110,7 @@ function Fatura() {
               </div>
 
               <div className="flex items-center gap-2 text-sm text-gray-600">
-                <div className="w-4 h-4 rounded-full border-2 border-[#F4D147] border-t-transparent animate-spin" />
+                <div className="w-4 h-4 rounded-full border-2 border-[#FFE600] border-t-transparent animate-spin" />
                 Preparando sua conta...
               </div>
             </div>

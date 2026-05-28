@@ -53,12 +53,12 @@ function Endereco() {
   };
 
   const inputCls =
-    "w-full border border-gray-300 rounded-lg px-3 py-3 text-sm text-gray-800 placeholder:text-gray-400 outline-none focus:border-[#F4D147] focus:ring-2 focus:ring-[#F4D147]/20 bg-white";
+    "w-full border border-gray-300 rounded-lg px-3 py-3 text-sm text-gray-800 placeholder:text-gray-400 outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/20 bg-white";
   const labelCls = "block text-sm font-semibold text-gray-800 mb-1.5";
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <div className="bg-[#F4D147] w-full py-3 flex justify-center items-center shadow-sm">
+      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
       <FunnelSteps current={4} />
@@ -124,7 +124,7 @@ function Endereco() {
             <button
               type="submit"
               disabled={saving || success}
-              className="w-full bg-[#F4D147] hover:bg-[#E5C238] disabled:bg-[#0a2540] disabled:text-gray-300 disabled:cursor-not-allowed text-gray-900 font-bold py-4 rounded-lg shadow-md transition-colors mt-2"
+              className="w-full bg-[#FFE600] hover:bg-[#E6CF00] disabled:bg-[#0a2540] disabled:text-gray-300 disabled:cursor-not-allowed text-gray-900 font-bold py-4 rounded-lg shadow-md transition-colors mt-2"
             >
               {saving ? "Salvando dados..." : "Continuar"}
             </button>
@@ -135,7 +135,7 @@ function Endereco() {
       {success && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center px-6 z-50 animate-in fade-in duration-200">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-8 flex flex-col items-center text-center">
-            <div className="w-16 h-16 rounded-full bg-[#F4D147] flex items-center justify-center mb-4">
+            <div className="w-16 h-16 rounded-full bg-[#FFE600] flex items-center justify-center mb-4">
               <svg viewBox="0 0 24 24" className="w-9 h-9 text-white" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
@@ -146,7 +146,7 @@ function Endereco() {
             <p className="text-sm text-gray-600 mb-5">
               Seu endereço foi salvo e está pronto para entrega do cartão.
             </p>
-            <div className="w-full bg-gray-50 border-l-4 border-[#F4D147] rounded-md py-4 px-4 text-sm font-semibold text-gray-700">
+            <div className="w-full bg-gray-50 border-l-4 border-[#FFE600] rounded-md py-4 px-4 text-sm font-semibold text-gray-700">
               Redirecionando ...
             </div>
           </div>

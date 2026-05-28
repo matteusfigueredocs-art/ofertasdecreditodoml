@@ -24,7 +24,7 @@ function Envio() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <div className="bg-[#F4D147] w-full py-3 flex justify-center items-center shadow-sm">
+      <div className="bg-[#FFE600] w-full py-3 flex justify-center items-center shadow-sm">
         <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
       </div>
       <FunnelSteps current={4} />
@@ -41,15 +41,15 @@ function Envio() {
 
           <button
             onClick={() => handleSelect("sedex")}
-            className="w-full border border-gray-200 rounded-xl p-4 mb-3 flex items-center gap-4 hover:border-[#F4D147] hover:shadow-sm transition-all text-left bg-white"
+            className="w-full border border-gray-200 rounded-xl p-4 mb-3 flex items-center gap-4 hover:border-[#FFE600] hover:shadow-sm transition-all text-left bg-white"
           >
-            <div className="w-14 h-14 rounded-lg bg-[#F4D147] flex items-center justify-center shrink-0 text-2xl">
+            <div className="w-14 h-14 rounded-lg bg-[#FFE600] flex items-center justify-center shrink-0 text-2xl">
               📦
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-start justify-between gap-2">
                 <div className="font-bold text-gray-800">SEDEX</div>
-                <div className="bg-[#F4D147] text-gray-900 text-[10px] font-bold py-1 px-2.5 rounded-full whitespace-nowrap">
+                <div className="bg-[#FFE600] text-gray-900 text-[10px] font-bold py-1 px-2.5 rounded-full whitespace-nowrap">
                   MAIS POPULAR
                 </div>
               </div>
@@ -64,7 +64,7 @@ function Envio() {
 
           <button
             onClick={() => handleSelect("pac")}
-            className="w-full border border-gray-200 rounded-xl p-4 flex items-center gap-4 hover:border-[#F4D147] hover:shadow-sm transition-all text-left bg-white"
+            className="w-full border border-gray-200 rounded-xl p-4 flex items-center gap-4 hover:border-[#FFE600] hover:shadow-sm transition-all text-left bg-white"
           >
             <div className="w-14 h-14 rounded-lg bg-[#EAF1FF] flex items-center justify-center shrink-0 text-2xl">
               📮
