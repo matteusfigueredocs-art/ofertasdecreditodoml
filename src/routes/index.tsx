@@ -137,7 +137,6 @@ function Index() {
         {/* Bloco entrega do cartão */}
         <div className="px-4 mt-6">
           <div className="relative bg-white rounded-2xl shadow-md overflow-hidden">
-          <div className="relative bg-white rounded-2xl shadow-md overflow-hidden">
             <div className="relative px-6 pt-6 pb-2 text-center">
               <span className="inline-flex items-center gap-1.5 bg-[#FFE600] text-gray-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
 
