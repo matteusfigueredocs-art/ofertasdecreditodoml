@@ -315,22 +315,39 @@ function Index() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-
         {/* Depoimentos */}
         <div className="px-4 mt-6">
           <div className="bg-white rounded-2xl shadow-md p-5">
-            <h2 className="text-lg font-bold text-gray-900 text-center mb-1">O que dizem nossos clientes</h2>
+            <h2 className="text-lg font-bold text-gray-900 text-center mb-1">Quem já recebeu o cartão</h2>
             <div className="flex items-center justify-center gap-1 text-yellow-400 mb-4">
               {[...Array(5)].map((_, i) => <i key={i} className="fa-solid fa-star text-xs" />)}
               <span className="text-xs text-gray-600 ml-1 font-medium">4.8 · +12 mil avaliações</span>
             </div>
+
+            {/* Galeria de fotos reais */}
+            <div className="grid grid-cols-3 gap-2 mb-4">
+              {[
+                { img: clienteMariana, name: "Mariana" },
+                { img: clienteJoao, name: "João Pedro" },
+                { img: clienteCarlos, name: "Carlos" },
+              ].map((p) => (
+                <div key={p.name} className="relative rounded-xl overflow-hidden aspect-[3/4] shadow-sm">
+                  <img src={p.img} alt={`${p.name} recebeu o cartão`} className="w-full h-full object-cover" />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-1.5">
+                    <p className="text-[10px] font-semibold text-white text-center">{p.name}</p>
+                  </div>
+                  <div className="absolute top-1.5 right-1.5 bg-[#FFE600] rounded-full w-5 h-5 flex items-center justify-center shadow">
+                    <i className="fa-solid fa-check text-[9px] text-gray-900" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
             <div className="space-y-3">
               {[
                 { name: "Mariana S.", city: "São Paulo, SP", text: "Pedi e em 3 dias o cartão chegou em casa. Super fácil!" },
-                { name: "Carlos R.", city: "Rio de Janeiro, RJ", text: "Aprovação foi rápida mesmo, sem burocracia nenhuma." },
-                { name: "Juliana P.", city: "Belo Horizonte, MG", text: "Adorei o cashback nas compras do Mercado Livre." },
+                { name: "João Pedro L.", city: "Curitiba, PR", text: "Aprovação foi rápida mesmo, sem burocracia nenhuma." },
+                { name: "Carlos H.", city: "Belo Horizonte, MG", text: "Chegou direitinho pelos Correios, embalagem linda." },
               ].map((d) => (
                 <div key={d.name} className="border border-gray-100 rounded-xl p-3">
                   <div className="flex items-center gap-2 mb-1.5">
@@ -348,6 +365,9 @@ function Index() {
                   <p className="text-xs text-gray-700 leading-relaxed">"{d.text}"</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
             </div>
           </div>
         </div>
