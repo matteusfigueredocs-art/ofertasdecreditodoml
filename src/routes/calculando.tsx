@@ -78,9 +78,6 @@ function Calculando() {
             <div className="absolute -bottom-12 -left-8 w-28 h-28 rounded-full bg-[#FFE600]/20" />
 
             <div className="relative flex items-center gap-2 mb-3">
-              <span className="inline-flex items-center gap-1 bg-[#FFE600] text-gray-900 text-[10px] font-bold uppercase tracking-wide px-2 py-1 rounded-full">
-                <Sparkles className="w-3 h-3" /> Pré-aprovado
-              </span>
               <span className="text-[11px] opacity-90">Análise em tempo real</span>
             </div>
 
