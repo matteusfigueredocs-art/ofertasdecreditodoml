@@ -31,14 +31,26 @@ const steps = [
   { img: step3Img, text: "Receba seu cartão no conforto de casa e comece a usar" },
 ];
 
+const clientes = [
+  { img: clienteMariana, name: "Mariana Souza", city: "São Paulo, SP", text: "Pedi e em 3 dias o cartão chegou em casa. Super fácil!" },
+  { img: clienteJoao, name: "João Pedro Lima", city: "Curitiba, PR", text: "Aprovação foi rápida mesmo, sem burocracia nenhuma." },
+  { img: clienteCarlos, name: "Carlos Henrique", city: "Salvador, BA", text: "Chegou direitinho pelos Correios, embalagem linda." },
+];
+
 function Index() {
   const [idx, setIdx] = useState(0);
+  const [clienteIdx, setClienteIdx] = useState(0);
   const [activeStep, setActiveStep] = useState(-1);
   const timelineRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const t = setInterval(() => setIdx((i) => (i + 1) % 3), 5000);
+    return () => clearInterval(t);
+  }, []);
+
+  useEffect(() => {
+    const t = setInterval(() => setClienteIdx((i) => (i + 1) % clientes.length), 4500);
     return () => clearInterval(t);
   }, []);
 
@@ -315,7 +327,7 @@ function Index() {
                 </div>
               ))}
             </div>
-        {/* Depoimentos */}
+        {/* Quem já recebeu */}
         <div className="px-4 mt-6">
           <div className="bg-white rounded-2xl shadow-md p-5">
             <h2 className="text-lg font-bold text-gray-900 text-center mb-1">Quem já recebeu o cartão</h2>
@@ -324,46 +336,41 @@ function Index() {
               <span className="text-xs text-gray-600 ml-1 font-medium">4.8 · +12 mil avaliações</span>
             </div>
 
-            {/* Galeria de fotos reais */}
-            <div className="grid grid-cols-3 gap-2 mb-4">
-              {[
-                { img: clienteMariana, name: "Mariana" },
-                { img: clienteJoao, name: "João Pedro" },
-                { img: clienteCarlos, name: "Carlos" },
-              ].map((p) => (
-                <div key={p.name} className="relative rounded-xl overflow-hidden aspect-[3/4] shadow-sm">
-                  <img src={p.img} alt={`${p.name} recebeu o cartão`} className="w-full h-full object-cover" />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-1.5">
-                    <p className="text-[10px] font-semibold text-white text-center">{p.name}</p>
+            <div className="overflow-hidden rounded-xl">
+              <div
+                className="flex transition-transform duration-700 ease-out"
+                style={{ transform: `translateX(-${clienteIdx * 100}%)` }}
+              >
+                {clientes.map((c) => (
+                  <div key={c.name} className="w-full shrink-0 px-1">
+                    <div className="relative rounded-xl overflow-hidden aspect-[4/5] shadow-md">
+                      <img src={c.img} alt={`${c.name} recebeu o cartão`} className="w-full h-full object-cover" />
+                      <div className="absolute top-2 right-2 bg-[#FFE600] rounded-full px-2 py-1 flex items-center gap-1 shadow">
+                        <i className="fa-solid fa-check text-[10px] text-gray-900" />
+                        <span className="text-[10px] font-bold text-gray-900">Entregue</span>
+                      </div>
+                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent p-3">
+                        <p className="text-white text-base font-bold leading-tight">{c.name}</p>
+                        <p className="text-white/80 text-[11px]">{c.city}</p>
+                        <div className="flex gap-0.5 text-yellow-300 mt-1">
+                          {[...Array(5)].map((_, i) => <i key={i} className="fa-solid fa-star text-[10px]" />)}
+                        </div>
+                        <p className="text-white text-xs leading-snug mt-1.5">"{c.text}"</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="absolute top-1.5 right-1.5 bg-[#FFE600] rounded-full w-5 h-5 flex items-center justify-center shadow">
-                    <i className="fa-solid fa-check text-[9px] text-gray-900" />
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
-            <div className="space-y-3">
-              {[
-                { name: "Mariana S.", city: "São Paulo, SP", text: "Pedi e em 3 dias o cartão chegou em casa. Super fácil!" },
-                { name: "João Pedro L.", city: "Curitiba, PR", text: "Aprovação foi rápida mesmo, sem burocracia nenhuma." },
-                { name: "Carlos H.", city: "Belo Horizonte, MG", text: "Chegou direitinho pelos Correios, embalagem linda." },
-              ].map((d) => (
-                <div key={d.name} className="border border-gray-100 rounded-xl p-3">
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <div className="w-8 h-8 rounded-full bg-[#3483FA] text-white flex items-center justify-center font-bold text-xs">
-                      {d.name.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-gray-900 leading-tight">{d.name}</p>
-                      <p className="text-[10px] text-gray-500">{d.city}</p>
-                    </div>
-                    <div className="ml-auto flex gap-0.5 text-yellow-400">
-                      {[...Array(5)].map((_, i) => <i key={i} className="fa-solid fa-star text-[10px]" />)}
-                    </div>
-                  </div>
-                  <p className="text-xs text-gray-700 leading-relaxed">"{d.text}"</p>
-                </div>
+            <div className="flex items-center justify-center gap-2 mt-4">
+              {clientes.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setClienteIdx(i)}
+                  aria-label={`Cliente ${i + 1}`}
+                  className={`h-2 rounded-full transition-all ${i === clienteIdx ? "w-6 bg-[#3483FA]" : "w-2 bg-gray-300"}`}
+                />
               ))}
             </div>
           </div>
