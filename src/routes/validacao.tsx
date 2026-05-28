@@ -66,6 +66,9 @@ function Validacao() {
         return;
       }
       setData(res.data);
+      if (typeof window !== "undefined") {
+        sessionStorage.setItem("nomeTitular", res.data.nome);
+      }
       setScreen("success");
     } catch (e) {
       console.error(e);

@@ -33,10 +33,14 @@ function Personalizar() {
   const subTextColor = isLight ? "text-gray-700/70" : "text-white/70";
   const platinumColor = isLight ? "text-gray-700" : "text-white/80";
 
-  // Get name from URL query string
+  // Nome vem do CPF consultado (sessionStorage), com fallback pela query string
   const nome =
     typeof window !== "undefined"
-      ? new URLSearchParams(window.location.search).get("nome")?.toUpperCase() || "NOME DO TITULAR"
+      ? (
+          sessionStorage.getItem("nomeTitular") ||
+          new URLSearchParams(window.location.search).get("nome") ||
+          "NOME DO TITULAR"
+        ).toUpperCase()
       : "NOME DO TITULAR";
 
   return (
