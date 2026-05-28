@@ -2,7 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
-import mlHandshake from "@/assets/ml-handshake.png";
+import mlHandshake from "@/assets/ml-handshake-white.png";
 import mastercard from "@/assets/mastercard.png";
 import cardChip from "@/assets/card-chip.png";
 
