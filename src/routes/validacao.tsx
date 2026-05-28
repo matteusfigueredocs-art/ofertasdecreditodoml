@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 import { consultarCPF } from "@/lib/cpf.functions";
@@ -49,6 +49,16 @@ function Validacao() {
   const [screen, setScreen] = useState<Screen>("form");
   const [data, setData] = useState<CPFData | null>(null);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem("cpfPreenchido");
+      if (saved && saved.length === 11) {
+        setCpf(formatCPF(saved));
+        sessionStorage.removeItem("cpfPreenchido");
+      }
+    } catch {}
+  }, []);
 
   const handleContinue = async () => {
     const digits = cpf.replace(/\D/g, "");
