@@ -54,7 +54,7 @@ function Envio() {
     return () => timers.forEach(clearTimeout);
   }, [stage]);
 
-  const handleSelect = (method: "sedex" | "pac") => {
+  const handleSelect = (method: "sedex" | "pac" | "loggi") => {
     const current = typeof window !== "undefined" ? window.location.search : "";
     const sp = new URLSearchParams(current);
     sp.set("metodo", method);
