@@ -103,36 +103,8 @@ function Index() {
           </div>
         </div>
 
-        {/* Como Solicitar - Timeline */}
-        <div id="como-solicitar" className="px-4 mt-6">
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <div className="flex justify-center mb-4">
-              <div className="w-12 h-1.5 rounded-full bg-[#F4D147]" />
-            </div>
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-8 text-center leading-tight">
-              Aproveite seu cartão de crédito de forma segura, rápida e sem burocracia
-            </h2>
 
-            <div className="relative pl-14">
-              {[
-                { title: "Crédito na hora", text: "Para usar onde e quando quiser!" },
-                { title: "Sem burocracia", text: "Sem consulta ao SPC/Serasa." },
-                { title: "Cartão para seu dia a dia", text: "Use em lojas físicas e online." },
-              ].map((item, i, arr) => (
-                <div key={i} className="relative pb-8 last:pb-0">
-                  {i < arr.length - 1 && (
-                    <span className="absolute left-[-32px] top-10 bottom-0 w-0.5 bg-[#3483FA]" />
-                  )}
-                  <div className="absolute left-[-46px] top-0 w-10 h-10 rounded-full border-2 border-[#3483FA] bg-white flex items-center justify-center text-[#3483FA] font-bold">
-                    {i + 1}
-                  </div>
-                  <h3 className="font-bold text-gray-900 text-base">{item.title}</h3>
-                  <p className="text-sm text-gray-600 mt-1">{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+
 
 
         {/* Estatísticas */}
