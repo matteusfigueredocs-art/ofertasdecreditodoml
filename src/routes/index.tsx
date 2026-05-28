@@ -57,7 +57,7 @@ function Index() {
 
         {/* Vantagens */}
         <div className="px-4 -mt-3 relative z-10">
-          <div className="bg-[#FBE74D] rounded-xl shadow-md p-6">
+          <div className="bg-white rounded-xl shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Vantagens exclusivas</h2>
             <div className="space-y-4">
               <div className="flex items-center bg-white p-4 rounded-lg">
@@ -105,7 +105,7 @@ function Index() {
 
         {/* Como Solicitar */}
         <div id="como-solicitar" className="px-4 mt-6">
-          <div className="bg-[#FBE74D] rounded-xl shadow-md p-6">
+          <div className="bg-white rounded-xl shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Como Solicitar?</h2>
 
             <div className="flex items-center justify-between mb-6">
@@ -175,7 +175,7 @@ function Index() {
 
         {/* Estatísticas */}
         <div className="px-4 mt-6">
-          <div className="bg-[#FBE74D] rounded-xl shadow-md p-6 flex justify-between text-center">
+          <div className="bg-white rounded-xl shadow-md p-6 flex justify-between text-center">
             <div>
               <p className="text-2xl font-bold text-gray-900">+500mil</p>
               <p className="text-xs text-gray-600">Clientes</p>
@@ -195,7 +195,7 @@ function Index() {
         <div className="px-4 mt-6">
           <button
             onClick={handleCTA}
-            className="bg-[#FBE74D] rounded-xl shadow-md p-4 w-full flex items-center justify-between"
+            className="bg-white rounded-xl shadow-md p-4 w-full flex items-center justify-between"
           >
             <div className="flex items-center">
               <div className="bg-[#FBE74D] w-10 h-10 rounded-full flex items-center justify-center mr-3">
