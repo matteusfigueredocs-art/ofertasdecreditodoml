@@ -53,60 +53,88 @@ function Personalizar() {
             Personalize o seu cartão
           </h1>
 
-          {/* Credit card preview */}
-          <div
-            className={`relative w-full aspect-[1.75/1] rounded-2xl bg-gradient-to-br ${card.gradient} p-5 shadow-xl mb-6 overflow-hidden transition-all duration-300`}
-          >
-            {/* diagonal sheen lines */}
-            <div
-              className="absolute inset-0 opacity-[0.18] pointer-events-none"
-              style={{
-                backgroundImage:
-                  "repeating-linear-gradient(135deg, rgba(255,255,255,0.6) 0px, rgba(255,255,255,0.6) 1px, transparent 1px, transparent 6px)",
-              }}
-            />
-            <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,white,transparent_60%)]" />
+          {/* Credit card preview - 3D rotating */}
+          <div className="card-3d-scene mb-6">
+            <div className="card-3d-rotator relative w-full aspect-[1.75/1]">
+              {/* FRONT */}
+              <div
+                className={`card-3d-face absolute inset-0 rounded-2xl bg-gradient-to-br ${card.gradient} p-5 shadow-xl overflow-hidden`}
+              >
+                {/* diagonal sheen lines */}
+                <div
+                  className="absolute inset-0 opacity-[0.18] pointer-events-none"
+                  style={{
+                    backgroundImage:
+                      "repeating-linear-gradient(135deg, rgba(255,255,255,0.6) 0px, rgba(255,255,255,0.6) 1px, transparent 1px, transparent 6px)",
+                  }}
+                />
+                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,white,transparent_60%)]" />
 
-            {/* Top row */}
-            <div className="flex justify-between items-start relative">
-              <img
-                src={mlHandshake}
-                alt="Mercado Livre"
-                className="h-10 object-contain drop-shadow"
-              />
-              <span className={`${platinumColor} text-xs tracking-[0.2em] font-semibold`}>
-                PLATINUM
-              </span>
-            </div>
+                {/* Top row */}
+                <div className="flex justify-between items-start relative">
+                  <img
+                    src={mlHandshake}
+                    alt="Mercado Livre"
+                    className="h-10 object-contain drop-shadow"
+                  />
+                  <span className={`${platinumColor} text-xs tracking-[0.2em] font-semibold`}>
+                    PLATINUM
+                  </span>
+                </div>
 
-            {/* Chip */}
-            <div className="absolute left-5 top-1/2 -translate-y-1/2">
-              <img src={cardChip} alt="Chip" className="w-12 h-9 object-contain drop-shadow" />
-            </div>
+                {/* Chip */}
+                <div className="absolute left-5 top-1/2 -translate-y-1/2">
+                  <img src={cardChip} alt="Chip" className="w-12 h-9 object-contain drop-shadow" />
+                </div>
 
-            {/* Contactless */}
-            <svg
-              viewBox="0 0 24 24"
-              className={`absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 ${textColor} rotate-90`}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            >
-              <path d="M5 8c4-4 10-4 14 0" />
-              <path d="M8 11c2.5-2.5 5.5-2.5 8 0" />
-              <path d="M11 14c1-1 2-1 2 0" />
-            </svg>
+                {/* Contactless */}
+                <svg
+                  viewBox="0 0 24 24"
+                  className={`absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 ${textColor} rotate-90`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                >
+                  <path d="M5 8c4-4 10-4 14 0" />
+                  <path d="M8 11c2.5-2.5 5.5-2.5 8 0" />
+                  <path d="M11 14c1-1 2-1 2 0" />
+                </svg>
 
-            {/* Bottom */}
-            <div className="absolute bottom-4 left-5 right-5 flex justify-between items-end">
-              <div>
-                <div className={`${textColor} font-semibold tracking-wider text-sm`}>{nome}</div>
-                <div className={`${subTextColor} text-[10px] tracking-wider`}>TITULAR DO CARTÃO</div>
+                {/* Bottom */}
+                <div className="absolute bottom-4 left-5 right-5 flex justify-between items-end">
+                  <div>
+                    <div className={`${textColor} font-semibold tracking-wider text-sm`}>{nome}</div>
+                    <div className={`${subTextColor} text-[10px] tracking-wider`}>TITULAR DO CARTÃO</div>
+                  </div>
+                  <img src={mastercard} alt="Mastercard" className="h-8 object-contain" />
+                </div>
               </div>
-              <img src={mastercard} alt="Mastercard" className="h-8 object-contain" />
+
+              {/* BACK */}
+              <div
+                className={`card-3d-face card-3d-back absolute inset-0 rounded-2xl bg-gradient-to-br ${card.gradient} p-5 shadow-xl overflow-hidden`}
+              >
+                <div
+                  className="absolute inset-0 opacity-[0.18] pointer-events-none"
+                  style={{
+                    backgroundImage:
+                      "repeating-linear-gradient(135deg, rgba(255,255,255,0.6) 0px, rgba(255,255,255,0.6) 1px, transparent 1px, transparent 6px)",
+                  }}
+                />
+                {/* magnetic stripe */}
+                <div className="absolute left-0 right-0 top-5 h-10 bg-black/80" />
+                {/* signature strip */}
+                <div className="absolute left-4 right-20 top-20 h-8 bg-white/90 rounded-sm flex items-center px-2">
+                  <div className="text-[10px] text-gray-500 tracking-widest">123</div>
+                </div>
+                <div className="absolute bottom-3 right-4 text-[9px] text-white/70 tracking-wider">
+                  mercadolivre.com
+                </div>
+              </div>
             </div>
           </div>
+
 
           {/* Color picker */}
           <div className="flex justify-center gap-4 mb-6">
