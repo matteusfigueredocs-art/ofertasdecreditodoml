@@ -15,7 +15,8 @@ export const Route = createFileRoute("/confirmacao")({
 
 type Method = { name: string; price: string; days: string };
 const METHODS: Record<string, Method> = {
-  sedex: { name: "SEDEX", price: "R$ 29,90", days: "1 dia útil" },
+  sedex: { name: "SEDEX", price: "R$ 29,90", days: "3 dias úteis" },
+  loggi: { name: "Loggi", price: "R$ 31,67", days: "1 dia útil" },
   pac: { name: "PAC", price: "R$ 24,30", days: "15-20 dias úteis" },
 };
 
