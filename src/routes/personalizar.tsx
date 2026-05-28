@@ -124,15 +124,15 @@ function Personalizar() {
                   <div>9101</div>
                   <div>1213</div>
                 </div>
-                <div className={`absolute right-6 top-[67%] flex items-end gap-2 text-right font-mono ${textColor}`}>
+                <div className={`absolute right-6 top-[64%] flex items-end gap-2 text-right font-mono ${textColor}`}>
                   <span className="text-[5px] leading-[.9] opacity-85">EXP.<br />DATE</span>
                   <span className="text-[9px] tracking-[0.08em]">05/31</span>
                 </div>
-                <div className={`absolute right-6 top-[74%] flex items-end gap-2 text-right font-mono ${textColor}`}>
+                <div className={`absolute right-6 top-[70%] flex items-end gap-2 text-right font-mono ${textColor}`}>
                   <span className="text-[5px] leading-[.9] opacity-85">SECURITY<br />CODE</span>
                   <span className="text-[9px] tracking-[0.08em]">145</span>
                 </div>
-                <div className="absolute right-5 bottom-[20%] rounded bg-red-600 px-1.5 py-1 text-[8px] font-bold text-white">
+                <div className="absolute left-5 bottom-6 rounded bg-red-600 px-1.5 py-1 text-[8px] font-bold text-white">
                   Banco24Horas
                 </div>
                 <img
