@@ -191,24 +191,7 @@ function Index() {
           </div>
         </div>
 
-        {/* Ver Limite */}
-        <div className="px-4 mt-6">
-          <button
-            onClick={handleCTA}
-            className="bg-white rounded-xl shadow-md p-4 w-full flex items-center justify-between"
-          >
-            <div className="flex items-center">
-              <div className="bg-[#FBE74D] w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                <i className="fas fa-calculator text-gray-900" />
-              </div>
-              <div className="text-left">
-                <p className="font-semibold text-gray-800">Ver Limite Disponível</p>
-                <p className="text-sm text-gray-600">Descubra qual limite está liberado para você</p>
-              </div>
-            </div>
-            <i className="fas fa-chevron-right text-gray-900" />
-          </button>
-        </div>
+
 
         {/* Footer */}
         <div className="px-4 pb-6">
