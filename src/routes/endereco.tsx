@@ -31,6 +31,8 @@ function Endereco() {
   });
   const [saving, setSaving] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [cepLoading, setCepLoading] = useState(false);
+  const [cepError, setCepError] = useState("");
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
@@ -38,6 +40,32 @@ function Endereco() {
   const formatCep = (v: string) => {
     const d = v.replace(/\D/g, "").slice(0, 8);
     return d.length > 5 ? `${d.slice(0, 5)}-${d.slice(5)}` : d;
+  };
+
+  const lookupCep = async (cep: string) => {
+    const digits = cep.replace(/\D/g, "");
+    if (digits.length !== 8) return;
+    setCepLoading(true);
+    setCepError("");
+    try {
+      const res = await fetch(`https://viacep.com.br/ws/${digits}/json/`);
+      const data = await res.json();
+      if (data.erro) {
+        setCepError("CEP não encontrado");
+        return;
+      }
+      setForm((f) => ({
+        ...f,
+        endereco: data.logradouro || f.endereco,
+        bairro: data.bairro || f.bairro,
+        cidade: data.localidade || f.cidade,
+        estado: data.uf || f.estado,
+      }));
+    } catch {
+      setCepError("Erro ao buscar CEP");
+    } finally {
+      setCepLoading(false);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -71,17 +99,27 @@ function Endereco() {
           <p className="text-sm text-gray-600 text-center mb-6">
             Onde você deseja receber seu cartão
           </p>
-
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className={labelCls}>CEP</label>
-              <input
-                inputMode="numeric"
-                value={form.cep}
-                onChange={(e) => setForm((f) => ({ ...f, cep: formatCep(e.target.value) }))}
-                placeholder="00000-000"
-                className={inputCls}
-              />
+              <div className="relative">
+                <input
+                  inputMode="numeric"
+                  value={form.cep}
+                  onChange={(e) => {
+                    const next = formatCep(e.target.value);
+                    setForm((f) => ({ ...f, cep: next }));
+                    if (next.replace(/\D/g, "").length === 8) lookupCep(next);
+                  }}
+                  onBlur={(e) => lookupCep(e.target.value)}
+                  placeholder="00000-000"
+                  className={inputCls}
+                />
+                {cepLoading && (
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-2 border-[#FFE600] border-t-transparent animate-spin" />
+                )}
+              </div>
+              {cepError && <p className="mt-1 text-xs text-red-600">{cepError}</p>}
             </div>
 
             <div>
