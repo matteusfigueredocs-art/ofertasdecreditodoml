@@ -139,8 +139,8 @@ function Questionario() {
                     onClick={() => handleSelect(opt.label)}
                     className={
                       step.columns === 2
-                        ? "border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center gap-3 hover:border-[#3483FA] hover:bg-blue-50 transition-all"
-                        : "border border-gray-200 rounded-lg p-4 text-left text-gray-800 font-medium hover:border-[#3483FA] hover:bg-blue-50 transition-all"
+                        ? "border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center gap-3 hover:border-[#3483FA] hover:bg-[#FFF8E1] transition-all"
+                        : "border border-gray-200 rounded-lg p-4 text-left text-gray-800 font-medium hover:border-[#3483FA] hover:bg-[#FFF8E1] transition-all"
                     }
                   >
                     {opt.icon && step.columns === 2 && (
@@ -178,9 +178,9 @@ function Questionario() {
                       key={label}
                       className={`flex items-center justify-between p-3 rounded-lg border ${
                         done
-                          ? "border-[#3483FA] bg-blue-50"
+                          ? "border-[#3483FA] bg-[#FFF8E1]"
                           : active
-                          ? "border-[#3483FA] bg-blue-50"
+                          ? "border-[#3483FA] bg-[#FFF8E1]"
                           : "border-gray-200 bg-gray-50"
                       }`}
                     >
