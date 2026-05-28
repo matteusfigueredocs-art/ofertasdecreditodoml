@@ -80,11 +80,51 @@ function Index() {
     <div className="min-h-screen bg-[#FFE600]">
       <div className="max-w-md mx-auto min-h-screen bg-[#FFE600] relative">
         {/* Header */}
-        <div className="flex items-center px-4 py-3 bg-[#FFE600] shadow-sm">
-          <div className="flex-1 flex justify-center items-center">
+        <div className="px-4 py-3 bg-[#FFE600] shadow-sm">
+          <div className="flex justify-center items-center mb-3">
             <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
           </div>
+
+          {/* Barras de ajuda */}
+          <div className="space-y-2">
+            {[
+              {
+                icon: "fa-circle-question",
+                title: "Como solicitar ajuda",
+                text: "Acesse o app do Mercado Livre, vá em \"Minha conta\" > \"Ajuda\" e selecione o assunto. Nosso time responde em até 24h.",
+              },
+              {
+                icon: "fa-headset",
+                title: "Atendimento ao cliente",
+                text: "Fale com a gente pelo chat do app, 24 horas por dia, 7 dias por semana. Atendimento 100% gratuito.",
+              },
+              {
+                icon: "fa-shield-halved",
+                title: "Segurança e proteção",
+                text: "Em caso de perda, roubo ou compras não reconhecidas, bloqueie seu cartão direto pelo app na hora.",
+              },
+            ].map((item) => (
+              <details
+                key={item.title}
+                className="group bg-white/95 rounded-lg border border-[#E6CF00] overflow-hidden"
+              >
+                <summary className="flex items-center gap-3 px-3 py-2.5 cursor-pointer list-none">
+                  <span className="w-7 h-7 rounded-full bg-[#FFE600] flex items-center justify-center shrink-0">
+                    <i className={`fas ${item.icon} text-gray-900 text-xs`} />
+                  </span>
+                  <span className="flex-1 text-sm font-semibold text-gray-900">
+                    {item.title}
+                  </span>
+                  <i className="fas fa-chevron-down text-gray-500 text-xs transition-transform group-open:rotate-180" />
+                </summary>
+                <p className="px-3 pb-3 pt-0 text-xs text-gray-700 leading-relaxed">
+                  {item.text}
+                </p>
+              </details>
+            ))}
+          </div>
         </div>
+
 
         {/* Hero */}
         <div className="relative">
