@@ -115,9 +115,9 @@ function Index() {
 
             <div className="relative pl-14">
               {[
-                { title: "Peça seu cartão de crédito", text: "Você pede em poucas etapas e nós cuidamos do resto." },
-                { title: "Vamos analisar seu pedido", text: "Queremos te conhecer analisando seu histórico com relação a crédito." },
-                { title: "Receba seu cartão em casa", text: "Enviamos para o endereço informado e é só começar a usar." },
+                { title: "Crédito na hora", text: "Para usar onde e quando quiser!" },
+                { title: "Sem burocracia", text: "Sem consulta ao SPC/Serasa." },
+                { title: "Cartão para seu dia a dia", text: "Use em lojas físicas e online." },
               ].map((item, i, arr) => (
                 <div key={i} className="relative pb-8 last:pb-0">
                   {i < arr.length - 1 && (
