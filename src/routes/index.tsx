@@ -46,8 +46,10 @@ function Index() {
   const [idx, setIdx] = useState(0);
   const [clienteIdx, setClienteIdx] = useState(0);
   const [activeStep, setActiveStep] = useState(-1);
+  const [menuOpen, setMenuOpen] = useState(false);
   const timelineRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+
 
   useEffect(() => {
     const t = setInterval(() => setIdx((i) => (i + 1) % 3), 5000);
