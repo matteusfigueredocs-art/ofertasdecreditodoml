@@ -1,7 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
-import mlLogo from "@/assets/mercado-livre-logo.png";
 import cartaoMao from "@/assets/cartao-mao.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 export const Route = createFileRoute("/aprovado")({
