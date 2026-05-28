@@ -351,30 +351,6 @@ function Index() {
           </div>
         </div>
 
-        {/* Benefícios */}
-        <div className="px-4 mt-6">
-          <div className="bg-white rounded-2xl shadow-md p-5">
-            <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Benefícios do seu cartão</h2>
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { icon: "fa-circle-xmark", title: "Sem anuidade", desc: "Zero taxa anual" },
-                { icon: "fa-coins", title: "Cashback", desc: "Em compras ML" },
-                { icon: "fa-percent", title: "Descontos", desc: "Mercado Livre" },
-                { icon: "fa-calendar-days", title: "Parcele em até 12x", desc: "Sem juros" },
-              ].map((b) => (
-                <div key={b.title} className="border border-gray-100 rounded-xl p-3 flex items-start gap-2.5">
-                  <div className="w-9 h-9 rounded-full bg-[#EAF2FE] flex items-center justify-center shrink-0">
-                    <i className={`fa-solid ${b.icon} text-[#3483FA]`} />
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-gray-900 leading-tight">{b.title}</p>
-                    <p className="text-[11px] text-gray-500 mt-0.5">{b.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
 
         {/* Depoimentos */}
         <div className="px-4 mt-6">
