@@ -79,7 +79,8 @@ function Validacao() {
   return (
     <div className="min-h-screen bg-white flex flex-col relative overflow-hidden">
       {/* Header */}
-      <FunnelSteps current={1} />
+      <FunnelSteps current={1} showBack={false} />
+
 
       {/* Decorations */}
       <div className="absolute top-40 -left-20 w-64 h-64 rounded-full bg-white/40 pointer-events-none" />
