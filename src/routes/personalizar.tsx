@@ -6,6 +6,7 @@ import mlHandshake from "@/assets/ml-handshake.png";
 import mastercard from "@/assets/mastercard.png";
 import cardChip from "@/assets/card-chip.png";
 import cardBg from "@/assets/card-bg.png";
+import cardFrontBg from "@/assets/card-front-bg.png";
 
 export const Route = createFileRoute("/personalizar")({
   head: () => ({
@@ -61,8 +62,10 @@ function Personalizar() {
                 className="card-3d-face absolute inset-0 rounded-2xl shadow-2xl overflow-hidden"
                 style={{
                   backgroundColor: card.value,
-                  backgroundImage:
-                    "radial-gradient(circle at 24% 18%, rgba(255,255,255,.18), transparent 24%), linear-gradient(160deg, rgba(255,255,255,.08), rgba(0,0,0,.12))",
+                  backgroundImage: `url(${cardFrontBg})`,
+                  backgroundSize: "100% 100%",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
                 }}
               >
                 <img
