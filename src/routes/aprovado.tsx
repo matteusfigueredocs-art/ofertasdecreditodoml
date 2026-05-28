@@ -64,9 +64,13 @@ function Aprovado() {
             Agora é só finalizar seu cartão e começar a aproveitar
           </p>
 
-          <div className="rounded-xl bg-gradient-to-br from-[#FFE600] to-[#1E5BBA] text-white p-5 mb-6 text-center shadow-md">
-            <p className="text-[11px] uppercase tracking-wider opacity-90">Limite aprovado</p>
-            <p className="text-3xl font-extrabold mt-1 tabular-nums">
+          <div className="relative rounded-2xl bg-[#FFE600] p-6 mb-6 text-center shadow-[0_8px_24px_-8px_rgba(255,230,0,0.6)] border border-[#E6CF00] overflow-hidden">
+            <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/30" />
+            <div className="absolute -bottom-12 -left-10 w-28 h-28 rounded-full bg-black/5" />
+            <p className="relative text-[11px] uppercase tracking-[0.18em] text-gray-800 font-semibold">
+              Limite aprovado
+            </p>
+            <p className="relative text-4xl font-extrabold mt-2 tabular-nums text-gray-900">
               R$ {limite.toLocaleString("pt-BR")},00
             </p>
           </div>
