@@ -94,7 +94,7 @@ function Index() {
             </button>
 
             <div className="flex items-center justify-center mt-4 pt-4 border-t border-gray-100 text-gray-600">
-              <i className="fas fa-lock mr-2 text-[#3483FA]" />
+              <i className="fas fa-lock mr-2 text-gray-900" />
               <span className="text-sm">Seus dados estão protegidos e seguros</span>
             </div>
           </div>
@@ -110,13 +110,13 @@ function Index() {
                 <div key={n} className="flex items-center flex-1 last:flex-none">
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
-                      idx >= n ? "bg-[#3483FA] text-white" : "bg-gray-200 text-gray-500"
+                      idx >= n ? "bg-[#FFE600] text-gray-900" : "bg-gray-200 text-gray-500"
                     }`}
                   >
                     {n + 1}
                   </div>
                   {n < 2 && (
-                    <div className={`h-1 flex-1 mx-1 ${idx > n ? "bg-[#3483FA]" : "bg-gray-200"}`} />
+                    <div className={`h-1 flex-1 mx-1 ${idx > n ? "bg-[#FFE600]" : "bg-gray-200"}`} />
                   )}
                 </div>
               ))}
@@ -135,14 +135,14 @@ function Index() {
               <button
                 onClick={() => setIdx((i) => (i - 1 + 3) % 3)}
                 aria-label="Anterior"
-                className="absolute left-2 top-24 -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-[#3483FA] hover:bg-[#FFF8E1]"
+                className="absolute left-2 top-24 -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-gray-900 hover:bg-[#FFF8E1]"
               >
                 <i className="fas fa-chevron-left" />
               </button>
               <button
                 onClick={() => setIdx((i) => (i + 1) % 3)}
                 aria-label="Próximo"
-                className="absolute right-2 top-24 -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-[#3483FA] hover:bg-[#FFF8E1]"
+                className="absolute right-2 top-24 -translate-y-1/2 bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg text-gray-900 hover:bg-[#FFF8E1]"
               >
                 <i className="fas fa-chevron-right" />
               </button>
@@ -154,7 +154,7 @@ function Index() {
                   key={n}
                   onClick={() => setIdx(n)}
                   aria-label={`Ir para etapa ${n + 1}`}
-                  className={`w-2 h-2 rounded-full ${idx === n ? "bg-[#3483FA]" : "bg-gray-300"}`}
+                  className={`w-2 h-2 rounded-full ${idx === n ? "bg-[#FFE600]" : "bg-gray-300"}`}
                 />
               ))}
             </div>
@@ -165,15 +165,15 @@ function Index() {
         <div className="px-4 mt-6">
           <div className="bg-white rounded-xl shadow-md p-6 flex justify-between text-center">
             <div>
-              <p className="text-2xl font-bold text-[#3483FA]">+500mil</p>
+              <p className="text-2xl font-bold text-gray-900">+500mil</p>
               <p className="text-xs text-gray-600">Clientes</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-[#3483FA]">4.8/5</p>
+              <p className="text-2xl font-bold text-gray-900">4.8/5</p>
               <p className="text-xs text-gray-600">Avaliação</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-[#3483FA]">5 min</p>
+              <p className="text-2xl font-bold text-gray-900">5 min</p>
               <p className="text-xs text-gray-600">Aprovação</p>
             </div>
           </div>
@@ -187,14 +187,14 @@ function Index() {
           >
             <div className="flex items-center">
               <div className="bg-[#FFF8E1] w-10 h-10 rounded-full flex items-center justify-center mr-3">
-                <i className="fas fa-calculator text-[#3483FA]" />
+                <i className="fas fa-calculator text-gray-900" />
               </div>
               <div className="text-left">
                 <p className="font-semibold text-gray-800">Ver Limite Disponível</p>
                 <p className="text-sm text-gray-600">Descubra qual limite está liberado para você</p>
               </div>
             </div>
-            <i className="fas fa-chevron-right text-[#3483FA]" />
+            <i className="fas fa-chevron-right text-gray-900" />
           </button>
         </div>
 
