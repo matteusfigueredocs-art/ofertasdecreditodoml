@@ -131,6 +131,8 @@ function Index() {
               <span className="text-sm">Seus dados estão protegidos e seguros</span>
             </div>
           </div>
+        </div>
+
 
         {/* Bloco entrega do cartão */}
         <div className="px-4 mt-6">
