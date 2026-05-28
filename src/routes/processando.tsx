@@ -27,14 +27,12 @@ function Processando() {
   useEffect(() => {
     const timers: ReturnType<typeof setTimeout>[] = [];
     steps.forEach((_, i) => {
-  useEffect(() => {
-    const timers: ReturnType<typeof setTimeout>[] = [];
-    steps.forEach((_, i) => {
       timers.push(setTimeout(() => setCurrent(i + 1), (i + 1) * 400));
     });
     timers.push(setTimeout(() => navigate({ to: "/cartao-aprovado" }), 2000));
     return () => timers.forEach(clearTimeout);
   }, [navigate]);
+
   return (
     <div className="min-h-screen bg-white flex flex-col relative overflow-hidden">
       <div className="bg-[#F4D147] w-full py-3 flex justify-center items-center shadow-sm">
