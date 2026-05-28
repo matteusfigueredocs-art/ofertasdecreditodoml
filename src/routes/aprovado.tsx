@@ -1,8 +1,8 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
+import cartaoMao from "@/assets/cartao-mao.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
-
 export const Route = createFileRoute("/aprovado")({
   head: () => ({
     meta: [
@@ -19,11 +19,14 @@ export const Route = createFileRoute("/aprovado")({
 function Aprovado() {
   const navigate = useNavigate();
   const [limite, setLimite] = useState<number>(4200);
+  const [nome, setNome] = useState<string>("SEU NOME");
 
   useEffect(() => {
     try {
       const v = sessionStorage.getItem("limiteAprovado");
       if (v) setLimite(parseInt(v, 10) || 4200);
+      const n = sessionStorage.getItem("nomeTitular");
+      if (n) setNome(n.toUpperCase());
     } catch {}
   }, []);
 
@@ -63,6 +66,21 @@ function Aprovado() {
           <p className="text-sm text-gray-600 text-center mb-4">
             Agora é só finalizar seu cartão e começar a aproveitar
           </p>
+
+          {/* Cartão na mão com o nome do titular */}
+          <div className="relative flex justify-center mb-4">
+            <img
+              src={cartaoMao}
+              alt="Cartão Mercado Livre"
+              className="w-64 h-auto object-contain drop-shadow-xl"
+            />
+            <span
+              className="absolute text-white font-medium tracking-[0.14em] uppercase text-[11px] whitespace-nowrap"
+              style={{ top: "44%", left: "28%", transform: "translateX(-50%)" }}
+            >
+              {nome}
+            </span>
+          </div>
 
           <div className="relative rounded-2xl bg-[#FFE600] p-6 mb-6 text-center shadow-[0_8px_24px_-8px_rgba(255,230,0,0.6)] border border-[#E6CF00] overflow-hidden">
             <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/30" />
