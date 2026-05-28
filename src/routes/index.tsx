@@ -167,7 +167,7 @@ function Index() {
                   key={n}
                   onClick={() => setIdx(n)}
                   aria-label={`Ir para etapa ${n + 1}`}
-                  className={`w-2 h-2 rounded-full ${idx === n ? "bg-[#F4D147]" : "bg-gray-300"}`}
+                  className={`w-2 h-2 rounded-full ${idx === n ? "bg-[#3483FA]" : "bg-gray-300"}`}
                 />
               ))}
             </div>
