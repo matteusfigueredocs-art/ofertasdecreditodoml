@@ -46,6 +46,7 @@ function Validacao() {
   const navigate = useNavigate();
   const consultar = useServerFn(consultarCPF);
   const [cpf, setCpf] = useState("");
+  const [accepted, setAccepted] = useState(false);
   const [screen, setScreen] = useState<Screen>("form");
   const [data, setData] = useState<CPFData | null>(null);
   const [error, setError] = useState("");
@@ -110,12 +111,31 @@ function Validacao() {
                 className="w-full border border-gray-300 rounded-md px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#FFE600] focus:border-transparent"
               />
               {error && <p className="text-sm text-red-600 mt-2">{error}</p>}
+
+              <label className="flex items-start gap-2 mt-4 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={accepted}
+                  onChange={(e) => setAccepted(e.target.checked)}
+                  className="mt-0.5 w-4 h-4 accent-[#3483FA] shrink-0"
+                />
+                <span className="text-[12px] text-gray-600 leading-snug">
+                  Li e entendi a <a href="#" className="text-[#3483FA] underline">Declaração de Privacidade</a> e autorizo o tratamento dos meus dados, inclusive para consulta ao SCR.
+                </span>
+              </label>
+
               <button
                 onClick={handleContinue}
-                className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md mt-6 transition-all"
+                disabled={!accepted || cpf.replace(/\D/g, "").length !== 11}
+                className="w-full bg-[#FFE600] hover:bg-[#E6CF00] disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed text-gray-900 text-lg font-semibold py-4 rounded-md mt-4 transition-all"
               >
                 Continuar
               </button>
+
+              <div className="flex items-center justify-center mt-3 text-gray-500">
+                <i className="fas fa-lock mr-1.5 text-xs" />
+                <span className="text-[11px]">Seus dados estão protegidos e seguros</span>
+              </div>
             </>
           )}
 
