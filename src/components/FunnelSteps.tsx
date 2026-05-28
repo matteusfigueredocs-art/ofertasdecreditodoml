@@ -16,7 +16,7 @@ export function FunnelSteps({ current }: { current: number }) {
             const done = current > s.id;
             const active = current === s.id;
             const circleClass = done
-              ? "bg-[#FFE600] text-white border-[#FFE600]"
+              ? "bg-[#FFE600] text-gray-900 border-[#FFE600]"
               : active
               ? "bg-white text-gray-900 border-[#FFE600] ring-4 ring-[#FFE600]/20"
               : "bg-white/70 text-gray-500 border-gray-400";

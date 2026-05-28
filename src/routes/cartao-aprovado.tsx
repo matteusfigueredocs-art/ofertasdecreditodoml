@@ -61,7 +61,7 @@ function CartaoAprovado() {
         <section className="bg-white border-2 border-[#FFE600] rounded-xl p-6 text-center">
           <div className="text-xs font-bold tracking-widest text-gray-900">LIMITE APROVADO</div>
           <div className="text-4xl font-extrabold text-gray-900 my-3">R$ 4.750,00</div>
-          <div className="inline-block bg-[#FFE600] text-white text-xs font-semibold px-4 py-2 rounded-full">
+          <div className="inline-block bg-[#FFE600] text-gray-900 text-xs font-semibold px-4 py-2 rounded-full">
             Cartão liberado em até 5 minutos
           </div>
           <div className="text-[11px] text-gray-500 mt-3">Sujeito à confirmação dos dados pessoais</div>
@@ -70,7 +70,7 @@ function CartaoAprovado() {
         {/* CTA */}
         <button
           onClick={() => navigate({ to: "/aprovado" })}
-          className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-white text-lg font-semibold py-4 rounded-md shadow-md transition-all"
+          className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md shadow-md transition-all"
         >
           Finalizar Cadastro
         </button>

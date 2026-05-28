@@ -49,7 +49,7 @@ function Envio() {
             <div className="flex-1 min-w-0">
               <div className="flex items-start justify-between gap-2">
                 <div className="font-bold text-gray-800">SEDEX</div>
-                <div className="bg-[#FFE600] text-white text-[10px] font-bold py-1 px-2.5 rounded-full whitespace-nowrap">
+                <div className="bg-[#FFE600] text-gray-900 text-[10px] font-bold py-1 px-2.5 rounded-full whitespace-nowrap">
                   MAIS POPULAR
                 </div>
               </div>

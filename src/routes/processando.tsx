@@ -60,7 +60,7 @@ function Processando() {
                     {label}
                   </span>
                   {done ? (
-                    <span className="w-6 h-6 rounded-full bg-[#FFE600] text-white flex items-center justify-center text-xs">
+                    <span className="w-6 h-6 rounded-full bg-[#FFE600] text-gray-900 flex items-center justify-center text-xs">
                       ✓
                     </span>
                   ) : active ? (

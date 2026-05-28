@@ -124,7 +124,7 @@ function Endereco() {
             <button
               type="submit"
               disabled={saving || success}
-              className="w-full bg-[#FFE600] hover:bg-[#2968c8] disabled:bg-[#0a2540] disabled:text-gray-300 disabled:cursor-not-allowed text-white font-bold py-4 rounded-lg shadow-md transition-colors mt-2"
+              className="w-full bg-[#FFE600] hover:bg-[#E6CF00] disabled:bg-[#0a2540] disabled:text-gray-300 disabled:cursor-not-allowed text-gray-900 font-bold py-4 rounded-lg shadow-md transition-colors mt-2"
             >
               {saving ? "Salvando dados..." : "Continuar"}
             </button>

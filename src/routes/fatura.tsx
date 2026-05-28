@@ -51,7 +51,7 @@ function Fatura() {
                   day === 25 ? "col-span-2 max-w-[50%] mx-auto w-full" : ""
                 }`}
               >
-                <div className="w-12 h-12 rounded-md bg-[#FFE600] flex items-center justify-center text-white font-bold shrink-0">
+                <div className="w-12 h-12 rounded-md bg-[#FFE600] flex items-center justify-center text-gray-900 font-bold shrink-0">
                   {String(day).padStart(2, "0")}
                 </div>
                 <div className="flex-1 font-semibold text-gray-800 text-sm">Todo dia {day}</div>

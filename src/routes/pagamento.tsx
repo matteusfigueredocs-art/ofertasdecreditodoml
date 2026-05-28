@@ -107,7 +107,7 @@ function Pagamento() {
 
           <button
             onClick={() => navigate({ to: "/" })}
-            className="w-full bg-[#FFE600] hover:bg-[#2968c8] text-white font-bold py-4 rounded-lg shadow-md transition-colors"
+            className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 font-bold py-4 rounded-lg shadow-md transition-colors"
           >
             Pagar Frete
           </button>
@@ -169,7 +169,7 @@ function Pagamento() {
           </div>
 
           <div className="mt-6 flex items-center gap-3 p-3 bg-[#EAF2FE] rounded-lg">
-            <div className="w-9 h-9 rounded-full bg-[#FFE600] flex items-center justify-center text-white font-bold shrink-0">
+            <div className="w-9 h-9 rounded-full bg-[#FFE600] flex items-center justify-center text-gray-900 font-bold shrink-0">
               ✓
             </div>
             <div className="text-sm">

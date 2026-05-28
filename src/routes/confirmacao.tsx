@@ -128,7 +128,7 @@ function Confirmacao() {
 
           <button
             onClick={() => navigate({ to: "/pagamento", search: { nome: new URLSearchParams(typeof window !== "undefined" ? window.location.search : "").get("nome") ?? "" } as never })}
-            className="w-full bg-[#FFE600] hover:bg-[#2968c8] text-white font-bold py-4 rounded-lg shadow-md transition-colors tracking-wide"
+            className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 font-bold py-4 rounded-lg shadow-md transition-colors tracking-wide"
           >
             SIM, VOU QUERER!
           </button>
