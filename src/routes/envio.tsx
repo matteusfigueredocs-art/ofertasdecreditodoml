@@ -189,8 +189,8 @@ function Envio() {
                 onClick={() => handleSelect("sedex")}
                 className="w-full border border-gray-200 rounded-xl p-4 mb-3 flex items-center gap-4 hover:border-[#FFE600] hover:shadow-sm transition-all text-left bg-white"
               >
-                <div className="w-14 h-14 rounded-lg bg-[#FFE600] flex items-center justify-center shrink-0 text-2xl">
-                  📦
+                <div className="w-20 h-14 rounded-lg bg-white border border-gray-200 flex items-center justify-center shrink-0 p-1.5">
+                  <img src={sedexLogo} alt="SEDEX" className="max-h-full max-w-full object-contain" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-2">
@@ -209,11 +209,33 @@ function Envio() {
               </button>
 
               <button
+                onClick={() => handleSelect("loggi")}
+                className="w-full border border-gray-200 rounded-xl p-4 mb-3 flex items-center gap-4 hover:border-[#FFE600] hover:shadow-sm transition-all text-left bg-white"
+              >
+                <div className="w-20 h-14 rounded-lg bg-white border border-gray-200 flex items-center justify-center shrink-0 p-1.5">
+                  <img src={loggiLogo} alt="Loggi" className="max-h-full max-w-full object-contain" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="font-bold text-gray-800">Loggi</div>
+                    <div className="font-bold text-gray-800 whitespace-nowrap">R$ 31,67</div>
+                  </div>
+                  <div className="text-sm text-gray-600">2 a 4 dias úteis</div>
+                  <div className="text-xs text-gray-900 font-semibold mt-0.5">
+                    ✓ Rastreamento em tempo real
+                  </div>
+                  <div className="text-xs text-gray-500 italic mt-0.5">
+                    Chegará entre 30/05 a 03/06
+                  </div>
+                </div>
+              </button>
+
+              <button
                 onClick={() => handleSelect("pac")}
                 className="w-full border border-gray-200 rounded-xl p-4 flex items-center gap-4 hover:border-[#FFE600] hover:shadow-sm transition-all text-left bg-white"
               >
-                <div className="w-14 h-14 rounded-lg bg-[#EAF1FF] flex items-center justify-center shrink-0 text-2xl">
-                  📮
+                <div className="w-20 h-14 rounded-lg bg-white border border-gray-200 flex items-center justify-center shrink-0 p-1.5">
+                  <img src={pacLogo} alt="PAC" className="max-h-full max-w-full object-contain" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-2">
