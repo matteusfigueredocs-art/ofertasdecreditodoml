@@ -28,7 +28,7 @@ import clienteAndre from "@/assets/cliente-andre.png";
 import clientePatricia1 from "@/assets/cliente-patricia-1.png";
 import clienteJuliana from "@/assets/cliente-juliana.png";
 import clienteJoaoPedro from "@/assets/cliente-joao-pedro.png";
-import clientePatricia2 from "@/assets/cliente-patricia-2.png";
+
 import clienteMariana from "@/assets/cliente-mariana.png";
 import clienteJoao from "@/assets/cliente-joao.png";
 import clienteCarlos from "@/assets/cliente-carlos.png";
