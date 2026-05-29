@@ -385,24 +385,29 @@ function Index() {
           </div>
         </div>
 
-        {/* Por que pedir */}
+        {/* Benefícios */}
         <div className="bg-white p-5">
-          <h2 className="text-xl font-extrabold text-gray-900 mb-4 leading-tight">
-            Por que pedir o Cartão de crédito Mercado Pago?
-          </h2>
-          <ul className="space-y-3">
+          <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Benefícios do seu cartão</h2>
+          <div className="grid grid-cols-2 gap-3">
             {[
-              "Parcele suas compras em qualquer lugar. Você pode pagar em até 18x sem juros no Mercado Livre ao comprar produtos selecionados.",
-              "Use seu cartão em qualquer loja ou site do mundo.",
-              "Controle tudo pelo app, não importa onde esteja.",
-            ].map((text) => (
-              <li key={text} className="flex items-start gap-3">
-                <i className="fa-solid fa-check text-gray-700 mt-1 shrink-0" />
-                <p className="text-sm text-gray-700 leading-snug">{text}</p>
-              </li>
+              { icon: "fa-circle-xmark", title: "Sem anuidade", desc: "Zero taxa anual" },
+              { icon: "fa-coins", title: "Cashback", desc: "Em compras ML" },
+              { icon: "fa-percent", title: "Descontos", desc: "Mercado Livre" },
+              { icon: "fa-calendar-days", title: "Parcele em até 12x", desc: "Sem juros" },
+            ].map((b) => (
+              <div key={b.title} className="border border-gray-100 rounded-xl p-3 flex items-start gap-2.5">
+                <div className="w-9 h-9 rounded-full bg-[#EAF2FE] flex items-center justify-center shrink-0">
+                  <i className={`fa-solid ${b.icon} text-[#3483FA]`} />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-gray-900 leading-tight">{b.title}</p>
+                  <p className="text-[11px] text-gray-500 mt-0.5">{b.desc}</p>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
+
 
 
         {/* Quem já recebeu */}
