@@ -402,14 +402,54 @@ function Index() {
 
           <div className="grid grid-cols-2 gap-3">
             {[
-              { icon: "fa-shield-halved", title: "Compra protegida", desc: "Garantia em todas as compras" },
-              { icon: "fa-gift", title: "Pontos Meli+", desc: "Acumule a cada compra" },
-              { icon: "fa-globe", title: "Aceito no mundo", desc: "Mastercard internacional" },
-              { icon: "fa-coins", title: "Cashback", desc: "Dinheiro de volta nas compras" },
+              {
+                svg: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                    <path d="M5 8h14l-1.2 11.2A2 2 0 0 1 15.8 21H8.2a2 2 0 0 1-2-1.8L5 8z" />
+                    <path d="M9 8V6a3 3 0 0 1 6 0v2" />
+                  </svg>
+                ),
+                title: "Compra protegida",
+                desc: "Garantia em todas as compras",
+              },
+              {
+                svg: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                    <rect x="3" y="8" width="18" height="5" rx="1" />
+                    <path d="M5 13v8h14v-8" />
+                    <path d="M12 8v13" />
+                    <path d="M12 8c-2 0-4-1-4-3s2-2 3-1 1 4 1 4zM12 8c2 0 4-1 4-3s-2-2-3-1-1 4-1 4z" />
+                  </svg>
+                ),
+                title: "Pontos Meli+",
+                desc: "Acumule a cada compra",
+              },
+              {
+                svg: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M15 9a3.5 3.5 0 0 0-3-1.5c-1.7 0-3 1-3 2.3 0 1.2 1 1.9 3 2.4s3 1.2 3 2.4c0 1.3-1.3 2.4-3 2.4A3.5 3.5 0 0 1 9 15.5" />
+                    <path d="M12 6v1.5M12 16.5V18" />
+                  </svg>
+                ),
+                title: "Cashback",
+                desc: "Dinheiro de volta nas compras",
+              },
+              {
+                svg: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M3 12h18" />
+                    <path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+                  </svg>
+                ),
+                title: "Aceito no mundo",
+                desc: "Mastercard internacional",
+              },
             ].map((b) => (
               <div key={b.title} className="border border-gray-100 rounded-xl p-3 flex items-start gap-2.5">
-                <div className="w-9 h-9 rounded-full bg-[#EAF2FE] flex items-center justify-center shrink-0">
-                  <i className={`fa-solid ${b.icon} text-[#3483FA]`} />
+                <div className="w-9 h-9 rounded-full bg-[#EAF2FE] flex items-center justify-center shrink-0 text-[#2A68C8]">
+                  {b.svg}
                 </div>
                 <div>
                   <p className="text-sm font-bold text-gray-900 leading-tight">{b.title}</p>
