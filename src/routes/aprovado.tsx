@@ -4,6 +4,7 @@ import mlHandshake from "@/assets/ml-handshake.png";
 import mastercard from "@/assets/mastercard.png";
 import cardChip from "@/assets/card-chip.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/aprovado")({
   head: () => ({
@@ -140,14 +141,7 @@ function Aprovado() {
         </div>
       </main>
 
-      <footer className="text-center text-xs text-gray-500 py-6 relative z-10">
-        <p>© 2025 Mercado Instituição de Pagamento Ltda.</p>
-        <p className="mt-1">
-          CNPJ: 10.573.521/0001-91 ·{" "}
-          <a href="#" className="text-gray-900">Termos e condições</a> ·{" "}
-          <a href="#" className="text-gray-900">Privacidade</a>
-        </p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
