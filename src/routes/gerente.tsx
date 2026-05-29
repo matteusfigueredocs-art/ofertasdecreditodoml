@@ -49,7 +49,7 @@ function Gerente() {
           <div className="relative rounded-2xl p-[1.5px] mb-6 bg-gradient-to-br from-[#FFE600] via-[#3483FA] to-[#0F2D5C] shadow-[0_18px_40px_-20px_rgba(52,131,250,0.55)]">
             <div className="relative rounded-[14px] bg-white overflow-hidden">
               {/* top banner */}
-              <div className="relative h-20 bg-gradient-to-br from-[#0F2D5C] via-[#1E3A8A] to-[#3483FA] overflow-hidden">
+              <div className="relative h-32 bg-gradient-to-br from-[#0F2D5C] via-[#1E3A8A] to-[#3483FA] overflow-hidden">
                 <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-[#FFE600]/30 blur-2xl" />
                 <div className="absolute -bottom-12 -left-8 w-28 h-28 rounded-full bg-white/10 blur-xl" />
                 <span className="absolute top-3 right-3 inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.16em] bg-white/15 backdrop-blur text-white px-2.5 py-1 rounded-full border border-white/20">
@@ -58,7 +58,7 @@ function Gerente() {
                 </span>
               </div>
 
-              <div className="px-6 pb-6 -mt-12 flex flex-col items-center">
+              <div className="px-6 pb-6 -mt-16 flex flex-col items-center">
                 <div className="w-28 h-28 rounded-full p-[3px] bg-gradient-to-br from-[#FFE600] to-[#3483FA] shadow-xl ring-4 ring-white">
                   <div className="w-full h-full rounded-full overflow-hidden bg-white">
                     <img src={gerente} alt="Gerente Geovana Lima" className="w-full h-full object-cover" />
