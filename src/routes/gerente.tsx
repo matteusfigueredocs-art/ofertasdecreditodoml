@@ -9,6 +9,9 @@ export const Route = createFileRoute("/gerente")({
       { title: "Conheça sua Gerente - Mercado Livre" },
       { name: "description", content: "Sua gerente irá auxiliar na ativação do seu cartão." },
     ],
+    links: [
+      { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" },
+    ],
   }),
   component: Gerente,
 });
