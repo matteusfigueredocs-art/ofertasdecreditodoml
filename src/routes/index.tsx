@@ -492,12 +492,10 @@ function Index() {
 
 
         {/* Footer */}
-        <div className="px-4 pt-6 pb-28">
-          <div className="text-center text-xs text-gray-500">
-            <p>© 2025 Mercado Instituição de Pagamento Ltda.</p>
-            <p>CNPJ: 10.573.521/0001-91</p>
-          </div>
+        <div className="pb-28">
+          <SiteFooter />
         </div>
+
       </div>
 
       {/* CTA fixo no rodapé */}
