@@ -4,6 +4,7 @@ import { FunnelSteps } from "@/components/FunnelSteps";
 import mlHandshake from "@/assets/ml-handshake.png";
 import mastercard from "@/assets/mastercard.png";
 import cardChip from "@/assets/card-chip.png";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/personalizar")({
   head: () => ({

