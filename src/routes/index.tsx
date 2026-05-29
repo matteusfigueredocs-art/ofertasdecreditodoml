@@ -391,7 +391,7 @@ function Index() {
         <div className="bg-white p-5">
           <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Benefícios do seu cartão</h2>
           <div className="flex justify-center mb-4">
-            <img src={cartaoMao} alt="Cartão Mercado Livre Platinum sendo segurado" className="w-56 h-auto drop-shadow-xl" />
+            <img src={cartaoMao} alt="Cartão Mercado Livre Platinum sendo segurado" className="w-80 max-w-full h-auto drop-shadow-xl" />
           </div>
           <div className="grid grid-cols-2 gap-3">
             {[
