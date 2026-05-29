@@ -45,7 +45,7 @@ const clientes = [
   { img: clientePatricia1, name: "PATRÍCIA ALVES", city: "Cartão entregue", text: "Foi bem rápido e o cartão veio do jeito que eu esperava." },
   { img: clienteJuliana, name: "JULIANA FERREIRA", city: "Cartão entregue", text: "Chegou direitinho e já consegui ativar sem dificuldade." },
   { img: clienteJoaoPedro, name: "JOÃO PEDRO LIMA", city: "Cartão entregue", text: "A entrega foi tranquila e o cartão veio certinho." },
-  { img: clientePatricia2, name: "PATRÍCIA ALVES", city: "Cartão entregue", text: "Tudo chegou bem embalado e sem complicação." },
+  
   { img: clienteMariana, name: "MARIANA SOUZA", city: "Cartão entregue", text: "Atendimento ótimo e o cartão chegou rapidinho." },
   { img: clienteJoao, name: "JOÃO SILVA", city: "Cartão entregue", text: "Processo simples do começo ao fim, recomendo." },
   { img: clienteCarlos, name: "CARLOS OLIVEIRA", city: "Cartão entregue", text: "Recebi no prazo e já estou usando sem problemas." },
