@@ -125,7 +125,7 @@ function Validacao() {
               <button
                 onClick={handleContinue}
                 disabled={!accepted || cpf.replace(/\D/g, "").length !== 11}
-                className="w-full bg-[#FFE600] hover:bg-[#E6CF00] disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed text-gray-900 text-lg font-semibold py-4 rounded-md mt-4 transition-all"
+                className="w-full bg-[#2A68C8] hover:bg-[#1E5BBA] disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed text-white text-lg font-semibold py-4 rounded-md mt-4 transition-all"
               >
                 Continuar
               </button>
@@ -173,7 +173,7 @@ function Validacao() {
               </div>
               <button
                 onClick={() => navigate({ to: "/questionario" })}
-                className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md transition-all"
+                className="w-full bg-[#2A68C8] hover:bg-[#1E5BBA] text-white text-lg font-semibold py-4 rounded-md transition-all"
               >
                 Continuar
               </button>

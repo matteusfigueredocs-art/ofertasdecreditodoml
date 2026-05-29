@@ -67,7 +67,7 @@ function CartaoAprovado() {
         {/* CTA */}
         <button
           onClick={() => navigate({ to: "/aprovado" })}
-          className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 text-lg font-semibold py-4 rounded-md shadow-md transition-all"
+          className="w-full bg-[#2A68C8] hover:bg-[#1E5BBA] text-white text-lg font-semibold py-4 rounded-md shadow-md transition-all"
         >
           Finalizar Cadastro
         </button>
