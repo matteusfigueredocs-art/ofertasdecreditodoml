@@ -25,7 +25,7 @@ import step1Img from "@/assets/step-1.png";
 import step2Img from "@/assets/step-2.png";
 import step3Img from "@/assets/step-3.png";
 import clienteAndre from "@/assets/cliente-andre.png";
-import clientePatricia1 from "@/assets/cliente-patricia-1.png";
+import clientePatricia1 from "@/assets/cliente-patricia-2.png";
 import clienteJuliana from "@/assets/cliente-juliana.png";
 import clienteJoaoPedro from "@/assets/cliente-joao-pedro.png";
 
