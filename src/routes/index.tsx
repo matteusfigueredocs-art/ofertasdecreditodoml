@@ -166,7 +166,7 @@ function Index() {
         <div className="-mt-12 relative z-10">
           {/* White divider line between hero and content */}
           <div className="h-1 bg-white w-full shadow-md" />
-          <div className="bg-white shadow-md p-6 pt-10 relative">
+          <div className="bg-white p-6 pt-10 relative">
 
 
 
@@ -230,7 +230,7 @@ function Index() {
 
         {/* Bloco entrega do cartão */}
         <div>
-          <div className="relative bg-white shadow-md overflow-hidden">
+          <div className="relative bg-white overflow-hidden">
 
             <div className="relative px-6 pt-6 pb-2 text-center">
               <span className="inline-flex items-center gap-1.5 bg-[#FFE600] text-gray-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
@@ -299,7 +299,7 @@ function Index() {
         </div>
         {/* Como Solicitar - Carrossel */}
         <div id="como-solicitar">
-          <div className="bg-white shadow-md p-6">
+          <div className="bg-white p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Como solicitar?</h2>
 
 
@@ -355,7 +355,7 @@ function Index() {
         </div>
 
         {/* Estatísticas */}
-        <div className="px-4 py-6 bg-white shadow-md">
+        <div className="px-4 py-6 bg-white">
           <div className="bg-gradient-to-br from-[#3483FA] to-[#1c5fc7] rounded-2xl shadow-xl p-5 flex justify-between text-center relative overflow-hidden">
             <div className="absolute -top-6 -right-6 w-24 h-24 bg-white/10 rounded-full" />
             <div className="absolute -bottom-8 -left-8 w-28 h-28 bg-white/5 rounded-full" />
@@ -386,7 +386,7 @@ function Index() {
         </div>
 
         {/* Benefícios */}
-        <div className="bg-white shadow-md p-5">
+        <div className="bg-white p-5">
           <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Benefícios do seu cartão</h2>
           <div className="grid grid-cols-2 gap-3">
             {[
@@ -409,7 +409,7 @@ function Index() {
         </div>
 
         {/* Quem já recebeu */}
-        <div className="bg-white shadow-md p-5">
+        <div className="bg-white p-5">
           <h2 className="text-lg font-bold text-gray-900 text-center mb-1">Quem já recebeu o cartão</h2>
           <div className="flex items-center justify-center gap-1 text-yellow-400 mb-4">
             {[...Array(5)].map((_, i) => <i key={i} className="fa-solid fa-star text-xs" />)}
@@ -456,7 +456,7 @@ function Index() {
         </div>
 
         {/* FAQ */}
-        <div className="bg-white shadow-md p-5">
+        <div className="bg-white p-5">
 
             <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Perguntas frequentes</h2>
             <div className="space-y-2">
