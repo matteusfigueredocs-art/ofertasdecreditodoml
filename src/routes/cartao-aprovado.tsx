@@ -112,6 +112,24 @@ function CartaoAprovado() {
             ))}
           </div>
         </section>
+        {/* Por que pedir */}
+        <section className="bg-white rounded-xl p-5">
+          <h2 className="text-xl font-extrabold text-gray-900 mb-4 leading-tight">
+            Por que pedir o Cartão de crédito Mercado Pago?
+          </h2>
+          <ul className="space-y-3">
+            {[
+              "Parcele suas compras em qualquer lugar. Você pode pagar em até 18x sem juros no Mercado Livre ao comprar produtos selecionados.",
+              "Use seu cartão em qualquer loja ou site do mundo.",
+              "Controle tudo pelo app, não importa onde esteja.",
+            ].map((text) => (
+              <li key={text} className="flex items-start gap-3">
+                <i className="fas fa-check text-gray-700 mt-1 shrink-0" />
+                <p className="text-sm text-gray-700 leading-snug">{text}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
       </main>
 
       <footer className="text-center text-xs text-gray-500 py-6">
@@ -125,3 +143,4 @@ function CartaoAprovado() {
     </div>
   );
 }
+
