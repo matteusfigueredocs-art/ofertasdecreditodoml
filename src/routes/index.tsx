@@ -30,6 +30,7 @@ import clientePatricia2 from "@/assets/cliente-patricia-2.png";
 import clienteMariana from "@/assets/cliente-mariana.png";
 import clienteJoao from "@/assets/cliente-joao.png";
 import clienteCarlos from "@/assets/cliente-carlos.png";
+import cartaoMao from "@/assets/cartao-mao.png";
 
 const steps = [
   { img: step1Img, text: "Preencha seu CPF para consultar seu limite de cartão pré-aprovado" },
@@ -386,8 +387,12 @@ function Index() {
         </div>
 
         {/* Benefícios */}
+        {/* Benefícios */}
         <div className="bg-white p-5">
           <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Benefícios do seu cartão</h2>
+          <div className="flex justify-center mb-4">
+            <img src={cartaoMao} alt="Cartão Mercado Livre Platinum sendo segurado" className="w-56 h-auto drop-shadow-xl" />
+          </div>
           <div className="grid grid-cols-2 gap-3">
             {[
               { icon: "fa-circle-xmark", title: "Sem anuidade", desc: "Zero taxa anual" },
