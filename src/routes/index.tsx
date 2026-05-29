@@ -395,10 +395,10 @@ function Index() {
           </div>
           <div className="grid grid-cols-2 gap-3">
             {[
-              { icon: "fa-shield-halved", title: "Compras seguras", desc: "Proteção antifraude" },
-              { icon: "fa-mobile-screen", title: "App completo", desc: "Controle pelo celular" },
-              { icon: "fa-globe", title: "Aceito no mundo", desc: "Bandeira Mastercard" },
-              { icon: "fa-bolt", title: "Aprovação rápida", desc: "Em poucos minutos" },
+              { icon: "fa-circle-check", title: "Sem anuidade", desc: "Grátis para sempre" },
+              { icon: "fa-percent", title: "12% de desconto", desc: "Compras no Mercado Livre" },
+              { icon: "fa-calendar-days", title: "Até 12x sem juros", desc: "Em milhares de produtos" },
+              { icon: "fa-truck-fast", title: "Frete grátis", desc: "Sem valor mínimo no ML" },
             ].map((b) => (
               <div key={b.title} className="border border-gray-100 rounded-xl p-3 flex items-start gap-2.5">
                 <div className="w-9 h-9 rounded-full bg-[#EAF2FE] flex items-center justify-center shrink-0">
