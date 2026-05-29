@@ -390,11 +390,13 @@ function Index() {
         {/* Benefícios */}
         <div className="bg-white p-5">
           <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Benefícios do seu cartão</h2>
-          <div className="relative flex justify-center mb-4 rounded-2xl overflow-hidden bg-gradient-to-br from-[#EAF2FE] via-white to-[#3483FA]/10 py-6">
+          <div className="relative flex justify-center items-end mb-4 rounded-2xl overflow-hidden bg-gradient-to-br from-[#EAF2FE] via-white to-[#3483FA]/10 pt-6">
             <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, #3483FA 1.2px, transparent 1.5px)", backgroundSize: "18px 18px", opacity: 0.25 }} />
             <div className="absolute inset-0" style={{ background: "radial-gradient(circle at center, transparent 30%, rgba(255,255,255,0.7) 80%)" }} />
-            <img src={cartaoMao} alt="Cartão Mercado Livre Platinum sendo segurado" className="relative w-80 max-w-full h-auto drop-shadow-2xl" />
+            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent" />
+            <img src={cartaoMao} alt="Cartão Mercado Livre Platinum sendo segurado" className="relative w-72 max-w-full h-auto drop-shadow-2xl" />
           </div>
+
 
           <div className="grid grid-cols-2 gap-3">
             {[
