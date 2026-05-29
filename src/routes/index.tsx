@@ -401,7 +401,7 @@ function Index() {
               { icon: "fa-shield-halved", title: "Compra protegida", desc: "Garantia em todas as compras" },
               { icon: "fa-gift", title: "Pontos Meli+", desc: "Acumule a cada compra" },
               { icon: "fa-globe", title: "Aceito no mundo", desc: "Mastercard internacional" },
-              { icon: "fa-mobile-screen", title: "App completo", desc: "Controle tudo pelo celular" },
+              { icon: "fa-coins", title: "Cashback", desc: "Dinheiro de volta nas compras" },
             ].map((b) => (
               <div key={b.title} className="border border-gray-100 rounded-xl p-3 flex items-start gap-2.5">
                 <div className="w-9 h-9 rounded-full bg-[#EAF2FE] flex items-center justify-center shrink-0">
