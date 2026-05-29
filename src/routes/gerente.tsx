@@ -113,7 +113,7 @@ function Gerente() {
 
             <button
               type="submit"
-              className="w-full bg-[#FFE600] hover:bg-[#E6CF00] text-gray-900 font-bold py-4 rounded-lg shadow-md transition-colors"
+              className="w-full bg-[#2A68C8] hover:bg-[#1E5BBA] text-white font-bold py-4 rounded-lg shadow-md transition-colors"
             >
               Continuar
             </button>
