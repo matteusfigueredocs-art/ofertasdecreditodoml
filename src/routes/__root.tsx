@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "www.ofertadecreditodoml" },
+      { name: "description", content: "Page Replica Pro creates digital replicas of web pages, allowing users to duplicate and customize content." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "www.ofertadecreditodoml" },
+      { property: "og:description", content: "Page Replica Pro creates digital replicas of web pages, allowing users to duplicate and customize content." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "www.ofertadecreditodoml" },
+      { name: "twitter:description", content: "Page Replica Pro creates digital replicas of web pages, allowing users to duplicate and customize content." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a698352f-b63a-45a8-bdc7-9bb55f49a7fa/id-preview-e82c40f2--668f3925-5240-4614-aea2-36ed5aac47af.lovable.app-1780017210789.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a698352f-b63a-45a8-bdc7-9bb55f49a7fa/id-preview-e82c40f2--668f3925-5240-4614-aea2-36ed5aac47af.lovable.app-1780017210789.png" },
     ],
     links: [
       {
