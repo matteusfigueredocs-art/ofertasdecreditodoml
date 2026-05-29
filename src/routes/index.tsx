@@ -390,15 +390,16 @@ function Index() {
         {/* Benefícios */}
         <div className="bg-white p-5">
           <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Benefícios do seu cartão</h2>
-          <div className="flex justify-center mb-4">
-            <img src={cartaoMao} alt="Cartão Mercado Livre Platinum sendo segurado" className="w-80 max-w-full h-auto drop-shadow-xl" />
+          <div className="relative flex justify-center mb-4 rounded-2xl overflow-hidden bg-gradient-to-br from-[#FFE600] via-[#FFF06A] to-[#3483FA]/20 py-6">
+            <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.6) 0, transparent 40%), radial-gradient(circle at 80% 80%, rgba(52,131,250,0.4) 0, transparent 45%)" }} />
+            <img src={cartaoMao} alt="Cartão Mercado Livre Platinum sendo segurado" className="relative w-80 max-w-full h-auto drop-shadow-2xl" />
           </div>
           <div className="grid grid-cols-2 gap-3">
             {[
-              { icon: "fa-circle-check", title: "Sem anuidade", desc: "Grátis para sempre" },
-              { icon: "fa-percent", title: "12% de desconto", desc: "Compras no Mercado Livre" },
-              { icon: "fa-calendar-days", title: "Até 12x sem juros", desc: "Em milhares de produtos" },
-              { icon: "fa-truck-fast", title: "Frete grátis", desc: "Sem valor mínimo no ML" },
+              { icon: "fa-shield-halved", title: "Compra protegida", desc: "Garantia em todas as compras" },
+              { icon: "fa-gift", title: "Pontos Meli+", desc: "Acumule a cada compra" },
+              { icon: "fa-globe", title: "Aceito no mundo", desc: "Mastercard internacional" },
+              { icon: "fa-mobile-screen", title: "App completo", desc: "Controle tudo pelo celular" },
             ].map((b) => (
               <div key={b.title} className="border border-gray-100 rounded-xl p-3 flex items-start gap-2.5">
                 <div className="w-9 h-9 rounded-full bg-[#EAF2FE] flex items-center justify-center shrink-0">
@@ -412,6 +413,7 @@ function Index() {
             ))}
           </div>
         </div>
+
 
 
 
