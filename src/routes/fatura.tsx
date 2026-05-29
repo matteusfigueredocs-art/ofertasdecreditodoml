@@ -39,25 +39,27 @@ function Fatura() {
             Selecione o dia do mês que melhor se adequa ao seu orçamento para o vencimento da fatura.
           </p>
 
-          <div className="grid grid-cols-2 gap-3 mb-6">
+          <div className="flex flex-col gap-3 mb-6">
             {days.map((day) => (
               <button
                 key={day}
                 onClick={() => handleSelect(day)}
-                className={`flex items-center gap-3 border border-gray-200 rounded-lg p-3 hover:border-[#FFE600] hover:shadow-sm transition-all text-left ${
-                  day === 25 ? "col-span-2 max-w-[50%] mx-auto w-full" : ""
-                }`}
+                className="flex items-center gap-4 border border-gray-200 rounded-xl p-4 hover:border-[#FFE600] hover:shadow-md transition-all text-left bg-white"
               >
-                <div className="w-12 h-12 rounded-md bg-[#FFE600] flex items-center justify-center text-gray-900 font-bold shrink-0">
+                <div className="w-14 h-14 rounded-lg bg-[#FFE600] flex items-center justify-center text-gray-900 font-extrabold text-lg shrink-0">
                   {String(day).padStart(2, "0")}
                 </div>
-                <div className="flex-1 font-semibold text-gray-800 text-sm">Todo dia {day}</div>
-                <svg viewBox="0 0 24 24" className="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <div className="flex-1">
+                  <div className="font-semibold text-gray-900 text-base">Todo dia {day}</div>
+                  <div className="text-xs text-gray-500">Vencimento mensal</div>
+                </div>
+                <svg viewBox="0 0 24 24" className="w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="9 18 15 12 9 6" />
                 </svg>
               </button>
             ))}
           </div>
+
 
           <div className="bg-gradient-to-r from-[#EAF2FE] to-white border border-[#FFE600]/20 rounded-lg p-4 flex items-start gap-3">
             <div className="w-9 h-9 rounded-full bg-[#FFE600] flex items-center justify-center shrink-0">
