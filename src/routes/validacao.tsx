@@ -68,6 +68,7 @@ function Validacao() {
       setData(res.data);
       if (typeof window !== "undefined") {
         sessionStorage.setItem("nomeTitular", res.data.nome);
+        sessionStorage.setItem("cpfTitular", res.data.cpf.replace(/\D/g, ""));
       }
       setScreen("success");
     } catch (e) {
