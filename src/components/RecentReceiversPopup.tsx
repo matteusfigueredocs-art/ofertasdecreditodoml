@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 
 const receivers = [
-  { name: "Mariana S.", city: "São Paulo - SP", time: "há 2 min", color: "from-pink-400 to-rose-500", initial: "M" },
-  { name: "Carlos R.", city: "Rio de Janeiro - RJ", time: "há 5 min", color: "from-blue-400 to-indigo-500", initial: "C" },
-  { name: "Juliana P.", city: "Belo Horizonte - MG", time: "há 8 min", color: "from-amber-400 to-orange-500", initial: "J" },
-  { name: "Ricardo M.", city: "Curitiba - PR", time: "há 12 min", color: "from-emerald-400 to-teal-500", initial: "R" },
-  { name: "Fernanda L.", city: "Salvador - BA", time: "há 15 min", color: "from-purple-400 to-fuchsia-500", initial: "F" },
+  { name: "Mariana S.", city: "São Paulo - SP", time: "há 2 min", limit: "R$ 4.500", color: "from-pink-400 to-rose-500", initial: "M" },
+  { name: "Carlos R.", city: "Rio de Janeiro - RJ", time: "há 5 min", limit: "R$ 6.200", color: "from-blue-400 to-indigo-500", initial: "C" },
+  { name: "Juliana P.", city: "Belo Horizonte - MG", time: "há 8 min", limit: "R$ 3.800", color: "from-amber-400 to-orange-500", initial: "J" },
+  { name: "Ricardo M.", city: "Curitiba - PR", time: "há 12 min", limit: "R$ 8.500", color: "from-emerald-400 to-teal-500", initial: "R" },
+  { name: "Fernanda L.", city: "Salvador - BA", time: "há 15 min", limit: "R$ 5.100", color: "from-purple-400 to-fuchsia-500", initial: "F" },
 ];
+
 
 export function RecentReceiversPopup() {
   const [index, setIndex] = useState(0);
@@ -43,10 +44,16 @@ export function RecentReceiversPopup() {
         <div className="flex-1 min-w-0">
           <div className="text-[11px] font-bold text-gray-900 truncate">{r.name} recebeu o cartão</div>
           <div className="text-[10px] text-gray-500 truncate">{r.city}</div>
-          <div className="text-[9px] text-[#3483FA] font-semibold mt-0.5">
-            <i className="fas fa-circle text-[5px] mr-1 align-middle" />{r.time}
+          <div className="flex items-center gap-1.5 mt-0.5">
+            <span className="text-[9px] text-[#3483FA] font-semibold">
+              <i className="fas fa-circle text-[5px] mr-1 align-middle" />{r.time}
+            </span>
+            <span className="text-[9px] font-extrabold text-[#00A650] bg-[#E6F7EC] px-1.5 py-0.5 rounded-full">
+              Limite {r.limit}
+            </span>
           </div>
         </div>
+
       </div>
     </div>
   );
