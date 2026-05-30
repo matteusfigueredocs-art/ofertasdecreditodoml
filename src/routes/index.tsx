@@ -382,7 +382,7 @@ function Index() {
             <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, #3483FA 1.2px, transparent 1.5px)", backgroundSize: "18px 18px", opacity: 0.25 }} />
             <div className="absolute inset-0" style={{ background: "radial-gradient(circle at center, transparent 30%, rgba(255,255,255,0.7) 80%)" }} />
             <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent" />
-            <img src={cartaoMao} alt="Cartão Mercado Livre Platinum sendo segurado" className="relative w-72 max-w-full h-auto drop-shadow-2xl" />
+            <img src={cartaoMao} alt="Cartão Mercado Livre Platinum sendo segurado" className="relative w-72 max-w-full h-auto drop-shadow-2xl" loading="lazy" decoding="async" />
           </div>
 
 
