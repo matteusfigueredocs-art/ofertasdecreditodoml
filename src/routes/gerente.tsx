@@ -62,9 +62,9 @@ function Gerente() {
               </div>
 
               <div className="px-6 pb-6 -mt-12 flex flex-col items-center">
-                <div className="w-28 h-28 rounded-full p-[3px] bg-gradient-to-br from-[#FFE600] to-[#3483FA] shadow-xl ring-4 ring-white">
-                  <div className="w-full h-full rounded-full overflow-hidden bg-gray-100">
-                    <img src={gerente} alt="Gerente Geovana Lima" className="w-full h-full object-cover" style={{ objectPosition: "72% 35%" }} />
+                <div className="w-40 aspect-[940/627] rounded-2xl p-[3px] bg-gradient-to-br from-[#FFE600] to-[#3483FA] shadow-xl ring-4 ring-white">
+                  <div className="w-full h-full rounded-[14px] overflow-hidden bg-white">
+                    <img src={gerente} alt="Gerente Geovana Lima" className="w-full h-full object-contain" />
                   </div>
                 </div>
 
