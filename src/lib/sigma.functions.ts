@@ -30,6 +30,7 @@ export const createSigmaPix = createServerFn({ method: "POST" })
         paymentMethod: "pix",
         productLink: data.productLink,
         paymentValue: data.paymentValue,
+        useTwoCards: false,
         customer: {
           name: data.name,
           email: data.email,
