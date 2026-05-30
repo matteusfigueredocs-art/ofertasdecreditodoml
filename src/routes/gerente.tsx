@@ -1,7 +1,9 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import mlLogo from "@/assets/mercado-livre-logo.png";
 import gerente from "@/assets/gerente-geovana.png";
+import { FunnelSteps } from "@/components/FunnelSteps";
+import { SiteFooter } from "@/components/SiteFooter";
+
 
 export const Route = createFileRoute("/gerente")({
   head: () => ({
