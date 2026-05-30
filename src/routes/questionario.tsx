@@ -86,15 +86,16 @@ function Questionario() {
 
   useEffect(() => {
     if (!analyzing) return;
-    const t1 = setTimeout(() => setProgressSteps(1), 1200);
-    const t2 = setTimeout(() => setProgressSteps(2), 2600);
-    const t3 = setTimeout(() => setProgressSteps(3), 4000);
-    const t4 = setTimeout(() => setProgressSteps(4), 5200);
-    const t5 = setTimeout(() => navigate({ to: "/calculando" }), 6200);
+    const t1 = setTimeout(() => setProgressSteps(1), 2500);
+    const t2 = setTimeout(() => setProgressSteps(2), 5500);
+    const t3 = setTimeout(() => setProgressSteps(3), 8500);
+    const t4 = setTimeout(() => setProgressSteps(4), 11500);
+    const t5 = setTimeout(() => navigate({ to: "/calculando" }), 13500);
     return () => {
       [t1, t2, t3, t4, t5].forEach(clearTimeout);
     };
   }, [analyzing, navigate]);
+
 
   const step = steps[current];
 
@@ -154,17 +155,17 @@ function Questionario() {
 
               <div className="space-y-3">
                 {[
-                  "Validando perfil",
-                  "Calculando limite",
-                  "Verificando aprovação",
-                  "Finalizando análise",
-                ].map((label, idx) => {
+                  { label: "Validando perfil", icon: "fa-user-check" },
+                  { label: "Calculando limite", icon: "fa-calculator" },
+                  { label: "Verificando aprovação", icon: "fa-shield-halved" },
+                  { label: "Finalizando análise", icon: "fa-clipboard-check" },
+                ].map((item, idx) => {
                   const done = progressSteps > idx;
                   const active = progressSteps === idx;
                   return (
                     <div
-                      key={label}
-                      className={`flex items-center justify-between p-3 rounded-lg border ${
+                      key={item.label}
+                      className={`flex items-center gap-3 p-3 rounded-lg border ${
                         done
                           ? "border-[#FFE600] bg-[#FBE74D]"
                           : active
@@ -172,7 +173,14 @@ function Questionario() {
                           : "border-gray-200 bg-gray-50"
                       }`}
                     >
-                      <span className="text-sm font-medium text-gray-800">{label}</span>
+                      <span
+                        className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
+                          done || active ? "bg-[#FFE600]" : "bg-gray-200"
+                        }`}
+                      >
+                        <i className={`fas ${item.icon} text-gray-800 text-sm`} />
+                      </span>
+                      <span className="flex-1 text-sm font-medium text-gray-800">{item.label}</span>
                       {done ? (
                         <span className="w-6 h-6 rounded-full bg-[#FFE600] flex items-center justify-center">
                           <i className="fas fa-check text-white text-xs" />
@@ -186,6 +194,7 @@ function Questionario() {
                   );
                 })}
               </div>
+
             </div>
           )}
         </div>
