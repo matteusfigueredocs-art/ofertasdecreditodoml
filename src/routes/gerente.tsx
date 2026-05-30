@@ -37,7 +37,8 @@ function Gerente() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <div className="bg-[#FFE600] w-full h-3" />
+      <FunnelSteps current={6} />
+
 
       <main className="flex-1 flex items-start justify-center px-4 py-6">
         <div className="w-full max-w-md bg-white rounded-xl shadow-sm p-6 md:p-8">
