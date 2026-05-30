@@ -468,7 +468,7 @@ function Index() {
               {clientes.map((c) => (
                 <div key={c.name} className="w-full shrink-0 px-1">
                   <div className="relative rounded-xl overflow-hidden aspect-[4/5] shadow-md">
-                    <img src={c.img} alt={`${c.name} recebeu o cartão`} className="w-full h-full object-cover" />
+                    <img src={c.img} alt={`${c.name} recebeu o cartão`} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                     <div className="absolute top-2 right-2 bg-[#FFE600] rounded-full px-2 py-1 flex items-center gap-1 shadow">
                       <i className="fa-solid fa-check text-[10px] text-gray-900" />
                       <span className="text-[10px] font-bold text-gray-900">Entregue</span>
