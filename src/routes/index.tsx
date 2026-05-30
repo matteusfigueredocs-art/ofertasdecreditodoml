@@ -179,9 +179,21 @@ function Index() {
             </div>
 
 
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-8 text-center leading-tight">
-              Aproveite seu cartão de crédito de forma segura, rápida e sem burocracia
-            </h2>
+            <div className="text-center mb-8">
+              <span className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] text-[#3483FA] bg-[#EAF2FE] px-3 py-1 rounded-full mb-3">
+                Como funciona
+              </span>
+              <h2 className="text-3xl font-extrabold text-gray-900 leading-tight">
+                Aproveite seu cartão de crédito de forma{" "}
+                <span className="relative inline-block">
+                  <span className="absolute inset-x-0 bottom-1 h-3 bg-[#FFE600] -z-10" />
+                  segura, rápida
+                </span>{" "}
+                e sem burocracia
+              </h2>
+            </div>
+
+
 
             <div ref={timelineRef} className="relative pl-14">
               {[
@@ -239,9 +251,10 @@ function Index() {
               <span className="inline-flex items-center gap-1.5 bg-[#FFE600] text-gray-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
                 <i className="fas fa-truck-fast" /> Entrega rápida e segura
               </span>
-              <h3 className="mt-3 text-xl font-bold text-gray-900 leading-tight">
-                Receba seu cartão em casa
+              <h3 className="mt-3 text-2xl font-extrabold text-gray-900 leading-tight">
+                Receba seu cartão <span className="relative inline-block"><span className="absolute inset-x-0 bottom-1 h-3 bg-[#FFE600] -z-10" />em casa</span>
               </h3>
+
               <p className="text-sm text-gray-600 mt-1.5 max-w-xs mx-auto">
                 Embalagem exclusiva, rastreamento em tempo real e entrega em todo o Brasil.
               </p>
@@ -361,7 +374,10 @@ function Index() {
         {/* Benefícios */}
         {/* Benefícios */}
         <div className="bg-white p-5">
-          <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Benefícios do seu cartão</h2>
+          <h2 className="text-2xl font-extrabold text-gray-900 text-center mb-4 leading-tight">
+            <span className="relative inline-block"><span className="absolute inset-x-0 bottom-1 h-3 bg-[#FFE600] -z-10" />Benefícios</span> do seu cartão
+          </h2>
+
           <div className="relative flex justify-center items-end mb-4 rounded-2xl overflow-hidden bg-gradient-to-br from-[#EAF2FE] via-white to-[#3483FA]/10 pt-6">
             <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, #3483FA 1.2px, transparent 1.5px)", backgroundSize: "18px 18px", opacity: 0.25 }} />
             <div className="absolute inset-0" style={{ background: "radial-gradient(circle at center, transparent 30%, rgba(255,255,255,0.7) 80%)" }} />
@@ -435,7 +451,10 @@ function Index() {
 
         {/* Quem já recebeu */}
         <div className="bg-white p-5">
-          <h2 className="text-lg font-bold text-gray-900 text-center mb-1">Quem já recebeu o cartão</h2>
+          <h2 className="text-2xl font-extrabold text-gray-900 text-center mb-1 leading-tight">
+            Quem já <span className="relative inline-block"><span className="absolute inset-x-0 bottom-1 h-3 bg-[#FFE600] -z-10" />recebeu</span> o cartão
+          </h2>
+
           <div className="flex items-center justify-center gap-1 text-yellow-400 mb-4">
             {[...Array(5)].map((_, i) => <i key={i} className="fa-solid fa-star text-xs" />)}
             <span className="text-xs text-gray-600 ml-1 font-medium">4.8 · +12 mil avaliações</span>
