@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-import heroImg from "@/assets/hero-mercado-livre.png";
+import heroImg from "@/assets/hero-mercado-livre-clean.png";
 import cartaoEntregaImg from "@/assets/cartao-entrega.png";
 import step1Img from "@/assets/step-1.png";
 import step2Img from "@/assets/step-2.png";
