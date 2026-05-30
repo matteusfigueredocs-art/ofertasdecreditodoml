@@ -166,6 +166,8 @@ function Envio() {
                       {/* baú */}
                       <rect x="0" y="0" width="26" height="16" rx="2" fill="#ffffff" stroke="#0d0d0d" strokeWidth="1.5" />
                       <rect x="2" y="2" width="22" height="12" fill="#FFE600" />
+                      {/* logo ML no baú */}
+                      <text x="13" y="11" textAnchor="middle" fontSize="6" fontWeight="900" fill="#0050B4" fontFamily="Arial, sans-serif">ML</text>
                       {/* cabine */}
                       <rect x="26" y="4" width="10" height="12" rx="1.5" fill="#0050B4" stroke="#0d0d0d" strokeWidth="1.5" />
                       <rect x="28" y="6" width="6" height="4" fill="#EAF2FE" />
@@ -178,6 +180,7 @@ function Envio() {
                       <mpath href="#rota" />
                     </animateMotion>
                   </g>
+
                 </svg>
 
                 {/* badge "rastreando" */}
@@ -185,6 +188,15 @@ function Envio() {
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                   <span className="text-[10px] font-bold text-gray-700 tracking-wide">RASTREANDO</span>
                 </div>
+
+                {/* badge Mercado Livre */}
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#FFE600] px-2.5 py-1 rounded-full border border-[#0050B4]/20 flex items-center gap-1.5 shadow-sm">
+                  <svg viewBox="0 0 24 24" className="w-3 h-3" fill="#0050B4">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  </svg>
+                  <span className="text-[9px] font-extrabold text-[#0050B4] tracking-wide">MERCADO LIVRE • ENVIOS</span>
+                </div>
+
               </div>
 
               <div className="space-y-3">
