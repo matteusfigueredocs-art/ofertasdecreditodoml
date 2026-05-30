@@ -165,21 +165,14 @@ function Envio() {
                     <path id="rota" d="M40 160 Q 140 60 220 130 T 370 50" />
                   </defs>
                   <use href="#rota" stroke="#0050B4" strokeWidth="2.5" strokeDasharray="6 6" fill="none" />
-                  {/* Caminhão SVG percorrendo a rota */}
+                  {/* Cartão percorrendo a rota */}
                   <g>
-                    <g transform="translate(-18,-12)">
-                      {/* baú */}
-                      <rect x="0" y="0" width="26" height="16" rx="2" fill="#ffffff" stroke="#0d0d0d" strokeWidth="1.5" />
-                      <rect x="2" y="2" width="22" height="12" fill="#FFE600" />
-                      {/* logo ML no baú */}
-                      <text x="13" y="11" textAnchor="middle" fontSize="6" fontWeight="900" fill="#0050B4" fontFamily="Arial, sans-serif">ML</text>
-                      {/* cabine */}
-                      <rect x="26" y="4" width="10" height="12" rx="1.5" fill="#0050B4" stroke="#0d0d0d" strokeWidth="1.5" />
-                      <rect x="28" y="6" width="6" height="4" fill="#EAF2FE" />
-                      {/* rodas */}
-                      <circle cx="7" cy="18" r="3" fill="#0d0d0d" />
-                      <circle cx="20" cy="18" r="3" fill="#0d0d0d" />
-                      <circle cx="32" cy="18" r="3" fill="#0d0d0d" />
+                    <g transform="translate(-16,-10)">
+                      <rect x="0" y="0" width="32" height="20" rx="3" fill={cardColor} stroke="#0d0d0d" strokeWidth="1.2" />
+                      <rect x="3" y="4" width="7" height="5" rx="1" fill="#E8C658" stroke="#0d0d0d" strokeWidth="0.4" />
+                      <rect x="3" y="14" width="14" height="1.2" fill={cardColor === "#FFE600" ? "#0d0d0d" : "#ffffff"} opacity="0.7" />
+                      <circle cx="25" cy="14" r="2.2" fill="#EB001B" opacity="0.9" />
+                      <circle cx="28" cy="14" r="2.2" fill="#F79E1B" opacity="0.9" />
                     </g>
                     <animateMotion dur="2.8s" repeatCount="indefinite" rotate="auto">
                       <mpath href="#rota" />
@@ -194,13 +187,6 @@ function Envio() {
                   <span className="text-[10px] font-bold text-gray-700 tracking-wide">RASTREANDO</span>
                 </div>
 
-                {/* badge Mercado Livre */}
-                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#FFE600] px-2.5 py-1 rounded-full border border-[#0050B4]/20 flex items-center gap-1.5 shadow-sm">
-                  <svg viewBox="0 0 24 24" className="w-3 h-3" fill="#0050B4">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                  </svg>
-                  <span className="text-[9px] font-extrabold text-[#0050B4] tracking-wide">MERCADO LIVRE • ENVIOS</span>
-                </div>
 
               </div>
 
