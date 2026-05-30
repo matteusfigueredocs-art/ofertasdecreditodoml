@@ -179,9 +179,20 @@ function Index() {
             </div>
 
 
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-8 text-center leading-tight">
-              Aproveite seu cartão de crédito de forma <span className="relative inline-block">segura<span className="absolute left-0 right-0 bottom-0.5 h-2 bg-[#FFE600] -z-0" /></span>, <span className="relative inline-block">rápida<span className="absolute left-0 right-0 bottom-0.5 h-2 bg-[#FFE600] -z-0" /></span> e sem <span className="relative inline-block">burocracia<span className="absolute left-0 right-0 bottom-0.5 h-2 bg-[#FFE600] -z-0" /></span>
-            </h2>
+            <div className="text-center mb-8">
+              <span className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] text-[#3483FA] bg-[#EAF2FE] px-3 py-1 rounded-full mb-3">
+                Como funciona
+              </span>
+              <h2 className="text-3xl font-extrabold text-gray-900 leading-tight">
+                Aproveite seu cartão de crédito de forma{" "}
+                <span className="relative inline-block">
+                  <span className="absolute inset-x-0 bottom-1 h-3 bg-[#FFE600] -z-10" />
+                  segura, rápida
+                </span>{" "}
+                e sem burocracia
+              </h2>
+            </div>
+
 
 
             <div ref={timelineRef} className="relative pl-14">
