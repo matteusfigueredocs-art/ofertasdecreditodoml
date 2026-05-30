@@ -44,10 +44,16 @@ export function RecentReceiversPopup() {
         <div className="flex-1 min-w-0">
           <div className="text-[11px] font-bold text-gray-900 truncate">{r.name} recebeu o cartão</div>
           <div className="text-[10px] text-gray-500 truncate">{r.city}</div>
-          <div className="text-[9px] text-[#3483FA] font-semibold mt-0.5">
-            <i className="fas fa-circle text-[5px] mr-1 align-middle" />{r.time}
+          <div className="flex items-center gap-1.5 mt-0.5">
+            <span className="text-[9px] text-[#3483FA] font-semibold">
+              <i className="fas fa-circle text-[5px] mr-1 align-middle" />{r.time}
+            </span>
+            <span className="text-[9px] font-extrabold text-[#00A650] bg-[#E6F7EC] px-1.5 py-0.5 rounded-full">
+              Limite {r.limit}
+            </span>
           </div>
         </div>
+
       </div>
     </div>
   );
