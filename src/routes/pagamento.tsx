@@ -214,7 +214,7 @@ function Pagamento() {
                 disabled={loading}
                 className="w-full bg-[#2A68C8] hover:bg-[#1E5BBA] disabled:opacity-60 text-white font-bold py-4 rounded-lg shadow-md transition-colors"
               >
-                {loading ? "Gerando PIX..." : "Pagar Frete com PIX"}
+                {loading ? "Gerando..." : "Pagar Frete"}
               </button>
               <div className="text-center text-xs text-gray-900 font-semibold mt-2 flex items-center justify-center gap-1">
                 🔒 Pagamento 100% seguro
