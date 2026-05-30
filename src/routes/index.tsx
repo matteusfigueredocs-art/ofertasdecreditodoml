@@ -344,7 +344,7 @@ function Index() {
               >
                 {steps.map((s, i) => (
                   <div key={i} className="w-full shrink-0 flex flex-col items-center text-center px-2">
-                    <img src={s.img} alt={`Passo ${i + 1}`} className="w-full max-w-xs rounded-lg" />
+                    <img src={s.img} alt={`Passo ${i + 1}`} className="w-full max-w-xs rounded-lg" loading="lazy" decoding="async" />
                     <p className="text-sm text-gray-700 mt-3">{s.text}</p>
                   </div>
                 ))}
