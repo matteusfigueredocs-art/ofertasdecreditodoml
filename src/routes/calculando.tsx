@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { TrendingUp, UserCheck, Calculator, CheckCircle2, Sparkles, ShieldCheck } from "lucide-react";
+import { TrendingUp, UserCheck, Calculator, CheckCircle2, Sparkles, ShieldCheck, CreditCard, Wallet, BadgeCheck } from "lucide-react";
 import { FunnelSteps } from "@/components/FunnelSteps";
 
 export const Route = createFileRoute("/calculando")({
@@ -137,11 +137,33 @@ function Calculando() {
               status={step > 1 ? "done" : "loading"}
             />
             <StepRow
-              icon={<CheckCircle2 className="w-4 h-4 text-white" strokeWidth={2.5} />}
-              label="Verificando aprovação"
+              icon={<CreditCard className="w-4 h-4 text-white" strokeWidth={2.5} />}
+              label="Verificando aprovação do cartão"
               state={getState(2)}
               status={step > 2 ? "done" : step === 2 ? "loading" : "waiting"}
             />
+          </div>
+
+          {/* Financial trust icons */}
+          <div className="mt-4 grid grid-cols-3 gap-2">
+            <div className="rounded-xl border border-gray-200 bg-white p-3 flex flex-col items-center gap-1.5">
+              <div className="w-9 h-9 rounded-full bg-[#EAF2FE] flex items-center justify-center">
+                <CreditCard className="w-4 h-4 text-[#3483FA]" strokeWidth={2.4} />
+              </div>
+              <span className="text-[10px] font-semibold text-gray-700">Cartão Platinum</span>
+            </div>
+            <div className="rounded-xl border border-gray-200 bg-white p-3 flex flex-col items-center gap-1.5">
+              <div className="w-9 h-9 rounded-full bg-[#FFF7CC] flex items-center justify-center">
+                <Wallet className="w-4 h-4 text-[#B8860B]" strokeWidth={2.4} />
+              </div>
+              <span className="text-[10px] font-semibold text-gray-700">Sem anuidade</span>
+            </div>
+            <div className="rounded-xl border border-gray-200 bg-white p-3 flex flex-col items-center gap-1.5">
+              <div className="w-9 h-9 rounded-full bg-[#E6F7EC] flex items-center justify-center">
+                <BadgeCheck className="w-4 h-4 text-[#16A34A]" strokeWidth={2.4} />
+              </div>
+              <span className="text-[10px] font-semibold text-gray-700">Aprovação fácil</span>
+            </div>
           </div>
 
           {/* Trust badge */}
