@@ -166,6 +166,8 @@ function Envio() {
                       {/* baú */}
                       <rect x="0" y="0" width="26" height="16" rx="2" fill="#ffffff" stroke="#0d0d0d" strokeWidth="1.5" />
                       <rect x="2" y="2" width="22" height="12" fill="#FFE600" />
+                      {/* logo ML no baú */}
+                      <text x="13" y="11" textAnchor="middle" fontSize="6" fontWeight="900" fill="#0050B4" fontFamily="Arial, sans-serif">ML</text>
                       {/* cabine */}
                       <rect x="26" y="4" width="10" height="12" rx="1.5" fill="#0050B4" stroke="#0d0d0d" strokeWidth="1.5" />
                       <rect x="28" y="6" width="6" height="4" fill="#EAF2FE" />
@@ -178,6 +180,7 @@ function Envio() {
                       <mpath href="#rota" />
                     </animateMotion>
                   </g>
+
                 </svg>
 
                 {/* badge "rastreando" */}
