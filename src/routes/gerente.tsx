@@ -3,6 +3,8 @@ import { useState } from "react";
 import gerente from "@/assets/gerente-geovana.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 import { SiteFooter } from "@/components/SiteFooter";
+import { RecentReceiversPopup } from "@/components/RecentReceiversPopup";
+
 
 
 export const Route = createFileRoute("/gerente")({
@@ -89,35 +91,7 @@ function Gerente() {
             </div>
           </div>
 
-          <div className="mb-6">
-            <div className="flex items-center justify-center gap-2 mb-3">
-              <i className="fas fa-users text-[#3483FA]" />
-              <h2 className="text-sm font-bold text-gray-800">Clientes que já receberam</h2>
-            </div>
-            <div className="space-y-3">
-              {[
-                { name: "Mariana S.", city: "São Paulo - SP", text: "Chegou em 5 dias! Já estou usando, super recomendo.", color: "from-pink-400 to-rose-500", initial: "M" },
-                { name: "Carlos R.", city: "Rio de Janeiro - RJ", text: "Atendimento da Geovana foi excelente, cartão chegou rapidinho!", color: "from-blue-400 to-indigo-500", initial: "C" },
-                { name: "Juliana P.", city: "Belo Horizonte - MG", text: "Fácil de pedir e o limite veio melhor do que eu esperava.", color: "from-amber-400 to-orange-500", initial: "J" },
-              ].map((t, i) => (
-                <div key={i} className="flex gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
-                  <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-white font-bold shrink-0`}>
-                    {t.initial}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2">
-                      <div className="text-xs font-bold text-gray-900 truncate">{t.name}</div>
-                      <div className="flex items-center gap-0.5 text-[#FFB800] text-[10px]">
-                        <i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" />
-                      </div>
-                    </div>
-                    <div className="text-[10px] text-gray-500 mb-1">{t.city} • <i className="fas fa-circle-check text-[#3483FA]" /> Recebido</div>
-                    <p className="text-xs text-gray-700 leading-snug">"{t.text}"</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+
 
 
 
@@ -148,6 +122,8 @@ function Gerente() {
         </div>
       </main>
       <SiteFooter />
+      <RecentReceiversPopup />
+
     </div>
 
   );
