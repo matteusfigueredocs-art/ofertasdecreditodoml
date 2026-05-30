@@ -1,32 +1,84 @@
 import { useEffect, useState } from "react";
 
-const receivers = [
-  { name: "Mariana S.", city: "São Paulo - SP", time: "há 2 min", limit: "R$ 4.500", color: "from-pink-400 to-rose-500", initial: "M" },
-  { name: "Carlos R.", city: "Rio de Janeiro - RJ", time: "há 5 min", limit: "R$ 6.200", color: "from-blue-400 to-indigo-500", initial: "C" },
-  { name: "Juliana P.", city: "Belo Horizonte - MG", time: "há 8 min", limit: "R$ 3.800", color: "from-amber-400 to-orange-500", initial: "J" },
-  { name: "Ricardo M.", city: "Curitiba - PR", time: "há 12 min", limit: "R$ 8.500", color: "from-emerald-400 to-teal-500", initial: "R" },
-  { name: "Fernanda L.", city: "Salvador - BA", time: "há 15 min", limit: "R$ 5.100", color: "from-purple-400 to-fuchsia-500", initial: "F" },
+const firstNames = [
+  "Mariana", "Carlos", "Juliana", "Ricardo", "Fernanda", "Bruno", "Camila", "Rafael", "Patrícia", "Lucas",
+  "Beatriz", "Gustavo", "Amanda", "Felipe", "Larissa", "Diego", "Vanessa", "Thiago", "Aline", "Eduardo",
+  "Renata", "Marcelo", "Tatiana", "André", "Priscila", "Rodrigo", "Carolina", "Leandro", "Bianca", "Vinícius",
+  "Daniela", "Fábio", "Letícia", "Murilo", "Gabriela", "Henrique", "Natália", "Pedro", "Sabrina", "Alex",
+  "Isabela", "Otávio", "Cristina", "Wesley", "Débora", "Igor", "Simone", "Caio", "Joana", "Matheus",
+  "Adriana", "Paulo", "Roberta", "Sérgio", "Luciana", "Marcos", "Tatiane", "José", "Helena", "Antônio",
+  "Mônica", "Ronaldo", "Andréa", "Júlio", "Sandra", "Anderson", "Cláudia", "Maurício", "Vera", "Wagner",
+  "Eliane", "Edson", "Sônia", "Jorge", "Regina", "Marcio", "Suelen", "Roberto", "Karina", "Daniel",
+  "Michele", "Alexandre", "Janaína", "Fernando", "Tamires", "Cristiano", "Vitória", "Davi", "Lorena", "Samuel",
+  "Yasmin", "Nathan", "Raquel", "Erick", "Mirela", "Heitor", "Manuela", "Arthur", "Sophia", "Enzo",
 ];
 
+const lastInitials = ["S.", "R.", "P.", "M.", "L.", "C.", "F.", "G.", "A.", "B.", "O.", "T.", "N.", "D."];
+
+const cities = [
+  "São Paulo - SP", "Rio de Janeiro - RJ", "Belo Horizonte - MG", "Curitiba - PR", "Salvador - BA",
+  "Porto Alegre - RS", "Recife - PE", "Fortaleza - CE", "Brasília - DF", "Manaus - AM",
+  "Goiânia - GO", "Belém - PA", "Vitória - ES", "Florianópolis - SC", "Natal - RN",
+  "Campinas - SP", "São Luís - MA", "Maceió - AL", "João Pessoa - PB", "Cuiabá - MT",
+  "Teresina - PI", "Aracaju - SE", "Campo Grande - MS", "Londrina - PR", "Ribeirão Preto - SP",
+  "Uberlândia - MG", "Sorocaba - SP", "Niterói - RJ", "Santos - SP", "Joinville - SC",
+  "Caxias do Sul - RS", "Feira de Santana - BA", "Juiz de Fora - MG", "São José dos Campos - SP", "Osasco - SP",
+  "Contagem - MG", "Aparecida de Goiânia - GO", "Ananindeua - PA", "Jaboatão - PE", "Petrópolis - RJ",
+  "Santo André - SP", "São Bernardo - SP", "Pelotas - RS", "Anápolis - GO", "Itapetinga - BA",
+  "Maringá - PR", "Mauá - SP", "Diadema - SP", "Carapicuíba - SP", "Piracicaba - SP",
+];
+
+const gradients = [
+  "from-pink-400 to-rose-500",
+  "from-blue-400 to-indigo-500",
+  "from-amber-400 to-orange-500",
+  "from-emerald-400 to-teal-500",
+  "from-purple-400 to-fuchsia-500",
+  "from-cyan-400 to-blue-500",
+  "from-red-400 to-pink-500",
+  "from-yellow-400 to-amber-500",
+  "from-green-400 to-emerald-500",
+  "from-violet-400 to-purple-500",
+  "from-sky-400 to-cyan-500",
+  "from-orange-400 to-red-500",
+];
+
+const limits = [
+  "R$ 1.800", "R$ 2.500", "R$ 3.200", "R$ 3.800", "R$ 4.100", "R$ 4.500", "R$ 5.100", "R$ 5.700",
+  "R$ 6.200", "R$ 6.800", "R$ 7.400", "R$ 8.000", "R$ 8.500", "R$ 9.200", "R$ 10.000", "R$ 12.000",
+];
+
+function pick<T>(arr: T[]) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function genReceiver() {
+  const first = pick(firstNames);
+  const last = pick(lastInitials);
+  return {
+    name: `${first} ${last}`,
+    initial: first[0],
+    city: pick(cities),
+    limit: pick(limits),
+    time: `há ${Math.floor(Math.random() * 28) + 1} min`,
+    color: pick(gradients),
+  };
+}
 
 export function RecentReceiversPopup() {
-  const [index, setIndex] = useState(0);
+  const [r, setR] = useState(() => genReceiver());
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    let i = 0;
     const show = () => {
-      setIndex(i % receivers.length);
+      setR(genReceiver());
       setVisible(true);
       setTimeout(() => setVisible(false), 4500);
-      i++;
     };
     const start = setTimeout(show, 1500);
     const interval = setInterval(show, 7000);
     return () => { clearTimeout(start); clearInterval(interval); };
   }, []);
-
-  const r = receivers[index];
 
   return (
     <div
@@ -52,4 +104,3 @@ export function RecentReceiversPopup() {
     </div>
   );
 }
-
