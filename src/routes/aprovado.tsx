@@ -104,55 +104,6 @@ function Aprovado() {
             </div>
           </div>
 
-          <div className="relative rounded-2xl p-[1.5px] mb-6 bg-gradient-to-br from-[#3483FA] via-[#1E5BBA] to-[#0F2D5C] shadow-[0_18px_40px_-18px_rgba(52,131,250,0.7)]">
-            <div className="relative rounded-[14px] bg-gradient-to-br from-[#0F2D5C] via-[#1E3A8A] to-[#0B1F4A] p-5 overflow-hidden">
-              {/* glow orbs */}
-              <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#3483FA]/40 blur-2xl" />
-              <div className="absolute -bottom-16 -left-12 w-40 h-40 rounded-full bg-[#FFE600]/20 blur-2xl" />
-              {/* grid lines */}
-              <div
-                className="absolute inset-0 opacity-[0.12]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px)",
-                  backgroundSize: "22px 22px",
-                }}
-              />
-
-              <div className="relative flex items-center justify-between mb-3">
-                <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#0F2D5C] bg-[#FFE600] px-2.5 py-1 rounded-full">
-                  <i className="fas fa-circle-check" />
-                  Aprovado
-                </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-white/60 font-semibold">
-                  Pré-aprovação
-                </span>
-              </div>
-
-              <p className="relative text-[11px] uppercase tracking-[0.22em] text-white/70 font-semibold">
-                Limite disponível
-              </p>
-
-              <div className="relative flex items-baseline gap-1.5 mt-1.5">
-                <span className="text-base text-white/80 font-semibold">R$</span>
-                <span className="text-[40px] leading-none font-extrabold tabular-nums text-white drop-shadow-[0_2px_8px_rgba(52,131,250,0.5)]">
-                  {limite.toLocaleString("pt-BR")}
-                </span>
-                <span className="text-base text-white/80 font-semibold">,00</span>
-              </div>
-
-              <div className="relative mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-white/80">
-                <span className="inline-flex items-center gap-1.5">
-                  <i className="fas fa-shield-halved text-[#FFE600]" />
-                  Limite garantido
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <i className="fas fa-bolt text-[#FFE600]" />
-                  Liberação imediata
-                </span>
-              </div>
-            </div>
-          </div>
 
 
           <div className="space-y-3 mb-6">
