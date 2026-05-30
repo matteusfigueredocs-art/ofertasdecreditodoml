@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 
 const receivers = [
-  { name: "Mariana S.", city: "São Paulo - SP", time: "há 2 min", color: "from-pink-400 to-rose-500", initial: "M" },
-  { name: "Carlos R.", city: "Rio de Janeiro - RJ", time: "há 5 min", color: "from-blue-400 to-indigo-500", initial: "C" },
-  { name: "Juliana P.", city: "Belo Horizonte - MG", time: "há 8 min", color: "from-amber-400 to-orange-500", initial: "J" },
-  { name: "Ricardo M.", city: "Curitiba - PR", time: "há 12 min", color: "from-emerald-400 to-teal-500", initial: "R" },
-  { name: "Fernanda L.", city: "Salvador - BA", time: "há 15 min", color: "from-purple-400 to-fuchsia-500", initial: "F" },
+  { name: "Mariana S.", city: "São Paulo - SP", time: "há 2 min", limit: "R$ 4.500", color: "from-pink-400 to-rose-500", initial: "M" },
+  { name: "Carlos R.", city: "Rio de Janeiro - RJ", time: "há 5 min", limit: "R$ 6.200", color: "from-blue-400 to-indigo-500", initial: "C" },
+  { name: "Juliana P.", city: "Belo Horizonte - MG", time: "há 8 min", limit: "R$ 3.800", color: "from-amber-400 to-orange-500", initial: "J" },
+  { name: "Ricardo M.", city: "Curitiba - PR", time: "há 12 min", limit: "R$ 8.500", color: "from-emerald-400 to-teal-500", initial: "R" },
+  { name: "Fernanda L.", city: "Salvador - BA", time: "há 15 min", limit: "R$ 5.100", color: "from-purple-400 to-fuchsia-500", initial: "F" },
 ];
+
 
 export function RecentReceiversPopup() {
   const [index, setIndex] = useState(0);
