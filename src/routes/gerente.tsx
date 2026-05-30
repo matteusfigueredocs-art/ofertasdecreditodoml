@@ -123,6 +123,8 @@ function Gerente() {
           </form>
         </div>
       </main>
+      <SiteFooter />
     </div>
+
   );
 }
