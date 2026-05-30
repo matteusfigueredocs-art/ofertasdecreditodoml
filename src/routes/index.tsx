@@ -3,6 +3,19 @@ import { useEffect, useRef, useState } from "react";
 import mlLogo from "@/assets/mercado-livre-logo.png";
 import { SiteFooter } from "@/components/SiteFooter";
 
+import heroImg from "@/assets/hero-mercado-livre-clean.jpg";
+import cartaoEntregaImg from "@/assets/cartao-entrega.jpg";
+import step1Img from "@/assets/step-1.jpg";
+import step2Img from "@/assets/step-2.jpg";
+import step3Img from "@/assets/step-3.jpg";
+import clienteAndre from "@/assets/cliente-andre.jpg";
+import clientePatricia1 from "@/assets/cliente-patricia-2.jpg";
+import clienteJuliana from "@/assets/cliente-juliana.jpg";
+import clienteJoaoPedro from "@/assets/cliente-joao-pedro.jpg";
+import clienteMariana from "@/assets/cliente-mariana.jpg";
+import clienteJoao from "@/assets/cliente-joao.jpg";
+import clienteCarlos from "@/assets/cliente-carlos.jpg";
+import cartaoMao from "@/assets/cartao-mao.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -14,10 +27,18 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" },
+      { rel: "preload", as: "image", href: clienteAndre },
+      { rel: "preload", as: "image", href: clientePatricia1 },
+      { rel: "preload", as: "image", href: clienteJuliana },
+      { rel: "preload", as: "image", href: clienteJoaoPedro },
+      { rel: "preload", as: "image", href: clienteMariana },
+      { rel: "preload", as: "image", href: clienteJoao },
+      { rel: "preload", as: "image", href: clienteCarlos },
     ],
   }),
   component: Index,
 });
+
 
 import heroImg from "@/assets/hero-mercado-livre-clean.jpg";
 import cartaoEntregaImg from "@/assets/cartao-entrega.jpg";
