@@ -122,7 +122,7 @@ function Gerente() {
         </div>
       </main>
       <SiteFooter />
-      <RecentReceiversPopup />
+
 
     </div>
 
