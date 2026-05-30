@@ -251,9 +251,10 @@ function Index() {
               <span className="inline-flex items-center gap-1.5 bg-[#FFE600] text-gray-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
                 <i className="fas fa-truck-fast" /> Entrega rápida e segura
               </span>
-              <h3 className="mt-3 text-xl font-bold text-gray-900 leading-tight">
-                Receba seu cartão em casa
+              <h3 className="mt-3 text-2xl font-extrabold text-gray-900 leading-tight">
+                Receba seu cartão <span className="relative inline-block"><span className="absolute inset-x-0 bottom-1 h-3 bg-[#FFE600] -z-10" />em casa</span>
               </h3>
+
               <p className="text-sm text-gray-600 mt-1.5 max-w-xs mx-auto">
                 Embalagem exclusiva, rastreamento em tempo real e entrega em todo o Brasil.
               </p>
