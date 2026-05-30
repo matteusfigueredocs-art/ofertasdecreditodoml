@@ -109,7 +109,7 @@ function Index() {
             >
               <i className={`fas ${menuOpen ? "fa-xmark" : "fa-bars"} text-gray-900 text-xl`} />
             </button>
-            <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
+            <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" loading="eager" decoding="async" />
             <div className="w-10 h-10" />
           </div>
 
