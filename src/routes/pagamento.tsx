@@ -245,6 +245,10 @@ function Pagamento() {
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 Aguardando confirmação do pagamento...
               </div>
+              <div className="mt-4 pt-3 border-t border-gray-200 flex flex-col items-center gap-1">
+                <img src={bancoCentralLogo} alt="Banco Central do Brasil" className="h-6 object-contain" />
+                <div className="text-[10px] text-gray-500 text-center">Pagamento processado via PIX — sistema regulado pelo Banco Central do Brasil</div>
+              </div>
             </div>
           )}
 
