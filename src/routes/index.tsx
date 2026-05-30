@@ -357,36 +357,6 @@ function Index() {
           </div>
         </div>
 
-        {/* Estatísticas */}
-        <div className="px-4 py-6 bg-white">
-          <div className="bg-gradient-to-br from-[#3483FA] to-[#1c5fc7] rounded-2xl shadow-xl p-5 flex justify-between text-center relative overflow-hidden">
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-white/10 rounded-full" />
-            <div className="absolute -bottom-8 -left-8 w-28 h-28 bg-white/5 rounded-full" />
-            <div className="relative flex-1">
-              <div className="flex items-center justify-center gap-1 text-yellow-300 mb-1">
-                <i className="fa-solid fa-users text-sm" />
-              </div>
-              <p className="text-2xl font-extrabold text-white leading-none">+500mil</p>
-              <p className="text-[11px] text-white/80 mt-1 font-medium uppercase tracking-wide">Clientes</p>
-            </div>
-            <div className="w-px bg-white/20 mx-2" />
-            <div className="relative flex-1">
-              <div className="flex items-center justify-center gap-1 text-yellow-300 mb-1">
-                <i className="fa-solid fa-star text-sm" />
-              </div>
-              <p className="text-2xl font-extrabold text-white leading-none">4.8/5</p>
-              <p className="text-[11px] text-white/80 mt-1 font-medium uppercase tracking-wide">Avaliação</p>
-            </div>
-            <div className="w-px bg-white/20 mx-2" />
-            <div className="relative flex-1">
-              <div className="flex items-center justify-center gap-1 text-yellow-300 mb-1">
-                <i className="fa-solid fa-bolt text-sm" />
-              </div>
-              <p className="text-2xl font-extrabold text-white leading-none">5 min</p>
-              <p className="text-[11px] text-white/80 mt-1 font-medium uppercase tracking-wide">Aprovação</p>
-            </div>
-          </div>
-        </div>
 
         {/* Benefícios */}
         {/* Benefícios */}
