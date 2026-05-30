@@ -40,20 +40,7 @@ export const Route = createFileRoute("/")({
 });
 
 
-import heroImg from "@/assets/hero-mercado-livre-clean.jpg";
-import cartaoEntregaImg from "@/assets/cartao-entrega.jpg";
-import step1Img from "@/assets/step-1.jpg";
-import step2Img from "@/assets/step-2.jpg";
-import step3Img from "@/assets/step-3.jpg";
-import clienteAndre from "@/assets/cliente-andre.jpg";
-import clientePatricia1 from "@/assets/cliente-patricia-2.jpg";
-import clienteJuliana from "@/assets/cliente-juliana.jpg";
-import clienteJoaoPedro from "@/assets/cliente-joao-pedro.jpg";
 
-import clienteMariana from "@/assets/cliente-mariana.jpg";
-import clienteJoao from "@/assets/cliente-joao.jpg";
-import clienteCarlos from "@/assets/cliente-carlos.jpg";
-import cartaoMao from "@/assets/cartao-mao.png";
 
 const steps = [
   { img: step1Img, text: "Preencha seu CPF para consultar seu limite de cartão pré-aprovado" },
