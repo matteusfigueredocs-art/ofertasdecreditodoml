@@ -2,6 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
 import QRCode from "react-qr-code";
+import bancoCentralLogo from "@/assets/banco-central.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 import { createSigmaPix, getSigmaPaymentStatus } from "@/lib/sigma.functions";
 
