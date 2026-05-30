@@ -123,34 +123,25 @@ function Questionario() {
                 {step.question}
               </h2>
 
-              <div
-                className={
-                  step.columns === 2
-                    ? "grid grid-cols-2 gap-3"
-                    : "flex flex-col gap-3"
-                }
-              >
+              <div className="flex flex-col gap-3">
                 {step.options.map((opt) => (
                   <button
                     key={opt.label}
                     onClick={() => handleSelect(opt.label)}
-                    className={
-                      step.columns === 2
-                        ? "border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center gap-3 hover:border-[#FFE600] hover:bg-[#FBE74D] transition-all"
-                        : "border border-gray-200 rounded-lg p-4 text-left text-gray-800 font-medium hover:border-[#FFE600] hover:bg-[#FBE74D] transition-all"
-                    }
+                    className="border border-gray-200 rounded-lg p-4 flex items-center gap-3 text-left hover:border-[#FFE600] hover:bg-[#FBE74D] transition-all"
                   >
-                    {opt.icon && step.columns === 2 && (
-                      <span className="w-12 h-12 rounded-lg bg-[#FFE600] flex items-center justify-center">
+                    {opt.icon && (
+                      <span className="w-11 h-11 rounded-lg bg-[#FFE600] flex items-center justify-center shrink-0">
                         <i className={`fas ${opt.icon} text-gray-800 text-lg`} />
                       </span>
                     )}
-                    <span className="text-sm font-semibold text-gray-800 text-center">
+                    <span className="text-sm font-semibold text-gray-800">
                       {opt.label}
                     </span>
                   </button>
                 ))}
               </div>
+
             </>
           ) : (
             <div className="py-2">
