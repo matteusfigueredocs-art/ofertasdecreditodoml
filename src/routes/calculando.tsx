@@ -62,7 +62,7 @@ function Calculando() {
     step > i ? "done" : step === i ? "active" : "pending";
 
   return (
-    <div className="min-h-screen bg-[#FFE600] flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
       <FunnelSteps current={2} />
 
