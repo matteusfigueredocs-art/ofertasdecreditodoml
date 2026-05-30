@@ -124,7 +124,16 @@ function Confirmacao() {
           </div>
 
           <button
-            onClick={() => navigate({ to: "/pagamento", search: { nome: new URLSearchParams(typeof window !== "undefined" ? window.location.search : "").get("nome") ?? "" } as never })}
+            onClick={() => {
+              const sp = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
+              navigate({
+                to: "/pagamento",
+                search: {
+                  nome: sp.get("nome") ?? "",
+                  metodo: params.metodo,
+                } as never,
+              });
+            }}
             className="w-full bg-[#2A68C8] hover:bg-[#1E5BBA] text-white font-bold py-4 rounded-lg shadow-md transition-colors tracking-wide"
           >
             SIM, VOU QUERER!
