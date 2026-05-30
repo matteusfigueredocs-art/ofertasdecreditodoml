@@ -26,7 +26,7 @@ function Limite() {
       <main className="flex-1 flex items-start justify-center px-4 py-8 relative z-10">
         <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6 md:p-8">
           <div className="flex justify-center mb-3">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFE600] to-[#3483FA] flex items-center justify-center shadow-lg">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#2A68C8] to-[#3483FA] flex items-center justify-center shadow-lg">
               <CreditCard className="w-7 h-7 text-white" strokeWidth={2.2} />
             </div>
           </div>
