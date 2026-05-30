@@ -109,7 +109,7 @@ function Index() {
             >
               <i className={`fas ${menuOpen ? "fa-xmark" : "fa-bars"} text-gray-900 text-xl`} />
             </button>
-            <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" />
+            <img src={mlLogo} alt="Mercado Livre" className="h-9 object-contain" loading="eager" decoding="async" />
             <div className="w-10 h-10" />
           </div>
 
@@ -162,7 +162,7 @@ function Index() {
 
         {/* Hero */}
         <div className="relative">
-          <img src={heroImg} alt="Cartão Mercado Pago Pré-aprovado" className="w-full h-auto object-contain block" />
+          <img src={heroImg} alt="Cartão Mercado Pago Pré-aprovado" className="w-full h-auto object-contain block" loading="eager" fetchPriority="high" decoding="async" width="1024" height="1024" />
         </div>
 
         {/* Timeline */}
@@ -344,7 +344,7 @@ function Index() {
               >
                 {steps.map((s, i) => (
                   <div key={i} className="w-full shrink-0 flex flex-col items-center text-center px-2">
-                    <img src={s.img} alt={`Passo ${i + 1}`} className="w-full max-w-xs rounded-lg" />
+                    <img src={s.img} alt={`Passo ${i + 1}`} className="w-full max-w-xs rounded-lg" loading="lazy" decoding="async" />
                     <p className="text-sm text-gray-700 mt-3">{s.text}</p>
                   </div>
                 ))}
@@ -382,7 +382,7 @@ function Index() {
             <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, #3483FA 1.2px, transparent 1.5px)", backgroundSize: "18px 18px", opacity: 0.25 }} />
             <div className="absolute inset-0" style={{ background: "radial-gradient(circle at center, transparent 30%, rgba(255,255,255,0.7) 80%)" }} />
             <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent" />
-            <img src={cartaoMao} alt="Cartão Mercado Livre Platinum sendo segurado" className="relative w-72 max-w-full h-auto drop-shadow-2xl" />
+            <img src={cartaoMao} alt="Cartão Mercado Livre Platinum sendo segurado" className="relative w-72 max-w-full h-auto drop-shadow-2xl" loading="lazy" decoding="async" />
           </div>
 
 
@@ -468,7 +468,7 @@ function Index() {
               {clientes.map((c) => (
                 <div key={c.name} className="w-full shrink-0 px-1">
                   <div className="relative rounded-xl overflow-hidden aspect-[4/5] shadow-md">
-                    <img src={c.img} alt={`${c.name} recebeu o cartão`} className="w-full h-full object-cover" />
+                    <img src={c.img} alt={`${c.name} recebeu o cartão`} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                     <div className="absolute top-2 right-2 bg-[#FFE600] rounded-full px-2 py-1 flex items-center gap-1 shadow">
                       <i className="fa-solid fa-check text-[10px] text-gray-900" />
                       <span className="text-[10px] font-bold text-gray-900">Entregue</span>
