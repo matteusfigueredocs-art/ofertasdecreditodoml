@@ -215,74 +215,76 @@ function Envio() {
               <h1 className="text-2xl font-bold text-gray-800 text-center mb-3">
                 Escolha o método de envio
               </h1>
-              <p className="text-sm text-gray-600 text-center mb-6 leading-relaxed">
+              <p className="text-sm text-gray-600 text-center mb-3 leading-relaxed">
                 Entrega para <span className="font-bold text-gray-900">{cidade || "sua cidade"}{estado ? ` - ${estado}` : ""}</span>
               </p>
+              <div className="text-center text-[11px] font-bold text-[#2A68C8] mb-4 uppercase tracking-wider">
+                👇 Toque em uma opção para continuar
+              </div>
 
               <button
                 onClick={() => handleSelect("sedex")}
-                className="w-full border border-gray-200 rounded-xl p-4 mb-3 flex items-center gap-4 hover:border-[#FFE600] hover:shadow-sm transition-all text-left bg-white"
+                className="group w-full border-2 border-[#FFE600] bg-[#FFFBE0]/40 rounded-xl p-4 mb-3 flex items-center gap-3 hover:shadow-md active:scale-[0.99] transition-all text-left relative"
               >
-                <div className="w-20 h-14 rounded-lg bg-white border border-gray-200 flex items-center justify-center shrink-0 p-1.5">
+                <div className="w-16 h-14 rounded-lg bg-white border border-gray-200 flex items-center justify-center shrink-0 p-1.5">
                   <img src={sedexLogo} alt="SEDEX" className="max-h-full max-w-full object-contain" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-start justify-between gap-2">
+                  <div className="flex items-center justify-between gap-2 mb-1">
                     <div className="font-bold text-gray-800">SEDEX</div>
-                    <div className="bg-[#FFE600] text-gray-900 text-[10px] font-bold py-1 px-2.5 rounded-full whitespace-nowrap">
+                    <div className="bg-[#FFE600] text-gray-900 text-[9px] font-bold py-0.5 px-2 rounded-full whitespace-nowrap">
                       MAIS POPULAR
                     </div>
                   </div>
-                  <div className="text-sm text-gray-600">3 dias úteis</div>
-                  <div className="text-xs text-gray-900 font-semibold mt-0.5">
+                  <div className="text-xs text-gray-600">3 dias úteis</div>
+                  <div className="text-[11px] text-gray-900 font-semibold">
                     ✓ Rastreamento incluído
                   </div>
-                  <div className="text-xs text-gray-500 italic mt-0.5">Chegará até 30/05</div>
-                  <div className="text-right font-bold text-gray-800 -mt-5">R$ 29,90</div>
+                  <div className="flex items-end justify-between mt-1">
+                    <div className="text-[10px] text-gray-500 italic">Chegará até 30/05</div>
+                    <div className="font-extrabold text-gray-900 text-base">R$ 29,90</div>
+                  </div>
                 </div>
+                <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[#2A68C8] opacity-0 group-hover:opacity-100 transition-opacity">›</span>
               </button>
 
               <button
                 onClick={() => handleSelect("loggi")}
-                className="w-full border border-gray-200 rounded-xl p-4 mb-3 flex items-center gap-4 hover:border-[#FFE600] hover:shadow-sm transition-all text-left bg-white"
+                className="w-full border border-gray-200 rounded-xl p-4 mb-3 flex items-center gap-3 hover:border-[#FFE600] hover:shadow-sm active:scale-[0.99] transition-all text-left bg-white"
               >
-                <div className="w-20 h-14 rounded-lg bg-white border border-gray-200 flex items-center justify-center shrink-0 p-0.5 overflow-hidden">
+                <div className="w-16 h-14 rounded-lg bg-white border border-gray-200 flex items-center justify-center shrink-0 p-0.5 overflow-hidden">
                   <img src={loggiLogo} alt="Loggi" className="w-full h-full object-contain scale-125" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-start justify-between gap-2">
+                  <div className="flex items-center justify-between gap-2 mb-1">
                     <div className="font-bold text-gray-800">Loggi</div>
-                    <div className="font-bold text-gray-800 whitespace-nowrap">R$ 31,67</div>
+                    <div className="font-extrabold text-gray-900 whitespace-nowrap text-base">R$ 31,67</div>
                   </div>
-                  <div className="text-sm text-gray-600">1 dia útil</div>
-                  <div className="text-xs text-gray-900 font-semibold mt-0.5">
+                  <div className="text-xs text-gray-600">1 dia útil</div>
+                  <div className="text-[11px] text-gray-900 font-semibold">
                     ✓ Rastreamento em tempo real
                   </div>
-                  <div className="text-xs text-gray-500 italic mt-0.5">
-                    Chegará até 28/05
-                  </div>
+                  <div className="text-[10px] text-gray-500 italic mt-0.5">Chegará até 28/05</div>
                 </div>
               </button>
 
               <button
                 onClick={() => handleSelect("pac")}
-                className="w-full border border-gray-200 rounded-xl p-4 flex items-center gap-4 hover:border-[#FFE600] hover:shadow-sm transition-all text-left bg-white"
+                className="w-full border border-gray-200 rounded-xl p-4 flex items-center gap-3 hover:border-[#FFE600] hover:shadow-sm active:scale-[0.99] transition-all text-left bg-white"
               >
-                <div className="w-20 h-14 rounded-lg bg-white border border-gray-200 flex items-center justify-center shrink-0 p-1.5">
+                <div className="w-16 h-14 rounded-lg bg-white border border-gray-200 flex items-center justify-center shrink-0 p-1.5">
                   <img src={pacLogo} alt="PAC" className="max-h-full max-w-full object-contain" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-start justify-between gap-2">
+                  <div className="flex items-center justify-between gap-2 mb-1">
                     <div className="font-bold text-gray-800">PAC</div>
-                    <div className="font-bold text-gray-800 whitespace-nowrap">R$ 24,30</div>
+                    <div className="font-extrabold text-gray-900 whitespace-nowrap text-base">R$ 24,30</div>
                   </div>
-                  <div className="text-sm text-gray-600">15-20 dias úteis</div>
-                  <div className="text-xs text-gray-900 font-semibold mt-0.5">
+                  <div className="text-xs text-gray-600">15-20 dias úteis</div>
+                  <div className="text-[11px] text-gray-900 font-semibold">
                     ✓ Rastreamento incluído
                   </div>
-                  <div className="text-xs text-gray-500 italic mt-0.5">
-                    Chegará entre 17/06 a 24/06
-                  </div>
+                  <div className="text-[10px] text-gray-500 italic mt-0.5">Chegará entre 17/06 a 24/06</div>
                 </div>
               </button>
             </>

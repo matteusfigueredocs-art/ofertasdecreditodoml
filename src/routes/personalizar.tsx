@@ -177,7 +177,13 @@ function Personalizar() {
           </div>
 
           <button
-            onClick={() => navigate({ to: "/fatura" })}
+            onClick={() => {
+              try {
+                sessionStorage.setItem("cardColor", card.value);
+                sessionStorage.setItem("cardColorName", card.name);
+              } catch {}
+              navigate({ to: "/fatura" });
+            }}
             className="w-full bg-[#2A68C8] hover:bg-[#1E5BBA] text-white text-lg font-semibold py-4 rounded-md shadow-md transition-all"
           >
             Continuar
