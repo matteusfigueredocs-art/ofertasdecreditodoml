@@ -30,31 +30,26 @@ export function RecentReceiversPopup() {
 
   return (
     <div
-      className={`fixed bottom-4 left-4 z-50 transition-all duration-500 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
+      className={`fixed bottom-3 left-3 z-50 transition-all duration-500 ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"
       }`}
     >
-      <div className="bg-white rounded-xl shadow-2xl border border-gray-100 p-3 flex items-center gap-3 max-w-[280px]">
-        <div className={`relative w-11 h-11 rounded-full bg-gradient-to-br ${r.color} flex items-center justify-center text-white font-bold shrink-0`}>
+      <div className="bg-white rounded-lg shadow-xl border border-gray-100 p-2 flex items-center gap-2 max-w-[220px]">
+        <div className={`relative w-8 h-8 rounded-full bg-gradient-to-br ${r.color} flex items-center justify-center text-white font-bold text-xs shrink-0`}>
           {r.initial}
-          <span className="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-[#25D366] border-2 border-white flex items-center justify-center">
-            <i className="fas fa-check text-white text-[7px]" />
+          <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-[#25D366] border border-white flex items-center justify-center">
+            <i className="fas fa-check text-white text-[5px]" />
           </span>
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-[11px] font-bold text-gray-900 truncate">{r.name} recebeu o cartão</div>
-          <div className="text-[10px] text-gray-500 truncate">{r.city}</div>
-          <div className="flex items-center gap-1.5 mt-0.5">
-            <span className="text-[9px] text-[#3483FA] font-semibold">
-              <i className="fas fa-circle text-[5px] mr-1 align-middle" />{r.time}
-            </span>
-            <span className="text-[9px] font-extrabold text-[#00A650] bg-[#E6F7EC] px-1.5 py-0.5 rounded-full">
-              Limite {r.limit}
-            </span>
+          <div className="text-[10px] font-bold text-gray-900 truncate leading-tight">{r.name} recebeu o cartão</div>
+          <div className="text-[8px] text-gray-500 truncate leading-tight">{r.city} • {r.time}</div>
+          <div className="text-[8px] font-extrabold text-[#00A650] leading-tight mt-0.5">
+            Limite {r.limit}
           </div>
         </div>
-
       </div>
     </div>
   );
 }
+
