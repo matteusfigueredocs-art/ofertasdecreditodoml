@@ -3,7 +3,7 @@ import { useState } from "react";
 import gerente from "@/assets/gerente-geovana.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 import { SiteFooter } from "@/components/SiteFooter";
-import { RecentReceiversPopup } from "@/components/RecentReceiversPopup";
+
 
 
 
@@ -122,7 +122,7 @@ function Gerente() {
         </div>
       </main>
       <SiteFooter />
-      <RecentReceiversPopup />
+
 
     </div>
 
