@@ -162,7 +162,7 @@ function Index() {
 
         {/* Hero */}
         <div className="relative">
-          <img src={heroImg} alt="Cartão Mercado Pago Pré-aprovado" className="w-full h-auto object-contain block" />
+          <img src={heroImg} alt="Cartão Mercado Pago Pré-aprovado" className="w-full h-auto object-contain block" loading="eager" fetchPriority="high" decoding="async" width="1024" height="1024" />
         </div>
 
         {/* Timeline */}
