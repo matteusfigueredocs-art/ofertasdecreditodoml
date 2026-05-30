@@ -374,7 +374,10 @@ function Index() {
         {/* Benefícios */}
         {/* Benefícios */}
         <div className="bg-white p-5">
-          <h2 className="text-lg font-bold text-gray-900 text-center mb-4">Benefícios do seu cartão</h2>
+          <h2 className="text-2xl font-extrabold text-gray-900 text-center mb-4 leading-tight">
+            <span className="relative inline-block"><span className="absolute inset-x-0 bottom-1 h-3 bg-[#FFE600] -z-10" />Benefícios</span> do seu cartão
+          </h2>
+
           <div className="relative flex justify-center items-end mb-4 rounded-2xl overflow-hidden bg-gradient-to-br from-[#EAF2FE] via-white to-[#3483FA]/10 pt-6">
             <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, #3483FA 1.2px, transparent 1.5px)", backgroundSize: "18px 18px", opacity: 0.25 }} />
             <div className="absolute inset-0" style={{ background: "radial-gradient(circle at center, transparent 30%, rgba(255,255,255,0.7) 80%)" }} />
