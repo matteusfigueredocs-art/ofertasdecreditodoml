@@ -33,6 +33,7 @@ function Envio() {
   const [cidade, setCidade] = useState("");
   const [estado, setEstado] = useState("");
   const [cep, setCep] = useState("");
+  const [cardColor, setCardColor] = useState("#3483FA");
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -40,6 +41,10 @@ function Envio() {
     setCidade(sp.get("cidade") || "");
     setEstado(sp.get("estado") || "");
     setCep(sp.get("cep") || "");
+    try {
+      const c = sessionStorage.getItem("cardColor");
+      if (c) setCardColor(c);
+    } catch {}
   }, []);
 
   useEffect(() => {
