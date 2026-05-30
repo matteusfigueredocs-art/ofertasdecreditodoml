@@ -451,7 +451,10 @@ function Index() {
 
         {/* Quem já recebeu */}
         <div className="bg-white p-5">
-          <h2 className="text-lg font-bold text-gray-900 text-center mb-1">Quem já recebeu o cartão</h2>
+          <h2 className="text-2xl font-extrabold text-gray-900 text-center mb-1 leading-tight">
+            Quem já <span className="relative inline-block"><span className="absolute inset-x-0 bottom-1 h-3 bg-[#FFE600] -z-10" />recebeu</span> o cartão
+          </h2>
+
           <div className="flex items-center justify-center gap-1 text-yellow-400 mb-4">
             {[...Array(5)].map((_, i) => <i key={i} className="fa-solid fa-star text-xs" />)}
             <span className="text-xs text-gray-600 ml-1 font-medium">4.8 · +12 mil avaliações</span>
