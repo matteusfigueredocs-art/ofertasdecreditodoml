@@ -188,6 +188,15 @@ function Envio() {
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                   <span className="text-[10px] font-bold text-gray-700 tracking-wide">RASTREANDO</span>
                 </div>
+
+                {/* badge Mercado Livre */}
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#FFE600] px-2.5 py-1 rounded-full border border-[#0050B4]/20 flex items-center gap-1.5 shadow-sm">
+                  <svg viewBox="0 0 24 24" className="w-3 h-3" fill="#0050B4">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  </svg>
+                  <span className="text-[9px] font-extrabold text-[#0050B4] tracking-wide">MERCADO LIVRE • ENVIOS</span>
+                </div>
+
               </div>
 
               <div className="space-y-3">
