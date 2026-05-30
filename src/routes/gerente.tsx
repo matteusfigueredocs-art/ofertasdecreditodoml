@@ -1,7 +1,9 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import mlLogo from "@/assets/mercado-livre-logo.png";
 import gerente from "@/assets/gerente-geovana.png";
+import { FunnelSteps } from "@/components/FunnelSteps";
+import { SiteFooter } from "@/components/SiteFooter";
+
 
 export const Route = createFileRoute("/gerente")({
   head: () => ({
@@ -35,7 +37,8 @@ function Gerente() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <div className="bg-[#FFE600] w-full h-3" />
+      <FunnelSteps current={6} />
+
 
       <main className="flex-1 flex items-start justify-center px-4 py-6">
         <div className="w-full max-w-md bg-white rounded-xl shadow-sm p-6 md:p-8">
@@ -61,7 +64,7 @@ function Gerente() {
               <div className="px-6 pb-6 -mt-16 flex flex-col items-center">
                 <div className="w-28 h-28 rounded-full p-[3px] bg-gradient-to-br from-[#FFE600] to-[#3483FA] shadow-xl ring-4 ring-white">
                   <div className="w-full h-full rounded-full overflow-hidden bg-white">
-                    <img src={gerente} alt="Gerente Geovana Lima" className="w-full h-full object-cover" />
+                    <img src={gerente} alt="Gerente Geovana Lima" className="w-full h-full object-cover object-top" />
                   </div>
                 </div>
 
@@ -120,6 +123,8 @@ function Gerente() {
           </form>
         </div>
       </main>
+      <SiteFooter />
     </div>
+
   );
 }
