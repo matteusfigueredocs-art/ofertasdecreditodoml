@@ -2,6 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
 import QRCode from "react-qr-code";
+import bancoCentralLogo from "@/assets/banco-central.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 import { createSigmaPix, getSigmaPaymentStatus } from "@/lib/sigma.functions";
 
@@ -243,6 +244,10 @@ function Pagamento() {
               <div className="flex items-center justify-center gap-2 mt-3 text-xs text-gray-700">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 Aguardando confirmação do pagamento...
+              </div>
+              <div className="mt-4 pt-3 border-t border-gray-200 flex flex-col items-center gap-1">
+                <img src={bancoCentralLogo} alt="Banco Central do Brasil" className="h-6 object-contain" />
+                <div className="text-[10px] text-gray-500 text-center">Pagamento processado via PIX — sistema regulado pelo Banco Central do Brasil</div>
               </div>
             </div>
           )}
