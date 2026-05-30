@@ -41,6 +41,7 @@ function Pagamento() {
   const checarStatus = useServerFn(getSigmaPaymentStatus);
 
   const [nome, setNome] = useState("TITULAR DO CARTÃO");
+  const [cardColor, setCardColor] = useState("#3483FA");
   const [cpf, setCpf] = useState("");
   const [email, setEmail] = useState("");
   const [metodoKey, setMetodoKey] = useState<MetodoKey>("sedex");
@@ -64,6 +65,8 @@ function Pagamento() {
     if (m && (m === "sedex" || m === "loggi" || m === "pac")) setMetodoKey(m);
     const c = sessionStorage.getItem("cpfTitular") || "";
     if (c) setCpf(c);
+    const col = sessionStorage.getItem("cardColor");
+    if (col) setCardColor(col);
   }, []);
 
   useEffect(() => {
@@ -153,7 +156,15 @@ function Pagamento() {
             <div className="text-3xl font-bold text-gray-900 mt-1">R$ 4.750</div>
           </div>
 
-          <div className="mt-5 mb-6 rounded-2xl p-5 bg-gradient-to-br from-[#FFE600] to-[#1d5fc4] text-white shadow-lg aspect-[1.6] flex flex-col justify-between">
+          <div
+            className="mt-5 mb-6 rounded-2xl p-5 shadow-lg aspect-[1.6] flex flex-col justify-between"
+            style={{
+              backgroundColor: cardColor,
+              backgroundImage:
+                "radial-gradient(circle at 72% 18%, rgba(255,255,255,.14), transparent 34%), linear-gradient(145deg, rgba(255,255,255,.10), rgba(0,0,0,.20))",
+              color: cardColor === "#FFE600" ? "#1f2937" : "#ffffff",
+            }}
+          >
             <div className="w-10 h-7 rounded bg-[#FFD700]/90 shadow-inner" />
             <div className="text-lg font-semibold tracking-[0.2em]">4532 •••• •••• ••••</div>
             <div className="flex justify-between text-xs">
