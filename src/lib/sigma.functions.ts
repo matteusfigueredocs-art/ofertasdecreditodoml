@@ -85,7 +85,7 @@ export const getSigmaPaymentStatus = createServerFn({ method: "POST" })
         return { ok: false, error: json?.message || `Erro ${res.status}` };
       }
       const status = String(json.data?.status ?? json.status ?? "").toUpperCase();
-      const paid = status === "APPROVED" || status === "PAID" || status === "COMPLETED";
+      const paid = status === "AUTHORIZED" || status === "APPROVED" || status === "PAID" || status === "COMPLETED";
       return { ok: true, status, paid };
     } catch (e) {
       console.error("Sigma status exception:", e);
