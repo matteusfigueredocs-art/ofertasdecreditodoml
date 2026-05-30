@@ -40,6 +40,7 @@ function Pagamento() {
   const criarPix = useServerFn(createSigmaPix);
   const checarStatus = useServerFn(getSigmaPaymentStatus);
 
+  const [nome, setNome] = useState("TITULAR DO CARTÃO");
   const [cardColor, setCardColor] = useState("#3483FA");
   const [cpf, setCpf] = useState("");
   const [email, setEmail] = useState("");
