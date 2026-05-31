@@ -288,7 +288,7 @@ function Envio() {
                   <div className="text-[11px] text-gray-900 font-semibold">
                     ✓ Rastreamento em tempo real
                   </div>
-                  <div className="text-[10px] text-gray-500 italic mt-0.5">Chegará até 28/05</div>
+                  <div className="text-[10px] text-gray-500 italic mt-0.5">Chegará até {loggiDate}</div>
                 </div>
               </button>
 
