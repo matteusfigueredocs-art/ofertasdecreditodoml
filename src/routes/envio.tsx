@@ -308,7 +308,7 @@ function Envio() {
                   <div className="text-[11px] text-gray-900 font-semibold">
                     ✓ Rastreamento incluído
                   </div>
-                  <div className="text-[10px] text-gray-500 italic mt-0.5">Chegará entre 17/06 a 24/06</div>
+                  <div className="text-[10px] text-gray-500 italic mt-0.5">Chegará entre {pacStart} a {pacEnd}</div>
                 </div>
               </button>
             </>
