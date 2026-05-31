@@ -265,7 +265,7 @@ function Envio() {
                     ✓ Rastreamento incluído
                   </div>
                   <div className="flex items-end justify-between mt-1">
-                    <div className="text-[10px] text-gray-500 italic">Chegará até 30/05</div>
+                    <div className="text-[10px] text-gray-500 italic">Chegará até {sedexDate}</div>
                     <div className="font-extrabold text-gray-900 text-base">R$ 29,90</div>
                   </div>
                 </div>
