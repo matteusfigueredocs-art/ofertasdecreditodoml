@@ -4,7 +4,7 @@ import mlLogo from "@/assets/mercado-livre-logo.png";
 import { SiteFooter } from "@/components/SiteFooter";
 
 import heroImg from "@/assets/hero-mercado-livre-clean.jpg";
-import cartaoEntregaImg from "@/assets/cartao-entrega.jpg";
+import cartaoEntregaImg from "@/assets/cartao-entrega.png";
 import step1Img from "@/assets/step-1.jpg";
 import step2Img from "@/assets/step-2.jpg";
 import step3Img from "@/assets/step-3.jpg";
