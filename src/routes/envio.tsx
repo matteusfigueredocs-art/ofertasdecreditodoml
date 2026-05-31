@@ -24,7 +24,28 @@ const searchSteps = [
   "Consultando frete Correios",
 ];
 
+function addBusinessDays(from: Date, days: number) {
+  const d = new Date(from);
+  let added = 0;
+  while (added < days) {
+    d.setDate(d.getDate() + 1);
+    const dow = d.getDay();
+    if (dow !== 0 && dow !== 6) added++;
+  }
+  return d;
+}
+function fmtBR(d: Date) {
+  const dd = String(d.getDate()).padStart(2, "0");
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  return `${dd}/${mm}`;
+}
+
 function Envio() {
+  const today = new Date();
+  const sedexDate = fmtBR(addBusinessDays(today, 3));
+  const loggiDate = fmtBR(addBusinessDays(today, 1));
+  const pacStart = fmtBR(addBusinessDays(today, 15));
+  const pacEnd = fmtBR(addBusinessDays(today, 20));
   const navigate = useNavigate();
   const [stage, setStage] = useState<Stage>("confirm");
   const [stepIdx, setStepIdx] = useState(0);
@@ -244,7 +265,7 @@ function Envio() {
                     ✓ Rastreamento incluído
                   </div>
                   <div className="flex items-end justify-between mt-1">
-                    <div className="text-[10px] text-gray-500 italic">Chegará até 30/05</div>
+                    <div className="text-[10px] text-gray-500 italic">Chegará até {sedexDate}</div>
                     <div className="font-extrabold text-gray-900 text-base">R$ 29,90</div>
                   </div>
                 </div>
@@ -267,7 +288,7 @@ function Envio() {
                   <div className="text-[11px] text-gray-900 font-semibold">
                     ✓ Rastreamento em tempo real
                   </div>
-                  <div className="text-[10px] text-gray-500 italic mt-0.5">Chegará até 28/05</div>
+                  <div className="text-[10px] text-gray-500 italic mt-0.5">Chegará até {loggiDate}</div>
                 </div>
               </button>
 
@@ -287,7 +308,7 @@ function Envio() {
                   <div className="text-[11px] text-gray-900 font-semibold">
                     ✓ Rastreamento incluído
                   </div>
-                  <div className="text-[10px] text-gray-500 italic mt-0.5">Chegará entre 17/06 a 24/06</div>
+                  <div className="text-[10px] text-gray-500 italic mt-0.5">Chegará entre {pacStart} a {pacEnd}</div>
                 </div>
               </button>
             </>
