@@ -108,7 +108,7 @@ function Pagamento() {
           email: email || undefined,
           external_id: cpf || undefined,
         });
-        navigate({ to: "/aprovado" });
+        navigate({ to: "/sucesso" });
       }
     };
     pollRef.current = window.setInterval(tick, 3000) as unknown as number;
