@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import QRCode from "react-qr-code";
 import bancoCentralLogo from "@/assets/banco-central.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
+import { SiteFooter } from "@/components/SiteFooter";
 import { createSigmaPix, getSigmaPaymentStatus } from "@/lib/sigma.functions";
 import { trackTikTok } from "@/lib/tiktok";
 
