@@ -333,6 +333,7 @@ function Pagamento() {
           </div>
         </div>
       </main>
+      <SiteFooter />
     </div>
   );
 }
