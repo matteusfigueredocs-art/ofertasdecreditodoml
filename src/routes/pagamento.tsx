@@ -324,13 +324,6 @@ function Pagamento() {
             ))}
           </div>
 
-          <div className="mt-6 flex items-center gap-3 p-3 bg-[#EAF2FE] rounded-lg">
-            <div className="w-9 h-9 rounded-full bg-[#FFE600] flex items-center justify-center text-gray-900 font-bold shrink-0">✓</div>
-            <div className="text-sm">
-              <div className="font-semibold text-gray-800">Ana Silva</div>
-              <div className="text-xs text-gray-600">Recebeu seu cartão hoje · há 2 minutos</div>
-            </div>
-          </div>
         </div>
       </main>
       <SiteFooter />
