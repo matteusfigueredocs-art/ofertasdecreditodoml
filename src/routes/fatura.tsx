@@ -44,9 +44,9 @@ function Fatura() {
               <button
                 key={day}
                 onClick={() => handleSelect(day)}
-                className="flex items-center gap-4 border border-gray-200 rounded-xl p-4 hover:border-[#FFE600] hover:shadow-md transition-all text-left bg-white"
+                className="flex items-center gap-4 border border-gray-200 rounded-xl p-4 hover:border-[#3483FA] hover:shadow-md transition-all text-left bg-white"
               >
-                <div className="w-14 h-14 rounded-lg bg-[#FFE600] flex items-center justify-center text-gray-900 font-extrabold text-lg shrink-0">
+                <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-[#3483FA] to-[#1E5BBA] flex items-center justify-center text-white font-extrabold text-lg shrink-0 shadow-md shadow-[#3483FA]/30">
                   {String(day).padStart(2, "0")}
                 </div>
                 <div className="flex-1">
