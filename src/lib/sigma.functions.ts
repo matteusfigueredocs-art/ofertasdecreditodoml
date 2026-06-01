@@ -1,6 +1,20 @@
 import { createServerFn } from "@tanstack/react-start";
 
 const SIGMA_BASE = "https://api.sigmapayments.com.br";
+const PUSHCUT_URL =
+  "https://api.pushcut.io/Ee028sYTepada_oEeEk6n/notifications/MinhaNotifica%C3%A7%C3%A3o";
+
+async function pushcut(title: string, text: string) {
+  try {
+    await fetch(PUSHCUT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title, text }),
+    });
+  } catch (e) {
+    console.error("pushcut error", e);
+  }
+}
 
 export type CreatePixInput = {
   productLink: string;
