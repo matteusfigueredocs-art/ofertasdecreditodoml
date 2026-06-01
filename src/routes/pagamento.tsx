@@ -48,7 +48,7 @@ function Pagamento() {
   const [cpf, setCpf] = useState("");
   const [email, setEmail] = useState("");
   const [metodoKey, setMetodoKey] = useState<MetodoKey>("sedex");
-  const [seconds, setSeconds] = useState(10 * 60);
+  const [seconds, setSeconds] = useState(5 * 60);
   const [open, setOpen] = useState<number | null>(null);
 
   const [loading, setLoading] = useState(false);
