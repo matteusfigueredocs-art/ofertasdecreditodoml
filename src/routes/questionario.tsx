@@ -146,6 +146,11 @@ function Questionario() {
             </>
           ) : (
             <div className="py-2">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3483FA] to-[#1E5BBA] flex items-center justify-center shadow-lg shadow-[#3483FA]/30">
+                  <i className="fas fa-credit-card text-white text-2xl" />
+                </div>
+              </div>
               <h2 className="text-lg md:text-xl font-bold text-gray-800 text-center mb-2">
                 Analisando suas respostas...
               </h2>
@@ -180,9 +185,8 @@ function Questionario() {
                       >
                         <i className={`fas ${item.icon} ${done || active ? "text-white" : "text-gray-800"} text-sm`} />
                       </span>
-                      <span className="flex-1 text-sm font-medium text-gray-800 flex items-center gap-2">
+                      <span className="flex-1 text-sm font-medium text-gray-800">
                         {item.label}
-                        {active && <span className="text-base animate-bounce">{item.emoji}</span>}
                       </span>
                       {done ? (
                         <span className="w-6 h-6 rounded-full bg-[#3483FA] flex items-center justify-center">
