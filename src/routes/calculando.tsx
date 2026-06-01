@@ -2,6 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { TrendingUp, UserCheck, Calculator, CheckCircle2, Sparkles, ShieldCheck, CreditCard, Wallet, BadgeCheck } from "lucide-react";
 import { FunnelSteps } from "@/components/FunnelSteps";
+import cartaoMao from "@/assets/cartao-mao.png";
 
 export const Route = createFileRoute("/calculando")({
   head: () => ({
@@ -69,36 +70,44 @@ function Calculando() {
       <main className="flex-1 flex items-start justify-center px-3 py-5">
         <div className="w-full max-w-md">
           {/* Hero card with limite animado */}
-          <div className="relative bg-gradient-to-br from-[#FFE600] to-[#1E5BBA] rounded-2xl shadow-xl p-5 text-white overflow-hidden">
-            <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/10" />
-            <div className="absolute -bottom-12 -left-8 w-28 h-28 rounded-full bg-[#FFE600]/20" />
-
-            <div className="relative flex items-center gap-2 mb-3">
-              <span className="text-[11px] opacity-90">Análise em tempo real</span>
-            </div>
-
-            <p className="relative text-xs uppercase tracking-wider opacity-90 mb-1">
-              Calculando seu limite
-            </p>
-            <div className="relative flex items-end gap-1">
-              <span className="text-sm font-semibold mb-1.5">R$</span>
-              <span className="text-4xl font-extrabold tabular-nums">
-                {counter.toLocaleString("pt-BR")}
-              </span>
-              <span className="ml-1 text-sm font-semibold mb-1.5 animate-pulse">,00</span>
+          <div className="relative bg-white border border-gray-200 rounded-2xl shadow-md p-4 overflow-hidden">
+            <div className="flex items-center gap-3">
+              <img
+                src={cartaoMao}
+                alt="Cartão Mercado Livre"
+                className="w-24 h-auto object-contain shrink-0 drop-shadow-md"
+              />
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-1.5 mb-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="text-[10px] font-semibold text-emerald-600 uppercase tracking-wide">
+                    Análise em tempo real
+                  </span>
+                </div>
+                <p className="text-[10px] uppercase tracking-wider text-gray-500 font-semibold mb-0.5">
+                  Calculando seu limite
+                </p>
+                <div className="flex items-end gap-1 text-gray-900">
+                  <span className="text-xs font-semibold mb-1">R$</span>
+                  <span className="text-3xl font-extrabold tabular-nums leading-none">
+                    {counter.toLocaleString("pt-BR")}
+                  </span>
+                  <span className="ml-0.5 text-xs font-semibold mb-1">,00</span>
+                </div>
+              </div>
             </div>
 
             {/* Progress */}
-            <div className="relative mt-4">
-              <div className="h-2 w-full bg-white/20 rounded-full overflow-hidden">
+            <div className="mt-3">
+              <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-white rounded-full transition-all duration-700 ease-out"
+                  className="h-full bg-gradient-to-r from-[#3483FA] to-[#1E5BBA] rounded-full transition-all duration-700 ease-out"
                   style={{ width: `${progress}%` }}
                 />
               </div>
-              <div className="flex justify-between text-[11px] mt-1 opacity-90">
+              <div className="flex justify-between text-[11px] mt-1 text-gray-600">
                 <span>Processando dados</span>
-                <span className="font-bold">{progress}%</span>
+                <span className="font-bold text-gray-900">{progress}%</span>
               </div>
             </div>
           </div>
