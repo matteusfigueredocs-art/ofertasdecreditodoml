@@ -1,6 +1,22 @@
 import { createServerFn } from "@tanstack/react-start";
 
 const SIGMA_BASE = "https://api.sigmapayments.com.br";
+const PUSHCUT_URL =
+  "https://api.pushcut.io/Ee028sYTepada_oEeEk6n/notifications/MinhaNotifica%C3%A7%C3%A3o";
+
+async function pushcut(title: string, text: string) {
+  try {
+    await fetch(PUSHCUT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title, text }),
+    });
+  } catch (e) {
+    console.error("pushcut error", e);
+  }
+}
+
+const notifiedPaid = new Set<string>();
 
 export type CreatePixInput = {
   productLink: string;
@@ -55,14 +71,19 @@ export const createSigmaPix = createServerFn({ method: "POST" })
       }
 
       const d = json.data;
-      return {
-        ok: true,
+      const result = {
+        ok: true as const,
         transactionId: d.transaction_id,
         paymentId: d.payment_data?.payment_id,
         pixKey: d.payment_data?.pix_key,
         totalValue: d.payment_data?.total_transaction_value ?? d.total_value,
         expirationDate: d.payment_data?.expiration_date,
       };
+      await pushcut(
+        "💸 PIX gerado",
+        `${data.name} • CPF ${data.document} • R$ ${(data.paymentValue / 100).toFixed(2)} • ${data.productLink}`,
+      );
+      return result;
     } catch (e) {
       console.error("Sigma createPix exception:", e);
       return { ok: false, error: "Falha ao conectar com o gateway de pagamento." };
@@ -86,6 +107,13 @@ export const getSigmaPaymentStatus = createServerFn({ method: "POST" })
       }
       const status = String(json.data?.status ?? json.status ?? "").toUpperCase();
       const paid = status === "AUTHORIZED" || status === "APPROVED" || status === "PAID" || status === "COMPLETED";
+      if (paid && !notifiedPaid.has(data.transactionId)) {
+        notifiedPaid.add(data.transactionId);
+        await pushcut(
+          "✅ Venda confirmada",
+          `Pagamento aprovado • TX ${data.transactionId}`,
+        );
+      }
       return { ok: true, status, paid };
     } catch (e) {
       console.error("Sigma status exception:", e);
