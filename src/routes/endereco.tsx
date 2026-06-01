@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FunnelSteps } from "@/components/FunnelSteps";
+import { trackTikTok } from "@/lib/tiktok";
 
 export const Route = createFileRoute("/endereco")({
   head: () => ({
@@ -32,6 +33,12 @@ function Endereco() {
   const [success, setSuccess] = useState(false);
   const [cepLoading, setCepLoading] = useState(false);
   const [cepError, setCepError] = useState("");
+
+  useEffect(() => {
+    const email = typeof window !== "undefined" ? sessionStorage.getItem("emailTitular") || undefined : undefined;
+    const cpf = typeof window !== "undefined" ? sessionStorage.getItem("cpfTitular") || undefined : undefined;
+    trackTikTok("CompleteRegistration", { email, external_id: cpf });
+  }, []);
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));

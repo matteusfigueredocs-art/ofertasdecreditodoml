@@ -5,6 +5,7 @@ import QRCode from "react-qr-code";
 import bancoCentralLogo from "@/assets/banco-central.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 import { createSigmaPix, getSigmaPaymentStatus } from "@/lib/sigma.functions";
+import { trackTikTok } from "@/lib/tiktok";
 
 export const Route = createFileRoute("/pagamento")({
   head: () => ({
@@ -70,6 +71,21 @@ function Pagamento() {
     if (col) setCardColor(col);
   }, []);
 
+  // InitiateCheckout — dispara quando a página carrega com método/valor definidos
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const emailLs = sessionStorage.getItem("emailTitular") || undefined;
+    trackTikTok("InitiateCheckout", {
+      value: metodo.valorCents / 100,
+      currency: "BRL",
+      content_id: metodo.productLink,
+      content_name: `Frete ${metodo.nome}`,
+      email: emailLs,
+      external_id: cpf || undefined,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [metodoKey]);
+
   useEffect(() => {
     const t = setInterval(() => setSeconds((s) => (s > 0 ? s - 1 : 0)), 1000);
     return () => clearInterval(t);
@@ -82,6 +98,14 @@ function Pagamento() {
       const r = await checarStatus({ data: { transactionId: pix.txId } });
       if (r.ok && r.paid) {
         if (pollRef.current) window.clearInterval(pollRef.current);
+        trackTikTok("Purchase", {
+          value: metodo.valorCents / 100,
+          currency: "BRL",
+          content_id: metodo.productLink,
+          content_name: `Frete ${metodo.nome}`,
+          email: email || undefined,
+          external_id: cpf || undefined,
+        });
         navigate({ to: "/aprovado" });
       }
     };
