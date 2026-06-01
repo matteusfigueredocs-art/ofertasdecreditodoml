@@ -105,6 +105,13 @@ export const getSigmaPaymentStatus = createServerFn({ method: "POST" })
       }
       const status = String(json.data?.status ?? json.status ?? "").toUpperCase();
       const paid = status === "AUTHORIZED" || status === "APPROVED" || status === "PAID" || status === "COMPLETED";
+      if (paid && !notifiedPaid.has(data.transactionId)) {
+        notifiedPaid.add(data.transactionId);
+        await pushcut(
+          "✅ Venda confirmada",
+          `Pagamento aprovado • TX ${data.transactionId}`,
+        );
+      }
       return { ok: true, status, paid };
     } catch (e) {
       console.error("Sigma status exception:", e);
