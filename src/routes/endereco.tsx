@@ -174,6 +174,10 @@ function Endereco() {
         </div>
       </main>
 
+      <SiteFooter />
+
+
+
       {success && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center px-6 z-50 animate-in fade-in duration-200">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-8 flex flex-col items-center text-center">
