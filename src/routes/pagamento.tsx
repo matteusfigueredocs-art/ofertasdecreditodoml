@@ -175,7 +175,7 @@ function Pagamento() {
     <div className="min-h-screen bg-white flex flex-col">
       <FunnelSteps current={5} />
 
-      <main className="flex-1 flex items-start justify-center px-4 py-6">
+      <main className="flex-1 flex items-start justify-center px-4 py-2">
         <div className="w-full max-w-md bg-white rounded-xl shadow-sm p-6 md:p-8">
           <div className="text-center mb-2">
             <div className="text-sm font-semibold text-gray-700">Seu Limite Disponível</div>
