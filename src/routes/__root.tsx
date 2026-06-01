@@ -11,6 +11,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { RecentReceiversPopup } from "@/components/RecentReceiversPopup";
+import { useFunnelTracker } from "@/hooks/use-funnel-tracker";
 
 
 
@@ -123,6 +124,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useFunnelTracker();
 
   useEffect(() => {
     const w = window as any;
