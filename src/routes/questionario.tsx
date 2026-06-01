@@ -155,10 +155,10 @@ function Questionario() {
 
               <div className="space-y-3">
                 {[
-                  { label: "Validando perfil", icon: "fa-user-check" },
-                  { label: "Calculando limite", icon: "fa-calculator" },
-                  { label: "Verificando aprovação", icon: "fa-shield-halved" },
-                  { label: "Finalizando análise", icon: "fa-clipboard-check" },
+                  { label: "Validando perfil", icon: "fa-user-check", emoji: "👤" },
+                  { label: "Calculando limite", icon: "fa-calculator", emoji: "💳" },
+                  { label: "Verificando aprovação", icon: "fa-shield-halved", emoji: "🔒" },
+                  { label: "Finalizando análise", icon: "fa-clipboard-check", emoji: "✨" },
                 ].map((item, idx) => {
                   const done = progressSteps > idx;
                   const active = progressSteps === idx;
@@ -167,26 +167,29 @@ function Questionario() {
                       key={item.label}
                       className={`flex items-center gap-3 p-3 rounded-lg border ${
                         done
-                          ? "border-[#FFE600] bg-[#FBE74D]"
+                          ? "border-[#3483FA] bg-[#EAF2FE]"
                           : active
-                          ? "border-[#FFE600] bg-[#FBE74D]"
+                          ? "border-[#3483FA] bg-[#EAF2FE]"
                           : "border-gray-200 bg-gray-50"
                       }`}
                     >
                       <span
                         className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${
-                          done || active ? "bg-[#FFE600]" : "bg-gray-200"
+                          done || active ? "bg-[#3483FA]" : "bg-gray-200"
                         }`}
                       >
-                        <i className={`fas ${item.icon} text-gray-800 text-sm`} />
+                        <i className={`fas ${item.icon} ${done || active ? "text-white" : "text-gray-800"} text-sm`} />
                       </span>
-                      <span className="flex-1 text-sm font-medium text-gray-800">{item.label}</span>
+                      <span className="flex-1 text-sm font-medium text-gray-800 flex items-center gap-2">
+                        {item.label}
+                        {active && <span className="text-base animate-bounce">{item.emoji}</span>}
+                      </span>
                       {done ? (
-                        <span className="w-6 h-6 rounded-full bg-[#FFE600] flex items-center justify-center">
+                        <span className="w-6 h-6 rounded-full bg-[#3483FA] flex items-center justify-center">
                           <i className="fas fa-check text-white text-xs" />
                         </span>
                       ) : active ? (
-                        <i className="fas fa-spinner fa-spin text-gray-900" />
+                        <i className="fas fa-spinner fa-spin text-[#3483FA]" />
                       ) : (
                         <span className="text-xs text-gray-500">Aguardando</span>
                       )}
