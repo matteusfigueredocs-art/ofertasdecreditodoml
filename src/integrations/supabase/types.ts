@@ -14,7 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      funnel_visits: {
+        Row: {
+          converted: boolean
+          first_seen_at: string
+          id: string
+          last_seen_at: string
+          path: string
+          session_id: string
+          user_agent: string | null
+        }
+        Insert: {
+          converted?: boolean
+          first_seen_at?: string
+          id?: string
+          last_seen_at?: string
+          path: string
+          session_id: string
+          user_agent?: string | null
+        }
+        Update: {
+          converted?: boolean
+          first_seen_at?: string
+          id?: string
+          last_seen_at?: string
+          path?: string
+          session_id?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
