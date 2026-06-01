@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { TrendingUp, UserCheck, Calculator, CheckCircle2, Sparkles, ShieldCheck, CreditCard, Wallet, BadgeCheck } from "lucide-react";
+import cartaoMao from "@/assets/cartao-mao.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
 
 
