@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { FunnelSteps } from "@/components/FunnelSteps";
+import { SiteFooter } from "@/components/SiteFooter";
 import { trackTikTok } from "@/lib/tiktok";
 
 export const Route = createFileRoute("/endereco")({
@@ -172,6 +173,10 @@ function Endereco() {
           </form>
         </div>
       </main>
+
+      <SiteFooter />
+
+
 
       {success && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center px-6 z-50 animate-in fade-in duration-200">
