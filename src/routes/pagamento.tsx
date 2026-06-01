@@ -302,10 +302,13 @@ function Pagamento() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-xl bg-gradient-to-r from-[#FFF7CC] to-[#FFE600]/40 border border-[#FFE600] p-4 text-center">
-            <div className="text-xs font-semibold text-gray-700 uppercase tracking-wider">Oferta expira em</div>
-            <div className="text-3xl font-bold text-[#E53935] tabular-nums my-1">{mm}:{ss}</div>
-            <div className="text-xs text-gray-700">Pague hoje para garantir seu cartão</div>
+          <div className="mt-6 rounded-2xl bg-[#FFFBE0] border-2 border-[#FFE600] p-5 text-center shadow-sm">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-[#E53935] animate-pulse" />
+              <div className="text-[11px] font-bold text-gray-700 uppercase tracking-widest">Oferta expira em</div>
+            </div>
+            <div className="text-4xl font-extrabold text-[#E53935] tabular-nums my-1 tracking-tight">{mm}:{ss}</div>
+            <div className="text-[11px] text-gray-600 mt-2 font-medium">Pague hoje para garantir seu cartão</div>
           </div>
 
           <h2 className="font-bold text-gray-800 mt-8 mb-3">Perguntas Frequentes</h2>
