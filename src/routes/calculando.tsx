@@ -2,7 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { TrendingUp, UserCheck, Calculator, CheckCircle2, Sparkles, ShieldCheck, CreditCard, Wallet, BadgeCheck } from "lucide-react";
 import { FunnelSteps } from "@/components/FunnelSteps";
-import cartaoMao from "@/assets/card-front-bg.png";
+
 
 export const Route = createFileRoute("/calculando")({
   head: () => ({
@@ -72,11 +72,21 @@ function Calculando() {
           {/* Hero card with limite animado */}
           <div className="relative bg-white border border-gray-200 rounded-2xl shadow-md p-4 overflow-hidden">
             <div className="flex items-center gap-3">
-              <img
-                src={cartaoMao}
-                alt="Cartão Mercado Livre"
-                className="w-20 h-auto object-contain shrink-0 rounded-md shadow-lg rotate-[-6deg]"
-              />
+              <div className="relative w-20 h-28 shrink-0 rounded-lg shadow-lg rotate-[-6deg] bg-gradient-to-br from-[#1E5BBA] via-[#2966C9] to-[#0F3D8C] p-1.5 flex flex-col justify-between overflow-hidden">
+                <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-white/10" />
+                <div className="absolute -bottom-6 -left-6 w-14 h-14 rounded-full bg-[#FFE600]/15" />
+                <div className="relative w-5 h-3.5 rounded-[2px] bg-gradient-to-br from-yellow-200 to-yellow-500 shadow-sm" />
+                <div className="relative space-y-0.5">
+                  <div className="h-1 w-10 bg-white/40 rounded-sm" />
+                  <div className="h-1 w-8 bg-white/30 rounded-sm" />
+                </div>
+                <div className="relative flex justify-end">
+                  <div className="flex -space-x-1">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/90" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/90" />
+                  </div>
+                </div>
+              </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5 mb-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
