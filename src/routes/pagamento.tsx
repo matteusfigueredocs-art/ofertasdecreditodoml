@@ -177,7 +177,7 @@ function Pagamento() {
 
       <main className="flex-1 flex items-start justify-center px-4 py-2">
         <div className="w-full max-w-md">
-          <div className="mb-3 flex items-center justify-center gap-3 bg-[#FFFBE0] border border-[#FFE600] rounded-xl px-4 py-2 shadow-sm">
+          <div className="mb-3 flex items-center justify-center gap-3 bg-[#FFF5F5] border border-[#FECACA] rounded-xl px-4 py-2 shadow-sm">
             <div className="flex items-center gap-1.5">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#E53935] animate-pulse" />
               <span className="text-[10px] font-bold text-gray-600 uppercase tracking-wider">Oferta expira em</span>
