@@ -4,6 +4,7 @@ import sedexLogo from "@/assets/sedex-logo.png";
 import pacLogo from "@/assets/pac-logo.png";
 import loggiLogo from "@/assets/loggi-logo.png";
 import { FunnelSteps } from "@/components/FunnelSteps";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/envio")({
   head: () => ({
@@ -315,6 +316,7 @@ function Envio() {
           )}
         </div>
       </main>
+      <SiteFooter />
     </div>
   );
 }
