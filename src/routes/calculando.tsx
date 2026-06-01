@@ -75,7 +75,7 @@ function Calculando() {
               <img
                 src={cartaoMao}
                 alt="Cartão Mercado Livre"
-                className="w-24 h-auto object-contain shrink-0 drop-shadow-md"
+                className="w-20 h-auto object-contain shrink-0 rounded-md shadow-lg rotate-[-6deg]"
               />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5 mb-1">
