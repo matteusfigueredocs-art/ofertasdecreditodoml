@@ -3,6 +3,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
 import QRCode from "react-qr-code";
 import bancoCentralLogo from "@/assets/banco-central.png";
+import pixLogo from "@/assets/pix-logo.png.asset.json";
 import { FunnelSteps } from "@/components/FunnelSteps";
 import { SiteFooter } from "@/components/SiteFooter";
 import { createSigmaPix, getSigmaPaymentStatus } from "@/lib/sigma.functions";
