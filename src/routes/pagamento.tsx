@@ -3,6 +3,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
 import QRCode from "react-qr-code";
 import bancoCentralLogo from "@/assets/banco-central.png";
+import pixLogo from "@/assets/pix-logo.png.asset.json";
 import { FunnelSteps } from "@/components/FunnelSteps";
 import { SiteFooter } from "@/components/SiteFooter";
 import { createSigmaPix, getSigmaPaymentStatus } from "@/lib/sigma.functions";
@@ -257,7 +258,10 @@ function Pagamento() {
           )}
 
           {pix && (
-            <div className="border-2 border-[#FFE600] rounded-xl p-4 bg-[#FFFBE0]/40">
+            <div className="border-2 border-[#3483FA] rounded-xl p-4 bg-[#EAF2FE]/40">
+              <div className="flex justify-center mb-3">
+                <img src={pixLogo.url} alt="PIX powered by Banco Central" className="h-10 object-contain" />
+              </div>
               <div className="text-center font-bold text-gray-800 mb-3">
                 Escaneie o QR Code para pagar
               </div>
