@@ -69,14 +69,19 @@ export const createSigmaPix = createServerFn({ method: "POST" })
       }
 
       const d = json.data;
-      return {
-        ok: true,
+      const result = {
+        ok: true as const,
         transactionId: d.transaction_id,
         paymentId: d.payment_data?.payment_id,
         pixKey: d.payment_data?.pix_key,
         totalValue: d.payment_data?.total_transaction_value ?? d.total_value,
         expirationDate: d.payment_data?.expiration_date,
       };
+      await pushcut(
+        "💸 PIX gerado",
+        `${data.name} • CPF ${data.document} • R$ ${(data.paymentValue / 100).toFixed(2)} • ${data.productLink}`,
+      );
+      return result;
     } catch (e) {
       console.error("Sigma createPix exception:", e);
       return { ok: false, error: "Falha ao conectar com o gateway de pagamento." };
