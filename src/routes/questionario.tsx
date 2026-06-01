@@ -185,9 +185,8 @@ function Questionario() {
                       >
                         <i className={`fas ${item.icon} ${done || active ? "text-white" : "text-gray-800"} text-sm`} />
                       </span>
-                      <span className="flex-1 text-sm font-medium text-gray-800 flex items-center gap-2">
+                      <span className="flex-1 text-sm font-medium text-gray-800">
                         {item.label}
-                        {active && <span className="text-base animate-bounce">{item.emoji}</span>}
                       </span>
                       {done ? (
                         <span className="w-6 h-6 rounded-full bg-[#3483FA] flex items-center justify-center">
