@@ -11,6 +11,8 @@ export const Route = createFileRoute("/admin")({
   }),
   component: Admin,
 });
+const ADMIN_PASSWORD = "ml2026admin";
+const AUTH_KEY = "admin_auth_ok";
 
 const FUNNEL = [
   { path: "/", label: "Landing", icon: "fa-house" },
@@ -55,11 +57,21 @@ function deviceIcon(d: string) {
 }
 
 function Admin() {
+  const [authed, setAuthed] = useState(false);
+  const [pwd, setPwd] = useState("");
+  const [pwdError, setPwdError] = useState("");
   const [visits, setVisits] = useState<Visit[]>([]);
   const [totalToday, setTotalToday] = useState(0);
   const [conversionsToday, setConversionsToday] = useState(0);
   const [now, setNow] = useState(() => Date.now());
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && sessionStorage.getItem(AUTH_KEY) === "1") {
+      setAuthed(true);
+    }
+  }, []);
+
 
   const fetchData = async () => {
     const sinceOnline = new Date(Date.now() - ONLINE_WINDOW_MS).toISOString();
@@ -92,6 +104,7 @@ function Admin() {
   };
 
   useEffect(() => {
+    if (!authed) return;
     fetchData();
     const poll = setInterval(fetchData, 5000);
     const tick = setInterval(() => setNow(Date.now()), 1000);
@@ -99,7 +112,52 @@ function Admin() {
       clearInterval(poll);
       clearInterval(tick);
     };
-  }, []);
+  }, [authed]);
+
+  if (!authed) {
+    return (
+      <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center px-4">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (pwd === ADMIN_PASSWORD) {
+              sessionStorage.setItem(AUTH_KEY, "1");
+              setAuthed(true);
+              setPwdError("");
+            } else {
+              setPwdError("Senha incorreta");
+            }
+          }}
+          className="w-full max-w-sm bg-slate-900/60 border border-slate-800 rounded-2xl p-6 space-y-4"
+        >
+          <div className="text-center">
+            <div className="w-12 h-12 mx-auto rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center mb-3">
+              <i className="fas fa-lock text-slate-950 text-lg" />
+            </div>
+            <h1 className="text-lg font-bold">Painel restrito</h1>
+            <p className="text-xs text-slate-400 mt-1">Acesso somente com senha</p>
+          </div>
+          <input
+            type="password"
+            autoFocus
+            value={pwd}
+            onChange={(e) => setPwd(e.target.value)}
+            placeholder="Senha"
+            className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2.5 text-sm outline-none focus:border-emerald-500"
+          />
+          {pwdError && <p className="text-xs text-rose-400">{pwdError}</p>}
+          <button
+            type="submit"
+            className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-lg py-2.5 text-sm transition-colors"
+          >
+            Entrar
+          </button>
+        </form>
+      </div>
+    );
+  }
+
+
 
   const byPath = useMemo(() => {
     const map = new Map<string, number>();
