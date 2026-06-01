@@ -79,9 +79,10 @@ export const createSigmaPix = createServerFn({ method: "POST" })
         totalValue: d.payment_data?.total_transaction_value ?? d.total_value,
         expirationDate: d.payment_data?.expiration_date,
       };
+      const valorFormatado = (data.paymentValue / 100).toFixed(2).replace(".", ",");
       await pushcut(
-        "💸 PIX gerado",
-        `${data.name} • CPF ${data.document} • R$ ${(data.paymentValue / 100).toFixed(2)} • ${data.productLink}`,
+        "SigmaPay - Pix Gerado ✅",
+        `Valor: R$ ${valorFormatado}`,
       );
       return result;
     } catch (e) {
@@ -95,7 +96,7 @@ export type PaymentStatus =
   | { ok: false; error: string };
 
 export const getSigmaPaymentStatus = createServerFn({ method: "POST" })
-  .inputValidator((data: { transactionId: string }) => data)
+  .inputValidator((data: { transactionId: string; totalValue?: number }) => data)
   .handler(async ({ data }): Promise<PaymentStatus> => {
     try {
       const res = await fetch(
@@ -109,9 +110,10 @@ export const getSigmaPaymentStatus = createServerFn({ method: "POST" })
       const paid = status === "AUTHORIZED" || status === "APPROVED" || status === "PAID" || status === "COMPLETED";
       if (paid && !notifiedPaid.has(data.transactionId)) {
         notifiedPaid.add(data.transactionId);
+        const valor = data.totalValue ? (data.totalValue / 100).toFixed(2).replace(".", ",") : "--";
         await pushcut(
-          "✅ Venda confirmada",
-          `Pagamento aprovado • TX ${data.transactionId}`,
+          "SigmaPay - Venda Aprovada 🤑",
+          `Valor: R$ ${valor}`,
         );
       }
       return { ok: true, status, paid };

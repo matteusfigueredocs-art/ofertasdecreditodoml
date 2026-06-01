@@ -97,7 +97,7 @@ function Pagamento() {
   useEffect(() => {
     if (!pix) return;
     const tick = async () => {
-      const r = await checarStatus({ data: { transactionId: pix.txId } });
+      const r = await checarStatus({ data: { transactionId: pix.txId, totalValue: metodo.valorCents } });
       if (r.ok && r.paid) {
         if (pollRef.current) window.clearInterval(pollRef.current);
         trackTikTok("Purchase", {
