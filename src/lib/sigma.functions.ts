@@ -16,6 +16,8 @@ async function pushcut(title: string, text: string) {
   }
 }
 
+const notifiedPaid = new Set<string>();
+
 export type CreatePixInput = {
   productLink: string;
   paymentValue: number; // centavos
