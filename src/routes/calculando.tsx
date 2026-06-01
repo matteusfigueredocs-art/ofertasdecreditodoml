@@ -2,7 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { TrendingUp, UserCheck, Calculator, CheckCircle2, Sparkles, ShieldCheck, CreditCard, Wallet, BadgeCheck } from "lucide-react";
 import { FunnelSteps } from "@/components/FunnelSteps";
-import cartaoMao from "@/assets/cartao-mao.png";
+import cartaoMao from "@/assets/card-front-bg.png";
 
 export const Route = createFileRoute("/calculando")({
   head: () => ({
