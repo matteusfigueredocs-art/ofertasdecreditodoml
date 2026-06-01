@@ -316,6 +316,7 @@ function Envio() {
           )}
         </div>
       </main>
+      <SiteFooter />
     </div>
   );
 }
