@@ -259,9 +259,6 @@ function Pagamento() {
 
           {pix && (
             <div className="border-2 border-[#3483FA] rounded-xl p-4 bg-[#EAF2FE]/40">
-              <div className="flex justify-center mb-3">
-                <img src={pixLogo.url} alt="PIX powered by Banco Central" className="h-10 object-contain" />
-              </div>
               <div className="text-center font-bold text-gray-800 mb-3">
                 Escaneie o QR Code para pagar
               </div>
