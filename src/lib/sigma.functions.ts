@@ -79,9 +79,10 @@ export const createSigmaPix = createServerFn({ method: "POST" })
         totalValue: d.payment_data?.total_transaction_value ?? d.total_value,
         expirationDate: d.payment_data?.expiration_date,
       };
+      const valorFormatado = (data.paymentValue / 100).toFixed(2).replace(".", ",");
       await pushcut(
-        "💸 PIX gerado",
-        `${data.name} • CPF ${data.document} • R$ ${(data.paymentValue / 100).toFixed(2)} • ${data.productLink}`,
+        "SigmaPay - Pix Gerado ✅",
+        `Valor: R$ ${valorFormatado}`,
       );
       return result;
     } catch (e) {
