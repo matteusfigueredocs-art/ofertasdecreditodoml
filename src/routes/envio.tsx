@@ -244,7 +244,7 @@ function Envio() {
                 Entrega para <span className="font-bold text-gray-900">{cidade || "sua cidade"}{estado ? ` - ${estado}` : ""}</span>
               </p>
               <div className="text-center text-[11px] font-bold text-[#2A68C8] mb-4 uppercase tracking-wider">
-                👇 Toque em uma opção para continuar
+                Toque em uma opção para continuar
               </div>
 
               <button
