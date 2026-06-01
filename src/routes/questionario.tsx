@@ -146,6 +146,11 @@ function Questionario() {
             </>
           ) : (
             <div className="py-2">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3483FA] to-[#1E5BBA] flex items-center justify-center shadow-lg shadow-[#3483FA]/30">
+                  <i className="fas fa-credit-card text-white text-2xl" />
+                </div>
+              </div>
               <h2 className="text-lg md:text-xl font-bold text-gray-800 text-center mb-2">
                 Analisando suas respostas...
               </h2>
