@@ -25,6 +25,7 @@ import { Route as ConfirmacaoRouteImport } from './routes/confirmacao'
 import { Route as CartaoAprovadoRouteImport } from './routes/cartao-aprovado'
 import { Route as CalculandoRouteImport } from './routes/calculando'
 import { Route as AprovadoRouteImport } from './routes/aprovado'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ValidacaoRoute = ValidacaoRouteImport.update({
@@ -107,6 +108,11 @@ const AprovadoRoute = AprovadoRouteImport.update({
   path: '/aprovado',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -115,6 +121,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/aprovado': typeof AprovadoRoute
   '/calculando': typeof CalculandoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
@@ -134,6 +141,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/aprovado': typeof AprovadoRoute
   '/calculando': typeof CalculandoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
@@ -154,6 +162,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/aprovado': typeof AprovadoRoute
   '/calculando': typeof CalculandoRoute
   '/cartao-aprovado': typeof CartaoAprovadoRoute
@@ -175,6 +184,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
     | '/aprovado'
     | '/calculando'
     | '/cartao-aprovado'
@@ -194,6 +204,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admin'
     | '/aprovado'
     | '/calculando'
     | '/cartao-aprovado'
@@ -213,6 +224,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/admin'
     | '/aprovado'
     | '/calculando'
     | '/cartao-aprovado'
@@ -233,6 +245,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
   AprovadoRoute: typeof AprovadoRoute
   CalculandoRoute: typeof CalculandoRoute
   CartaoAprovadoRoute: typeof CartaoAprovadoRoute
@@ -365,6 +378,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AprovadoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -377,6 +397,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
   AprovadoRoute: AprovadoRoute,
   CalculandoRoute: CalculandoRoute,
   CartaoAprovadoRoute: CartaoAprovadoRoute,
