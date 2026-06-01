@@ -328,6 +328,7 @@ function Pagamento() {
             ))}
           </div>
 
+          </div>
         </div>
       </main>
       <SiteFooter />
