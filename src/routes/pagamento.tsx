@@ -177,13 +177,12 @@ function Pagamento() {
 
       <main className="flex-1 flex items-start justify-center px-4 py-2">
         <div className="w-full max-w-md">
-          <div className="mb-4 rounded-2xl bg-[#FFFBE0] border-2 border-[#FFE600] p-5 text-center shadow-sm">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <span className="inline-block w-2 h-2 rounded-full bg-[#E53935] animate-pulse" />
-              <div className="text-[11px] font-bold text-gray-700 uppercase tracking-widest">Oferta expira em</div>
+          <div className="mb-3 flex items-center justify-center gap-3 bg-[#FFFBE0] border border-[#FFE600] rounded-xl px-4 py-2 shadow-sm">
+            <div className="flex items-center gap-1.5">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#E53935] animate-pulse" />
+              <span className="text-[10px] font-bold text-gray-600 uppercase tracking-wider">Oferta expira em</span>
             </div>
-            <div className="text-4xl font-extrabold text-[#E53935] tabular-nums my-1 tracking-tight">{mm}:{ss}</div>
-            <div className="text-[11px] text-gray-600 mt-2 font-medium">Pague hoje para garantir seu cartão</div>
+            <span className="text-lg font-extrabold text-[#E53935] tabular-nums">{mm}:{ss}</span>
           </div>
           <div className="bg-white rounded-xl shadow-sm p-6 md:p-8">
           <div className="text-center mb-2">
