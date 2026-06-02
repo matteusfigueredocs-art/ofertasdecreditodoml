@@ -49,7 +49,15 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      track_funnel_visit: {
+        Args: {
+          _converted?: boolean
+          _path: string
+          _session_id: string
+          _user_agent: string
+        }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
