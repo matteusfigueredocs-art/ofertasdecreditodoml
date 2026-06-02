@@ -1,6 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import mlLogo from "@/assets/mercado-livre-logo.png";
 
 export const Route = createFileRoute("/splash")({
   head: () => ({
@@ -14,28 +13,40 @@ export const Route = createFileRoute("/splash")({
 
 function SplashPage() {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
+  const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setLoading(false), 2500);
-    return () => clearTimeout(t);
+    const duration = 10000;
+    const interval = 50;
+    const step = 100 / (duration / interval);
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        const next = prev + step;
+        if (next >= 100) {
+          clearInterval(timer);
+          setShowButton(true);
+          return 100;
+        }
+        return next;
+      });
+    }, interval);
+    return () => clearInterval(timer);
   }, []);
 
   return (
     <div className="min-h-screen bg-[#FFE600] flex flex-col items-center justify-center px-6">
       <div className="flex flex-col items-center w-full max-w-sm">
-        <img
-          src={mlLogo}
-          alt="Mercado Livre"
-          className="h-10 object-contain mb-8"
-          loading="eager"
-          decoding="async"
-        />
-
-        {loading ? (
-          <div className="flex flex-col items-center gap-4">
-            <div className="w-10 h-10 border-4 border-white border-t-[#3483FA] rounded-full animate-spin" />
+        {!showButton ? (
+          <div className="flex flex-col items-center gap-4 w-full animate-in fade-in duration-300">
             <p className="text-gray-900 font-semibold text-lg">Carregando...</p>
+            <div className="w-full h-3 bg-white/50 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-[#3483FA] rounded-full transition-all duration-75 ease-linear"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+            <p className="text-gray-700 text-sm font-medium">{Math.round(progress)}%</p>
           </div>
         ) : (
           <div className="flex flex-col items-center gap-6 w-full animate-in fade-in zoom-in-95 duration-300">

@@ -65,8 +65,19 @@ function genReceiver() {
   };
 }
 
+function nullReceiver() {
+  return {
+    name: "",
+    initial: "",
+    city: "",
+    limit: "",
+    time: "",
+    color: "from-gray-300 to-gray-400",
+  };
+}
+
 export function RecentReceiversPopup() {
-  const [r, setR] = useState(() => genReceiver());
+  const [r, setR] = useState(nullReceiver);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -75,9 +86,9 @@ export function RecentReceiversPopup() {
       setVisible(true);
       setTimeout(() => setVisible(false), 4500);
     };
-    const start = setTimeout(show, 1500);
+    show();
     const interval = setInterval(show, 7000);
-    return () => { clearTimeout(start); clearInterval(interval); };
+    return () => { clearInterval(interval); };
   }, []);
 
   return (
