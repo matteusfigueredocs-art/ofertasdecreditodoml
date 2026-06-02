@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ValidacaoRouteImport } from './routes/validacao'
 import { Route as SucessoRouteImport } from './routes/sucesso'
+import { Route as SplashRouteImport } from './routes/splash'
 import { Route as QuestionarioRouteImport } from './routes/questionario'
 import { Route as ProcessandoRouteImport } from './routes/processando'
 import { Route as PersonalizarRouteImport } from './routes/personalizar'
@@ -36,6 +37,11 @@ const ValidacaoRoute = ValidacaoRouteImport.update({
 const SucessoRoute = SucessoRouteImport.update({
   id: '/sucesso',
   path: '/sucesso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SplashRoute = SplashRouteImport.update({
+  id: '/splash',
+  path: '/splash',
   getParentRoute: () => rootRouteImport,
 } as any)
 const QuestionarioRoute = QuestionarioRouteImport.update({
@@ -136,6 +142,7 @@ export interface FileRoutesByFullPath {
   '/personalizar': typeof PersonalizarRoute
   '/processando': typeof ProcessandoRoute
   '/questionario': typeof QuestionarioRoute
+  '/splash': typeof SplashRoute
   '/sucesso': typeof SucessoRoute
   '/validacao': typeof ValidacaoRoute
 }
@@ -156,6 +163,7 @@ export interface FileRoutesByTo {
   '/personalizar': typeof PersonalizarRoute
   '/processando': typeof ProcessandoRoute
   '/questionario': typeof QuestionarioRoute
+  '/splash': typeof SplashRoute
   '/sucesso': typeof SucessoRoute
   '/validacao': typeof ValidacaoRoute
 }
@@ -177,6 +185,7 @@ export interface FileRoutesById {
   '/personalizar': typeof PersonalizarRoute
   '/processando': typeof ProcessandoRoute
   '/questionario': typeof QuestionarioRoute
+  '/splash': typeof SplashRoute
   '/sucesso': typeof SucessoRoute
   '/validacao': typeof ValidacaoRoute
 }
@@ -199,6 +208,7 @@ export interface FileRouteTypes {
     | '/personalizar'
     | '/processando'
     | '/questionario'
+    | '/splash'
     | '/sucesso'
     | '/validacao'
   fileRoutesByTo: FileRoutesByTo
@@ -219,6 +229,7 @@ export interface FileRouteTypes {
     | '/personalizar'
     | '/processando'
     | '/questionario'
+    | '/splash'
     | '/sucesso'
     | '/validacao'
   id:
@@ -239,6 +250,7 @@ export interface FileRouteTypes {
     | '/personalizar'
     | '/processando'
     | '/questionario'
+    | '/splash'
     | '/sucesso'
     | '/validacao'
   fileRoutesById: FileRoutesById
@@ -260,6 +272,7 @@ export interface RootRouteChildren {
   PersonalizarRoute: typeof PersonalizarRoute
   ProcessandoRoute: typeof ProcessandoRoute
   QuestionarioRoute: typeof QuestionarioRoute
+  SplashRoute: typeof SplashRoute
   SucessoRoute: typeof SucessoRoute
   ValidacaoRoute: typeof ValidacaoRoute
 }
@@ -278,6 +291,13 @@ declare module '@tanstack/react-router' {
       path: '/sucesso'
       fullPath: '/sucesso'
       preLoaderRoute: typeof SucessoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/splash': {
+      id: '/splash'
+      path: '/splash'
+      fullPath: '/splash'
+      preLoaderRoute: typeof SplashRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/questionario': {
@@ -412,6 +432,7 @@ const rootRouteChildren: RootRouteChildren = {
   PersonalizarRoute: PersonalizarRoute,
   ProcessandoRoute: ProcessandoRoute,
   QuestionarioRoute: QuestionarioRoute,
+  SplashRoute: SplashRoute,
   SucessoRoute: SucessoRoute,
   ValidacaoRoute: ValidacaoRoute,
 }
