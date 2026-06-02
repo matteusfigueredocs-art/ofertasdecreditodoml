@@ -27,16 +27,12 @@ export function useFunnelTracker() {
 
     const send = async () => {
       try {
-        await supabase.from("funnel_visits").upsert(
-          {
-            session_id: sessionId,
-            path: pathname,
-            user_agent: ua,
-            last_seen_at: new Date().toISOString(),
-            ...(converted ? { converted: true } : {}),
-          },
-          { onConflict: "session_id" },
-        );
+        await supabase.rpc("track_funnel_visit", {
+          _session_id: sessionId,
+          _path: pathname,
+          _user_agent: ua,
+          _converted: converted,
+        });
       } catch {
         // silent
       }
