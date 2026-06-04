@@ -28,6 +28,7 @@ import { Route as CalculandoRouteImport } from './routes/calculando'
 import { Route as AprovadoRouteImport } from './routes/aprovado'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiPublicPushinpayWebhookRouteImport } from './routes/api/public/pushinpay-webhook'
 
 const ValidacaoRoute = ValidacaoRouteImport.update({
   id: '/validacao',
@@ -124,6 +125,12 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicPushinpayWebhookRoute =
+  ApiPublicPushinpayWebhookRouteImport.update({
+    id: '/api/public/pushinpay-webhook',
+    path: '/api/public/pushinpay-webhook',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -145,6 +152,7 @@ export interface FileRoutesByFullPath {
   '/splash': typeof SplashRoute
   '/sucesso': typeof SucessoRoute
   '/validacao': typeof ValidacaoRoute
+  '/api/public/pushinpay-webhook': typeof ApiPublicPushinpayWebhookRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -166,6 +174,7 @@ export interface FileRoutesByTo {
   '/splash': typeof SplashRoute
   '/sucesso': typeof SucessoRoute
   '/validacao': typeof ValidacaoRoute
+  '/api/public/pushinpay-webhook': typeof ApiPublicPushinpayWebhookRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -188,6 +197,7 @@ export interface FileRoutesById {
   '/splash': typeof SplashRoute
   '/sucesso': typeof SucessoRoute
   '/validacao': typeof ValidacaoRoute
+  '/api/public/pushinpay-webhook': typeof ApiPublicPushinpayWebhookRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -211,6 +221,7 @@ export interface FileRouteTypes {
     | '/splash'
     | '/sucesso'
     | '/validacao'
+    | '/api/public/pushinpay-webhook'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -232,6 +243,7 @@ export interface FileRouteTypes {
     | '/splash'
     | '/sucesso'
     | '/validacao'
+    | '/api/public/pushinpay-webhook'
   id:
     | '__root__'
     | '/'
@@ -253,6 +265,7 @@ export interface FileRouteTypes {
     | '/splash'
     | '/sucesso'
     | '/validacao'
+    | '/api/public/pushinpay-webhook'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -275,6 +288,7 @@ export interface RootRouteChildren {
   SplashRoute: typeof SplashRoute
   SucessoRoute: typeof SucessoRoute
   ValidacaoRoute: typeof ValidacaoRoute
+  ApiPublicPushinpayWebhookRoute: typeof ApiPublicPushinpayWebhookRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -412,6 +426,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/pushinpay-webhook': {
+      id: '/api/public/pushinpay-webhook'
+      path: '/api/public/pushinpay-webhook'
+      fullPath: '/api/public/pushinpay-webhook'
+      preLoaderRoute: typeof ApiPublicPushinpayWebhookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -435,7 +456,18 @@ const rootRouteChildren: RootRouteChildren = {
   SplashRoute: SplashRoute,
   SucessoRoute: SucessoRoute,
   ValidacaoRoute: ValidacaoRoute,
+  ApiPublicPushinpayWebhookRoute: ApiPublicPushinpayWebhookRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
