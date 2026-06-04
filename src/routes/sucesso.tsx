@@ -40,9 +40,9 @@ function Sucesso() {
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
-            <h1 className="text-2xl font-bold text-white">Pagamento confirmado!</h1>
+            <h1 className="text-2xl font-bold text-white">Compra confirmada!</h1>
             <p className="text-sm text-white/90 mt-1">
-              Tudo certo, {nome}. Seu cartão já está sendo preparado. 💳✨
+              Tudo certo, {nome}. Assim que seu cartão for emitido, você receberá um e-mail com todas as informações. 📧💳
             </p>
           </div>
 
