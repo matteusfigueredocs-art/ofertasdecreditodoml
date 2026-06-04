@@ -46,7 +46,24 @@ export type CreatePixResult =
   | { ok: false; error: string };
 
 export const createSigmaPix = createServerFn({ method: "POST" })
-  .inputValidator((data: CreatePixInput) => data)
+  .inputValidator((data: CreatePixInput) => {
+    const parsed = z
+      .object({
+        productLink: z.string().min(1).max(255),
+        paymentValue: z.number().int().positive(),
+        name: z.string().min(1).max(255),
+        email: z.string().email().max(255),
+        document: z.string().regex(/^\d{11}$/),
+        phone: z.string().optional(),
+      })
+      .parse(data);
+
+    const expectedValue = VALID_PRODUCTS[parsed.productLink as keyof typeof VALID_PRODUCTS];
+    if (expectedValue === undefined || parsed.paymentValue !== expectedValue) {
+      throw new Error("productLink ou paymentValue inválido");
+    }
+    return parsed;
+  })
   .handler(async ({ data }): Promise<CreatePixResult> => {
     try {
       const body = {
