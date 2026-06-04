@@ -3,8 +3,6 @@ import { z } from "zod";
 
 // PushinPay (mantemos os nomes de export antigos para não quebrar pagamento.tsx)
 const PUSHIN_BASE = "https://api.pushinpay.com.br/api";
-const PUSHIN_TOKEN =
-  "67122|HmBtIf5frOjy72hvgdhLsvnqWHVX9boCfsKxc0eSd37326ee";
 
 const PUSHCUT_URL =
   "https://api.pushcut.io/Ee028sYTepada_oEeEk6n/notifications/MinhaNotifica%C3%A7%C3%A3o";
@@ -78,7 +76,7 @@ export const createSigmaPix = createServerFn({ method: "POST" })
       const res = await fetch(`${PUSHIN_BASE}/pix/cashIn`, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${PUSHIN_TOKEN}`,
+          Authorization: `Bearer ${process.env.PUSHINPAY_TOKEN}`,
           Accept: "application/json",
           "Content-Type": "application/json",
         },
@@ -123,7 +121,7 @@ export const getSigmaPaymentStatus = createServerFn({ method: "POST" })
         `${PUSHIN_BASE}/transactions/${encodeURIComponent(data.transactionId)}`,
         {
           headers: {
-            Authorization: `Bearer ${PUSHIN_TOKEN}`,
+            Authorization: `Bearer ${process.env.PUSHINPAY_TOKEN}`,
             Accept: "application/json",
           },
         },
