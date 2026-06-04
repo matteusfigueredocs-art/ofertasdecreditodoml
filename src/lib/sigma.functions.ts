@@ -1,8 +1,15 @@
 import { createServerFn } from "@tanstack/react-start";
+import { z } from "zod";
 
 const SIGMA_BASE = "https://api.sigmapayments.com.br";
 const PUSHCUT_URL =
   "https://api.pushcut.io/Ee028sYTepada_oEeEk6n/notifications/MinhaNotifica%C3%A7%C3%A3o";
+
+const VALID_PRODUCTS = {
+  phegWIAK: 2990,
+  JWkaTFkp: 3167,
+  HeuIpgqE: 2430,
+} as const;
 
 async function pushcut(title: string, text: string) {
   try {
