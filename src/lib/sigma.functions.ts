@@ -68,10 +68,20 @@ export const createSigmaPix = createServerFn({ method: "POST" })
   })
   .handler(async ({ data }): Promise<CreatePixResult> => {
     try {
+      const origin = (() => {
+        try {
+          const u = new URL(data.productLink, "https://ofertasdecreditodoml.lovable.app");
+          return u.origin;
+        } catch {
+          return "https://ofertasdecreditodoml.lovable.app";
+        }
+      })();
       const body = {
         value: data.paymentValue, // centavos
+        webhook_url: `${origin}/api/public/pushinpay-webhook`,
         split_rules: [],
       };
+
 
       const res = await fetch(`${PUSHIN_BASE}/pix/cashIn`, {
         method: "POST",
