@@ -76,7 +76,7 @@ export const createSigmaPix = createServerFn({ method: "POST" })
       const res = await fetch(`${PUSHIN_BASE}/pix/cashIn`, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${PUSHIN_TOKEN}`,
+          Authorization: `Bearer ${process.env.PUSHINPAY_TOKEN}`,
           Accept: "application/json",
           "Content-Type": "application/json",
         },
@@ -121,7 +121,7 @@ export const getSigmaPaymentStatus = createServerFn({ method: "POST" })
         `${PUSHIN_BASE}/transactions/${encodeURIComponent(data.transactionId)}`,
         {
           headers: {
-            Authorization: `Bearer ${PUSHIN_TOKEN}`,
+            Authorization: `Bearer ${process.env.PUSHINPAY_TOKEN}`,
             Accept: "application/json",
           },
         },
