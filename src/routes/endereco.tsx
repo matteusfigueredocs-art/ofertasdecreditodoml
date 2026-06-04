@@ -80,6 +80,9 @@ function Endereco() {
     if (saving || success) return;
     if (!form.cep || !form.endereco || !form.numero || !form.bairro || !form.cidade || !form.estado) return;
     setSaving(true);
+    try {
+      sessionStorage.setItem("endereco", JSON.stringify(form));
+    } catch {}
     setTimeout(() => {
       setSaving(false);
       setSuccess(true);
