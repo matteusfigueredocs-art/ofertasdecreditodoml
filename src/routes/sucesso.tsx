@@ -6,26 +6,56 @@ import { SiteFooter } from "@/components/SiteFooter";
 export const Route = createFileRoute("/sucesso")({
   head: () => ({
     meta: [
-      { title: "Pagamento confirmado - Mercado Livre" },
-      { name: "description", content: "Seu pagamento foi confirmado e seu cartão está a caminho." },
+      { title: "Pedido confirmado - Mercado Livre" },
+      { name: "description", content: "Seu pedido foi confirmado. Em breve você receberá um e-mail com a emissão do cartão." },
     ],
   }),
   component: Sucesso,
 });
 
+type Endereco = {
+  cep: string;
+  endereco: string;
+  numero: string;
+  complemento: string;
+  bairro: string;
+  cidade: string;
+  estado: string;
+};
+
+const cardColorMap: Record<string, { from: string; to: string; text: string }> = {
+  preto: { from: "#1a1a1a", to: "#3a3a3a", text: "#FFE600" },
+  amarelo: { from: "#FFE600", to: "#F5C518", text: "#1a1a1a" },
+  azul: { from: "#2A68C8", to: "#1E5BBA", text: "#ffffff" },
+  branco: { from: "#f5f5f5", to: "#e5e5e5", text: "#1a1a1a" },
+  vermelho: { from: "#D32F2F", to: "#A52525", text: "#ffffff" },
+};
+
 function Sucesso() {
-  const [nome, setNome] = useState("Titular");
-  const [codigo, setCodigo] = useState("ML000000000BR");
+  const [nomeCompleto, setNomeCompleto] = useState("Titular do Cartão");
+  const [primeiroNome, setPrimeiroNome] = useState("Titular");
+  const [endereco, setEndereco] = useState<Endereco | null>(null);
+  const [cardColor, setCardColor] = useState("preto");
+  const [cardColorName, setCardColorName] = useState("Preto");
 
   useEffect(() => {
     try {
       const n = sessionStorage.getItem("nomeTitular");
-      if (n) setNome(n.trim().split(/\s+/)[0]);
+      if (n) {
+        const upper = n.toUpperCase().trim();
+        setNomeCompleto(upper);
+        setPrimeiroNome(n.trim().split(/\s+/)[0]);
+      }
+      const end = sessionStorage.getItem("endereco");
+      if (end) setEndereco(JSON.parse(end));
+      const col = sessionStorage.getItem("cardColor");
+      if (col) setCardColor(col);
+      const colName = sessionStorage.getItem("cardColorName");
+      if (colName) setCardColorName(colName);
     } catch {}
-    // gera código de rastreio determinístico após mount (evita hydration mismatch)
-    const rnd = Math.floor(100000000 + Math.random() * 900000000);
-    setCodigo(`ML${rnd}BR`);
   }, []);
+
+  const colors = cardColorMap[cardColor] ?? cardColorMap.preto;
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -40,25 +70,126 @@ function Sucesso() {
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
-            <h1 className="text-2xl font-bold text-white">Compra confirmada!</h1>
+            <h1 className="text-2xl font-bold text-white">Pedido confirmado!</h1>
             <p className="text-sm text-white/90 mt-1">
-              Tudo certo, {nome}. Assim que seu cartão for emitido, você receberá um e-mail com todas as informações. 📧💳
+              Parabéns, {primeiroNome}! Seu cartão está sendo preparado. 💳
             </p>
           </div>
 
-          {/* Status box */}
+          {/* Cartão personalizado */}
+          <div className="mb-4">
+            <div className="text-xs font-bold text-gray-600 uppercase tracking-wider mb-2 px-1">
+              💳 Seu cartão
+            </div>
+            <div
+              className="rounded-2xl p-5 aspect-[1.586/1] flex flex-col justify-between shadow-2xl relative overflow-hidden"
+              style={{
+                background: `linear-gradient(135deg, ${colors.from}, ${colors.to})`,
+                color: colors.text,
+              }}
+            >
+              <div
+                className="absolute -right-10 -top-10 w-40 h-40 rounded-full opacity-10"
+                style={{ background: colors.text }}
+              />
+              <div
+                className="absolute -left-16 -bottom-16 w-48 h-48 rounded-full opacity-10"
+                style={{ background: colors.text }}
+              />
+
+              <div className="flex justify-between items-start relative z-10">
+                <div className="text-[10px] font-bold uppercase tracking-widest opacity-80">
+                  Mercado Livre
+                </div>
+                <div
+                  className="text-[10px] font-bold px-2 py-0.5 rounded"
+                  style={{ background: colors.text + "22" }}
+                >
+                  {cardColorName}
+                </div>
+              </div>
+
+              <div className="relative z-10">
+                <div
+                  className="w-10 h-7 rounded-md mb-3 opacity-90"
+                  style={{
+                    background: `linear-gradient(135deg, ${colors.text}cc, ${colors.text}66)`,
+                  }}
+                />
+                <div className="font-mono text-base tracking-widest opacity-90">
+                  •••• •••• •••• 4750
+                </div>
+              </div>
+
+              <div className="flex justify-between items-end relative z-10">
+                <div>
+                  <div className="text-[8px] uppercase tracking-wider opacity-70">
+                    Titular
+                  </div>
+                  <div className="text-xs font-bold tracking-wide truncate max-w-[180px]">
+                    {nomeCompleto}
+                  </div>
+                </div>
+                <div className="text-right">
+                  <div className="text-[8px] uppercase tracking-wider opacity-70">
+                    Validade
+                  </div>
+                  <div className="text-xs font-bold">12/31</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Endereço de entrega */}
           <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm mb-4">
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-xs font-bold text-gray-700 uppercase tracking-wider">Status do pedido</span>
+              <span className="w-7 h-7 rounded-full bg-[#FFE600] flex items-center justify-center text-sm">
+                📍
+              </span>
+              <div className="font-bold text-gray-800">Endereço de entrega</div>
             </div>
+            {endereco ? (
+              <div className="text-sm text-gray-700 leading-relaxed">
+                <div className="font-semibold text-gray-900">{nomeCompleto}</div>
+                <div>
+                  {endereco.endereco}, {endereco.numero}
+                  {endereco.complemento ? ` - ${endereco.complemento}` : ""}
+                </div>
+                <div>
+                  {endereco.bairro} - {endereco.cidade}/{endereco.estado}
+                </div>
+                <div className="text-gray-500 text-xs mt-1">CEP {endereco.cep}</div>
+              </div>
+            ) : (
+              <div className="text-sm text-gray-500">
+                Endereço informado durante o cadastro.
+              </div>
+            )}
+          </div>
 
+          {/* Aviso por e-mail */}
+          <div className="bg-[#EAF2FE]/60 border border-[#3483FA]/30 rounded-xl p-4 mb-4">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-lg">📧</span>
+              <div className="text-sm font-bold text-gray-900">
+                Você receberá um e-mail
+              </div>
+            </div>
+            <div className="text-xs text-gray-700 leading-relaxed">
+              Assim que seu cartão for emitido, enviaremos um e-mail com o código
+              de rastreio e os próximos passos da entrega.
+            </div>
+          </div>
+
+          {/* Próximos passos */}
+          <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm mb-4">
+            <div className="font-bold text-gray-800 mb-3">Próximos passos</div>
             <ol className="space-y-3">
               {[
-                { t: "Pagamento aprovado", d: "Confirmado via PIX", done: true },
-                { t: "Pedido recebido", d: "Seus dados foram validados", done: true },
-                { t: "Emissão do cartão", d: "Em até 5 dias úteis", done: false, active: true },
-                { t: "E-mail de confirmação", d: "Você receberá um e-mail assim que o cartão for emitido", done: false },
+                { t: "Pagamento confirmado", d: "Recebemos seu pagamento via PIX", done: true },
+                { t: "Emissão do cartão", d: "Em até 5 dias úteis", active: true },
+                { t: "E-mail de confirmação", d: "Aviso da emissão com rastreio", done: false },
+                { t: "Entrega no endereço", d: "3 a 7 dias úteis após emissão", done: false },
               ].map((s) => (
                 <li key={s.t} className="flex items-start gap-3">
                   <span
@@ -73,7 +204,9 @@ function Sucesso() {
                     {s.done ? "✓" : s.active ? "•" : ""}
                   </span>
                   <div>
-                    <div className={`text-sm font-semibold ${s.done || s.active ? "text-gray-800" : "text-gray-500"}`}>{s.t}</div>
+                    <div className={`text-sm font-semibold ${s.done || s.active ? "text-gray-800" : "text-gray-500"}`}>
+                      {s.t}
+                    </div>
                     <div className="text-xs text-gray-500">{s.d}</div>
                   </div>
                 </li>
@@ -81,33 +214,8 @@ function Sucesso() {
             </ol>
           </div>
 
-          {/* Email notice */}
-          <div className="bg-[#EAF2FE]/60 border border-[#3483FA]/30 rounded-xl p-4 mb-4">
-            <div className="text-xs font-bold text-gray-600 uppercase tracking-wider mb-1">📧 Aviso por e-mail</div>
-            <div className="text-sm text-gray-800 font-semibold">Você será notificado por e-mail</div>
-            <div className="text-xs text-gray-600 mt-1">
-              Assim que seu cartão for emitido, enviaremos um e-mail com o código de rastreio e os próximos passos.
-            </div>
-          </div>
-
-          {/* Next steps */}
-          <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm mb-4">
-            <div className="font-bold text-gray-800 mb-2">Próximos passos</div>
-            <ul className="text-sm text-gray-700 space-y-2">
-              <li className="flex gap-2"><span>📧</span> Aguarde o e-mail confirmando a emissão do seu cartão.</li>
-              <li className="flex gap-2"><span>🛡️</span> Verifique também sua caixa de spam ou promoções.</li>
-              <li className="flex gap-2"><span>🚚</span> Após a emissão, seu cartão chega em 3 a 7 dias úteis.</li>
-            </ul>
-          </div>
-
-          <a
-            href="https://www.mercadolivre.com.br"
-            className="block w-full text-center bg-[#2A68C8] hover:bg-[#1E5BBA] text-white font-bold py-4 rounded-lg shadow-md transition-colors"
-          >
-            Voltar ao Mercado Livre
-          </a>
-          <div className="text-center text-xs text-gray-500 mt-3">
-            Dúvidas? Entre em contato pelo app.
+          <div className="text-center text-xs text-gray-500 mt-3 mb-2">
+            Em caso de dúvidas, aguarde o e-mail de confirmação.
           </div>
         </div>
       </main>
