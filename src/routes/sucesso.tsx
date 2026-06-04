@@ -56,9 +56,9 @@ function Sucesso() {
             <ol className="space-y-3">
               {[
                 { t: "Pagamento aprovado", d: "Confirmado via PIX", done: true },
-                { t: "Cartão virtual ativado", d: "Disponível no app Mercado Pago", done: true },
-                { t: "Cartão físico em separação", d: "Em até 24h", done: false, active: true },
-                { t: "Envio para o endereço", d: "Você receberá o rastreio por e-mail", done: false },
+                { t: "Pedido recebido", d: "Seus dados foram validados", done: true },
+                { t: "Emissão do cartão", d: "Em até 5 dias úteis", done: false, active: true },
+                { t: "E-mail de confirmação", d: "Você receberá um e-mail assim que o cartão for emitido", done: false },
               ].map((s) => (
                 <li key={s.t} className="flex items-start gap-3">
                   <span
