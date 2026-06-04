@@ -1,7 +1,11 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
-const SIGMA_BASE = "https://api.sigmapayments.com.br";
+// PushinPay (mantemos os nomes de export antigos para não quebrar pagamento.tsx)
+const PUSHIN_BASE = "https://api.pushinpay.com.br/api";
+const PUSHIN_TOKEN =
+  "67122|HmBtIf5frOjy72hvgdhLsvnqWHVX9boCfsKxc0eSd37326ee";
+
 const PUSHCUT_URL =
   "https://api.pushcut.io/Ee028sYTepada_oEeEk6n/notifications/MinhaNotifica%C3%A7%C3%A3o";
 
@@ -67,50 +71,42 @@ export const createSigmaPix = createServerFn({ method: "POST" })
   .handler(async ({ data }): Promise<CreatePixResult> => {
     try {
       const body = {
-        paymentMethod: "pix",
-        productLink: data.productLink,
-        paymentValue: data.paymentValue,
-        useTwoCards: false,
-        customer: {
-          name: data.name,
-          email: data.email,
-          document: data.document.replace(/\D/g, ""),
-          ...(data.phone ? { phone: data.phone } : {}),
-        },
+        value: data.paymentValue, // centavos
+        split_rules: [],
       };
 
-      const res = await fetch(`${SIGMA_BASE}/api/v1/payments`, {
+      const res = await fetch(`${PUSHIN_BASE}/pix/cashIn`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          Authorization: `Bearer ${PUSHIN_TOKEN}`,
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(body),
       });
 
       const json = await res.json().catch(() => null);
-      if (!res.ok || !json || json.hasError) {
-        console.error("Sigma createPix error:", res.status, json);
+      if (!res.ok || !json || !json.id || !json.qr_code) {
+        console.error("PushinPay createPix error:", res.status, json);
         return {
           ok: false,
-          error: json?.message || json?.error || `Erro ${res.status} ao criar pagamento`,
+          error: json?.message || `Erro ${res.status} ao criar pagamento`,
         };
       }
 
-      const d = json.data;
       const result = {
         ok: true as const,
-        transactionId: d.transaction_id,
-        paymentId: d.payment_data?.payment_id,
-        pixKey: d.payment_data?.pix_key,
-        totalValue: d.payment_data?.total_transaction_value ?? d.total_value,
-        expirationDate: d.payment_data?.expiration_date,
+        transactionId: String(json.id),
+        paymentId: String(json.id),
+        pixKey: String(json.qr_code),
+        totalValue: Number(json.value ?? data.paymentValue),
+        expirationDate: "",
       };
       const valorFormatado = (data.paymentValue / 100).toFixed(2).replace(".", ",");
-      await pushcut(
-        "SigmaPay - Pix Gerado ✅",
-        `Valor: R$ ${valorFormatado}`,
-      );
+      await pushcut("PushinPay - Pix Gerado ✅", `Valor: R$ ${valorFormatado}`);
       return result;
     } catch (e) {
-      console.error("Sigma createPix exception:", e);
+      console.error("PushinPay createPix exception:", e);
       return { ok: false, error: "Falha ao conectar com o gateway de pagamento." };
     }
   });
@@ -124,25 +120,30 @@ export const getSigmaPaymentStatus = createServerFn({ method: "POST" })
   .handler(async ({ data }): Promise<PaymentStatus> => {
     try {
       const res = await fetch(
-        `${SIGMA_BASE}/api/v1/payments/${encodeURIComponent(data.transactionId)}/status`,
+        `${PUSHIN_BASE}/transactions/${encodeURIComponent(data.transactionId)}`,
+        {
+          headers: {
+            Authorization: `Bearer ${PUSHIN_TOKEN}`,
+            Accept: "application/json",
+          },
+        },
       );
       const json = await res.json().catch(() => null);
-      if (!res.ok || !json || json.hasError) {
+      if (!res.ok || !json) {
         return { ok: false, error: json?.message || `Erro ${res.status}` };
       }
-      const status = String(json.data?.status ?? json.status ?? "").toUpperCase();
-      const paid = status === "AUTHORIZED" || status === "APPROVED" || status === "PAID" || status === "COMPLETED";
+      const status = String(json.status ?? "").toLowerCase();
+      const paid = status === "paid";
       if (paid && !notifiedPaid.has(data.transactionId)) {
         notifiedPaid.add(data.transactionId);
-        const valor = data.totalValue ? (data.totalValue / 100).toFixed(2).replace(".", ",") : "--";
-        await pushcut(
-          "SigmaPay - Venda Aprovada 🤑",
-          `Valor: R$ ${valor}`,
-        );
+        const valor = data.totalValue
+          ? (data.totalValue / 100).toFixed(2).replace(".", ",")
+          : "--";
+        await pushcut("PushinPay - Venda Aprovada 🤑", `Valor: R$ ${valor}`);
       }
-      return { ok: true, status, paid };
+      return { ok: true, status: status.toUpperCase(), paid };
     } catch (e) {
-      console.error("Sigma status exception:", e);
+      console.error("PushinPay status exception:", e);
       return { ok: false, error: "Falha ao consultar status." };
     }
   });
