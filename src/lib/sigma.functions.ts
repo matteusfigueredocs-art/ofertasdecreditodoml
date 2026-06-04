@@ -3,8 +3,6 @@ import { z } from "zod";
 
 // PushinPay (mantemos os nomes de export antigos para não quebrar pagamento.tsx)
 const PUSHIN_BASE = "https://api.pushinpay.com.br/api";
-const PUSHIN_TOKEN =
-  "67122|HmBtIf5frOjy72hvgdhLsvnqWHVX9boCfsKxc0eSd37326ee";
 
 const PUSHCUT_URL =
   "https://api.pushcut.io/Ee028sYTepada_oEeEk6n/notifications/MinhaNotifica%C3%A7%C3%A3o";
