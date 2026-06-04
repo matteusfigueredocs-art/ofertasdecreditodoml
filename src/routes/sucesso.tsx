@@ -40,9 +40,9 @@ function Sucesso() {
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
-            <h1 className="text-2xl font-bold text-white">Pagamento confirmado!</h1>
+            <h1 className="text-2xl font-bold text-white">Compra confirmada!</h1>
             <p className="text-sm text-white/90 mt-1">
-              Tudo certo, {nome}. Seu cartão já está sendo preparado. 💳✨
+              Tudo certo, {nome}. Assim que seu cartão for emitido, você receberá um e-mail com todas as informações. 📧💳
             </p>
           </div>
 
@@ -56,9 +56,9 @@ function Sucesso() {
             <ol className="space-y-3">
               {[
                 { t: "Pagamento aprovado", d: "Confirmado via PIX", done: true },
-                { t: "Cartão virtual ativado", d: "Disponível no app Mercado Pago", done: true },
-                { t: "Cartão físico em separação", d: "Em até 24h", done: false, active: true },
-                { t: "Envio para o endereço", d: "Você receberá o rastreio por e-mail", done: false },
+                { t: "Pedido recebido", d: "Seus dados foram validados", done: true },
+                { t: "Emissão do cartão", d: "Em até 5 dias úteis", done: false, active: true },
+                { t: "E-mail de confirmação", d: "Você receberá um e-mail assim que o cartão for emitido", done: false },
               ].map((s) => (
                 <li key={s.t} className="flex items-start gap-3">
                   <span
@@ -81,20 +81,22 @@ function Sucesso() {
             </ol>
           </div>
 
-          {/* Tracking */}
+          {/* Email notice */}
           <div className="bg-[#EAF2FE]/60 border border-[#3483FA]/30 rounded-xl p-4 mb-4">
-            <div className="text-xs font-bold text-gray-600 uppercase tracking-wider mb-1">📦 Código de rastreio</div>
-            <div className="font-mono text-lg font-bold text-[#1E5BBA]">{codigo}</div>
-            <div className="text-xs text-gray-600 mt-1">Ative o rastreio em até 24h pelo e-mail enviado.</div>
+            <div className="text-xs font-bold text-gray-600 uppercase tracking-wider mb-1">📧 Aviso por e-mail</div>
+            <div className="text-sm text-gray-800 font-semibold">Você será notificado por e-mail</div>
+            <div className="text-xs text-gray-600 mt-1">
+              Assim que seu cartão for emitido, enviaremos um e-mail com o código de rastreio e os próximos passos.
+            </div>
           </div>
 
           {/* Next steps */}
           <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm mb-4">
             <div className="font-bold text-gray-800 mb-2">Próximos passos</div>
             <ul className="text-sm text-gray-700 space-y-2">
-              <li className="flex gap-2"><span>📧</span> Você receberá um e-mail de confirmação em instantes.</li>
-              <li className="flex gap-2"><span>📱</span> Use seu cartão virtual agora mesmo no app Mercado Pago.</li>
-              <li className="flex gap-2"><span>🚚</span> Seu cartão físico chega em 3 a 7 dias úteis.</li>
+              <li className="flex gap-2"><span>📧</span> Aguarde o e-mail confirmando a emissão do seu cartão.</li>
+              <li className="flex gap-2"><span>🛡️</span> Verifique também sua caixa de spam ou promoções.</li>
+              <li className="flex gap-2"><span>🚚</span> Após a emissão, seu cartão chega em 3 a 7 dias úteis.</li>
             </ul>
           </div>
 
