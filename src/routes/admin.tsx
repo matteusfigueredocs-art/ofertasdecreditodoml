@@ -113,6 +113,12 @@ function Admin() {
       clearInterval(tick);
     };
   }, [authed]);
+  const byPath = useMemo(() => {
+    const map = new Map<string, number>();
+    visits.forEach((v) => map.set(v.path, (map.get(v.path) || 0) + 1));
+    return map;
+  }, [visits]);
+
 
   if (!authed) {
     return (
@@ -158,12 +164,6 @@ function Admin() {
   }
 
 
-
-  const byPath = useMemo(() => {
-    const map = new Map<string, number>();
-    visits.forEach((v) => map.set(v.path, (map.get(v.path) || 0) + 1));
-    return map;
-  }, [visits]);
 
   const maxStep = Math.max(...Array.from(byPath.values()), 1);
   const conversionRate = totalToday > 0 ? ((conversionsToday / totalToday) * 100).toFixed(2) : "0.00";
