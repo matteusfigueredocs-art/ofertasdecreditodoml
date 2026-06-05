@@ -113,6 +113,12 @@ function Admin() {
       clearInterval(tick);
     };
   }, [authed]);
+  const byPath = useMemo(() => {
+    const map = new Map<string, number>();
+    visits.forEach((v) => map.set(v.path, (map.get(v.path) || 0) + 1));
+    return map;
+  }, [visits]);
+
 
   if (!authed) {
     return (
